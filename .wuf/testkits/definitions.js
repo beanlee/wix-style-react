@@ -166,7 +166,6 @@ module.exports = {
   Collapse: { skipSanityTest: true, noTestkit: true },
   Card: { skipSanityTest: true, noTestkit: true },
   Composite: { skipSanityTest: true, noTestkit: true },
-  FullTextView: { skipSanityTest: true, noTestkit: true },
 
   Text: {
     vanillaLegacyTestkit: true,

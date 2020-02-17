@@ -44,7 +44,6 @@ const files = [
   ['FloatingHelper.bundle.min.js', 49],
   ['FloatingNotification.bundle.min.js', 25],
   ['FormField.bundle.min.js', 44],
-  ['FullTextView.bundle.min.js', 31],
   ['GenericModalLayout.bundle.min.js', 4],
   ['GoogleAddressInput.bundle.min.js', 73],
   ['GoogleAddressInputWithLabel.bundle.min.js', 75],

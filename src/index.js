@@ -59,7 +59,6 @@ export { default as Notification } from './Notification';
 export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as ImageViewer } from './ImageViewer';
 export { default as PopoverMenu } from './PopoverMenu';
-export { default as FullTextView } from './FullTextView';
 export { default as PopoverMenuItem } from './PopoverMenuItem';
 export { default as Badge } from './Badge';
 export { default as BadgeSelect } from './BadgeSelect';

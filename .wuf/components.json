@@ -140,9 +140,6 @@
   "FormField": {
     "path": "src/FormField"
   },
-  "FullTextView": {
-    "path": "src/FullTextView"
-  },
   "GenericModalLayout": {
     "path": "src/GenericModalLayout"
   },

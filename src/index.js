@@ -71,8 +71,6 @@ export { default as ColorPicker } from './ColorPicker';
 export { default as CounterBadge } from './CounterBadge';
 export { default as FloatingHelper } from './FloatingHelper';
 export { default as FormField } from './FormField';
-export { HBox } from './HBox';
-export { VBox } from './VBox';
 export { default as Heading } from './Heading';
 export { default as Highlighter } from './Highlighter';
 export { default as Search } from './Search';

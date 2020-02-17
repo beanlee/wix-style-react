@@ -104,7 +104,6 @@ module.exports = {
   },
 
   Grid: { skipSanityTest: true, noTestkit: true },
-  HBox: { skipSanityTest: true, noTestkit: true },
   Layout: { skipSanityTest: true, noTestkit: true },
   MessageBox: { skipSanityTest: true, noTestkit: true },
 
@@ -162,7 +161,6 @@ module.exports = {
   PopoverMenuItem: { skipSanityTest: true, noTestkit: true },
   TableToolbar: { skipSanityTest: true, noTestkit: true },
   Tooltip: { skipSanityTest: true, manualExport: true },
-  VBox: { skipSanityTest: true, noTestkit: true },
   Collapse: { skipSanityTest: true, noTestkit: true },
   Card: { skipSanityTest: true, noTestkit: true },
   Composite: { skipSanityTest: true, noTestkit: true },

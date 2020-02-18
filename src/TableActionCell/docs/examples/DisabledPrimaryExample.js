@@ -10,7 +10,7 @@ const Example = () => (
       primaryAction={{
         text: 'Edit',
         disabled: true,
-        theme: 'fullblue',
+        skin: 'standard',
         onClick: () => window.alert('Primary action was triggered!'),
       }}
     />

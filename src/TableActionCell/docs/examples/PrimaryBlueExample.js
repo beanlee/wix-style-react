@@ -9,7 +9,7 @@ const Example = () => (
       dataHook="story-primary-blue"
       primaryAction={{
         text: 'Edit',
-        theme: 'fullblue',
+        skin: 'standard',
         onClick: () => window.alert('Primary action was triggered!'),
       }}
     />

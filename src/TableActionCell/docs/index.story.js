@@ -49,13 +49,13 @@ import SecondaryWithDividerExampleRaw from '!raw-loader!./examples/SecondaryWith
 
 const primaryActionOptions1 = {
   text: 'Details',
-  theme: 'fullblue',
+  skin: 'standard',
   onClick: () => console.log('Details action called!'),
 };
 
 const primaryActionOptions2 = {
   ...primaryActionOptions1,
-  theme: 'whiteblue',
+  skin: 'inverted',
 };
 
 const secondaryActionsOption = [

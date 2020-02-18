@@ -117,11 +117,7 @@ export const TailExample = (
 export const EmptyStateExample = [
   <Page.Header
     title="Your Product"
-    actionsBar={
-      <Button withNewIcons prefixIcon={<Add />}>
-        New Item
-      </Button>
-    }
+    actionsBar={<Button prefixIcon={<Add />}>New Item</Button>}
   />,
   <Page.Content>
     <Card>

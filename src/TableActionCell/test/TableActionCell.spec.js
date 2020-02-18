@@ -9,7 +9,7 @@ import { flattenInternalDriver } from '../../../test/utils/private-drivers';
 const primaryActionProps = (actionTrigger = () => {}, disabled = false) => ({
   primaryAction: {
     text: 'primary action',
-    theme: 'whiteblue',
+    skin: 'standard',
     onClick: actionTrigger,
     disabled,
   },

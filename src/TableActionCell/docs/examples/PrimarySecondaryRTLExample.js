@@ -14,7 +14,7 @@ const Example = () => (
         dataHook="story-primary-secondary-rtl"
         primaryAction={{
           text: 'Edit',
-          theme: 'whiteblue',
+          skin: 'inverted',
           onClick: () => window.alert('Primary action was triggered!'),
         }}
         secondaryActions={[

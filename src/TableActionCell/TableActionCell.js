@@ -3,7 +3,7 @@ import React from 'react';
 import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import More from 'wix-ui-icons-common/More';
 import PopoverMenu from '../beta/PopoverMenu';
-import Button from '../Deprecated/Button';
+import Button from '../Button';
 import IconButton from '../IconButton';
 import OldPopoverMenu from '../PopoverMenu';
 import OldPopoverMenuItem from '../PopoverMenuItem';
@@ -13,11 +13,11 @@ import HoverSlot from './HoverSlot';
 import style from './TableActionCell.st.css';
 
 /* eslint-disable react/prop-types */
-function renderPrimaryAction({ text, theme, onClick, disabled }) {
+function renderPrimaryAction({ text, skin, onClick, disabled }) {
   return (
     <Button
-      theme={theme}
       disabled={disabled}
+      skin={skin}
       onClick={event => {
         onClick();
 
@@ -46,17 +46,16 @@ function renderVisibleActions(actions) {
         }
         theme="dark"
       >
-        <Button
+        <IconButton
+          skin="inverted"
           disabled={disabled}
-          theme="icon-greybackground"
           onClick={event => {
             onClick();
             event.stopPropagation();
           }}
-          withNewIcons
         >
           {icon}
-        </Button>
+        </IconButton>
       </Tooltip>
     ),
   );
@@ -65,7 +64,6 @@ function renderVisibleActions(actions) {
 function renderHiddenActions(actions, popoverMenuProps, upgrade) {
   return upgrade ? (
     <PopoverMenu
-      buttonTheme="icon-greybackground"
       dataHook="table-action-cell-popover-menu"
       appendTo="parent"
       placement="top"
@@ -116,9 +114,9 @@ function renderHiddenActions(actions, popoverMenuProps, upgrade) {
 
 function renderPlaceholder() {
   return (
-    <Button theme="icon-white" withNewIcons>
+    <IconButton skin="inverted">
       <ChevronRight />
-    </Button>
+    </IconButton>
   );
 }
 
@@ -194,7 +192,7 @@ TableActionCell.propTypes = {
    */
   primaryAction: PropTypes.shape({
     text: PropTypes.string.isRequired,
-    theme: PropTypes.oneOf(['whiteblue', 'fullblue']),
+    skin: PropTypes.oneOf(['standard', 'inverted']),
     onClick: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
   }),

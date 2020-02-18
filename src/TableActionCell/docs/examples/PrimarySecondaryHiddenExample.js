@@ -13,7 +13,7 @@ const Example = () => (
       dataHook="story-primary-hidden-secondary"
       primaryAction={{
         text: 'Edit',
-        theme: 'fullblue',
+        skin: 'standard',
         onClick: () => window.alert('Primary action was triggered!'),
       }}
       secondaryActions={[

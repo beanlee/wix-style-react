@@ -13,9 +13,7 @@ const ignoreList = [
   'Layout',
   'Box',
   'Grid',
-  'MultiSelectComposite',
   'Selector',
-  'AutoCompleteComposite',
   'ContactItemBuilder',
   'BadgeSelectItemBuilder',
 ];

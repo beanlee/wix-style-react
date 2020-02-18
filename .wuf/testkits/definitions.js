@@ -66,13 +66,6 @@ module.exports = {
     skipSanityTest: true, // testkit does not have root `exists` method
   },
 
-  MultiSelectComposite: {
-    vanillaLegacyTestkit: true,
-    enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
-    noPuppeteerTestkit: true,
-  },
-
   DragAndDrop: { skipSanityTest: true, noTestkit: true },
   DragDropContextProvider: { skipSanityTest: true, noTestkit: true },
 
@@ -88,19 +81,6 @@ module.exports = {
     // TODO: testkit of this component is not following convention.
     // It is used only internally and before automated export was not exported manually
     noTestkit: true,
-  },
-
-  GoogleAddressInputWithLabel: {
-    vanillaLegacyTestkit: true,
-    enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
-    skipSanityTest: true,
-    // TODO: testkit of this component is not following convention.
-    // It is used only internally and before automated export was not exported manually
-
-    // the name of export has a typo, it's different than component name
-    protractorTestkitExportName: 'googleAddressWithInputTestkitFactory',
-    noPuppeteerTestkit: true,
   },
 
   Grid: { skipSanityTest: true, noTestkit: true },
@@ -239,18 +219,6 @@ module.exports = {
     enzymeLegacyTestkit: true,
     protractorLegacyTestkit: true,
     testkitPath: '../src/FieldLabelAttributes/FieldLabelAttributes.driver',
-    skipSanityTest: true,
-    noPuppeteerTestkit: true,
-  },
-
-  FieldWithSelectionComposite: {
-    vanillaLegacyTestkit: true,
-    enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
-    testkitPath:
-      '../src/Composite/FieldWithSelectionComposite/FieldWithSelectionComposite.driver',
-    protractorTestkitPath:
-      '../src/Composite/FieldWithSelectionComposite/FieldWithSelectionComposite.protractor.driver',
     skipSanityTest: true,
     noPuppeteerTestkit: true,
   },
@@ -508,13 +476,6 @@ module.exports = {
     vanillaLegacyTestkit: true,
     enzymeLegacyTestkit: true,
     protractorLegacyTestkit: true,
-  },
-
-  AutoCompleteComposite: {
-    vanillaLegacyTestkit: true,
-    enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
-    noPuppeteerTestkit: true,
   },
 
   EditableSelector: {

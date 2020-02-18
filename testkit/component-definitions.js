@@ -40,18 +40,6 @@ export default {
     },
   },
 
-  MultiSelectComposite: {
-    props: {
-      children: <MultiSelect />,
-    },
-  },
-
-  AutoCompleteComposite: {
-    props: {
-      children: [<AutoComplete key={1} />],
-    },
-  },
-
   Popover: {
     props: {
       children: [
@@ -326,12 +314,6 @@ export default {
   Box: {
     props: {
       children: <div />,
-    },
-  },
-
-  GoogleAddressInputWithLabel: {
-    props: {
-      children: <GoogleAddressInput Client={GmapsTestClient} />,
     },
   },
 

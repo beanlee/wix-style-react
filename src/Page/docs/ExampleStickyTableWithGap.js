@@ -122,8 +122,7 @@ class ProductTable extends React.Component {
             dataHook="action-cell-component-secondary"
             primaryAction={{
               text: 'Edit',
-              theme: 'fullblue',
-              onActionTrigger: () => primaryAction(rowData),
+              skin: 'standard',
             }}
             secondaryActions={[
               {

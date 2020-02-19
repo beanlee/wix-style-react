@@ -100,7 +100,7 @@ const files = [
   ['Stepper.bundle.min.js', 15],
   ['Swatches.bundle.min.js', 86],
   ['Table.bundle.min.js', 68],
-  ['TableActionCell.bundle.min.js', 65],
+  ['TableActionCell.bundle.min.js', 62],
   ['TableToolbar.bundle.min.js', 14],
   ['Tabs.bundle.min.js', 42],
   ['Tag.bundle.min.js', 21],

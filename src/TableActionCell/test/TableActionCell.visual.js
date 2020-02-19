@@ -42,7 +42,6 @@ const interactiveTests = [
       {
         it: 'Should display a divider',
         props: {
-          upgrade: true,
           secondaryActions: [
             {
               text: 'Star',

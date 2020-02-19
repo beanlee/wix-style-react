@@ -5,8 +5,6 @@ import More from 'wix-ui-icons-common/More';
 import PopoverMenu from '../beta/PopoverMenu';
 import Button from '../Button';
 import IconButton from '../IconButton';
-import OldPopoverMenu from '../PopoverMenu';
-import OldPopoverMenuItem from '../PopoverMenuItem';
 import Tooltip from '../Tooltip/Tooltip';
 import { dataHooks } from './constants';
 import HoverSlot from './HoverSlot';
@@ -61,8 +59,8 @@ function renderVisibleActions(actions) {
   );
 }
 
-function renderHiddenActions(actions, popoverMenuProps, upgrade) {
-  return upgrade ? (
+function renderHiddenActions(actions, popoverMenuProps) {
+  return (
     <PopoverMenu
       dataHook="table-action-cell-popover-menu"
       appendTo="parent"
@@ -91,24 +89,6 @@ function renderHiddenActions(actions, popoverMenuProps, upgrade) {
           ),
       )}
     </PopoverMenu>
-  ) : (
-    <OldPopoverMenu
-      buttonTheme="icon-greybackground"
-      dataHook="table-action-cell-popover-menu"
-      appendToParent
-      {...popoverMenuProps}
-    >
-      {actions.map(({ text, icon, onClick, disabled }, index) => (
-        <OldPopoverMenuItem
-          key={index}
-          dataHook="table-action-cell-popover-menu-item"
-          icon={icon}
-          onClick={() => onClick()}
-          text={text}
-          disabled={disabled}
-        />
-      ))}
-    </OldPopoverMenu>
   );
 }
 
@@ -128,7 +108,6 @@ const TableActionCell = props => {
     numOfVisibleSecondaryActions,
     alwaysShowSecondaryActions,
     popoverMenuProps,
-    upgrade,
   } = props;
 
   const visibleActions = secondaryActions.slice(
@@ -160,7 +139,7 @@ const TableActionCell = props => {
       {hiddenActions.length > 0 && (
         <div onClick={e => e.stopPropagation()} className={style.popoverMenu}>
           <HoverSlot display="always">
-            {renderHiddenActions(hiddenActions, popoverMenuProps, upgrade)}
+            {renderHiddenActions(hiddenActions, popoverMenuProps)}
           </HoverSlot>
         </div>
       )}
@@ -205,7 +184,7 @@ TableActionCell.propTypes = {
    * `disabled` is an optional prop for the secondary action to be disabled
    * `dataHook` is an optional prop for accessing the action in tests
    * 'disabledDescription' is an optional prop that indicates what string to display in tooltip when action is visible and disabled (if non is provided, the text prop is used)
-   * 'divider' is an optional prop to display a divider between the action items (supported only when `upgrade` prop is enabled)
+   * 'divider' is an optional prop to display a divider between the action items
    */
   secondaryActions: PropTypes.arrayOf(
     PropTypes.shape({
@@ -227,9 +206,6 @@ TableActionCell.propTypes = {
 
   /** Props being passed to the secondary actions' <PopoverMenu/> */
   popoverMenuProps: PropTypes.shape(PopoverMenu.propTypes),
-
-  /** When true, the TableActionCell will use the beta <PopupMenu> to enable setting dataHook for each action */
-  upgrade: PropTypes.bool, // This Upgrade prop is only for documentation, the actual use is in index.js
 };
 
 TableActionCell.defaultProps = {

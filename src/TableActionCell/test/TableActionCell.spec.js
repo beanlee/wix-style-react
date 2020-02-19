@@ -28,7 +28,6 @@ const secondaryActionsProps = ({ actionTriggers, actionDataHooks } = {}) => {
       .fill()
       .map((val, idx) => createAction(idx)),
     numOfVisibleSecondaryActions: 2,
-    upgrade: true,
   };
 };
 

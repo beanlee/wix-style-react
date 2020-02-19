@@ -73,9 +73,7 @@ class TablePageExample extends Component {
                 primaryAction={{
                   onClick: () => console.log('primaryAction'),
                   text: 'Edit',
-                  theme: 'fullblue',
-                  onActionTrigger: rowData =>
-                    window.alert(`Editing ${rowData.name}`),
+                  skin: 'standard',
                 }}
                 secondaryActions={[
                   {

@@ -23,7 +23,7 @@ class TableActionCellExample extends React.Component {
               <TableActionCell
                 primaryAction={{
                   text: 'Edit',
-                  theme: 'fullblue',
+                  skin: 'standard',
                   onClick: () => window.alert(`Editing ${rowData.firstName}`),
                 }}
                 secondaryActions={[

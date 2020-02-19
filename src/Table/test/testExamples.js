@@ -155,8 +155,7 @@ export class ActionCellExample extends React.Component {
                   dataHook="action-cell-component-secondary"
                   primaryAction={{
                     text: 'Edit',
-                    theme: 'fullblue',
-                    onActionTrigger: () => this.primaryAction(rowData),
+                    skin: 'standard',
                   }}
                   secondaryActions={[
                     {

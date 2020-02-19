@@ -7,7 +7,6 @@ import style from '../TableActionCell.story.st.css';
 const Example = () => (
   <div className={style.exampleRow}>
     <TableActionCell
-      upgrade
       secondaryActions={[
         {
           text: 'Download',

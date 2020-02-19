@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import Markdown from 'wix-storybook-utils/Markdown';
 import CodeExample from 'wix-storybook-utils/CodeExample';
 
-import Readme from '../README.md';
+import Readme from './README.md';
 
 import AllIcons from './AllIcons';
 import AllIconsRaw from '!raw-loader!./AllIcons';
@@ -17,10 +17,10 @@ import CustomIconSizeRaw from '!raw-loader!./CustomIconSize';
 import RTLIcon from './RTLIcon';
 import RTLIconRaw from '!raw-loader!./RTLIcon';
 
-import { Category } from '../../../stories/storiesHierarchy';
+import { Category } from '../storiesHierarchy';
 
 storiesOf(Category.FOUNDATION, module).add('1.4 Icons', () => (
-  <div data-hook="new-icons">
+  <div>
     <Markdown source={Readme} />
 
     <CodeExample title="All Icons" code={AllIconsRaw}>

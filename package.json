@@ -18,7 +18,6 @@
     "babel.config.js",
     "testkit",
     "es",
-    "new-icons",
     "*.scss",
     "*.js",
     "*.d.ts"
@@ -28,7 +27,6 @@
     "prestorybook": "./scripts/ensure-dist.sh && npm run generate-autodocs-registry",
     "generate-autodocs-registry": "node scripts/generate-autodocs-registry",
     "storybook:build": "npm run prestorybook && build-storybook -s ./src/assets",
-    "proxy-wix-ui-icons": "node scripts/proxy-wix-ui-icons",
     "------new components generators": "",
     "generate": "wuf generate --output src --codemods .wuf/generator/codemods --templates .wuf/generator/templates",
     "postgenerate": "npm run update-components",
@@ -57,7 +55,7 @@
     "sanity": "autotools-sanity --files './src/**/*.meta.js'",
     "------build steps": "",
     "prebuild": "npm run update-components && npm run update-components:beta",
-    "build": "npm run proxy-wix-ui-icons && npm run transpile && npm run build-puppeteer-testkit",
+    "build": "npm run transpile && npm run build-puppeteer-testkit",
     "postbuild": "npm run copy-public-styles && npm run export-components",
     "update-components": ".wuf/update-components.sh",
     "update-components:beta": ".wuf/update-components-beta.sh",
@@ -85,7 +83,7 @@
     "bundles:analyse": "npm run analyse --prefix .perfer",
     "------can be removed?": "",
     "storybook:named-imports": " npm run transpile && start-storybook -c ./test-runtime/imports/.storybook -p 6009",
-    "travis": "npm run lint && npm run proxy-wix-ui-icons && npm run transpile && npm run test:unit -- --maxWorkers=4",
+    "travis": "npm run lint && npm run transpile && npm run test:unit -- --maxWorkers=4",
     "transpile:watch": "babel src --out-dir dist/es/src --copy-files --watch --plugins=@babel/plugin-syntax-dynamic-import",
     "make-async-spec": "npx jscodeshift -t scripts/unidriver-migration/src/make-async/make-async.js",
     "------END": ""

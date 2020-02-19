@@ -4,7 +4,6 @@ const path = require('path');
 const NON_COMPONENT_FOLDER = [
   'utils',
   'providers',
-  'new-icons',
   'dnd-styles',
   'assets',
   'clients',

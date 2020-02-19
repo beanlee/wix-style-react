@@ -32,12 +32,8 @@ autodocs-registry
 !perfer.config.js
 .DS_Store
 /*.scss
-# we also ignore icons folder to avoid comitting icons export
-# icons that appear in root after build
-/new-icons/
-/src/new-icons/system
-/src/new-icons/*.js
 /bundles
+/new-icons
 
 # applitools private config
 !applitools.config.js

@@ -11,7 +11,29 @@
 - `<GoogleAddressInputWithLabel/>` - Use `<FormField/>` instead.
 - Icons from `wix-style-react/new-icons` import path were removed. Please install and use icons from `wix-ui-icons-common` package directly. You can migrate your existing codebase using provided codemod, please see [migration guide](./docs/migration/ICONS.md) for more details.
 
-## Changed
+## Changed:
 
-- `<TableActionCell/>` - replaced `primaryAction.theme` with `primaryAction.skin` (with new values).
-- `<TableActionCell/>` - removed `upgrade` prop, new upgrade behaviour is enabled by default.
+#### `<TableActionCell/>`
+- props:
+  - removed `upgrade` - component is now upgraded by default
+  - changed `primaryAction.theme` to `primaryAction.skin`
+
+#### `<InputArea/>`
+
+- Props:
+  - removed `onTooltipShow`
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+- Testkit:
+  - removed `hasError`
+  - removed `hasWarning`
+  - removed `getTooltipDataHook`
+  - removed `getTooltipElement`
+  - removed `isErrorMessageShown`
+  - removed `mouseEnterErrorIndicator`
+  - removed `getErrorMessage`
+  - removed `getStatusMessage`
+  - added `hasStatus`
+  - added `getStatus`
+  - added `hasStatusMessage`
+  - added `getStatusMessage`

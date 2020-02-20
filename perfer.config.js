@@ -94,7 +94,6 @@ const files = [
   ['SocialPreview.bundle.min.js', 9],
   ['SortableList.bundle.min.js', 30],
   ['StatisticsWidget.bundle.min.js', 47],
-  ['StatsWidget.bundle.min.js', 70],
   ['Stepper.bundle.min.js', 15],
   ['Swatches.bundle.min.js', 86],
   ['Table.bundle.min.js', 68],

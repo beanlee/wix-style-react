@@ -118,7 +118,6 @@ require('../src/Slider/docs/index.story');
 require('../src/SocialButton/docs/index.story');
 require('../src/SocialPreview/docs/index.story.js');
 require('../src/StatisticsWidget/docs/index.story');
-require('../src/StatsWidget/docs/index.story');
 require('../src/StatusIndicator/docs/index.story');
 require('../src/Stepper/docs/index.story');
 require('../src/Swatches/docs/index.story');
@@ -184,7 +183,3 @@ require('./PopoverMenu/index.story'); // 7.3 PopoverMenu
 // require('../src/CustomModalLayout/docs/design.story'); // 9.3 Custom Modal (WIP)
 require('./ModalMobileLayout/index.story'); // 9.5 Mobile Modal
 require('../src/MessageBox/docs');
-
-// DEPRECATED
-require('../src/Deprecated/SideMenu/docs');
-require('../src/Deprecated/SideMenu/docs/SideMenu');

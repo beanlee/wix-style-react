@@ -232,12 +232,6 @@ export default {
     },
   },
 
-  StatsWidget: {
-    props: {
-      title: 'test title',
-    },
-  },
-
   Table: {
     props: {
       data: [{ a: 'value 1', b: 'value 2' }],

@@ -107,7 +107,7 @@ EmptyState.propTypes = {
     imageContainer: PropTypes.string,
   }),
 
-  /** Children to render below the subtitle, ideally an action of some type (Button or TextLink for instance) */
+  /** Children to render below the subtitle, ideally an action of some type (Button or TextButton for instance) */
   children: PropTypes.node,
 
   dataHook: PropTypes.string,

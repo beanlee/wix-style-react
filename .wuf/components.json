@@ -278,9 +278,6 @@
       "docs"
     ]
   },
-  "StatsWidget": {
-    "path": "src/StatsWidget"
-  },
   "Stepper": {
     "path": "src/Stepper"
   },

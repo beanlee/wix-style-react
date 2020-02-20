@@ -12,9 +12,7 @@ const NON_COMPONENT_FOLDER = [
   'FieldLabelAttributes',
   'Backoffice',
   'BaseComponents',
-  'Deprecated',
   'Typography',
-  'Animations',
   'Foundation',
   'beta',
 ];

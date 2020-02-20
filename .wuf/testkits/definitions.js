@@ -131,14 +131,6 @@ module.exports = {
     protractorLegacyTestkit: true,
   },
 
-  PopoverMenu: {
-    vanillaLegacyTestkit: true,
-    enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
-    noPuppeteerTestkit: true,
-  },
-
-  PopoverMenuItem: { skipSanityTest: true, noTestkit: true },
   TableToolbar: { skipSanityTest: true, noTestkit: true },
   Tooltip: { skipSanityTest: true, manualExport: true },
   Collapse: { skipSanityTest: true, noTestkit: true },

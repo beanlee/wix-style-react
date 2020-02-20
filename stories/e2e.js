@@ -9,7 +9,6 @@ require('../src/Page/docs/PageTestStoriesDeprecated');
 require('../src/PageHeader/docs/testStory');
 require('../src/MultiSelect/docs/testStory');
 require('../src/MultiSelectCheckbox/docs/testStory');
-require('../src/PopoverMenu/docs/PopoverMenuRegressionTest');
 require('../src/Stepper/test/StepperWindowResizeTest');
 require('../src/Stepper/test/StepperAccessibilityTest');
 require('../src/Table/test/testStory');

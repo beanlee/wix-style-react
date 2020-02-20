@@ -108,7 +108,6 @@ export const numberInputTestkitFactory = protractorUniTestkitFactoryCreator(load
 export const pageTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Page/Page.protractor.driver')));
 export const pageHeaderTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/PageHeader/PageHeader.protractor.driver')));
 export const popoverTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Popover/Popover.protractor.driver')));
-export const popoverMenuTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/PopoverMenu/PopoverMenu.protractor.driver')));
 export const proportionTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/Proportion/Proportion.uni.driver')));
 export const radioGroupTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/RadioGroup/RadioGroup.protractor.driver')));
 export const rangeTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Range/Range.protractor.driver')));

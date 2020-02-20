@@ -3,14 +3,15 @@ import classNames from 'classnames';
 import Page from 'wix-style-react/Page';
 import Button from 'wix-style-react/Button';
 import Box from 'wix-style-react/Box';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import PopoverMenuItem from 'wix-style-react/PopoverMenuItem';
+import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import IconButton from 'wix-style-react/IconButton';
 import Breadcrumbs from 'wix-style-react/Breadcrumbs';
 import Tabs from 'wix-style-react/Tabs';
 import Card from 'wix-style-react/Card';
 import EmptyState from 'wix-style-react/EmptyState';
 import TextButton from 'wix-style-react/TextButton';
 import Add from 'wix-ui-icons-common/Add';
+import More from 'wix-ui-icons-common/More';
 
 import SomeContentComponent from './SomeContentComponent';
 import ImagePlaceholder from '../../../../stories/utils/ImagePlaceholder';
@@ -23,14 +24,15 @@ const ActionsBar = () => {
       <Box>
         <PopoverMenu
           dataHook="example-page-header-popover-menu"
-          buttonTheme="icon-greybackground"
-          placement="bottom"
-          size="normal"
-          appendToParent
+          triggerElement={
+            <IconButton skin="inverted">
+              <More />
+            </IconButton>
+          }
         >
-          <PopoverMenuItem onClick={() => {}} text="Refresh" />
-          <PopoverMenuItem onClick={() => {}} text="Trash" />
-          <PopoverMenuItem onClick={() => {}} text="Edit" />
+          <PopoverMenu.MenuItem onClick={() => {}} text="Refresh" />
+          <PopoverMenu.MenuItem onClick={() => {}} text="Trash" />
+          <PopoverMenu.MenuItem onClick={() => {}} text="Edit" />
         </PopoverMenu>
       </Box>
       <Box marginLeft="small" marginRight="small">

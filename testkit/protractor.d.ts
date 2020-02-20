@@ -68,7 +68,6 @@ export const numberInputTestkitFactory: any;
 export const pageTestkitFactory: any;
 export const pageHeaderTestkitFactory: any;
 export const popoverTestkitFactory: any;
-export const popoverMenuTestkitFactory: any;
 export const proportionTestkitFactory: any;
 export const radioGroupTestkitFactory: any;
 export const rangeTestkitFactory: any;

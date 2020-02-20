@@ -8,8 +8,9 @@ import Page from 'wix-style-react/Page';
 import Card from 'wix-style-react/Card';
 import Box from 'wix-style-react/Box';
 import Notification from 'wix-style-react/Notification';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import PopoverMenuItem from 'wix-style-react/PopoverMenuItem';
+import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import IconButton from 'wix-style-react/IconButton';
+import More from 'wix-ui-icons-common/More';
 
 import * as s from './PageTestStories.scss';
 import './PageStory.scss';
@@ -95,14 +96,19 @@ PageTestStories.add('12. PopoverMenus', () => (
             <Box align="right">
               <PopoverMenu
                 dataHook="popovermenu-in-content"
-                buttonTheme="icon-greybackground"
                 placement="top"
-                size="normal"
-                appendToParent
+                triggerElement={
+                  <IconButton
+                    skin="inverted"
+                    dataHook="popovermenu-in-content-button"
+                  >
+                    <More />
+                  </IconButton>
+                }
               >
-                <PopoverMenuItem onClick={() => {}} text="Refresh" />
-                <PopoverMenuItem onClick={() => {}} text="Trash" />
-                <PopoverMenuItem onClick={() => {}} text="Edit" />
+                <PopoverMenu.MenuItem onClick={() => {}} text="Refresh" />
+                <PopoverMenu.MenuItem onClick={() => {}} text="Trash" />
+                <PopoverMenu.MenuItem onClick={() => {}} text="Edit" />
               </PopoverMenu>
             </Box>
             <LongTextContent />

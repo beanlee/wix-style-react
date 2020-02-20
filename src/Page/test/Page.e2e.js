@@ -1,8 +1,6 @@
 import { eyesItInstance } from '../../../test/utils/eyes-it';
-import {
-  pageTestkitFactory,
-  popoverMenuTestkitFactory,
-} from '../../../testkit/protractor';
+import { pageTestkitFactory } from '../../../testkit/protractor';
+import { PopoverMenuTestkit } from '../../../testkit/beta/protractor';
 import { pagePrivateDriverFactory } from '../Page.private.protractor.driver';
 import {
   waitForVisibilityOf,
@@ -100,17 +98,23 @@ describe('Page', () => {
     async () => {
       await browser.get(testStoryUrl('12. PopoverMenus'));
 
-      const headerMenu = popoverMenuTestkitFactory({
+      const headerMenu = PopoverMenuTestkit({
         dataHook: 'example-page-header-popover-menu',
       });
-      await headerMenu.click();
-      eyes.checkWindow('header PopoverMenu should be opened');
+      const headerMenuButton = await headerMenu.getTriggerElement(
+        'page-header-popover-menu-button',
+      );
+      await headerMenuButton.click();
+      await eyes.checkWindow('header PopoverMenu should be opened');
 
-      const contentMenu = popoverMenuTestkitFactory({
+      const contentMenu = PopoverMenuTestkit({
         dataHook: 'popovermenu-in-content',
       });
-      await contentMenu.click();
-      eyes.checkWindow('content PopoverMenu should be opened');
+      const contentMenuButton = await contentMenu.getTriggerElement(
+        'popovermenu-in-content-button',
+      );
+      await contentMenuButton.click();
+      await eyes.checkWindow('content PopoverMenu should be opened');
     },
     { enableSnapshotAtBrowserGet: false, enableSnapshotAtEnd: false },
   );

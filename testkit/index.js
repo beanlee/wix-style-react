@@ -103,7 +103,6 @@ export const numberInputTestkitFactory = uniTestkitFactoryCreator(load(require('
 export const pageTestkitFactory = testkitFactoryCreator(load(require('../src/Page/Page.driver')));
 export const pageHeaderTestkitFactory = testkitFactoryCreator(load(require('../src/PageHeader/PageHeader.driver')));
 export const popoverTestkitFactory = testkitFactoryCreator(load(require('../src/Popover/Popover.driver')));
-export const popoverMenuTestkitFactory = testkitFactoryCreator(load(require('../src/PopoverMenu/PopoverMenu.driver')));
 export const proportionTestkitFactory = uniTestkitFactoryCreator(load(require('../src/Proportion/Proportion.uni.driver')));
 export const radioGroupTestkitFactory = testkitFactoryCreator(load(require('../src/RadioGroup/RadioGroup.driver')));
 export const rangeTestkitFactory = testkitFactoryCreator(load(require('../src/Range/Range.driver')));

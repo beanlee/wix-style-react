@@ -227,15 +227,6 @@
   "Popover": {
     "path": "src/Popover"
   },
-  "PopoverMenu": {
-    "path": "src/PopoverMenu"
-  },
-  "PopoverMenuItem": {
-    "path": "src/PopoverMenuItem",
-    "missingFiles": [
-      "docs"
-    ]
-  },
   "Proportion": {
     "path": "src/Proportion"
   },

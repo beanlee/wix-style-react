@@ -17,9 +17,10 @@ import { Row, Col, Container } from 'wix-style-react/Grid';
 import Button from 'wix-style-react/Button';
 import TextButton from 'wix-style-react/TextButton';
 import Add from 'wix-ui-icons-common/Add';
+import More from 'wix-ui-icons-common/More';
 import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import PopoverMenuItem from 'wix-style-react/PopoverMenuItem';
+import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import IconButton from 'wix-style-react/IconButton';
 import EmptyState from 'wix-style-react/EmptyState';
 import { Category } from '../../../../../storiesHierarchy';
 
@@ -30,17 +31,18 @@ class ExamplePageWithCard extends Component {
         <Box>
           <Box>
             <PopoverMenu
-              buttonTheme="icon-greybackground"
-              placement="bottom"
-              size="normal"
-              appendToParent
+              triggerElement={
+                <IconButton skin="inverted">
+                  <More />
+                </IconButton>
+              }
             >
-              <PopoverMenuItem
-                onClick={() => console.log('PopoverMenuItem onClick')}
+              <PopoverMenu.MenuItem
+                onClick={() => console.log('PopoverMenu.MenuItem onClick')}
                 text="Refresh"
               />
-              <PopoverMenuItem
-                onClick={() => console.log('PopoverMenuItem onClick')}
+              <PopoverMenu.MenuItem
+                onClick={() => console.log('PopoverMenu.MenuItem onClick')}
                 text="Trash"
               />
             </PopoverMenu>

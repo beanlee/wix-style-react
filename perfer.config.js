@@ -54,7 +54,7 @@ const files = [
   ['ImageViewer.bundle.min.js', 58],
   ['InfoIcon.bundle.min.js', 41],
   ['Input.bundle.min.js', 62],
-  ['InputArea.bundle.min.js', 46],
+  ['InputArea.bundle.min.js', 47],
   ['InputWithLabel.bundle.min.js', 64],
   ['InputWithOptions.bundle.min.js', 71],
   ['Label.bundle.min.js', 8],

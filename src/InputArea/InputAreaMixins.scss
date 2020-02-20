@@ -23,6 +23,10 @@
         &.hasError {
             @include FocusBoxError
         }
+
+        &.hasWarning {
+            @include FocusBoxWarning
+        }
     }
 }
 

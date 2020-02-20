@@ -201,25 +201,25 @@ describe('InputArea', () => {
       });
     });
 
-    describe('deprecated - error attribute', () => {
-      it('should display an error icon if error is true', async () => {
-        const driver = createDriver(<InputAreaForTesting error />);
-
-        expect(await driver.hasError()).toBe(true);
-      });
-    });
-
     describe('status attribute', () => {
-      it('should display an error icon if status="error"', async () => {
-        const driver = createDriver(<InputAreaForTesting status="error" />);
+      [
+        { status: 'error', message: 'Error Message' },
+        { status: 'warning', message: 'Warning Message' },
+        { status: 'loading', message: 'Loading Message' },
+      ].forEach(test => {
+        it(`should display a status icon when status="${test.status}"`, async () => {
+          const driver = createDriver(
+            <InputAreaForTesting
+              status={test.status}
+              statusMessage={test.message}
+            />,
+          );
 
-        expect(await driver.hasError()).toBe(true);
-      });
-
-      it('should display an warning icon if status="warning"', async () => {
-        const driver = createDriver(<InputAreaForTesting status="warning" />);
-
-        expect(await driver.hasWarning()).toBe(true);
+          expect(await driver.hasStatus()).toBe(true);
+          expect(await driver.getStatus()).toBe(test.status);
+          expect(await driver.hasStatusMessage()).toBe(true);
+          expect(await driver.getStatusMessage()).toBe(test.message);
+        });
       });
     });
 

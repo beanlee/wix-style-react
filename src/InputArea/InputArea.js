@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import ErrorIndicator from '../ErrorIndicator';
-import WarningIndicator from '../WarningIndicator';
+import StatusIndicator from '../StatusIndicator';
 import debounce from 'lodash/debounce';
 import isNaN from 'lodash/isNaN';
-import deprecationLog from '../utils/deprecationLog';
 
 import styles from './InputArea.scss';
 
@@ -15,16 +13,9 @@ import { dataHooks } from './constants';
  * General inputArea container
  */
 class InputArea extends React.PureComponent {
-  static StatusError = 'error';
-  static StatusWarning = 'warning';
-
   constructor(props) {
     super(props);
-    if (this.props.error || this.props.errorMessage) {
-      deprecationLog(
-        'InputArea error and errorMessage props are deprecated. Please use status and statusMessage',
-      );
-    }
+
     this._onKeyDown = this._onKeyDown.bind(this);
     this._onChange = this._onChange.bind(this);
     this._onInput = this._onInput.bind(this);
@@ -64,7 +55,6 @@ class InputArea extends React.PureComponent {
       autoFocus,
       defaultValue,
       disabled,
-      error,
       forceFocus,
       forceHover,
       id,
@@ -82,22 +72,11 @@ class InputArea extends React.PureComponent {
       resizable,
       hasCounter,
       theme,
-      errorMessage,
       size,
       tooltipPlacement,
       status,
       statusMessage,
     } = this.props;
-
-    let hasError = status === InputArea.StatusError;
-    const hasWarning = status === InputArea.StatusWarning;
-    let statusTooltipMessage = statusMessage;
-
-    // Check for deprecated fields and use them if provided
-    if (error) {
-      hasError = error;
-      statusTooltipMessage = errorMessage;
-    }
 
     const inlineStyle = {};
     const rowsAttr = rows
@@ -118,8 +97,9 @@ class InputArea extends React.PureComponent {
     const classes = classNames({
       [styles.root]: true,
       [styles[`theme-${theme}`]]: true,
-      [styles.hasError]: hasError,
-      [styles.hasWarning]: hasWarning,
+      [styles.hasStatus]: !!status,
+      [styles.hasError]: status === 'error',
+      [styles.hasWarning]: status === 'warning',
       [styles.hasHover]: forceHover,
       [styles.hasFocus]: forceFocus || this.state.focus,
       [styles.resizable]: !!resizable,
@@ -175,17 +155,11 @@ class InputArea extends React.PureComponent {
           )}
         </div>
         <div className={styles.status}>
-          {hasError && !disabled && (
-            <ErrorIndicator
+          {!!status && !disabled && (
+            <StatusIndicator
               dataHook={dataHooks.tooltip}
-              errorMessage={statusTooltipMessage}
-              tooltipPlacement={tooltipPlacement}
-            />
-          )}
-          {hasWarning && !disabled && (
-            <WarningIndicator
-              dataHook={dataHooks.tooltip}
-              warningMessage={statusTooltipMessage}
+              status={status}
+              message={statusMessage}
               tooltipPlacement={tooltipPlacement}
             />
           )}
@@ -333,20 +307,8 @@ InputArea.propTypes = {
   /** Disables the input */
   disabled: PropTypes.bool,
 
-  /** Sets UI to erroneous *
-   * @deprecated
-   * @see status
-   */
-  error: PropTypes.bool,
-
-  /** Sets UI to indicate input status. for example: 'error' or 'warning' */
-  status: PropTypes.oneOf([InputArea.StatusError, InputArea.StatusWarning]),
-
-  /** The error message to display when hovering the error icon, if not given or empty there will be no tooltip *
-   * @deprecated
-   * @see statusMessage
-   */
-  errorMessage: PropTypes.string,
+  /** Sets UI to indicate input status */
+  status: PropTypes.oneOf(['error', 'warning', 'loading']),
 
   forceFocus: PropTypes.bool,
   forceHover: PropTypes.bool,
@@ -385,9 +347,6 @@ InputArea.propTypes = {
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
 
-  /** @deprecated onShow prop for the error tooltip */
-  onTooltipShow: PropTypes.func,
-
   /** Placeholder to display */
   placeholder: PropTypes.string,
 
@@ -410,7 +369,7 @@ InputArea.propTypes = {
   /** The theme of the input, can be one of `normal`, `paneltitle` */
   theme: PropTypes.oneOf(['normal', 'paneltitle', 'material', 'amaterial']),
 
-  /** Placement of the error tooltip */
+  /** Placement of the status tooltip */
   tooltipPlacement: PropTypes.string,
 
   /** Inputs value */

@@ -48,9 +48,13 @@ export const inputAreaUniDriverFactory = (base, body) => {
     getTooltipElement: () => base,
 
     // Status
+    /** Return true if there's a status */
     hasStatus: () => statusIndicatorTestkit().exists(),
+    /** If there's a status, returns its type */
     getStatus: () => statusIndicatorTestkit().getStatus(),
+    /** Return true if there's a status message */
     hasStatusMessage: () => statusIndicatorTestkit().hasMessage(),
+    /** If there's a status message, returns its text value */
     getStatusMessage: () => statusIndicatorTestkit().getMessage(),
   };
 };

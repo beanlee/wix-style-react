@@ -48,14 +48,18 @@ const inputAreaDriverFactory = ({ element, eventTrigger, wrapper }) => {
     getAriaDescribedby: () => textArea.getAttribute('aria-describedby'),
 
     // Status
+    /** Return true if there's a status */
     hasStatus: () =>
       !!element.querySelector(`[data-hook='${dataHooks.tooltip}']`),
+    /** If there's a status, returns its type */
     getStatus: () =>
       element
         .querySelector(`[data-hook='${dataHooks.tooltip}']`)
         .getAttribute('data-status'),
+    /** Return true if there's a status message */
     hasStatusMessage: () =>
       !!element.querySelector(`[data-hook='status-indicator-tooltip']`),
+    /** If there's a status message, returns its text value */
     getStatusMessage: () => {
       const tooltipDriver = tooltipDriverFactory({
         element: element.querySelector(

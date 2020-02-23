@@ -8,7 +8,7 @@ import Page from 'wix-style-react/Page';
 import Card from 'wix-style-react/Card';
 import Box from 'wix-style-react/Box';
 import Notification from 'wix-style-react/Notification';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import IconButton from 'wix-style-react/IconButton';
 import More from 'wix-ui-icons-common/More';
 

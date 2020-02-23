@@ -5,7 +5,7 @@ import CropIcon from 'wix-ui-icons-common/Crop';
 
 import Box from '../../../Box';
 import Text from '../../../Text';
-import PopoverMenu from '../../../beta/PopoverMenu';
+import PopoverMenu from '../../../PopoverMenu';
 import IconButton from '../../../IconButton';
 import FillPreview from '../../../FillPreview';
 import MediaOverlay from '../..';

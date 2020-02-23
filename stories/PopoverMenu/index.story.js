@@ -17,10 +17,8 @@ import Add from 'wix-ui-icons-common/Add';
 import Edit from 'wix-ui-icons-common/Edit';
 import Delete from 'wix-ui-icons-common/Delete';
 import More from 'wix-ui-icons-common/More';
-import { Layout, Cell } from 'wix-style-react/Layout';
 import IconButton from 'wix-style-react/IconButton';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
-import SectionHelper from 'wix-style-react/SectionHelper';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import { Category } from '../storiesHierarchy';
 
 const menuItems = [
@@ -47,19 +45,7 @@ export default {
 
   sections: [
     header({
-      component: (
-        <Layout gap={10} alignItems="center">
-          <Cell>
-            <PopoverMenu {...commonProps}>{menuItems}</PopoverMenu>
-          </Cell>
-          <Cell span={6}>
-            <SectionHelper title="Next Generation PopoverMenu">
-              To use new generation PopoverMenu make sure to import it from
-              /beta folder
-            </SectionHelper>
-          </Cell>
-        </Layout>
-      ),
+      component: <PopoverMenu {...commonProps}>{menuItems}</PopoverMenu>,
 
       issueUrl: 'https://github.com/wix/wix-style-react/issues/new',
     }),
@@ -77,7 +63,7 @@ export default {
         rows: [
           [
             <LinkTo
-              kind={Category.BETA}
+              kind={Category.COMPONENTS}
               story="PopoverMenu"
             >{`<PopoverMenu />`}</LinkTo>,
             'content element',

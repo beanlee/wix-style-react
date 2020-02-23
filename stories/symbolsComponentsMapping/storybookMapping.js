@@ -48,7 +48,7 @@ const componentActualUrl = {
   [layoutComponentsNames.CardDivider]: linkTo(Category.COMPONENTS, 'Card'),
 
   [tooltipPopoverComponentsNames.PopoverMenu]: linkTo(
-    Category.BETA,
+    Category.COMPONENTS,
     'PopoverMenu',
   ),
 

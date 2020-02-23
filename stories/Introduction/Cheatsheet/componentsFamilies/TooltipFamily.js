@@ -19,7 +19,7 @@ import {
 //7. Tooltip
 import Tooltip from 'wix-style-react/Tooltip';
 import Popover from 'wix-style-react/Popover';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import FloatingHelper from 'wix-style-react/FloatingHelper';
 
 //Assets

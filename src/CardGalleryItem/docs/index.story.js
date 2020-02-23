@@ -18,7 +18,7 @@ import { storySettings } from './storySettings';
 import componentProps from './exampleProps';
 import allComponents from '../../../stories/utils/allComponents';
 import * as examples from './examples';
-import PopoverMenu from '../../beta/PopoverMenu';
+import PopoverMenu from '../../PopoverMenu';
 
 const { category, storyName } = storySettings;
 

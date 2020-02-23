@@ -41,7 +41,7 @@ import Search from 'wix-style-react/Search';
 import ImageViewer from 'wix-style-react/ImageViewer';
 import { Category } from '../../../storiesHierarchy';
 import VariableInput from 'wix-style-react/VariableInput';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import { Add } from 'wix-ui-icons-common';
 
 const groupSymbol = symbolsGroup.inputs;

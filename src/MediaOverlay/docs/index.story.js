@@ -26,7 +26,7 @@ import skinExample from '!raw-loader!./examples/skin';
 import hoverSkinExample from '!raw-loader!./examples/hoverSkin';
 import Proportion from '../../Proportion';
 import Box from '../../Box';
-import PopoverMenu from '../../beta/PopoverMenu';
+import PopoverMenu from '../../PopoverMenu';
 import { galleryItemWithHoverActions } from './examples/content';
 import HeaderExample from './examples/header';
 import { storySettings } from '../test/storySettings';

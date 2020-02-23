@@ -9,7 +9,7 @@ import Dropdown from 'wix-style-react/Dropdown';
 import { Container, Row } from 'wix-style-react/Grid';
 import Highlighter from 'wix-style-react/Highlighter';
 import Page from 'wix-style-react/Page';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import IconButton from 'wix-style-react/IconButton';
 import Search from 'wix-style-react/Search';
 import Table from 'wix-style-react/Table';

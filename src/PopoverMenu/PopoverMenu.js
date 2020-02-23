@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ListItemAction from '../../ListItemAction';
-import DropdownBase from '../../DropdownBase';
-import { placements } from '../../Popover';
+import ListItemAction from '../ListItemAction';
+import DropdownBase from '../DropdownBase';
+import { placements } from '../Popover';
 import styles from './PopoverMenu.st.css';
 
 /** PopoverMenu */

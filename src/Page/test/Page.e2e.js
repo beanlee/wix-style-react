@@ -1,6 +1,8 @@
 import { eyesItInstance } from '../../../test/utils/eyes-it';
-import { pageTestkitFactory } from '../../../testkit/protractor';
-import { PopoverMenuTestkit } from '../../../testkit/beta/protractor';
+import {
+  pageTestkitFactory,
+  popoverMenuTestkitFactory,
+} from '../../../testkit/protractor';
 import { pagePrivateDriverFactory } from '../Page.private.protractor.driver';
 import {
   waitForVisibilityOf,
@@ -98,7 +100,7 @@ describe('Page', () => {
     async () => {
       await browser.get(testStoryUrl('12. PopoverMenus'));
 
-      const headerMenu = PopoverMenuTestkit({
+      const headerMenu = popoverMenuTestkitFactory({
         dataHook: 'example-page-header-popover-menu',
       });
       const headerMenuButton = await headerMenu.getTriggerElement(
@@ -107,7 +109,7 @@ describe('Page', () => {
       await headerMenuButton.click();
       await eyes.checkWindow('header PopoverMenu should be opened');
 
-      const contentMenu = PopoverMenuTestkit({
+      const contentMenu = popoverMenuTestkitFactory({
         dataHook: 'popovermenu-in-content',
       });
       const contentMenuButton = await contentMenu.getTriggerElement(

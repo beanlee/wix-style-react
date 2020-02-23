@@ -4,7 +4,7 @@
 }
 
 :import {
-  -st-from: "../beta/PopoverMenu/PopoverMenu.st.css";
+  -st-from: "../PopoverMenu/PopoverMenu.st.css";
   -st-default: PopoverMenu;
 }
 

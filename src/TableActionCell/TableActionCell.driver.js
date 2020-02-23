@@ -1,6 +1,6 @@
 import ReactTestUtils from 'react-dom/test-utils';
 import { INTERNAL_DRIVER_SYMBOL } from '../../test/utils/private-drivers';
-import { PopoverMenuTestkit } from '../../testkit/beta';
+import { popoverMenuTestkitFactory } from '../../testkit';
 import tooltipDriverFactory from '../Tooltip/Tooltip.driver';
 import { dataHooks } from './constants';
 
@@ -61,7 +61,7 @@ const tableActionCellDriverFactory = ({ element, wrapper }) => {
     });
 
   const getHiddenActionsPopoverMenuDriver = () =>
-    PopoverMenuTestkit({
+    popoverMenuTestkitFactory({
       wrapper,
       dataHook: 'table-action-cell-popover-menu',
     });

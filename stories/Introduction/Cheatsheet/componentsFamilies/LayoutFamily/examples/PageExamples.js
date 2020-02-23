@@ -19,7 +19,7 @@ import TextButton from 'wix-style-react/TextButton';
 import Add from 'wix-ui-icons-common/Add';
 import More from 'wix-ui-icons-common/More';
 import Breadcrumbs from 'wix-style-react/Breadcrumbs';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import IconButton from 'wix-style-react/IconButton';
 import EmptyState from 'wix-style-react/EmptyState';
 import { Category } from '../../../../../storiesHierarchy';

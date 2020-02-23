@@ -5,7 +5,7 @@ import {
   FooterLayout,
 } from './MessageBox';
 
-export { default as PopoverMenuNext } from './beta/PopoverMenu';
+export { default as PopoverMenu } from './PopoverMenu';
 export { default as AddItem } from './AddItem';
 export { default as Avatar } from './Avatar';
 export { default as Button } from './Button';

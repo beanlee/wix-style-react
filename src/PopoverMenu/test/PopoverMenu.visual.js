@@ -7,9 +7,9 @@ import Edit from 'wix-ui-icons-common/Edit';
 import Delete from 'wix-ui-icons-common/Delete';
 
 import PopoverMenu from '../PopoverMenu';
-import IconButton from '../../../IconButton';
-import TextButton from '../../../TextButton';
-import { PopoverMenuTestkit } from '../../../../testkit/beta';
+import IconButton from '../../IconButton';
+import TextButton from '../../TextButton';
+import { popoverMenuTestkitFactory } from '../../../testkit';
 
 const interactiveDataHook = 'interactive-popover-menu';
 
@@ -37,7 +37,7 @@ const longTextMenuItems = [
 const menuButtonDataHook = 'menubutton';
 
 const createDriver = dataHook =>
-  PopoverMenuTestkit({
+  popoverMenuTestkitFactory({
     wrapper: document.body,
     dataHook,
   });

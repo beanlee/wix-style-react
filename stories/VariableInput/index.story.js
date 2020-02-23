@@ -67,7 +67,7 @@ export default {
           ],
           [
             <LinkTo
-              kind={Category.BETA}
+              kind={Category.COMPONENTS}
               story="PopoverMenu"
             >{`<PopoverMenu/>`}</LinkTo>,
             'Component to insert new variables',

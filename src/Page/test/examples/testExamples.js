@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Page from 'wix-style-react/Page';
 import Button from 'wix-style-react/Button';
 import Box from 'wix-style-react/Box';
-import PopoverMenu from 'wix-style-react/beta/PopoverMenu';
+import PopoverMenu from 'wix-style-react/PopoverMenu';
 import IconButton from 'wix-style-react/IconButton';
 import Breadcrumbs from 'wix-style-react/Breadcrumbs';
 import Tabs from 'wix-style-react/Tabs';

@@ -1,16 +1,6 @@
 import * as Icons from 'wix-ui-icons-common';
 import * as SystemIcons from 'wix-ui-icons-common/system';
-import * as base from '../../src/index';
-import * as next from '../../src/beta/index';
-
-/**
- * We are removing deprecated components from the list and add ones from next api
- */
-
-const wsr = {
-  ...base,
-  ...next,
-};
+import * as wsr from '../../src/index';
 
 /*
  * This object contains all wix-style-react components including icons

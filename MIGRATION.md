@@ -14,13 +14,15 @@
 - `<SideMenu/>` - Use `<Sidebar/>` instead.
 - `<SideMenuDrill/>` - Use `<Sidebar/>` instead.
 - `<StatsWidget/>` - Use `<StatisticsWidget/>` instead. See [migration guide](./docs/migration/StatsWidget.md).
+- `<PopoverMenu/>` - replaced with new beta PopoverMenu, see migration guide below.
 
 ## Changed:
 
 #### `<TableActionCell/>`
-- props:
+
+- Props:
   - removed `upgrade` - component is now upgraded by default
-  - changed `primaryAction.theme` to `primaryAction.skin`
+  - changed `primaryAction.theme` to `primaryAction.skin` (with new values)
 
 #### `<InputArea/>`
 
@@ -41,3 +43,35 @@
   - added `getStatus`
   - added `hasStatusMessage`
   - added `getStatusMessage`
+
+## Migrating to new PopoverMenu
+
+Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.
+
+Replace old PopoverMenu:
+
+```jsx
+import PopoverMenu from 'wix-style-react/PopoverMenu';
+import PopoverMenuItem from 'wix-style-react/PopoverMenuItem';
+
+<PopoverMenu>
+  <PopoverMenuItem onClick={() => {}} text="Item" />
+</PopoverMenu>
+```
+
+With new PopoverMenu:
+
+```jsx
+import { PopoverMenu, IconButton } from 'wix-style-react';
+import More from 'wix-ui-icons-common/More';
+
+<PopoverMenu
+  triggerElement={
+    <IconButton skin="inverted">
+      <More />
+    </IconButton>
+  }
+>
+  <PopoverMenu.MenuItem onClick={() => {}} text="Item" />
+</PopoverMenu>
+```

@@ -1,31 +1,43 @@
 import * as React from 'react';
 import { MoveByOffset } from '../common';
-import { TooltipOldProps } from '../Tooltip';
+import {
+  AppendTo,
+  Placement,
+} from 'wix-ui-core/dist/src/components/popover/Popover.d';
 
-export interface PopoverMenuProps {
-  dataHook?: string;
-  size?: PopoverMenuSize;
-  placement?: PopoverMenuPlacement;
-  buttonTheme?: PopoverMenuButtonTheme;
-  buttonHeight?: PopoverMenuHeight;
-  maxWidth?: string | number;
-  appendToParent?: boolean;
-  appendTo?: TooltipOldProps['appendTo'];
+export interface PopoverMenuNextProps {
+  triggerElement: React.ReactNode;
+  children?: React.ReactNode;
+  maxWidth?: number;
+  minWidth?: number;
   zIndex?: number;
-  showArrow?: boolean;
-  onShow?: () => void;
-  onHide?: () => void;
   moveBy?: MoveByOffset;
+  placement?: Placement;
+  textSize?: 'small' | 'medium';
+  appendTo?: AppendTo;
+  flip?: boolean;
+  fixed?: boolean;
+  showArrow?: boolean;
+  wrapText?: boolean;
+  dataHook?: string;
 }
 
-export default class PopoverMenu extends React.Component<PopoverMenuProps> {}
+export interface PopoverMenuNextMenuItemProps {
+  text?: string;
+  onClick?: () => any;
+  skin?: 'dark' | 'destructive';
+  prefixIcon?: React.ReactNode;
+  dataHook?: string;
+  disabled?: boolean;
+}
 
-export type PopoverMenuSize = 'normal' | 'large';
-export type PopoverMenuPlacement = 'top' | 'right' | 'bottom' | 'left';
-export type PopoverMenuButtonTheme =
-  | 'icon-greybackground'
-  | 'icon-standard'
-  | 'icon-standardsecondary'
-  | 'icon-white'
-  | 'icon-whitesecondary';
-export type PopoverMenuHeight = 'small' | 'medium' | 'large';
+export interface PopoverMenuNextDividerProps {
+  dataHook?: string;
+}
+
+export default class PopoverMenuNext<
+  T extends PopoverMenuNextProps
+  > extends React.PureComponent<T> {
+  static MenuItem: (props?: PopoverMenuNextMenuItemProps) => React.ReactElement;
+  static Divider: (props?: PopoverMenuNextDividerProps) => React.ReactElement;
+}

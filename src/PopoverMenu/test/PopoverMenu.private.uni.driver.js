@@ -1,7 +1,7 @@
 import { PopoverMenuDriver as publicDriverFactory } from '../PopoverMenu.uni.driver';
-import { dropdownBasePrivateDriverFactory } from '../../../DropdownBase/DropdownBase.private.uni.driver';
+import { dropdownBasePrivateDriverFactory } from '../../DropdownBase/DropdownBase.private.uni.driver';
 
-import popoverCommonDriverFactory from '../../../Popover/Popover.common.uni.driver';
+import popoverCommonDriverFactory from '../../Popover/Popover.common.uni.driver';
 
 export const PopoverMenuPrivateDriver = (base, body) => {
   const { keyDown } = dropdownBasePrivateDriverFactory(base);

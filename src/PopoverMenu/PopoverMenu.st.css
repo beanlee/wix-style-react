@@ -1,16 +1,16 @@
 :import {
-  -st-from: "../../DropdownBase/DropdownBase.st.css";
+  -st-from: "../DropdownBase/DropdownBase.st.css";
   -st-default: DropdownBase;
 }
 
 :import {
-  -st-from: "../../ListItemAction/ListItemAction.st.css";
+  -st-from: "../ListItemAction/ListItemAction.st.css";
   -st-default: ListItemAction;
 }
 
 
 :import {
-  -st-from: "../../Foundation/stylable/colors.st.css";
+  -st-from: "../Foundation/stylable/colors.st.css";
   -st-named: D60;
 }
 

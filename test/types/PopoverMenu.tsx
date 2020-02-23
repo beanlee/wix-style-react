@@ -1,41 +1,55 @@
-import * as React from "react";
-import PopoverMenu from "../../src/PopoverMenu";
-import { popoverMenuTestkitFactory } from "../../dist/testkit";
-import { popoverMenuTestkitFactory as popoverMenuEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import * as enzyme from "enzyme";
+import * as React from 'react';
+import { mount } from 'enzyme';
+import PopoverMenu from '../../src/PopoverMenu';
+
+import { popoverMenuTestkitFactory } from '../../testkit';
+import { popoverMenuTestkitFactory as popoverMenuEnzymeTestkitFactory } from '../../testkit/enzyme';
+
+async function testkits() {
+  const vanilla = popoverMenuTestkitFactory({
+    dataHook: 'hi',
+    wrapper: document.createElement('div'),
+  });
+
+  await vanilla.exists();
+  await vanilla.isMenuOpen();
+
+  const enzyme = popoverMenuEnzymeTestkitFactory({
+    dataHook: 'shbem',
+    wrapper: mount(<div />),
+  });
+
+  await enzyme.exists();
+  await enzyme.isMenuOpen();
+}
 
 function PopoverMenuWithMandatoryProps() {
-  return <PopoverMenu />;
+  return <PopoverMenu triggerElement={<div />} />;
 }
 
 function PopoverMenuWithAllProps() {
   return (
     <PopoverMenu
-      dataHook={"hook"}
+      maxWidth={3}
+      minWidth={4}
+      zIndex={3}
+      moveBy={{ x: 3, y: 4 }}
+      triggerElement={<div />}
+      placement="left"
+      textSize="small"
+      wrapText={true}
       appendTo="parent"
-      appendToParent
-      buttonHeight="small"
-      buttonTheme="icon-greybackground"
-      maxWidth="100"
-      moveBy={{ x: 10, y: 10 }}
-      onHide={() => {}}
-      onShow={() => {}}
-      placement="bottom"
-      showArrow
-      size="large"
-      zIndex={1}
-    ></PopoverMenu>
+      flip={true}
+      fixed={true}
+      showArrow={true}
+    >
+      <PopoverMenu.MenuItem
+        text="SOMETHING"
+        skin="dark"
+        prefixIcon={<div>hello</div>}
+        disabled
+      />
+      <PopoverMenu.Divider />
+    </PopoverMenu>
   );
-}
-
-async function testkits() {
-  const testkit = popoverMenuTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
-  });
-
-  const enzymeTestkit = popoverMenuEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
-  });
 }

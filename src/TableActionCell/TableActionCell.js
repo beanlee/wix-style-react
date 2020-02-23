@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 import More from 'wix-ui-icons-common/More';
-import PopoverMenu from '../beta/PopoverMenu';
+import PopoverMenu from '../PopoverMenu';
 import Button from '../Button';
 import IconButton from '../IconButton';
 import Tooltip from '../Tooltip/Tooltip';

@@ -22,7 +22,6 @@ export const Category = {
   PICKERS_AND_SELECTORS: 'Design Guidelines|Pickers and Selectors',
   OTHER: 'Design Guidelines|Other',
   COMPONENTS: 'Components API|Components',
-  BETA: 'Components API|Next API',
   STYLING: 'Components API|Styling',
   WIP: 'Components API|Work in Progress',
   DEPRECATED: 'Deprecated',

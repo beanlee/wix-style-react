@@ -126,6 +126,7 @@ export const fontUpgradeTestkitFactory: any;
 export const customModalLayoutTestkitFactory: any;
 export const statusIndicatorTestkitFactory: any;
 export const messageModalLayoutTestkitFactory: any;
+export const popoverMenuTestkitFactory: any;
 export const announcementModalLayoutTestkitFactory: any;
 export const cardHeaderTestkitFactory: any;
 export const editableRowTestkitFactory: any;

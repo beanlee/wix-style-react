@@ -1,16 +1,13 @@
 import React from 'react';
 
-import { GmapsTestClient } from '../src/GoogleAddressInput/gmapsTestClient';
 import CropRotate from 'wix-ui-icons-common/CropRotate';
 import Popover from '../src/Popover';
-import MultiSelect from '../src/MultiSelect';
-import AutoComplete from '../src/AutoComplete';
 import Input from '../src/Input';
 import Notification from '../src/Notification';
 import FloatingHelper from '../src/FloatingHelper';
-import GoogleAddressInput from '../src/GoogleAddressInput';
 import VerticalTabs from '../src/VerticalTabs';
 import SegmentedToggle from '../src/SegmentedToggle';
+import PopoverMenu from '../src/PopoverMenu';
 
 /*
  * This file exports object with config for components.
@@ -50,6 +47,13 @@ export default {
           <div>I am the content!</div>
         </Popover.Content>,
       ],
+    },
+  },
+
+  PopoverMenu: {
+    props: {
+      triggerElement: <div />,
+      children: [<PopoverMenu.MenuItem key="0" />],
     },
   },
 

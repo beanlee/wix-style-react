@@ -64,7 +64,6 @@ export const colorInputTestkitFactory = uniTestkitFactoryCreator(load(require('.
 export const colorPickerTestkitFactory = testkitFactoryCreator(load(require('../src/ColorPicker/ColorPicker.driver')));
 export const contactItemBuilderTestkitFactory = testkitFactoryCreator(load(require('../src/ContactItemBuilder/ContactItemBuilder.driver')));
 export const counterBadgeTestkitFactory = uniTestkitFactoryCreator(load(require('../src/CounterBadge/CounterBadge.uni.driver')));
-export const dataTableTestkitFactory = testkitFactoryCreator(load(require('../src/DataTable/DataTable.driver')));
 export const dateInputTestkitFactory = uniTestkitFactoryCreator(load(require('../src/DateInput/DateInput.uni.driver')));
 export const datePickerTestkitFactory = testkitFactoryCreator(load(require('../src/DatePicker/DatePicker.driver')));
 export const dropdownTestkitFactory = testkitFactoryCreator(load(require('../src/Dropdown/Dropdown.driver')));

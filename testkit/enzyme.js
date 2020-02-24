@@ -64,7 +64,6 @@ export const colorInputTestkitFactory = enzymeUniTestkitFactoryCreator(load(requ
 export const colorPickerTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/ColorPicker/ColorPicker.driver')));
 export const contactItemBuilderTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/ContactItemBuilder/ContactItemBuilder.driver')));
 export const counterBadgeTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/CounterBadge/CounterBadge.uni.driver')));
-export const dataTableTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/DataTable/DataTable.driver')));
 export const dateInputTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/DateInput/DateInput.uni.driver')));
 export const datePickerTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/DatePicker/DatePicker.driver')));
 export const dropdownTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Dropdown/Dropdown.driver')));

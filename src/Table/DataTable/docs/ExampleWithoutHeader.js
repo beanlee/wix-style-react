@@ -1,5 +1,5 @@
 import React from 'react';
-import DataTable from 'wix-style-react/DataTable';
+import DataTable from '..';
 
 const style = {
   width: '966px',

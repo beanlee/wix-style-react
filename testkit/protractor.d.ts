@@ -30,7 +30,6 @@ export const colorInputTestkitFactory: any;
 export const colorPickerTestkitFactory: any;
 export const contactItemBuilderTestkitFactory: any;
 export const counterBadgeTestkitFactory: any;
-export const dataTableTestkitFactory: any;
 export const dateInputTestkitFactory: any;
 export const datePickerTestkitFactory: any;
 export const dropdownTestkitFactory: any;

@@ -77,12 +77,6 @@
   "CounterBadge": {
     "path": "src/CounterBadge"
   },
-  "DataTable": {
-    "path": "src/DataTable",
-    "missingFiles": [
-      "docs/index.story.js"
-    ]
-  },
   "DateInput": {
     "path": "src/DateInput"
   },

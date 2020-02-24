@@ -1,7 +1,7 @@
 import React from 'react';
 import { bool, string } from 'prop-types';
 import defaultTo from 'lodash/defaultTo';
-import DataTable from '../../DataTable';
+import DataTable from '../DataTable';
 import { getDataTableProps, createColumns } from '../Table';
 import { TableContext } from '../TableContext';
 

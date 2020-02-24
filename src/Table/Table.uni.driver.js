@@ -1,5 +1,5 @@
 import { baseUniDriverFactory, getElement } from '../../test/utils/unidriver';
-import { dataTablePrivateUniDriverFactory } from '../DataTable/DataTable.private.uni.driver';
+import { dataTablePrivateUniDriverFactory } from './DataTable/DataTable.private.uni.driver';
 import { checkboxUniDriverFactory } from '../Checkbox/Checkbox.uni.driver';
 import deprecationLog from '../utils/deprecationLog';
 

@@ -216,13 +216,6 @@ export default {
     },
   },
 
-  DataTable: {
-    props: {
-      data: [{ a: 'value 1', b: 'value 2' }],
-      columns: [{ title: 'A', render: row => row.a }],
-    },
-  },
-
   Slider: {
     props: {
       onChange: () => {},

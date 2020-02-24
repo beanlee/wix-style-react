@@ -70,7 +70,6 @@ export const colorInputTestkitFactory = protractorUniTestkitFactoryCreator(load(
 export const colorPickerTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/ColorPicker/ColorPicker.protractor.driver')));
 export const contactItemBuilderTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/ContactItemBuilder/ContactItemBuilder.uni.driver')));
 export const counterBadgeTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/CounterBadge/CounterBadge.uni.driver')));
-export const dataTableTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/DataTable/DataTable.protractor.driver')));
 export const dateInputTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/DateInput/DateInput.uni.driver')));
 export const datePickerTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/DatePicker/DatePicker.protractor.driver')));
 export const dropdownTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Dropdown/Dropdown.protractor.driver')));

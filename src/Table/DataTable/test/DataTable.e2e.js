@@ -2,9 +2,9 @@ import {
   waitForVisibilityOf,
   scrollToElement,
 } from 'wix-ui-test-utils/protractor';
-import { dataTableTestkitFactory } from '../../../testkit/protractor';
-import { eyesItInstance } from '../../../test/utils/eyes-it';
-import { createTestStoryUrl } from '../../../test/utils/storybook-helpers';
+import { dataTableTestkitFactory } from '../../../../testkit/protractor';
+import { eyesItInstance } from '../../../../test/utils/eyes-it';
+import { createTestStoryUrl } from '../../../../test/utils/storybook-helpers';
 import { storySettings, testStories } from '../docs/storySettings';
 
 describe('Data Table', () => {

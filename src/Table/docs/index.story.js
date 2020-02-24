@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   tabs,
   tab,
@@ -12,8 +11,6 @@ import {
   testkit,
   description,
 } from 'wix-storybook-utils/Sections';
-import SectionHelper from 'wix-style-react/SectionHelper';
-import { Layout, Cell } from 'wix-style-react/Layout';
 
 import { Table } from '..';
 import { storySettings } from './storySettings';
@@ -102,17 +99,6 @@ export default {
     header({
       issueUrl: 'https://github.com/wix/wix-style-react/issues/new',
       sourceUrl: 'https://github.com/wix/wix-style-react/tree/master/src/Table',
-      component: (
-        <Layout>
-          <Cell span={6}>
-            <SectionHelper appearance="danger">
-              If you're still using `{`<DateTable/>`}, we advice you to use `
-              {`<Table />`}` instead - which accepts the same API with
-              additional capabilities.
-            </SectionHelper>
-          </Cell>
-        </Layout>
-      ),
     }),
 
     tabs([

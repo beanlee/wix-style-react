@@ -1,5 +1,5 @@
-import { baseUniDriverFactory, ReactBase } from '../../test/utils/unidriver';
-import values from '../utils/operators/values';
+import { baseUniDriverFactory, ReactBase } from '../../../test/utils/unidriver';
+import values from '../../utils/operators/values';
 // const arbitraryEmptyElement = () => document.createElement('div');
 
 export const dataTableUniDriverFactory = base => {

@@ -4,7 +4,7 @@ import defaultTo from 'lodash/defaultTo';
 import classNames from 'classnames';
 
 import style from './Table.st.css';
-import DataTable from '../DataTable';
+import DataTable from './DataTable';
 import Checkbox from '../Checkbox';
 import { TableContext } from './TableContext';
 import { BulkSelection } from './BulkSelection';

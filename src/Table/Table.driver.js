@@ -1,4 +1,4 @@
-import dataTableDriverFactory from '../DataTable/DataTable.driver';
+import dataTableDriverFactory from './DataTable/DataTable.driver';
 import checkboxDriverFactory from '../Checkbox/Checkbox.driver';
 import deprecationLog from '../utils/deprecationLog';
 

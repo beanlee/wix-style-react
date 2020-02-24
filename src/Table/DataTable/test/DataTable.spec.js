@@ -5,7 +5,7 @@ import {
   createRendererWithDriver,
   createRendererWithUniDriver,
   cleanup,
-} from '../../../test/utils/react';
+} from '../../../../test/utils/react';
 import { enzymeUniTestkitFactoryCreator } from 'wix-ui-test-utils/enzyme';
 import DataTable from '../DataTable';
 import dataTableDriverFactory from '../DataTable.driver';

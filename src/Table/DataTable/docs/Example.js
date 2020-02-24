@@ -1,5 +1,6 @@
 import React from 'react';
-import DataTable from 'wix-style-react/DataTable';
+import DataTable from '..';
+import s from './Example.scss';
 
 const style = {
   width: '966px',
@@ -12,37 +13,21 @@ const baseData = [
   { firstName: 'Walter', lastName: 'Jenning' },
 ];
 
-const generateData = count => {
+const generateData = () => {
   let data = [];
-  for (let i = 0; i < count; i++) {
+  for (let i = 0; i < 10; i++) {
     data = data.concat(baseData);
   }
   return data;
 };
 
 class DataTableExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasMore: true, count: 5 };
-    this.loadMore = this.loadMore.bind(this);
-  }
-
-  loadMore() {
-    const loadMoreData = () => {
-      this.setState({ count: this.state.count + 5 });
-      if (this.state.count > 20) {
-        this.setState({ hasMore: false });
-      }
-    };
-    setTimeout(loadMoreData, 3000);
-  }
-
   render() {
     return (
       <div style={style}>
         <DataTable
-          dataHook="story-data-table-infinite-scroll"
-          data={generateData(this.state.count)}
+          dataHook="story-data-table-example"
+          data={generateData()}
           onRowClick={(row, rowNum) => {
             /*eslint-disable no-alert*/
             window.alert(
@@ -52,6 +37,9 @@ class DataTableExample extends React.Component {
             );
             /*eslint-enable no-alert*/
           }}
+          dynamicRowClass={row =>
+            row.firstName === baseData[1].firstName ? s.highlightRow : null
+          }
           infiniteScroll
           itemsPerPage={20}
           columns={[
@@ -75,8 +63,6 @@ class DataTableExample extends React.Component {
               minWidth: '100px',
             },
           ]}
-          hasMore={this.state.hasMore}
-          loadMore={this.loadMore}
         />
       </div>
     );

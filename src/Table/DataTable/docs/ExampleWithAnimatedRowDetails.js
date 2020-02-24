@@ -1,6 +1,7 @@
 import React from 'react';
-import DataTable from 'wix-style-react/DataTable';
-import s from './Example.scss';
+import DataTable from '..';
+import PropTypes from 'prop-types';
+import './Example.scss';
 
 const style = {
   width: '966px',
@@ -15,33 +16,37 @@ const baseData = [
 
 const generateData = () => {
   let data = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 2; i++) {
     data = data.concat(baseData);
   }
   return data;
 };
 
-class DataTableExample extends React.Component {
+const MyRowDetailsComponent = props => {
+  return (
+    <div style={{ padding: '9px' }}>
+      <h2>User Details</h2>
+      <p>First name: {props.firstName}</p>
+      <p>Last name: {props.lastName}</p>
+    </div>
+  );
+};
+
+MyRowDetailsComponent.propTypes = {
+  firstName: PropTypes.string.isRequired,
+  lastName: PropTypes.string.isRequired,
+};
+
+class ExampleWithAnimatedRowDetails extends React.Component {
   render() {
     return (
       <div style={style}>
         <DataTable
-          dataHook="story-data-table-example"
+          dataHook="story-data-table"
           data={generateData()}
-          onRowClick={(row, rowNum) => {
-            /*eslint-disable no-alert*/
-            window.alert(
-              `You clicked "${row.firstName} ${
-                row.lastName
-              }", row number ${rowNum + 1}`,
-            );
-            /*eslint-enable no-alert*/
-          }}
-          dynamicRowClass={row =>
-            row.firstName === baseData[1].firstName ? s.highlightRow : null
-          }
-          infiniteScroll
-          itemsPerPage={20}
+          rowDetails={row => <MyRowDetailsComponent {...row} />}
+          rowDetailsAnimation
+          allowMultiDetailsExpansion
           columns={[
             {
               title: 'Row Number',
@@ -69,4 +74,4 @@ class DataTableExample extends React.Component {
   }
 }
 
-export default DataTableExample;
+export default ExampleWithAnimatedRowDetails;

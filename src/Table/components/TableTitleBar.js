@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { DataTableHeader } from '../../DataTable';
+import { DataTableHeader } from '../DataTable';
 import { getDataTableProps, createColumns } from '../Table';
 import { TableContext } from '../TableContext';
 import { BulkSelectionConsumer } from '../BulkSelection';

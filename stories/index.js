@@ -40,7 +40,6 @@ require('../src/CounterBadge/docs/index.story');
 require('../src/CustomModalLayout/docs/index.story');
 require('../src/AnnouncementModalLayout/docs/index.story');
 require('../src/MessageModalLayout/docs/index.story');
-require('../src/DataTable/docs');
 require('../src/DateInput/docs/index.story');
 require('../src/DatePicker/docs/index.story');
 require('../src/Divider/docs/index.story');

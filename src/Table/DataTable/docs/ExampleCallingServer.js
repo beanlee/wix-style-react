@@ -1,7 +1,5 @@
 import React from 'react';
-import DataTable from 'wix-style-react/DataTable';
-import PropTypes from 'prop-types';
-import './Example.scss';
+import DataTable from '..';
 
 const style = {
   width: '966px',
@@ -14,39 +12,48 @@ const baseData = [
   { firstName: 'Walter', lastName: 'Jenning' },
 ];
 
-const generateData = () => {
+const generateData = count => {
   let data = [];
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < count; i++) {
     data = data.concat(baseData);
   }
   return data;
 };
 
-const MyRowDetailsComponent = props => {
-  return (
-    <div style={{ padding: '9px' }}>
-      <h2>User Details</h2>
-      <p>First name: {props.firstName}</p>
-      <p>Last name: {props.lastName}</p>
-    </div>
-  );
-};
+class DataTableExample extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasMore: true, count: 5 };
+    this.loadMore = this.loadMore.bind(this);
+  }
 
-MyRowDetailsComponent.propTypes = {
-  firstName: PropTypes.string.isRequired,
-  lastName: PropTypes.string.isRequired,
-};
+  loadMore() {
+    const loadMoreData = () => {
+      this.setState({ count: this.state.count + 5 });
+      if (this.state.count > 20) {
+        this.setState({ hasMore: false });
+      }
+    };
+    setTimeout(loadMoreData, 3000);
+  }
 
-class ExampleWithAnimatedRowDetails extends React.Component {
   render() {
     return (
       <div style={style}>
         <DataTable
-          dataHook="story-data-table"
-          data={generateData()}
-          rowDetails={row => <MyRowDetailsComponent {...row} />}
-          rowDetailsAnimation
-          allowMultiDetailsExpansion
+          dataHook="story-data-table-infinite-scroll"
+          data={generateData(this.state.count)}
+          onRowClick={(row, rowNum) => {
+            /*eslint-disable no-alert*/
+            window.alert(
+              `You clicked "${row.firstName} ${
+                row.lastName
+              }", row number ${rowNum + 1}`,
+            );
+            /*eslint-enable no-alert*/
+          }}
+          infiniteScroll
+          itemsPerPage={20}
           columns={[
             {
               title: 'Row Number',
@@ -68,10 +75,12 @@ class ExampleWithAnimatedRowDetails extends React.Component {
               minWidth: '100px',
             },
           ]}
+          hasMore={this.state.hasMore}
+          loadMore={this.loadMore}
         />
       </div>
     );
   }
 }
 
-export default ExampleWithAnimatedRowDetails;
+export default DataTableExample;

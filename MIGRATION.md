@@ -15,6 +15,7 @@
 - `<SideMenuDrill/>` - Use `<Sidebar/>` instead.
 - `<StatsWidget/>` - Use `<StatisticsWidget/>` instead. See [migration guide](./docs/migration/StatsWidget.md).
 - `<PopoverMenu/>` - replaced with new beta PopoverMenu, see migration guide below.
+- `<DataTable/>` - Use `<Table/>` instead.
 
 ## Changed:
 

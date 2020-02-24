@@ -1,5 +1,5 @@
 import ReactTestUtils from 'react-dom/test-utils';
-import values from '../utils/operators/values';
+import values from '../../utils/operators/values';
 
 const arbitraryEmptyElement = () => document.createElement('div');
 

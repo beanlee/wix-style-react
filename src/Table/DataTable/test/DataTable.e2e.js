@@ -1,11 +1,16 @@
 import {
   waitForVisibilityOf,
   scrollToElement,
+  protractorTestkitFactoryCreator,
 } from 'wix-ui-test-utils/protractor';
-import { dataTableTestkitFactory } from '../../../../testkit/protractor';
+import dataTableDriverFactory from '../DataTable.protractor.driver';
 import { eyesItInstance } from '../../../../test/utils/eyes-it';
 import { createTestStoryUrl } from '../../../../test/utils/storybook-helpers';
 import { storySettings, testStories } from '../docs/storySettings';
+
+const dataTableTestkitFactory = protractorTestkitFactoryCreator(
+  dataTableDriverFactory,
+);
 
 describe('Data Table', () => {
   const eyes = eyesItInstance();

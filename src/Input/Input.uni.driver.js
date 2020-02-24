@@ -12,7 +12,6 @@ export const testkit = base => {
   const reactBaseInput = ReactBase(input);
 
   const clearButtonNode = base.$(`[data-hook=input-clear-button]`);
-  const unitNode = base.$(`.unit`);
   const menuArrowNode = base.$(`.menuArrow`);
   const magnifyingGlassNode = base.$(`.magnifyingGlass`);
 
@@ -65,9 +64,6 @@ export const testkit = base => {
     enterText: async value => await input.enterValue(value),
     getAutocomplete: async () => await input.attr('autocomplete'),
     getDefaultValue: async () => await input._prop('defaultValue'),
-    getUnit: async () => {
-      return await unitNode.text();
-    },
     getTabIndex: async () => await input._prop('tabIndex'),
     isCustomInput: async () =>
       (await input.attr('data-hook')) === 'wsr-custom-input',
@@ -109,7 +105,6 @@ export const testkit = base => {
     },
     isFocus: async () => await reactBaseInput.isFocus(),
     hasHelp: async () => await base.$('.help').exists(),
-    clickUnit: async () => await unitNode.click(),
     hasMagnifyingGlass: async () => await magnifyingGlassNode.exists(),
     clickMagnifyingGlass: async () => await magnifyingGlassNode.click(),
     clickMenuArrow: async () => await menuArrowNode.click(),

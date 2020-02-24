@@ -62,7 +62,7 @@ export const prefix = `
 export const suffix = `
   <Dropdown
     placeholder="Select an option"
-    prefix={<Input.Affix>$</Input.Affix>}
+    suffix={<Input.Affix>%</Input.Affix>}
     options={[{id: 0, value: '35'}, {id: 1, value: '40'}, {id: 2, value: '50'}]}
     />
 `;

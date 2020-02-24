@@ -96,10 +96,6 @@ $material-gap: 8px;
   height: 100%;
   display: flex;
   align-items: center;
-
-  &:last-child .unit {
-    padding-right: $double-gap;
-  }
 }
 
 .roundInput {
@@ -581,15 +577,6 @@ $material-gap: 8px;
   line-height: 0;
   background: $B50;
   border-radius: 12px;
-}
-
-/** needs display:block to fix inputs with prefix in ie11
-https://github.com/wix/wix-style-react/issues/1691 */
-.unit {
-  padding: 0 $gap;
-  color: $paletteD3;
-  @include FontRoman();
-  display: block;
 }
 
 .menu-arrow {

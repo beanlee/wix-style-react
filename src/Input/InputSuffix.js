@@ -27,7 +27,6 @@ const suffixRules = {
   clearButton: ({ isClearButtonVisible }) => isClearButtonVisible,
   menuArrow: ({ menuArrow, isClearButtonVisible, magnifyingGlass }) =>
     menuArrow && !isClearButtonVisible && !magnifyingGlass,
-  unit: ({ unit }) => !!unit,
   customSuffix: ({ suffix }) => !!suffix,
 };
 
@@ -49,7 +48,6 @@ const InputSuffix = ({
   isClearButtonVisible,
   onClear,
   menuArrow,
-  unit,
   suffix,
   focused,
   tooltipPlacement,
@@ -134,14 +132,6 @@ const InputSuffix = ({
       isVisible: suffixRules.clearButton({ isClearButtonVisible }),
     },
     {
-      component: () => (
-        <div className={styles.unit} onClick={onIconClicked}>
-          {unit}
-        </div>
-      ),
-      isVisible: suffixRules.unit({ unit }),
-    },
-    {
       component: () => suffix,
       isVisible: suffixRules.customSuffix({ suffix }),
     },
@@ -200,7 +190,6 @@ InputSuffix.propTypes = {
   isClearButtonVisible: PropTypes.bool,
   onClear: PropTypes.func,
   menuArrow: PropTypes.bool,
-  unit: PropTypes.string,
   suffix: PropTypes.node,
   focused: PropTypes.bool,
   tooltipPlacement: PropTypes.string,

@@ -6,7 +6,6 @@ const inputDriverFactory = ({ element }) => {
   const clearButton =
     element && element.querySelector(`[data-hook=input-clear-button]`);
   const suffixNode = element && element.querySelector(`.${styles.suffix}`);
-  const unitNode = element && element.querySelector(`.${styles.unit}`);
   const magnifyingGlassNode =
     element && element.querySelector(`.${styles.magnifyingGlass}`);
   const customAffixNode =
@@ -35,7 +34,6 @@ const inputDriverFactory = ({ element }) => {
     keyDown: key => ReactTestUtils.Simulate.keyDown(input, { key }),
     click: () => ReactTestUtils.Simulate.click(input),
     clickSuffix: () => ReactTestUtils.Simulate.click(suffixNode),
-    clickUnit: () => ReactTestUtils.Simulate.click(unitNode),
     clickMagnifyingGlass: () =>
       ReactTestUtils.Simulate.click(magnifyingGlassNode),
     clickCustomAffix: () => ReactTestUtils.Simulate.click(customAffixNode),
@@ -93,7 +91,6 @@ const inputDriverFactory = ({ element }) => {
     hasLoader: () => element.querySelector(`.loaderContainer`),
     getTooltipDataHook: () => 'input-tooltip',
     getDataHook: () => element.getAttribute('data-hook'),
-    getUnit: () => unitNode.textContent,
     getCustomAffix: () => customAffixNode.textContent,
     hasMagnifyingGlass: () => !!magnifyingGlassNode,
     hasMenuArrow: () => !!menuArrowNode,

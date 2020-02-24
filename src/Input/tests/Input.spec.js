@@ -311,31 +311,6 @@ describe('Input', () => {
       });
     });
 
-    describe('unit attribute', () => {
-      it('should the unit text if passed', async () => {
-        const unit = '$';
-
-        const { driver } = render(<Input suffix="hello" unit={unit} />);
-        expect(await driver.getUnit()).toEqual(unit);
-      });
-
-      it('should invoke onInputClicked while click on unit', async () => {
-        const onInputClicked = jest.fn();
-        const { driver } = render(
-          <Input unit="$" onInputClicked={onInputClicked} />,
-        );
-        await driver.clickUnit();
-        expect(onInputClicked).toBeCalled();
-      });
-
-      it('should not fail while click on unit without passing onInputClicked', async () => {
-        const { driver } = render(<Input unit="$" />);
-        expect(() => {
-          driver.clickUnit();
-        }).not.toThrowError(/onInputClicked is not a function/);
-      });
-    });
-
     describe('magnifyingGlass attribute', () => {
       it('should display a magnifying glass icon if magnifyingGlass is true', async () => {
         const { driver } = render(<Input magnifyingGlass />);

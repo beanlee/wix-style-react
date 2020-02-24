@@ -12,7 +12,6 @@ import Calendar from '../Calendar';
 import DateInput from '../DateInput';
 
 import { PopoverCommonProps } from '../commonProps';
-import deprecationLog from '../utils/deprecationLog';
 
 /**
  * DatePicker component
@@ -52,17 +51,12 @@ export default class DatePicker extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    if (props.isOpen !== undefined) {
-      deprecationLog('DatePicker isOpen is deprecated. Please use initialOpen');
-    }
-
-    const initialOpen =
-      (!!props.initialOpen || !!props.isOpen) && !props.disabled;
+    const initialOpen = props.initialOpen && !props.disabled;
 
     this.state = {
       value: props.value || new Date(),
       isOpen: initialOpen,
-      isDateInputFocusable: !props.isOpen,
+      isDateInputFocusable: !props.initialOpen,
     };
   }
 
@@ -172,7 +166,7 @@ export default class DatePicker extends React.PureComponent {
           this.openCalendar(e);
         }}
         onKeyDown={this._handleKeyDown}
-        tabIndex={this.state.isDateInputFocusable ? 1 : -1}
+        tabIndex={this.state.isDateInputFocusable ? 0 : -1}
         error={error}
         errorMessage={errorMessage}
         autoSelect={false}
@@ -305,12 +299,6 @@ DatePicker.propTypes = {
 
   /** The selected date */
   value: PropTypes.object,
-
-  /**
-   * Controls the whether the calendar will be visible or not
-   * @deprecated
-   * */
-  isOpen: PropTypes.bool,
 
   /** Controls the whether the calendar will be initially visible or not */
   initialOpen: PropTypes.bool,

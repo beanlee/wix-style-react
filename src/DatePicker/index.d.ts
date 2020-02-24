@@ -13,7 +13,6 @@ export interface DatePickerProps extends CalendarProps {
   placeholderText?: string;
   rtl?: boolean;
   value?: {};
-  isOpen?: boolean;
   initialOpen?: boolean;
   error?: boolean;
   errorMessage?: React.ReactNode;

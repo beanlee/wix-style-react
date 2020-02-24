@@ -26,7 +26,6 @@
 | hasPrefix | - | boolean | true if the input have a prefix |
 | hasSuffix | - | boolean | true if the input have a suffix |
 | hasError | - | boolean | true if the input present an error |
-| hasMagnifyingGlass | - | boolean | true if input have magnifying glass, like search |
 | hasMenuArrow | - | boolean | true if input have menu arrow, like dropdown |
 | hasClearButton | - | boolean | true if the clear button is visible |
 | isRTL | - | boolean | true if the input is in RTL mode |

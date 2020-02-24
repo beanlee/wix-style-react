@@ -503,29 +503,6 @@ $material-gap: 8px;
   }
 }
 
-.magnifying-glass {
-  margin: 0 $gap;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  path {
-    fill: $B10;
-  }
-  line {
-    stroke: $B10;
-  }
-
-  &[disabled] {
-    path {
-      fill: $GR40;
-    }
-    line {
-      stroke: $GR40;
-    }
-  }
-}
-
 .exclamation {
   margin: 0 $gap;
 

@@ -94,11 +94,7 @@ class InputWithOptions extends Component {
     const inputAdditionalProps = this.inputAdditionalProps();
     const inputProps = Object.assign(
       omit(
-        Object.keys(DropdownLayout.propTypes).concat([
-          'onChange',
-          'dataHook',
-          'magnifyingGlass',
-        ]),
+        Object.keys(DropdownLayout.propTypes).concat(['onChange', 'dataHook']),
         this.props,
       ),
       inputAdditionalProps,
@@ -106,7 +102,7 @@ class InputWithOptions extends Component {
 
     const { inputElement } = inputProps;
     return React.cloneElement(inputElement, {
-      menuArrow: !this.props.magnifyingGlass,
+      menuArrow: true,
       ref: input => (this.input = input),
       ...inputProps,
       onKeyDown: chainEventHandlers(
@@ -454,7 +450,6 @@ InputWithOptions.defaultProps = {
   popoverProps: DEFAULT_POPOVER_PROPS,
   dropdownOffsetLeft: '0',
   showOptionsIfEmptyInput: true,
-  magnifyingGlass: false,
   autocomplete: 'off',
   native: false,
 };

@@ -25,6 +25,19 @@
   - removed `upgrade` - component is now upgraded by default
   - changed `primaryAction.theme` to `primaryAction.skin` (with new values)
 
+#### `<Input/>`
+- Props:
+  - removed `units` use `<Input.Affix/>` component instead
+  - removed `magnifyingGlass` use `<Search/>` component instead
+
+- Testkit:
+  - removed `clickUnit`
+  - removed `getUnit`
+  - removed `hasMagnifyingGlass`
+  - removed `clickMagnifyingGlass`
+
+Removed `<Input.Units/>` use `<Input.Affix>` instead.
+
 #### `<InputArea/>`
 
 - Props:

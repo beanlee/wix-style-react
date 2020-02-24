@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropDownArrow from 'wix-ui-icons-common/system/DropDownArrow';
-import Search from 'wix-ui-icons-common/Search';
 
 import CloseButton from '../CloseButton';
 import ThemedInputErrorSuffix from './ThemedInputErrorSuffix';
@@ -22,11 +21,9 @@ const suffixRules = {
   inputWarningSuffix: ({ status, disabled }) =>
     status === Input.StatusWarning && !disabled,
   inputHelpSuffix: ({ help, disabled }) => help && !disabled,
-  magnifyingGlass: ({ magnifyingGlass, isClearButtonVisible, error }) =>
-    magnifyingGlass && !isClearButtonVisible && !error,
   clearButton: ({ isClearButtonVisible }) => isClearButtonVisible,
-  menuArrow: ({ menuArrow, isClearButtonVisible, magnifyingGlass }) =>
-    menuArrow && !isClearButtonVisible && !magnifyingGlass,
+  menuArrow: ({ menuArrow, isClearButtonVisible }) =>
+    menuArrow && !isClearButtonVisible,
   customSuffix: ({ suffix }) => !!suffix,
 };
 
@@ -44,7 +41,6 @@ const InputSuffix = ({
   help,
   helpMessage,
   onIconClicked,
-  magnifyingGlass,
   isClearButtonVisible,
   onClear,
   menuArrow,
@@ -53,8 +49,6 @@ const InputSuffix = ({
   tooltipPlacement,
   onTooltipShow,
 }) => {
-  const error = status === Input.StatusError;
-
   const suffixes = [
     {
       component: () => (
@@ -105,22 +99,6 @@ const InputSuffix = ({
     },
     {
       component: () => (
-        <div
-          className={styles.magnifyingGlass}
-          disabled={disabled}
-          onClick={onIconClicked}
-        >
-          <Search />
-        </div>
-      ),
-      isVisible: suffixRules.magnifyingGlass({
-        magnifyingGlass,
-        isClearButtonVisible,
-        error,
-      }),
-    },
-    {
-      component: () => (
         <div className={styles.clearButton}>
           <CloseButton
             dataHook="input-clear-button"
@@ -148,7 +126,6 @@ const InputSuffix = ({
       isVisible: suffixRules.menuArrow({
         menuArrow,
         isClearButtonVisible,
-        magnifyingGlass,
       }),
     },
   ].filter(isFixVisible);
@@ -186,7 +163,6 @@ InputSuffix.propTypes = {
   help: PropTypes.bool,
   helpMessage: PropTypes.node,
   onIconClicked: PropTypes.func,
-  magnifyingGlass: PropTypes.bool,
   isClearButtonVisible: PropTypes.bool,
   onClear: PropTypes.func,
   menuArrow: PropTypes.bool,

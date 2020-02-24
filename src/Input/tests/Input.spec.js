@@ -311,39 +311,6 @@ describe('Input', () => {
       });
     });
 
-    describe('magnifyingGlass attribute', () => {
-      it('should display a magnifying glass icon if magnifyingGlass is true', async () => {
-        const { driver } = render(<Input magnifyingGlass />);
-        expect(await driver.hasMagnifyingGlass()).toBe(true);
-      });
-
-      it('should not display a magnifying glass icon if magnifyingGlass is false', async () => {
-        const { driver } = render(<Input magnifyingGlass={false} />);
-        expect(await driver.hasMagnifyingGlass()).toBe(false);
-      });
-
-      it('should not display a magnifying glass icon if error is true', async () => {
-        const { driver } = render(<Input magnifyingGlass error />);
-        expect(await driver.hasMagnifyingGlass()).toBe(false);
-      });
-
-      it('should invoke onInputClicked while click on magnifying glass icon', async () => {
-        const onInputClicked = jest.fn();
-        const { driver } = render(
-          <Input magnifyingGlass onInputClicked={onInputClicked} />,
-        );
-        await driver.clickMagnifyingGlass();
-        expect(onInputClicked).toBeCalled();
-      });
-
-      it('should not fail while click on magnifying glass icon without passing onInputClicked', async () => {
-        const { driver } = render(<Input magnifyingGlass />);
-        expect(async () => {
-          await driver.clickMagnifyingGlass();
-        }).not.toThrowError(/onInputClicked is not a function/);
-      });
-    });
-
     describe('menuArrow attribute', () => {
       it('should display a menu arrow icon if menuArrow is true', async () => {
         const { driver } = render(<Input menuArrow />);
@@ -352,11 +319,6 @@ describe('Input', () => {
 
       it('should not display a menu arrow icon if menuArrow is false', async () => {
         const { driver } = render(<Input menuArrow={false} />);
-        expect(await driver.hasMenuArrow()).toBe(false);
-      });
-
-      it('should not display a menu arrow icon if magnifyingGlass is true', async () => {
-        const { driver } = render(<Input menuArrow magnifyingGlass />);
         expect(await driver.hasMenuArrow()).toBe(false);
       });
 
@@ -781,7 +743,7 @@ describe('Input', () => {
       });
 
       it('should add `withSuffixes` classname to input when more than 1 suffix applied', async () => {
-        const { driver } = render(<Input suffix="hello" magnifyingGlass />);
+        const { driver } = render(<Input suffix="hello" status="error" />);
         expect(await driver.hasSuffixesClass()).toBe(true);
       });
 

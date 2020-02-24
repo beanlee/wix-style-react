@@ -57,11 +57,6 @@ class Input extends Component {
   };
 
   logDeprecations(props) {
-    if (props.magnifyingGlass) {
-      deprecationLog(
-        `Input's magnifyingGlass prop is deprecated and will be removed in the next major release, please use suffix property with '<Input suffix={<Input.Affix><Search /></Input.Affix>}/>' instead`,
-      );
-    }
     if (props.help) {
       deprecationLog(
         `Input's help prop is deprecated and will be removed in the next major release, please '<FormField infoContent="content"><Input /></FormField>'  instead`,
@@ -103,7 +98,6 @@ class Input extends Component {
       help,
       placeholder,
       helpMessage,
-      magnifyingGlass,
       menuArrow,
       defaultValue,
       tabIndex,
@@ -165,7 +159,6 @@ class Input extends Component {
       statusMessage: suffixStatusMessage,
       disabled,
       help,
-      magnifyingGlass,
       isClearButtonVisible,
       menuArrow,
       suffix,
@@ -246,7 +239,6 @@ class Input extends Component {
               help={help}
               helpMessage={helpMessage}
               onIconClicked={onIconClicked}
-              magnifyingGlass={magnifyingGlass}
               isClearButtonVisible={isClearButtonVisible}
               onClear={this.handleSuffixOnClear}
               menuArrow={menuArrow}

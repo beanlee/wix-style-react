@@ -13,7 +13,6 @@ export const testkit = base => {
 
   const clearButtonNode = base.$(`[data-hook=input-clear-button]`);
   const menuArrowNode = base.$(`.menuArrow`);
-  const magnifyingGlassNode = base.$(`.magnifyingGlass`);
 
   const driver = {
     ...baseUniDriverFactory(base),
@@ -105,8 +104,6 @@ export const testkit = base => {
     },
     isFocus: async () => await reactBaseInput.isFocus(),
     hasHelp: async () => await base.$('.help').exists(),
-    hasMagnifyingGlass: async () => await magnifyingGlassNode.exists(),
-    clickMagnifyingGlass: async () => await magnifyingGlassNode.click(),
     clickMenuArrow: async () => await menuArrowNode.click(),
     hasMenuArrow: async () => await menuArrowNode.exists(),
     isNarrowError: async () => await base.$(`.narrow`).exists(),

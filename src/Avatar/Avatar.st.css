@@ -240,26 +240,6 @@
 .avatar:contentType(text).colorA5 { background-color: value(A5); }
 .avatar:contentType(text).colorA6 { background-color: value(A6); }
 
-.avatar:contentType(text).colorBlue {
-  background-image: value(GRAD_B10);
-}
-
-.avatar:contentType(text).colorGreen {
-  background-image: value(GRAD_G10);
-}
-
-.avatar:contentType(text).colorGrey {
-  background-image: value(GRAD_D10);
-}
-
-.avatar:contentType(text).colorRed {
-  background-image: value(GRAD_R10);
-}
-
-.avatar:contentType(text).colorOrange {
-  background-image: value(GRAD_O10);
-}
-
 /* Sizes */
 .avatarContainer:size(size90) .avatar {
   height: 90px;

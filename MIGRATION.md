@@ -44,6 +44,10 @@
   - added `hasStatusMessage`
   - added `getStatusMessage`
 
+#### `<Avatar/>`
+
+- Prop `color` - Deprecated old values, valid values are now only A1 to A6.
+
 ## Migrating to new PopoverMenu
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.

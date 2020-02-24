@@ -2,8 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import IconButton from '../IconButton';
-import deprecationLog from '../utils/deprecationLog';
-import { avatarColorList, avatarShapes, dataHooks } from './constants';
+import { avatarShapes, dataHooks } from './constants';
 import { Avatar as CoreAvatar } from 'wix-ui-core/dist/src/components/avatar';
 import { placeholderSVGs } from './assets';
 import styles from './Avatar.st.css';
@@ -14,7 +13,6 @@ import { isMadefor } from '../FontUpgrade/utils';
 const getSizeNumber = size => Number(size.substring(4));
 const minIndicationRenderSize = 36;
 const minSmallIconButton = 60;
-const deprecatedColorList = ['blue', 'green', 'grey', 'red', 'orange'];
 
 /**
  * Avatar is a type of element that visually represents a user, either as an image, name initials or placeholder icon.
@@ -50,7 +48,7 @@ class Avatar extends React.PureComponent {
       size,
       presence,
       indication,
-      color: colorProp,
+      color,
       onIndicationClick,
       dataHook,
       className,
@@ -64,12 +62,7 @@ class Avatar extends React.PureComponent {
     } = this.props;
     const { fadeIndication, showIndication } = this.state;
 
-    if (deprecatedColorList.indexOf(colorProp) > -1) {
-      deprecationLog(
-        `Avatar component prop "color" with the value ${colorProp} is deprecated, and will be removed in next major release, please use instead one of these color: [${avatarColorList.toString()}]`,
-      );
-    }
-    const color = colorProp || stringToColor(text || name); //if color is provided as a prop use it, otherwise, generate a color based on the text
+    const calculatedColor = color || stringToColor(text || name); //if color is provided as a prop use it, otherwise, generate a color based on the text
     const sizeNumber = getSizeNumber(size);
     const renderOnHover = !showIndicationOnHover || showIndication;
     const renderIndication =
@@ -111,7 +104,7 @@ class Avatar extends React.PureComponent {
               }}
               className={classNames(
                 styles.avatar,
-                color && styles[`color${capitalize(color)}`],
+                styles[`color${capitalize(calculatedColor)}`],
               )}
             />
           </div>

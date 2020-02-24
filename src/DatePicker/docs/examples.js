@@ -36,6 +36,41 @@ export const filterDate = `
 />
 `;
 
+export const status = `
+<Layout cols={1}>
+  <Cell>
+    <DatePicker
+      value={new Date()}
+      placeholderText="Select Date"
+      onChange={event => console.log(event)}
+      filterDate={date => date < new Date()}
+      status="error"
+      statusMessage="Error Message"
+    />
+  </Cell>
+  <Cell>
+    <DatePicker
+      value={new Date()}
+      placeholderText="Select Date"
+      onChange={event => console.log(event)}
+      filterDate={date => date < new Date()}
+      status="warning"
+      statusMessage="Warning Message"
+    />
+  </Cell>
+  <Cell>
+    <DatePicker
+      value={new Date()}
+      placeholderText="Select Date"
+      onChange={event => console.log(event)}
+      filterDate={date => date < new Date()}
+      status="loading"
+      statusMessage="Loading Message"
+    />
+  </Cell>
+</Layout>
+`;
+
 export const rangeSelection = `
 <DatePicker
   value={new Date()}

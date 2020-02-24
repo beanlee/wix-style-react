@@ -17,6 +17,7 @@ import {
 import React from 'react';
 import * as examples from './examples';
 import allComponents from '../../../stories/utils/allComponents';
+import { columns } from 'wix-storybook-utils/Sections';
 
 const defaultValue = new Date('2017/05/01');
 const today = new Date();
@@ -101,6 +102,17 @@ export default {
           code({
             source: examples.filterDate,
           }),
+
+          columns([
+            description({
+              title: 'With Status',
+              text: `Setting a status to indicate some there's an issue.`,
+            }),
+            code({
+              compact: true,
+              source: examples.status,
+            }),
+          ]),
 
           // TODO - disabled until https://github.com/wix/wix-style-react/issues/4157 is fixed
           // code({

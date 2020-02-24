@@ -26,10 +26,6 @@ const testGroups = [
             placeholderText: 'Select Date',
             disabled: true,
           },
-          {
-            placeholderText: 'Select Date',
-            error: true,
-          },
         ],
       },
       {
@@ -47,24 +43,24 @@ const testGroups = [
           {
             placeholderText: 'Select Date',
             value: new Date('08/07/1986'),
-            error: true,
+            initialOpen: true,
+          },
+        ],
+      },
+      {
+        describe: 'With status',
+        its: [
+          {
+            placeholderText: 'Select Date',
+            status: 'error',
           },
           {
             placeholderText: 'Select Date',
-            value: new Date('08/07/1986'),
-            initialOpen: true,
+            status: 'warning',
           },
           {
             placeholderText: 'Select Date',
-            value: new Date('08/07/1986'),
-            initialOpen: true,
-            disabled: true,
-          },
-          {
-            placeholderText: 'Select Date',
-            value: new Date('08/07/1986'),
-            initialOpen: true,
-            error: true,
+            status: 'loading',
           },
         ],
       },

@@ -40,7 +40,6 @@ export default class DatePicker extends React.PureComponent {
     width: 150,
     zIndex: 1,
     disabled: false,
-    error: false,
     inputDataHook: 'date-picker-input',
     popoverProps: {
       placement: 'top-start',
@@ -142,8 +141,8 @@ export default class DatePicker extends React.PureComponent {
       placeholderText,
       readOnly,
       value: initialValue,
-      error,
-      errorMessage,
+      status,
+      statusMessage,
       customInput,
       dateFormat,
       inputProps = {},
@@ -167,8 +166,8 @@ export default class DatePicker extends React.PureComponent {
         }}
         onKeyDown={this._handleKeyDown}
         tabIndex={this.state.isDateInputFocusable ? 0 : -1}
-        error={error}
-        errorMessage={errorMessage}
+        status={status}
+        statusMessage={statusMessage}
         autoSelect={false}
         dateFormat={dateFormat}
         customInput={customInput}
@@ -303,11 +302,11 @@ DatePicker.propTypes = {
   /** Controls the whether the calendar will be initially visible or not */
   initialOpen: PropTypes.bool,
 
-  /** will show exclamation icon when true */
-  error: PropTypes.bool,
+  /** Sets UI to indicate a status */
+  status: PropTypes.oneOf(['error', 'warning', 'loading']),
 
-  /** will display message when hovering error icon */
-  errorMessage: PropTypes.node,
+  /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
+  statusMessage: PropTypes.node,
 
   /** set desired width of DatePicker input */
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),

@@ -307,14 +307,14 @@ InputArea.propTypes = {
   /** Disables the input */
   disabled: PropTypes.bool,
 
-  /** Sets UI to indicate input status */
+  /** Sets UI to indicate a status */
   status: PropTypes.oneOf(['error', 'warning', 'loading']),
+
+  /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
+  statusMessage: PropTypes.node,
 
   forceFocus: PropTypes.bool,
   forceHover: PropTypes.bool,
-
-  /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
-  statusMessage: PropTypes.string,
 
   /** When true a letters counter will appear */
   hasCounter: PropTypes.bool,

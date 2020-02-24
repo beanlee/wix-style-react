@@ -37,6 +37,7 @@ export default {
     hasCounter: false,
     resizable: false,
     disabled: false,
+    statusMessage: 'This is a message!',
   },
 
   exampleProps: {

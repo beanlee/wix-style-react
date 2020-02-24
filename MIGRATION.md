@@ -52,6 +52,8 @@
 
 - Props:
   - removed `isOpen` - use `initialOpen` instead.
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
 
 ## Migrating to new PopoverMenu
 

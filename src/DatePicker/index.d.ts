@@ -2,6 +2,7 @@ import * as React from 'react';
 import { CalendarProps } from '../Calendar';
 import { PopoverCommonProps } from '../common';
 
+export type DatePickerStatus = 'error' | 'warning' | 'loading';
 export interface DatePickerProps extends CalendarProps {
   customInput?: React.ReactNode;
   inputProps?: {};
@@ -14,8 +15,8 @@ export interface DatePickerProps extends CalendarProps {
   rtl?: boolean;
   value?: {};
   initialOpen?: boolean;
-  error?: boolean;
-  errorMessage?: React.ReactNode;
+  status?: DatePickerStatus;
+  statusMessage?: React.ReactNode;
   width?: number | string;
   zIndex?: number;
   popoverProps?: PopoverCommonProps;

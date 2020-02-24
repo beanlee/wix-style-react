@@ -7,50 +7,72 @@ const imageUrl =
 
 const tests = [
   {
-    it: 'with an image',
-    props: {
-      imageUrl,
-    },
+    description: 'standard',
+    its: [
+      {
+        it: 'with an image',
+        props: {
+          imageUrl,
+        },
+      },
+      {
+        it: 'with a transparent image',
+        props: {
+          imageUrl:
+            'https://onlinepngtools.com/images/examples-onlinepngtools/palm-fronds-and-sky.png',
+        },
+      },
+      {
+        it: 'disabled with an image',
+        props: {
+          imageUrl,
+          disabled: true,
+        },
+      },
+      {
+        it: 'disabled without an image',
+        props: {
+          disabled: true,
+        },
+      },
+      {
+        it: 'Without rounded borders',
+        props: {
+          imageUrl,
+          removeRoundedBorders: true,
+        },
+      },
+    ],
   },
   {
-    it: 'with a transparent image',
-    props: {
-      imageUrl:
-        'https://onlinepngtools.com/images/examples-onlinepngtools/palm-fronds-and-sky.png',
-    },
-  },
-  {
-    it: 'with an error',
-    props: {
-      error: true,
-    },
-  },
-  {
-    it: 'disabled with an image',
-    props: {
-      imageUrl,
-      disabled: true,
-    },
-  },
-  {
-    it: 'disabled with an error',
-    props: {
-      error: true,
-      disabled: true,
-    },
-  },
-  {
-    it: 'disabled without an error',
-    props: {
-      disabled: true,
-    },
-  },
-  {
-    it: 'Without rounded borders',
-    props: {
-      imageUrl,
-      removeRoundedBorders: true,
-    },
+    description: 'with status',
+    its: [
+      {
+        it: 'error',
+        props: {
+          status: 'error',
+        },
+      },
+      {
+        it: 'warning',
+        props: {
+          status: 'warning',
+        },
+      },
+      {
+        it: 'loading',
+        props: {
+          status: 'loading',
+        },
+      },
+      {
+        it: 'disabled with a status',
+        props: {
+          status: 'error',
+          disabled: true,
+        },
+      },
+    ],
   },
 ];
 
@@ -59,9 +81,11 @@ const AsyncStoryWrapper = ({ onDone, ...rest }) => (
 );
 
 visualize('ImageViewer', () => {
-  story('should render', () => {
-    tests.forEach(({ it, props }) => {
-      snap(it, done => <AsyncStoryWrapper {...props} onDone={done} />);
+  tests.forEach(({ description, its }) => {
+    story(description, () => {
+      its.forEach(({ it, props }) =>
+        snap(it, done => <AsyncStoryWrapper {...props} onDone={done} />),
+      );
     });
   });
 });

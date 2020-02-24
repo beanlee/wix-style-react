@@ -56,6 +56,20 @@
   - changed `error` to `status='error'`
   - changed `errorMessage` to `statusMessage`
 
+#### `<ImageViewer/>`
+
+- Props:
+  - removed `tooltipPlacement`
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+- Testkit:
+  - removed `isErrorVisible`
+  - removed `getErrorTooltipContent`
+  - added `hasStatus`
+  - added `getStatus`
+  - added `hasStatusMessage`
+  - added `getStatusMessage`
+
 ## Migrating to new PopoverMenu
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.

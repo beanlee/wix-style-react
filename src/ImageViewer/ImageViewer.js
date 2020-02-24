@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Delete from 'wix-ui-icons-common/Delete';
 import Replace from 'wix-ui-icons-common/Replace';
-import FormFieldError from 'wix-ui-icons-common/system/FormFieldError';
 import StatusIndicator from '../StatusIndicator';
 import Loader from '../Loader';
 import styles from './ImageViewer.st.css';
@@ -11,7 +10,6 @@ import IconButton from '../IconButton';
 import AddItem from '../AddItem/AddItem';
 import Box from '../Box';
 import classnames from 'classnames';
-import deprecationLog from '../utils/deprecationLog';
 import { dataHooks } from './constants';
 
 class ImageViewer extends Component {
@@ -23,12 +21,6 @@ class ImageViewer extends Component {
       imageLoading: !!imageUrl,
       previousImageUrl: undefined,
     };
-
-    if (this.props.error || this.props.errorMessage) {
-      deprecationLog(
-        'Props error and errorMessage are deprecated. Please use status and statusMessage',
-      );
-    }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -209,29 +201,6 @@ class ImageViewer extends Component {
     );
   };
 
-  _renderErrorIcon = () => {
-    const { error, disabled, errorMessage } = this.props;
-    const shouldRender = error && !disabled;
-    return (
-      shouldRender && (
-        <div className={styles.errorContainer}>
-          <Tooltip
-            upgrade
-            content={errorMessage}
-            timeout={0}
-            appendTo="window"
-            dataHook={dataHooks.errorTooltip}
-            placement="top"
-          >
-            <div className={styles.error}>
-              <FormFieldError />
-            </div>
-          </Tooltip>
-        </div>
-      )
-    );
-  };
-
   _renderLoader = () => (
     <Box
       align="center"
@@ -277,7 +246,6 @@ class ImageViewer extends Component {
     const {
       width,
       height,
-      error,
       disabled,
       dataHook,
       removeRoundedBorders,
@@ -288,13 +256,11 @@ class ImageViewer extends Component {
     const { imageLoading, previousImageUrl } = this.state;
 
     const hasImage = !!imageUrl;
-    const hasError = !!error;
     const hasNoPreviousImageWhileLoading = imageLoading && !previousImageUrl;
     const imageLoaded = hasImage && !imageLoading;
 
     const cssStates = {
       disabled,
-      error: !disabled && error,
       status: !disabled && status,
       removeRadius: removeRoundedBorders,
       hasImage,
@@ -322,8 +288,6 @@ class ImageViewer extends Component {
             ? this._renderLoader()
             : hasImage && this._renderButtons(),
         )}
-
-        {hasError && this._renderErrorIcon()}
 
         {/* Status */}
         {status && !disabled && (
@@ -361,27 +325,11 @@ ImageViewer.propTypes = {
   /** Image url, blank for not uploaded */
   imageUrl: PropTypes.string,
 
-  /** Show error icon
-   * @deprecated
-   */
-  error: PropTypes.bool,
-
-  /** Error tooltip message
-   * @deprecated
-   */
-  errorMessage: PropTypes.string,
-
   /** Sets UI to indicate a status */
   status: PropTypes.oneOf(['error', 'warning', 'loading']),
 
   /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
   statusMessage: PropTypes.node,
-
-  /** Error tooltip placement
-   * @deprecated
-   * @see tooltipProps
-   */
-  tooltipPlacement: PropTypes.string,
 
   /** Tooltip props, common for all tooltips */
   tooltipProps: PropTypes.object,

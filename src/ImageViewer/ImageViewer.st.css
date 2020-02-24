@@ -19,7 +19,6 @@
 
 .root {
   -st-states: status(enum(error, warning)),
-    error,
     disabled,
     removeRadius,
     hasImage,
@@ -47,10 +46,6 @@
 
 .root:hasImage {
   background-color: transparent;
-}
-
-.root:error {
-  border: 1px solid value(R10);
 }
 
 .root:status(error) {
@@ -146,30 +141,6 @@
   position: absolute;
   right: 9px;
   top: 9px;
-}
-
-/** error styles **/
-
-.errorContainer {
-  position: absolute;
-  right: 9px;
-  top: 9px;
-}
-
-.error {
-  background-color: value(R10);
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
-
-.error svg {
-  width: 10px;
-  height: 10px;
 }
 
 /** disabled styles */

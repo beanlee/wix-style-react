@@ -320,34 +320,6 @@ describe('ImageViewer', () => {
       });
     });
 
-    /* Deprecated */
-    describe('Error Icon', () => {
-      it('should not be visible by default', async () => {
-        const props = {
-          imageUrl: '',
-          width: 300,
-          height: 300,
-        };
-        const { driver } = render(buildComponent(props));
-        expect(await driver.isErrorVisible()).toBe(false);
-      });
-
-      describe('tooltip', () => {
-        it('should display provided content', async () => {
-          const errorMessage = 'error message';
-          const props = {
-            imageUrl: '',
-            width: 300,
-            height: 300,
-            error: true,
-            errorMessage,
-          };
-          const { driver } = render(buildComponent(props));
-          expect(await driver.getErrorTooltipContent()).toBe(errorMessage);
-        });
-      });
-    });
-
     describe('status attribute', () => {
       [
         { status: 'error', message: 'Error Message' },

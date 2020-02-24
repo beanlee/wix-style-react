@@ -27,7 +27,6 @@ export const imageViewerUniDriverFactory = (base, body) => {
   const updateIconButton = iconButtonTestkit(dataHooks.update);
   const updateTooltip = tooltipTestkit(dataHooks.updateTooltip);
   const removeTooltip = tooltipTestkit(dataHooks.removeTooltip);
-  const errorTooltip = tooltipTestkit(dataHooks.errorTooltip);
 
   const statusIndicatorTestkit = () =>
     statusIndicatorDriverFactory(
@@ -93,11 +92,5 @@ export const imageViewerUniDriverFactory = (base, body) => {
     hasStatusMessage: () => statusIndicatorTestkit().hasMessage(),
     /** If there's a status message, returns its text value */
     getStatusMessage: () => statusIndicatorTestkit().getMessage(),
-
-    // Error - Deprecated
-    /** @deprecated */
-    isErrorVisible: () => errorTooltip.exists(),
-    /** @deprecated */
-    getErrorTooltipContent: () => errorTooltip.getTooltipText(),
   };
 };

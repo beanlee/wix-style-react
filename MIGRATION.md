@@ -29,12 +29,14 @@
 - Props:
   - removed `units` use `<Input.Affix/>` component instead
   - removed `magnifyingGlass` use `<Search/>` component instead
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 
 - Testkit:
   - removed `clickUnit`
   - removed `getUnit`
   - removed `hasMagnifyingGlass`
   - removed `clickMagnifyingGlass`
+  - removed `hasHelp`
 
 Removed `<Input.Units/>` use `<Input.Affix>` instead.
 

@@ -103,7 +103,6 @@ export const testkit = base => {
       }
     },
     isFocus: async () => await reactBaseInput.isFocus(),
-    hasHelp: async () => await base.$('.help').exists(),
     clickMenuArrow: async () => await menuArrowNode.click(),
     hasMenuArrow: async () => await menuArrowNode.exists(),
     isNarrowError: async () => await base.$(`.narrow`).exists(),

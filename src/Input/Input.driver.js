@@ -80,7 +80,6 @@ const inputDriverFactory = ({ element }) => {
       ).length === 1,
     hasExclamation: () => !!element.querySelector(`.${styles.exclamation}`),
     isNarrowError: () => !!element.querySelector(`.${styles.narrow}`),
-    hasHelp: () => !!element.querySelector(`.${styles.help}`),
     hasError: () => element.classList.contains(styles.hasError),
     hasWarning: () => element.classList.contains(styles.hasWarning),
     getTooltipElement: () => element,

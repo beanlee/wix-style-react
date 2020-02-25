@@ -25,91 +25,7 @@ describe('Input', () => {
     afterEach(() => {
       cleanup();
     });
-    // todo: uncomment tooltip tests after tooltip unidriver is merged
-    /*
-    describe('test tooltip', () => {
-      it('should display the error tooltip on hover', async () => {
-        const { driver } = render(
-          <Input error errorMessage="I'm the error message" />,
-        );
-        const dataHook = driver.getTooltipDataHook();
-        const wrapper = driver.getTooltipElement();
-        const tooltipDriver = tooltipTestkitFactory({ wrapper, dataHook });
-        tooltipDriver.mouseEnter();
 
-        return resolveIn(500).then(() => {
-          expect(tooltipDriver.getContent()).toBe("I'm the error message");
-        });
-      });
-
-      describe('tooltipPlacement attribute', () => {
-        ['top', 'bottom', 'left', 'right'].forEach(placement => {
-          it(`should have a tooltip positioned to the ${placement}`, async () => {
-            const { driver } = render(
-              <Input
-                error
-                errorMessage="I'm the error message"
-                theme="amaterial"
-                tooltipPlacement={placement}
-              />,
-            );
-            const dataHook = driver.getTooltipDataHook();
-            const wrapper = driver.getTooltipElement();
-            const tooltipDriver = tooltipTestkitFactory({ wrapper, dataHook });
-            tooltipDriver.mouseEnter();
-
-            return resolveIn(500).then(() => {
-              expect(tooltipDriver.getPlacement()).toBe(placement);
-            });
-          });
-        });
-      });
-
-      describe('onTooltipShow attribute (only for amaterial theme for now)', () => {
-        it('should be called when error tooltip is active', async () => {
-          const onTooltipShow = sinon.spy();
-
-          const { driver } = render(
-            <Input
-              theme="amaterial"
-              error
-              errorMessage="I'm the error message"
-              onTooltipShow={onTooltipShow}
-            />,
-          );
-          const dataHook = driver.getTooltipDataHook();
-          const wrapper = driver.getTooltipElement();
-          const tooltipDriver = tooltipTestkitFactory({ wrapper, dataHook });
-          tooltipDriver.mouseEnter();
-
-          return resolveIn(500).then(() => {
-            expect(onTooltipShow.calledOnce).toBe(true);
-          });
-        });
-
-        it('should be called when help tooltip is active (only for amaterial theme for now)', async () => {
-          const onTooltipShow = sinon.spy();
-
-          const { driver } = render(
-            <Input
-              theme="amaterial"
-              help
-              helpMessage="I'm the help message"
-              onTooltipShow={onTooltipShow}
-            />,
-          );
-          const dataHook = driver.getTooltipDataHook();
-          const wrapper = driver.getTooltipElement();
-          const tooltipDriver = tooltipTestkitFactory({ wrapper, dataHook });
-          tooltipDriver.mouseEnter();
-
-          return resolveIn(500).then(() => {
-            expect(onTooltipShow.calledOnce).toBe(true);
-          });
-        });
-      });
-    });
-*/
     describe('enterText driver method', () => {
       it('passes the name and value attribute', async () => {
         const onChange = jest.fn();
@@ -290,24 +206,16 @@ describe('Input', () => {
     describe('hideStatusSuffix attribute', () => {
       it('should display suffix if hideStatusSuffix is falsy', async () => {
         const { driver } = render(
-          <Input status={'error'} hideStatusSuffix={false} />,
+          <Input status="error" hideStatusSuffix={false} />,
         );
 
         expect(await driver.hasSuffix()).toBe(true);
       });
 
       it('should hide suffix if hideStatusSuffix is true', async () => {
-        const { driver } = render(<Input status={'error'} hideStatusSuffix />);
+        const { driver } = render(<Input status="error" hideStatusSuffix />);
 
         expect(await driver.hasSuffix()).toBe(false);
-      });
-    });
-
-    describe('help attribute', () => {
-      it('should display an help icon if help is true', async () => {
-        const { driver } = render(<Input help />);
-
-        expect(await driver.hasHelp()).toBe(true);
       });
     });
 

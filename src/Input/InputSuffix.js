@@ -4,7 +4,6 @@ import DropDownArrow from 'wix-ui-icons-common/system/DropDownArrow';
 
 import CloseButton from '../CloseButton';
 import ThemedInputErrorSuffix from './ThemedInputErrorSuffix';
-import ThemedInputHelpSuffix from './ThemedInputHelpSuffix';
 import InputLoaderSuffix from './InputLoaderSuffix';
 import Input from './Input';
 
@@ -20,7 +19,6 @@ const suffixRules = {
     status === Input.StatusError && !disabled,
   inputWarningSuffix: ({ status, disabled }) =>
     status === Input.StatusWarning && !disabled,
-  inputHelpSuffix: ({ help, disabled }) => help && !disabled,
   clearButton: ({ isClearButtonVisible }) => isClearButtonVisible,
   menuArrow: ({ menuArrow, isClearButtonVisible }) =>
     menuArrow && !isClearButtonVisible,
@@ -38,8 +36,6 @@ const InputSuffix = ({
   statusMessage,
   status,
   disabled,
-  help,
-  helpMessage,
   onIconClicked,
   isClearButtonVisible,
   onClear,
@@ -84,18 +80,6 @@ const InputSuffix = ({
         />
       ),
       isVisible: suffixRules.inputLoaderSuffix({ status, disabled }),
-    },
-    {
-      component: () => (
-        <ThemedInputHelpSuffix
-          theme={theme}
-          help={help}
-          helpMessage={helpMessage}
-          tooltipPlacement={tooltipPlacement}
-          onTooltipShow={onTooltipShow}
-        />
-      ),
-      isVisible: suffixRules.inputHelpSuffix({ help, disabled }),
     },
     {
       component: () => (
@@ -160,8 +144,6 @@ InputSuffix.propTypes = {
   statusMessage: PropTypes.node,
   status: PropTypes.oneOf(['loading', 'error', 'warning']),
   disabled: PropTypes.bool,
-  help: PropTypes.bool,
-  helpMessage: PropTypes.node,
   onIconClicked: PropTypes.func,
   isClearButtonVisible: PropTypes.bool,
   onClear: PropTypes.func,

@@ -531,25 +531,6 @@ $material-gap: 8px;
   }
 }
 
-.help {
-  margin: 0 $gap;
-  color: $B20;
-  display: flex;
-}
-
-@include withRTL() {
-  .help,
-  .amaterial-help {
-    transform: scaleX(-1);
-  }
-}
-
-.amaterial-help {
-  margin: 0 $gap;
-  color: $B20;
-  display: flex;
-}
-
 .clear-button {
   line-height: 0;
   background: $B50;

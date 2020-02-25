@@ -20,7 +20,6 @@ class RadioButton extends React.PureComponent {
     disabled: PropTypes.bool,
     children: PropTypes.any,
     style: PropTypes.object,
-    type: PropTypes.oneOf(['default', 'button']),
     lineHeight: PropTypes.string,
     tabIndex: PropTypes.number,
 
@@ -33,7 +32,6 @@ class RadioButton extends React.PureComponent {
 
   static defaultProps = {
     vAlign: 'center',
-    type: 'default',
     content: null,
     tabIndex: 0,
   };
@@ -43,39 +41,7 @@ class RadioButton extends React.PureComponent {
     this.id = uniqueId();
   }
 
-  renderButton() {
-    const {
-      dataHook,
-      checked,
-      disabled,
-      onChange,
-      value,
-      icon,
-      children,
-      selectionArea,
-    } = this.props;
-
-    return (
-      <button
-        data-hook={dataHook}
-        type="button"
-        className={classnames(styles.radioButton, {
-          [styles.checked]: checked,
-          [styles.selectionAreaAlways]: selectionArea === 'always',
-          [styles.selectionAreaHover]: selectionArea === 'hover',
-        })}
-        checked={checked}
-        disabled={disabled}
-        id={this.id}
-        onClick={() => (!checked && !disabled ? onChange(value) : null)}
-      >
-        {icon && <span>{icon}</span>}
-        {children && <span>{children}</span>}
-      </button>
-    );
-  }
-
-  renderRadio() {
+  render() {
     const {
       dataHook,
       checked,
@@ -152,12 +118,6 @@ class RadioButton extends React.PureComponent {
         {content && <div data-hook="radio-button-content">{content}</div>}
       </div>
     );
-  }
-
-  render() {
-    return this.props.type === 'button'
-      ? this.renderButton()
-      : this.renderRadio();
   }
 }
 

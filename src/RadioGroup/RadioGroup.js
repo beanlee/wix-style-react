@@ -4,7 +4,6 @@ import uniqueId from 'lodash/uniqueId';
 import classNames from 'classnames';
 
 import RadioButton from './RadioButton/RadioButton';
-import deprecationLog from '../utils/deprecationLog';
 import styles from './RadioGroup.scss';
 import WixComponent from '../BaseComponents/WixComponent';
 
@@ -17,15 +16,6 @@ class RadioGroup extends WixComponent {
   constructor(props) {
     super(props);
     this.name = uniqueId('RadioGroup_');
-    this.logDeprecations(props);
-  }
-
-  logDeprecations(props) {
-    if (props.type === 'button') {
-      deprecationLog(
-        `RadioGroup's prop "type" with value "button" is deprecated. Use 'SegmentedToggle' component instead.`,
-      );
-    }
   }
 
   render() {
@@ -36,7 +26,6 @@ class RadioGroup extends WixComponent {
       value,
       vAlign,
       display,
-      type,
       spacing,
       lineHeight,
       selectionArea,
@@ -44,7 +33,6 @@ class RadioGroup extends WixComponent {
     return (
       <div
         className={classNames(styles[display], {
-          [styles.buttonType]: type === 'button',
           [styles.selectionAreaAlways]: selectionArea === 'always',
           [styles.selectionAreaHover]: selectionArea === 'hover',
           [styles.vertical]: display === 'vertical',
@@ -57,7 +45,6 @@ class RadioGroup extends WixComponent {
             name={this.name}
             onChange={onChange}
             vAlign={vAlign}
-            type={type}
             disabled={
               disabled || disabledRadios.indexOf(radio.props.value) !== -1
             }
@@ -96,9 +83,6 @@ RadioGroup.propTypes = {
   /** Make the entire control disabled */
   disabled: PropTypes.bool,
 
-  /** Decided which type of child controls to render */
-  type: PropTypes.oneOf(['default', 'button']),
-
   /** Display direction of the radios */
   display: PropTypes.oneOf(['vertical', 'horizontal']),
 
@@ -127,7 +111,6 @@ RadioGroup.defaultProps = {
   vAlign: 'center',
   display: 'vertical',
   lineHeight: '24px',
-  type: 'default',
   selectionArea: 'none',
 };
 

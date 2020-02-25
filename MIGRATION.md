@@ -83,6 +83,13 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - added `hasStatusMessage`
   - added `getStatusMessage`
 
+#### `<Button/>`
+
+- Props:
+  - removed `type` - For type button, use `<SegmentedToggle/>` component instead
+- Testkit:
+  - removed `isButtonType`
+
 ## Migrating to new PopoverMenu
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.

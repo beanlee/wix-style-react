@@ -1,8 +1,8 @@
-import * as React from "react";
-import TableActionCell from "../../src/TableActionCell";
-import { tableActionCellTestkitFactory } from "../../dist/testkit";
-import { tableActionCellTestkitFactory as tableActionCellEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import * as enzyme from "enzyme";
+import * as React from 'react';
+import TableActionCell from '../../src/TableActionCell';
+import { tableActionCellTestkitFactory } from '../../dist/testkit';
+import { tableActionCellTestkitFactory as tableActionCellEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import * as enzyme from 'enzyme';
 
 function tableActionCellWithMandatoryProps() {
   return <TableActionCell />;
@@ -18,18 +18,17 @@ function tableActionCellWithAllProps() {
       primaryAction={{
         disabled: true,
         onClick: () => {},
-        text: "text",
-        theme: "fullblue"
+        text: 'text',
+        theme: 'fullblue',
       }}
-      upgrade={true}
       secondaryActions={[
         {
-          dataHook: "hook",
+          dataHook: 'hook',
           disabled: true,
           icon: <div />,
           onClick: () => {},
-          text: "text"
-        }
+          text: 'text',
+        },
       ]}
     />
   );
@@ -37,12 +36,12 @@ function tableActionCellWithAllProps() {
 
 async function testkits() {
   const testkit = tableActionCellTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = tableActionCellEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
 }

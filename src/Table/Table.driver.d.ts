@@ -1,4 +1,4 @@
-import { DataTableDriver } from '../DataTable/DataTable.driver';
+import { DataTableDriver } from './DataTable/DataTable.driver';
 import { CheckboxDriver } from '../Checkbox/Checkbox.driver';
 
 export interface TableDriver<T> extends DataTableDriver {

@@ -3,14 +3,11 @@ import { LoaderDriver } from '../Loader/Loader.driver';
 import { SelectorDriver } from '../Selector/Selector.driver';
 import { TextDriver } from '../Text/Text.driver';
 import { CheckboxDriver } from '../Checkbox/Checkbox.driver';
-import { DeprecatedButtonDriver } from '../Deprecated/Button/Button.driver';
 import { SearchDriver } from '../Search/Search.driver';
 
 export interface ModalSelectorLayoutDriver extends BaseDriver {
   mainLoaderDriver: () => LoaderDriver;
   nextPageLoaderDriver: () => LoaderDriver;
-  cancelButtonDriver: () => DeprecatedButtonDriver;
-  okButtonDriver: () => DeprecatedButtonDriver;
   searchDriver: () => SearchDriver;
   subtitleTextDriver: () => TextDriver;
   getTitle: () => string;

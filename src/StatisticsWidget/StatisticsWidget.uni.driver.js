@@ -43,9 +43,9 @@ const statisticsWidgetDriverFactory = (base, body) => {
 
     /** Click on the statistic with index */
     clickStatistics: async index => {
-      const statistics = await getStatsItem(index);
+      const item = await getStatsItem(index);
 
-      return statistics.click();
+      return item.click();
     },
 
     /** Get value of the statistic with index */

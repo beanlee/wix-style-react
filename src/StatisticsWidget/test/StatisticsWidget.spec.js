@@ -121,25 +121,6 @@ describe('StatisticsWidget', () => {
       });
     });
 
-    describe('deprecated statistics prop', () => {
-      it('should render with old prop', async () => {
-        const data = {
-          statistics: [
-            {
-              value: 'First value',
-              description: 'First description',
-              percentage: 12,
-            },
-          ],
-        };
-
-        const { driver } = render(<StatisticsWidget {...data} />);
-        const count = await driver.getItemsCount();
-
-        expect(count).toBe(1);
-      });
-    });
-
     describe('Percents', () => {
       it('should not exist by default', async () => {
         data.items[0].percentage = undefined;

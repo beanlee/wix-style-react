@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import StatisticsItem from './StatisticsItem';
 import styles from './StatisticsWidget.st.css';
-import deprecationLog from '../utils/deprecationLog';
 
 class StatisticsWidget extends React.PureComponent {
   static displayName = 'StatisticsWidget';
@@ -11,21 +10,7 @@ class StatisticsWidget extends React.PureComponent {
   static propTypes = {
     /** Applied as data-hook HTML attribute that can be used to create driver in testing */
     dataHook: PropTypes.string,
-    /** The old name of the items props. Will be removed in future.
-     * @deprecated
-     * */
-    statistics: PropTypes.arrayOf(
-      PropTypes.shape({
-        value: PropTypes.string.isRequired,
-        valueInShort: PropTypes.string,
-        description: PropTypes.string,
-        descriptionInfo: PropTypes.string,
-        percentage: PropTypes.number,
-        invertedPercentage: PropTypes.bool,
-        onClick: PropTypes.func,
-        children: PropTypes.node,
-      }),
-    ),
+
     /**
      * Array of statistic items
      *  * `value` - Value of the statistic. Displayed as big text in the first row.
@@ -54,16 +39,10 @@ class StatisticsWidget extends React.PureComponent {
   _renderStat = (stat, key) => <StatisticsItem {...stat} key={key} />;
 
   render() {
-    const { dataHook, statistics } = this.props;
+    const { dataHook } = this.props;
     let { items } = this.props;
 
-    if (statistics) {
-      deprecationLog(
-        'StatisticsWidget prop "statistics" is deprecated and will be removed in next major release, please use "items" instead',
-      );
-    }
-
-    items = items || statistics || [];
+    items = items || [];
 
     if (items.length > 5) {
       // eslint-disable-next-line

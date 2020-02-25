@@ -85,6 +85,11 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - added `hasStatusMessage`
   - added `getStatusMessage`
 
+#### `<StatisticsWidget/>`
+
+- Props:
+  - removed `statistics` use `items` instead.
+
 #### `<Button/>`
 
 - Props:

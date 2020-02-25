@@ -30,29 +30,6 @@ const tests = [
         },
       },
       {
-        it: '3 items, old prop',
-        props: {
-          statistics: [
-            {
-              value: '$7,500',
-              description: 'Monday',
-              percentage: 21,
-              invertedPercentage: true,
-            },
-            {
-              value: '1 200 000',
-              description: 'Tuesday',
-              descriptionInfo: 'Sales on Tuesday',
-              percentage: 11,
-            },
-            {
-              value: '21k',
-              description: 'Wednesday',
-            },
-          ],
-        },
-      },
-      {
         it: '5 items',
         props: {
           items: [

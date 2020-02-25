@@ -6,7 +6,6 @@ import CloseButton from '../CloseButton';
 import Text from '../Text';
 import noop from 'lodash/noop';
 import { dataHooks } from './Tag.helpers';
-import deprecationLog from '../utils/deprecationLog';
 
 const tagToTextSize = {
   tiny: 'tiny',
@@ -21,16 +20,6 @@ const tagToTextSize = {
 class Tag extends React.PureComponent {
   static displayName = 'Tag';
 
-  constructor(props) {
-    super(props);
-
-    if (props.hasOwnProperty('wrap')) {
-      deprecationLog(
-        'Using "wrap" with current API is deprecated, The default is now always cropped by ellipsis.',
-      );
-    }
-  }
-
   _renderThumb() {
     const { thumb } = this.props;
     return thumb ? <span className={styles.thumb}>{thumb}</span> : null;
@@ -41,7 +30,6 @@ class Tag extends React.PureComponent {
 
     return (
       <Text
-        className={styles.text}
         skin={disabled ? 'disabled' : 'standard'}
         light={theme === 'dark'}
         secondary={theme !== 'dark'}

@@ -76,6 +76,11 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - changed `error` to `status='error'`
   - changed `errorMessage` to `statusMessage`
 
+#### `<Tag/>`
+
+- Props:
+  - removed `wrap` - now text has ellipsis by default
+
 #### `<ImageViewer/>`
 
 - Props:

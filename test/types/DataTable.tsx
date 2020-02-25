@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DataTable from '../../src/DataTable';
+import DataTable from '../../src/Table/DataTable';
 import { dataTableTestkitFactory } from '../../dist/testkit';
 import { dataTableTestkitFactory as dataTableEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
 import { dataTableTestkitFactory as dataTablePuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
@@ -51,14 +51,6 @@ function DataTableWithAllProps() {
       showHeaderWhenEmpty
       showLastRowDivider
       skin="neutral"
-      thBorder=""
-      thBoxShadow=""
-      thColor=""
-      thFontSize=""
-      thHeight=""
-      thLetterSpacing=""
-      thOpacity=""
-      thPadding=""
       useWindow
       virtualized
       virtualizedLineHeight={10}

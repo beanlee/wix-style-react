@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import {DataTableColumn, DataTableProps} from '../DataTable';
+import { DataTableColumn, DataTableProps } from './DataTable';
 import EmptyState from '../EmptyState';
 
 export interface TableProps extends UsedDataTableProps {

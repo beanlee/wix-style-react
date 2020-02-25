@@ -1,7 +1,6 @@
 import { baseUniDriverFactory, getElement } from '../../test/utils/unidriver';
 import { dataTablePrivateUniDriverFactory } from './DataTable/DataTable.private.uni.driver';
 import { checkboxUniDriverFactory } from '../Checkbox/Checkbox.uni.driver';
-import deprecationLog from '../utils/deprecationLog';
 
 export const tableUniDriverFactory = base => {
   const dataTableDriver = dataTablePrivateUniDriverFactory(base);
@@ -49,12 +48,6 @@ export const tableUniDriverFactory = base => {
     isRowSelectionDisabled: async index =>
       (await getRowCheckboxDriver(index)).isDisabled(),
     /** Click the row selection checkbox */
-    clickRowChecbox: async index => {
-      deprecationLog(
-        '"clickRowChecbox" method is deprecated (because of typo) and will be removed in next major release, please use "clickRowCheckbox" driver method',
-      );
-      return (await getRowCheckbox(index)).click();
-    },
     clickRowCheckbox: async index => (await getRowCheckbox(index)).click(),
     /** Click the bulk-selection checkbox */
     clickBulkSelectionCheckbox: async () =>

@@ -25,6 +25,11 @@
   - removed `upgrade` - component is now upgraded by default
   - changed `primaryAction.theme` to `primaryAction.skin` (with new values)
 
+#### `<Table/>`
+
+- Testkit:
+  - removed `clickRowChecbox` - removed due to typo, use `clickRowCheckbox` instead
+
 #### `<Input/>`
 - Props:
   - removed `units` use `<Input.Affix/>` component instead

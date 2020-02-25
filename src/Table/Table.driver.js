@@ -1,6 +1,5 @@
 import dataTableDriverFactory from './DataTable/DataTable.driver';
 import checkboxDriverFactory from '../Checkbox/Checkbox.driver';
-import deprecationLog from '../utils/deprecationLog';
 
 const tableDriverFactory = ({ element, eventTrigger }) => {
   const dataTableDriver = dataTableDriverFactory({
@@ -57,13 +56,6 @@ const tableDriverFactory = ({ element, eventTrigger }) => {
     isBulkSelectionDisabled,
     /** Whether specific row selection checkbox is disabled */
     isRowSelectionDisabled,
-    /** Click the row selection checkbox */
-    clickRowChecbox: index => {
-      deprecationLog(
-        '"clickRowChecbox" method is deprecated (because of typo) and will be removed in next major release, please use "clickRowCheckbox" driver method',
-      );
-      return eventTrigger.click(getRowCheckbox(index));
-    },
     /** Click the row selection checkbox */
     clickRowCheckbox: index => eventTrigger.click(getRowCheckbox(index)),
     /** Click the bulk-selection checkbox */

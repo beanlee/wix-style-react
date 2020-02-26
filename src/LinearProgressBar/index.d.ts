@@ -6,7 +6,6 @@ export interface LinearProgressBarProps {
   light?: boolean;
   showProgressIndication?: boolean;
   value?: number | string;
-  shouldLoadAsync?: boolean;
   skin?: 'standard' | 'success';
   dataHook?: string;
 }

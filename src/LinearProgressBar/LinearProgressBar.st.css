@@ -78,19 +78,11 @@
 
 .root:skin(standard):success::indicationContainer {
   background: value(B05);
+  color: value(D80);
 }
 
 .root:skin(success):success::indicationContainer {
   background: value(G05);
-}
-
-.root:error::indicationContainer {
-  background: value(R05);
-}
-
-.root::indicationContainer svg {
-  height: 8px;
-  width: 10px;
   color: value(D80);
 }
 

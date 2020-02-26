@@ -59,7 +59,7 @@ const files = [
   ['Label.bundle.min.js', 8],
   ['LabelledElement.bundle.min.js', 10],
   ['Layout.bundle.min.js', 3],
-  ['LinearProgressBar.bundle.min.js', 35],
+  ['LinearProgressBar.bundle.min.js', 47],
   ['ListItemAction.bundle.min.js', 13],
   ['Loader.bundle.min.js', 44],
   ['MediaOverlay.bundle.min.js', 14],

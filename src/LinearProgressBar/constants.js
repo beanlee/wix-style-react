@@ -1,6 +1,6 @@
 export const dataHooks = {
   tooltip: 'linear-progressbar-tooltip',
-  errorIcon: 'error-icon',
+  errorIcon: 'linear-progressbar-error-icon',
   successIcon: 'success-icon',
 };
 

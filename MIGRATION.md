@@ -45,6 +45,15 @@
 
 Removed `<Input.Units/>` use `<Input.Affix>` instead.
 
+#### `<LinearProgressBar/>`
+
+- Props:
+  - removed `shouldLoadAsync`
+- Testkit:
+  - removed `getTooltip`
+  - removed `isTooltipShown`
+  - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`
+
 #### `<InputArea/>`
 
 - Props:

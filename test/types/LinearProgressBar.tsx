@@ -16,7 +16,6 @@ function LinearProgressBarWithAllProps() {
       error
       errorMessage="msg"
       light
-      shouldLoadAsync
       showProgressIndication
       value={40}
       skin="success"

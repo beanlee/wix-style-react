@@ -19,7 +19,6 @@ function LoaderWithAllProps() {
       status="error"
       statusMessage="msg"
       text="text"
-      shouldLoadAsync
     />
   );
 }

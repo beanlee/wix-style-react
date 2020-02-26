@@ -9,7 +9,6 @@ export interface LoaderProps extends WixComponentProps {
   text?: React.ReactNode;
   status?: LoaderStatus;
   statusMessage?: string;
-  shouldLoadAsync?: boolean;
 }
 
 export default class Loader extends WixComponent<LoaderProps> {}

@@ -88,6 +88,11 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - changed `error` to `status='error'`
   - changed `errorMessage` to `statusMessage`
 
+#### `<Loader/>`
+
+- Props:
+  - removed `shouldLoadAsync`
+
 #### `<Tag/>`
 
 - Props:

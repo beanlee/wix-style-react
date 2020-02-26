@@ -215,11 +215,9 @@ class InputWithOptions extends Component {
       popoverProps,
       dropDirectionUp,
       dropdownWidth,
-      disableClickOutsideWhenClosed,
     } = this.props;
     const placement = dropDirectionUp ? 'top' : popoverProps.placement;
     const body = popoverProps.appendTo === 'window';
-    popoverProps.disableClickOutsideWhenClosed = disableClickOutsideWhenClosed;
     return !native ? (
       <Popover
         {...styles('root', {}, this.props)}
@@ -482,14 +480,6 @@ InputWithOptions.propTypes = {
     placement: PropTypes.oneOf(placements),
     dynamicWidth: PropTypes.bool,
   }),
-
-  /**
-   * Breaking change:
-   * When true - onClickOutside will be called only when the dropdown is open
-   *
-   * **NOTE! This is a temporary prop that will be removed in wsr-8**
-   */
-  disableClickOutsideWhenClosed: PropTypes.bool,
 };
 
 InputWithOptions.displayName = 'InputWithOptions';

@@ -65,6 +65,18 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - added `hasStatusMessage`
   - added `getStatusMessage`
 
+
+
+#### `<InputWithOptions/>`
+
+- Props:
+  - removed `disableClickOutsideWhenClosed`, this functionality is now permanent
+
+#### `<Popover/>`
+
+- Props:
+  - removed `disableClickOutsideWhenClosed`, this functionality is now permanent
+
 #### `<Avatar/>`
 
 - Prop `color` - Deprecated old values, valid values are now only A1 to A6.

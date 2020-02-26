@@ -126,13 +126,18 @@ describe('DropdownBase', () => {
   it('should call onClickOutside', async () => {
     const onClickOutsideFn = jest.fn();
 
-    const driver = createDriver(
-      <DropdownBase {...defaultProps} onClickOutside={onClickOutsideFn}>
-        <div>Hello</div>
-      </DropdownBase>,
-    );
+    const { args, driver } = createUncontrolledDriver(null, {
+      onClickOutside: onClickOutsideFn,
+    });
 
     await driver.clickOutside();
+    expect(onClickOutsideFn).toHaveBeenCalledTimes(0);
+
+    args.open();
+    expect(await driver.isDropdownShown()).toBe(true);
+
+    await driver.clickOutside();
+    expect(await driver.isDropdownShown()).toBe(false);
     expect(onClickOutsideFn).toHaveBeenCalledTimes(1);
   });
 

@@ -29,7 +29,6 @@ export default {
 
   componentProps: (setState, getState) => ({
     options: examples.options,
-    disableClickOutsideWhenClosed: true,
     selectedOptions: [],
     onClickOutside: () => {},
     onDeselect: selectedOption => {

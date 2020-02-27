@@ -214,11 +214,6 @@ $material-gap: 8px;
   }
 
   &-amaterial {
-    .errorIcon {
-      padding: 0 6px 16px;
-      color: #f2564d;
-    }
-
     border: 0;
     // `medium` is the new `normal` by Zeplin. For now supporting both
     &.size-normal,
@@ -456,11 +451,6 @@ $material-gap: 8px;
   .input-wrapper,
   .suffixes {
     direction: rtl;
-    .loaderContainer,
-    .warningExclamation {
-      margin-right: 0;
-      margin-left: $gap;
-    }
   }
   .input {
     direction: rtl;
@@ -482,11 +472,6 @@ $material-gap: 8px;
   direction: rtl;
   .suffixes {
     direction: rtl;
-    .loaderContainer,
-    .warningExclamation {
-      margin-right: 0;
-      margin-left: $gap;
-    }
   }
   .input {
     direction: rtl;
@@ -500,34 +485,6 @@ $material-gap: 8px;
         padding: 0 $gap;
       }
     }
-  }
-}
-
-.exclamation {
-  margin: 0 $gap;
-
-  &.narrow {
-    margin: 0;
-  }
-}
-
-.warningExclamation {
-  margin-right: $gap;
-  margin-left: 0;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-
-  &.narrow {
-    margin: 0;
-  }
-
-  > svg {
-    color: $paletteR5;
-    width: 18px;
-    height: 18px;
   }
 }
 
@@ -564,12 +521,4 @@ $material-gap: 8px;
   white-space: nowrap;
 
   @include Text($weight: thin, $size: medium, $secondary: true);
-}
-
-.loaderContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: $gap;
-  margin-left: 0;
 }

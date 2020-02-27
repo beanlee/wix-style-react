@@ -1,10 +1,10 @@
-import * as React from "react";
-import InputArea from "../../src/InputArea";
-import { inputAreaTestkitFactory } from "../../dist/testkit";
-import { inputAreaTestkitFactory as inputAreaEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import { inputAreaTestkitFactory as inputAreaPuppeteerTestkitFactory } from "../../dist/testkit/puppeteer";
-import * as enzyme from "enzyme";
-import * as puppeteer from "puppeteer";
+import * as React from 'react';
+import InputArea from '../../src/InputArea';
+import { inputAreaTestkitFactory } from '../../dist/testkit';
+import { inputAreaTestkitFactory as inputAreaEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import { inputAreaTestkitFactory as inputAreaPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
+import * as enzyme from 'enzyme';
+import * as puppeteer from 'puppeteer';
 
 function inputAreaWithMandatoryProps() {
   return <InputArea />;
@@ -23,8 +23,6 @@ function InputAreaWithAllProps() {
       rows={InputArea.MIN_ROWS}
       defaultValue="value"
       disabled
-      error
-      errorMessage="err"
       forceFocus
       forceHover
       hasCounter
@@ -67,20 +65,20 @@ function testInstanceMethods() {
 
 async function testkits() {
   const testkit = inputAreaTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = inputAreaEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
-  document.querySelector("textarea")!.disabled;
+  document.querySelector('textarea')!.disabled;
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await inputAreaPuppeteerTestkitFactory({
-    dataHook: "hook",
-    page
+    dataHook: 'hook',
+    page,
   });
 }

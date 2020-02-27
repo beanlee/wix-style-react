@@ -7,16 +7,14 @@ export interface ColorInputUniDriver extends BaseUniDriver {
   clickColorViewer(): Promise<void>;
   enterText: (text: string) => Promise<void>;
   getValue(): Promise<string>;
-  hasError(): Promise<boolean>;
   getPlaceholder(): Promise<string | null>;
   getSize(): Promise<InputSize | null>;
   isDisabled(): Promise<boolean>;
   colorPickerVisible(): Promise<boolean>;
 
-  // TOOD - uncomment in wsr8
   // Status
-  // hasStatus(): Promise<boolean>;
-  // getStatus(): Promise<InputStatus>;
-  // hasStatusMessage(): Promise<boolean>;
-  // getStatusMessage(): Promise<string>;
+  hasStatus(): Promise<boolean>;
+  getStatus(): Promise<InputStatus>;
+  hasStatusMessage(): Promise<boolean>;
+  getStatusMessage(): Promise<string>;
 }

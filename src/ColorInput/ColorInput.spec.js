@@ -280,12 +280,21 @@ describe('ColorInput', () => {
         expect(await driver.getPlaceholder()).toBe('');
       });
     });
-    describe(`'error' prop`, () => {
-      it(`should be set when true`, async () => {
-        const { driver } = render(renderColorInput({ error: true }));
-        await driver.click();
-        await driver.blur();
-        expect(await driver.hasError()).toBe(true);
+
+    describe('with status', () => {
+      [
+        { status: 'error', statusMessage: 'Error Message' },
+        { status: 'warning', statusMessage: 'Warning Message' },
+        { status: 'loading', statusMessage: 'Loading Message' },
+      ].forEach(test => {
+        it(`should display a status icon when status="${test.status}"`, async () => {
+          const { driver } = render(renderColorInput(test));
+
+          expect(await driver.hasStatus()).toBe(true);
+          expect(await driver.getStatus()).toBe(test.status);
+          expect(await driver.hasStatusMessage()).toBe(true);
+          expect(await driver.getStatusMessage()).toBe(test.statusMessage);
+        });
       });
     });
 

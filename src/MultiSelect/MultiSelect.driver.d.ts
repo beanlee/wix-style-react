@@ -8,7 +8,6 @@ export interface MultiSelectDriver
     getMaxHeight: () => string;
     clickOnInputWrapper: () => void;
     inputWrapperHasFocus: () => boolean;
-    inputWrapperHasError: () => boolean;
     inputWrapperIsDisabled: () => boolean;
     numberOfTags: () => number;
     customSuffixExists: () => HTMLElement;

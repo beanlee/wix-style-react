@@ -1,10 +1,10 @@
-import * as React from "react";
-import Search from "../../src/Search";
-import { searchTestkitFactory } from "../../dist/testkit";
-import { searchTestkitFactory as searchEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import { searchTestkitFactory as searchPuppeteerTestkitFactory } from "../../dist/testkit/puppeteer";
-import * as enzyme from "enzyme";
-import * as puppeteer from "puppeteer";
+import * as React from 'react';
+import Search from '../../src/Search';
+import { searchTestkitFactory } from '../../dist/testkit';
+import { searchTestkitFactory as searchEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import { searchTestkitFactory as searchPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
+import * as enzyme from 'enzyme';
+import * as puppeteer from 'puppeteer';
 
 function SearchWithMandatoryProps() {
   return <Search />;
@@ -30,8 +30,6 @@ function SearchWithAllProps() {
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help
@@ -105,30 +103,30 @@ function SearchWithAllProps() {
       overflow="scroll"
       options={[
         {
-          value: "a",
+          value: 'a',
           id: 0,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
+          overrideStyle: true,
         },
         {
           value: <div />,
           id: 1,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
+          overrideStyle: true,
         },
-        { value: "-", id: "2" },
+        { value: '-', id: '2' },
         {
           value: ({ selected, disabled, hovered }) => <div />,
           id: 3,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
-        }
+          overrideStyle: true,
+        },
       ]}
     />
   );
@@ -136,19 +134,19 @@ function SearchWithAllProps() {
 
 async function testkits() {
   const testkit = searchTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = searchEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await searchPuppeteerTestkitFactory({
-    dataHook: "hook",
-    page
+    dataHook: 'hook',
+    page,
   });
 }

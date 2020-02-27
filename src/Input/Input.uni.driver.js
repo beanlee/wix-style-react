@@ -1,8 +1,10 @@
 import { baseUniDriverFactory } from 'wix-ui-test-utils/base-driver';
 import { ReactBase } from '../../test/utils/unidriver';
 import DATA_ATTR from './DataAttr';
+import { statusIndicatorDriverFactory } from '../StatusIndicator/StatusIndicator.uni.driver';
+import { dataHooks } from './constants';
 
-export const testkit = base => {
+export const testkit = (base, body) => {
   // single $ throws an exception for more than 1 match, so we use the first matching result with $$
   // to support cases of multiple inputs, e.g cases where this driver is used inside other drivers with popovers
   // which includes an input
@@ -13,6 +15,11 @@ export const testkit = base => {
 
   const clearButtonNode = base.$(`[data-hook=input-clear-button]`);
   const menuArrowNode = base.$(`.menuArrow`);
+
+  const statusIndicatorDriver = statusIndicatorDriverFactory(
+    base.$(`[data-hook="${dataHooks.status}"]`),
+    body,
+  );
 
   const driver = {
     ...baseUniDriverFactory(base),
@@ -69,14 +76,6 @@ export const testkit = base => {
     getReadOnly: async () => await input._prop('readOnly'),
     getDisabled: async () => await input._prop('disabled'),
     getTextOverflow: async () => (await input._prop('style'))['text-overflow'],
-    hasExclamation: async () => await base.$(`.exclamation`).exists(),
-    hasError: async () => await base.hasClass('hasError'),
-    hasWarning: async () => await base.hasClass('hasWarning'),
-    hasLoader: async () => {
-      // There actually should be only 1  element with `.loaderContainer`, this is a component bug that there are actually 2.
-      return (await base.$$(`.loaderContainer`).count()) > 0;
-    },
-
     focus: async () => await reactBaseInput.focus(),
     blur: async () => await reactBaseInput.blur(),
     keyUp: async () => await reactBaseInput.keyUp(),
@@ -105,11 +104,20 @@ export const testkit = base => {
     isFocus: async () => await reactBaseInput.isFocus(),
     clickMenuArrow: async () => await menuArrowNode.click(),
     hasMenuArrow: async () => await menuArrowNode.exists(),
-    isNarrowError: async () => await base.$(`.narrow`).exists(),
     isRTL: async () => await base.hasClass('rtl'),
     getCursorLocation: async () => await input._prop('selectionStart'),
     clearText: () => driver.enterText(''),
     clickOutside: () => ReactBase.clickDocument(),
+
+    // Status
+    /** Return true if there's a status */
+    hasStatus: statusIndicatorDriver.exists,
+    /** If there's a status, returns its type */
+    getStatus: statusIndicatorDriver.getStatus,
+    /** Return true if there's a status message */
+    hasStatusMessage: statusIndicatorDriver.hasMessage,
+    /** If there's a status message, returns its text value */
+    getStatusMessage: statusIndicatorDriver.getMessage,
   };
 
   return driver;

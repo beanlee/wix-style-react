@@ -2,7 +2,7 @@ import inputDriverFactory from '../Input/Input.driver';
 import dropdownLayoutDriverFactory from '../DropdownLayout/DropdownLayout.driver';
 import popoverDriverFactory from '../Popover/Popover.driver';
 
-const inputWithOptionsDriverFactory = ({ element }) => {
+const inputWithOptionsDriverFactory = ({ element, eventTrigger }) => {
   const dropdownLayoutSelector = `[data-hook="dropdown-layout-wrapper"]`;
   const inputWrapperSelector = '[data-input-parent]';
   const popoverTestkit = () => popoverDriverFactory({ element });
@@ -19,6 +19,7 @@ const inputWithOptionsDriverFactory = ({ element }) => {
   const inputDriver = inputDriverFactory({
     element: inputWrapper(),
     wrapper: inputWrapper(),
+    eventTrigger,
   });
 
   const dropdownLayoutTestkit = () =>

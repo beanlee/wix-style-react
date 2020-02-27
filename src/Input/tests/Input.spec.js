@@ -189,17 +189,19 @@ describe('Input', () => {
     });
 
     describe('status attribute', () => {
-      it('should display a loader icon if status is loading', async () => {
-        // change
-        const { driver } = render(<Input status={'loading'} />);
+      [
+        { status: 'error', statusMessage: 'Error Message' },
+        { status: 'warning', statusMessage: 'Warning Message' },
+        { status: 'loading', statusMessage: 'Loading Message' },
+      ].forEach(test => {
+        it(`should display a status icon when status="${test.status}"`, async () => {
+          const { driver } = render(<Input {...test} />);
 
-        expect(await driver.hasLoader()).toBeTruthy();
-      });
-
-      it('should display a warning icon if status is warning', async () => {
-        const { driver } = render(<Input status={'warning'} />);
-
-        expect(await driver.hasWarning()).toBe(true);
+          expect(await driver.hasStatus()).toBe(true);
+          expect(await driver.getStatus()).toBe(test.status);
+          expect(await driver.hasStatusMessage()).toBe(true);
+          expect(await driver.getStatusMessage()).toBe(test.statusMessage);
+        });
       });
     });
 

@@ -17,8 +17,6 @@ function ColorInputWithAllProps() {
       addTooltipContent={<div />}
       colorPickerChildren={<div />}
       disabled
-      error
-      errorMessage="msg"
       status="error"
       statusMessage="message"
       onAddColor={_color => {}}

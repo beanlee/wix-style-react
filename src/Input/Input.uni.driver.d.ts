@@ -1,6 +1,6 @@
 import { BaseUniDriver } from 'wix-ui-test-utils/base-driver';
 import { SyntheticEventData } from 'react-dom/test-utils';
-import { InputTheme, InputSize } from './index';
+import { InputTheme, InputSize, InputStatus } from './index';
 
 export interface InputUniDriver extends BaseUniDriver {
   click: () => Promise<void>;
@@ -43,10 +43,6 @@ export interface InputUniDriver extends BaseUniDriver {
   getReadOnly: () => Promise<any>;
   getDisabled: () => Promise<any>;
   getTextOverflow: () => Promise<string>;
-  hasExclamation: () => Promise<boolean>;
-  hasError: () => Promise<boolean>;
-  hasWarning: () => Promise<boolean>;
-  hasLoader: () => Promise<boolean>;
   focus: () => Promise<void>;
   blur: () => Promise<void>;
   keyUp: () => Promise<void>;
@@ -65,9 +61,14 @@ export interface InputUniDriver extends BaseUniDriver {
   clickMagnifyingGlass: () => Promise<void>;
   clickMenuArrow: () => Promise<void>;
   hasMenuArrow: () => Promise<boolean>;
-  isNarrowError: () => Promise<boolean>;
   isRTL: () => Promise<boolean>;
   getCursorLocation: () => Promise<any>;
   clearText: () => Promise<void>;
   clickOutside: () => boolean;
+
+  // Status
+  hasStatus: () => Promise<boolean>;
+  getStatus: () => Promise<InputStatus>;
+  hasStatusMessage: () => Promise<boolean>;
+  getStatusMessage: () => Promise<string>;
 }

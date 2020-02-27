@@ -1,10 +1,10 @@
-import * as React from "react";
-import AutoComplete from "../../src/AutoComplete";
-import { autoCompleteTestkitFactory } from "../../dist/testkit";
-import { autoCompleteTestkitFactory as autoCompleteEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import { autoCompleteTestkitFactory as autoCompletePuppeteerTestkitFactory } from "../../dist/testkit/puppeteer";
-import * as enzyme from "enzyme";
-import * as puppeteer from "puppeteer";
+import * as React from 'react';
+import AutoComplete from '../../src/AutoComplete';
+import { autoCompleteTestkitFactory } from '../../dist/testkit';
+import { autoCompleteTestkitFactory as autoCompleteEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import { autoCompleteTestkitFactory as autoCompletePuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
+import * as enzyme from 'enzyme';
+import * as puppeteer from 'puppeteer';
 
 function AutoCompleteWithMandatoryProps() {
   return <AutoComplete />;
@@ -27,8 +27,6 @@ function AutoCompleteWithAllProps() {
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help
@@ -102,30 +100,30 @@ function AutoCompleteWithAllProps() {
       overflow="scroll"
       options={[
         {
-          value: "a",
+          value: 'a',
           id: 0,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
+          overrideStyle: true,
         },
         {
           value: <div />,
           id: 1,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
+          overrideStyle: true,
         },
-        { value: "-", id: "2" },
+        { value: '-', id: '2' },
         {
           value: ({ selected, disabled, hovered }) => <div />,
           id: 3,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
-        }
+          overrideStyle: true,
+        },
       ]}
     />
   );
@@ -140,19 +138,19 @@ function ShouldHaveRefMethods() {
 
 async function testkits() {
   const testkit = autoCompleteTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = autoCompleteEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await autoCompletePuppeteerTestkitFactory({
-    dataHook: "hook",
-    page
+    dataHook: 'hook',
+    page,
   });
 }

@@ -30,10 +30,6 @@ export const multiselectUniDriverFactory = (base, body) => {
     inputWrapperHasFocus: async () =>
       (await getInputWrapper()).classList.contains('hasFocus'),
 
-    /** returns true if the input has error */
-    inputWrapperHasError: async () =>
-      (await getInputWrapper()).classList.contains('error'),
-
     /** returns true if the input is disabled */
     inputWrapperIsDisabled: async () =>
       (await getInputWrapper()).classList.contains('disabled'),

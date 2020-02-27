@@ -5,7 +5,6 @@ import { dateInputTestkitFactory as dateInputEnzymeTestkitFactory } from '../../
 import { dateInputTestkitFactory as dateInputPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
 import * as enzyme from 'enzyme';
 import * as puppeteer from 'puppeteer';
-import Input from "../../src/Input";
 
 function DateInputWithMandatoryProps() {
   return <DateInput />;
@@ -24,19 +23,17 @@ function DateInputWithAllProps() {
       clearButton
       customInput={<span />}
       dataHook="hook"
-      dateFormat={"12/01/19"}
+      dateFormat={'12/01/19'}
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help
       helpMessage="msg"
       hideStatusSuffix
       id="1"
-      locale={"en"}
+      locale="en"
       max={10}
       maxLength={100}
       menuArrow
@@ -64,7 +61,7 @@ function DateInputWithAllProps() {
       roundInput
       rtl
       size="large"
-      status={Input.StatusError}
+      status="error"
       statusMessage="msg"
       step={1}
       suffix={<div />}
@@ -84,18 +81,18 @@ function DateInputWithAllProps() {
 async function testkits() {
   const testkit = dateInputTestkitFactory({
     dataHook: 'hook',
-    wrapper: document.createElement('div')
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = dateInputEnzymeTestkitFactory({
     dataHook: 'hook',
-    wrapper: enzyme.mount(<div />)
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await dateInputPuppeteerTestkitFactory({
     dataHook: 'hook',
-    page
+    page,
   });
 }

@@ -1,9 +1,18 @@
 import * as React from 'react';
-import {OmitPolyfill} from '../common';
+import { OmitPolyfill } from '../common';
 
-import InputWithOptions, {InputWithOptionsProps, OnSelectFnSignature} from '../InputWithOptions';
-import {DropdownLayoutProps, DropdownLayoutValueOption} from '../DropdownLayout';
-import {TagProps} from '../Tag';
+import InputWithOptions, {
+  InputWithOptionsProps,
+  OnSelectFnSignature,
+} from '../InputWithOptions';
+import {
+  DropdownLayoutProps,
+  DropdownLayoutValueOption,
+} from '../DropdownLayout';
+import { TagProps } from '../Tag';
+import { InputStatus } from '../Input';
+
+export type MultiSelectStatus = InputStatus;
 
 export interface MultiSelectProps
   extends InputWithOptionsProps<(values: string[]) => void> {
@@ -15,8 +24,8 @@ export interface MultiSelectProps
   maxNumRows?: number;
   delimiters?: string[];
   mode?: MultiSelectMode;
-  error?: boolean;
-  errorMessage?: string;
+  status?: MultiSelectStatus;
+  statusMessage?: React.ReactNode;
   onReorder?: OnReorderFn;
   onSelect?: (option: DropdownLayoutValueOption) => void;
   customInput?: React.ReactNode | Function;

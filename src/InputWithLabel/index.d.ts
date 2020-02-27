@@ -1,12 +1,14 @@
 import * as React from 'react';
-import {InputStatus} from '../Input';
+import { InputStatus } from '../Input';
+
+export type InputWithLabelStatus = InputStatus;
 
 export interface InputWithLabelProps {
   dataHook?: string;
   suffix?: React.ReactNode[];
   label?: string;
   value?: string | number;
-  status?: InputStatus;
+  status?: InputWithLabelStatus;
   statusMessage?: React.ReactNode;
   onFocus?: React.FocusEventHandler<HTMLInputElement>;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
@@ -23,4 +25,6 @@ export interface InputWithLabelProps {
   customInput?: React.ReactNode | Function;
 }
 
-export default class InputWithLabel extends React.Component<InputWithLabelProps> {}
+export default class InputWithLabel extends React.Component<
+  InputWithLabelProps
+> {}

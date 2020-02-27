@@ -1,24 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropDownArrow from 'wix-ui-icons-common/system/DropDownArrow';
-
 import CloseButton from '../CloseButton';
-import ThemedInputErrorSuffix from './ThemedInputErrorSuffix';
-import InputLoaderSuffix from './InputLoaderSuffix';
-import Input from './Input';
-
+import StatusIndicator from '../StatusIndicator';
 import styles from './Input.scss';
-import InputWarningSuffix from './InputWarningSuffix';
+import Box from '../Box';
+import { dataHooks } from './constants';
 
 const isFixVisible = fix => fix.isVisible;
 
 const suffixRules = {
-  inputLoaderSuffix: ({ status, disabled }) =>
-    status === Input.StatusLoading && !disabled,
-  inputErrorSuffix: ({ status, disabled }) =>
-    status === Input.StatusError && !disabled,
-  inputWarningSuffix: ({ status, disabled }) =>
-    status === Input.StatusWarning && !disabled,
+  inputStatusSuffix: ({ status, disabled }) => status && !disabled,
   clearButton: ({ isClearButtonVisible }) => isClearButtonVisible,
   menuArrow: ({ menuArrow, isClearButtonVisible }) =>
     menuArrow && !isClearButtonVisible,
@@ -41,45 +33,23 @@ const InputSuffix = ({
   onClear,
   menuArrow,
   suffix,
-  focused,
   tooltipPlacement,
   onTooltipShow,
 }) => {
   const suffixes = [
     {
       component: () => (
-        <InputWarningSuffix
-          theme={theme}
-          focused={focused}
-          warningMessage={statusMessage}
-          tooltipPlacement={tooltipPlacement}
-          onTooltipShow={onTooltipShow}
-        />
+        <Box margin={1} lineHeight="initial">
+          <StatusIndicator
+            dataHook={dataHooks.status}
+            status={status}
+            message={statusMessage}
+            tooltipPlacement={tooltipPlacement}
+            onTooltipShow={onTooltipShow}
+          />
+        </Box>
       ),
-      isVisible: suffixRules.inputWarningSuffix({ status, disabled }),
-    },
-    {
-      component: () => (
-        <ThemedInputErrorSuffix
-          theme={theme}
-          focused={focused}
-          errorMessage={statusMessage}
-          tooltipPlacement={tooltipPlacement}
-          onTooltipShow={onTooltipShow}
-        />
-      ),
-      isVisible: suffixRules.inputErrorSuffix({ status, disabled }),
-    },
-    {
-      component: () => (
-        <InputLoaderSuffix
-          theme={theme}
-          tooltipMessage={statusMessage}
-          tooltipPlacement={tooltipPlacement}
-          onTooltipShow={onTooltipShow}
-        />
-      ),
-      isVisible: suffixRules.inputLoaderSuffix({ status, disabled }),
+      isVisible: suffixRules.inputStatusSuffix({ status, disabled }),
     },
     {
       component: () => (
@@ -149,7 +119,6 @@ InputSuffix.propTypes = {
   onClear: PropTypes.func,
   menuArrow: PropTypes.bool,
   suffix: PropTypes.node,
-  focused: PropTypes.bool,
   tooltipPlacement: PropTypes.string,
   onTooltipShow: PropTypes.func,
 };

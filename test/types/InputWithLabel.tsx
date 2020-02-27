@@ -5,7 +5,6 @@ import { inputWithLabelTestkitFactory as inputWithLabelEnzymeTestkitFactory } fr
 import { inputWithLabelTestkitFactory as inputWithLabelPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
 import * as enzyme from 'enzyme';
 import * as puppeteer from 'puppeteer';
-import Input from "../../src/Input";
 
 function InputWithLabelWithMandatoryProps() {
   return <InputWithLabel />;
@@ -18,7 +17,7 @@ function InputWithLabelWithAllProps() {
       suffix={[<div />]}
       value={6}
       dataHook="hook"
-      status={Input.StatusLoading}
+      status="error"
       statusMessage={<div />}
       onChange={_ev => {}}
       onFocus={_ev => {}}

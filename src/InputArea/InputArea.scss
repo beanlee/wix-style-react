@@ -6,8 +6,6 @@
 $input-area-padding-exclamation: 34px;
 $input-area-padding-horizontal: 12px;
 $input-area-padding-top: 6px;
-$exclamation-horizontal: 8px;
-$exclamation-top: 4px;
 $gap: 6px;
 
 .status {
@@ -86,31 +84,6 @@ $gap: 6px;
 
 .nonResizable > textarea {
   resize: none;
-}
-
-.exclamation {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  flex-grow: 0;
-  min-width: 0;
-  user-select: none;
-  margin: 0 6px;
-  background-color: $paletteR1;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  justify-content: center;
-  &:last-child {
-    margin: 0;
-  }
-  path {
-    stroke: #fff;
-  }
-
-  top: $exclamation-top;
-  right: $exclamation-horizontal;
 }
 
 .theme {
@@ -204,10 +177,6 @@ $gap: 6px;
 
 // RTL layout based on global style set on document body or parent element.
 @include withRTL() {
-  .exclamation {
-    left: $exclamation-horizontal;
-    right: initial;
-  }
 
   .status {
     position: absolute;

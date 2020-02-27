@@ -116,8 +116,6 @@ class Input extends Component {
       max,
       step,
       required,
-      error,
-      errorMessage,
       hideStatusSuffix,
       customInput,
       pattern,
@@ -130,25 +128,13 @@ class Input extends Component {
       }
     };
 
-    let suffixStatus = hideStatusSuffix ? undefined : status;
-    let suffixStatusMessage =
-      statusMessage && statusMessage !== '' ? statusMessage : '';
-
-    // Check for deprecated fields and use them if provided
-    if (error) {
-      suffixStatus = Input.StatusError;
-      suffixStatusMessage = errorMessage;
-    }
-
-    const hasErrors = suffixStatus === Input.StatusError;
-
     // this doesn't work for uncontrolled, "value" refers only to controlled input
     const isClearButtonVisible =
-      this._isClearFeatureEnabled && !!value && !hasErrors && !disabled;
+      this._isClearFeatureEnabled && !!value && !status && !disabled;
 
     const visibleSuffixCount = getVisibleSuffixCount({
-      status: suffixStatus,
-      statusMessage: suffixStatusMessage,
+      status: hideStatusSuffix ? undefined : status,
+      statusMessage,
       disabled,
       isClearButtonVisible,
       menuArrow,
@@ -223,15 +209,14 @@ class Input extends Component {
         <InputContext.Provider value={{ ...this.props, inSuffix: true }}>
           {visibleSuffixCount > 0 && (
             <InputSuffix
-              status={suffixStatus}
-              statusMessage={suffixStatusMessage}
+              status={hideStatusSuffix ? undefined : status}
+              statusMessage={statusMessage}
               theme={theme}
               disabled={disabled}
               onIconClicked={onIconClicked}
               isClearButtonVisible={isClearButtonVisible}
               onClear={this.handleSuffixOnClear}
               menuArrow={menuArrow}
-              focused={this.state.focus}
               suffix={suffix}
               tooltipPlacement={tooltipPlacement}
               onTooltipShow={onTooltipShow}
@@ -398,8 +383,6 @@ Input.defaultProps = {
   autoSelect: true,
   size: 'normal',
   theme: 'normal',
-  statusMessage: '',
-  errorMessage: '',
   roundInput: false,
   textOverflow: 'clip',
   maxLength: 524288,
@@ -445,30 +428,18 @@ Input.propTypes = {
   /** when set to true this component is disabled */
   disabled: PropTypes.bool,
 
-  /** Input status - use to display an status indication for the user. for example: 'error', 'warning' or 'loading' */
+  /** Sets UI to indicate a status */
   status: PropTypes.oneOf([
     Input.StatusError,
     Input.StatusWarning,
     Input.StatusLoading,
   ]),
 
-  /** The status (error/loading) message to display when hovering the status icon, if not given or empty there will be no tooltip */
+  /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
   statusMessage: PropTypes.node,
 
   /** When set to true, this input won't display status suffix */
   hideStatusSuffix: PropTypes.bool,
-
-  /** Is input has errors
-   * @deprecated
-   * @see status
-   */
-  error: PropTypes.bool,
-
-  /** Error message to display
-   * @deprecated
-   * @see statusMessage
-   */
-  errorMessage: PropTypes.node,
 
   forceFocus: PropTypes.bool,
   forceHover: PropTypes.bool,

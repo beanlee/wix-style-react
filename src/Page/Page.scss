@@ -28,7 +28,7 @@ $zIndexLayerStep: 100;
 /* z-index is needed so that non-sticky content with 'position: relative' would not overlay above the sticky content.
    Need to be height than any component that may fit into a sticky page content.
    Currently:
-    - InputErrorSuffix's content uses 10000 (Likely to appear in a sticky TableToolbar)
+    - InputSuffix's content uses 10000 (Likely to appear in a sticky TableToolbar)
     - Tooltip uses 2000
     - ToggleButton uses 1000
    */

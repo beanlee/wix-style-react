@@ -8,6 +8,7 @@ const noBorderInputDriverFactory = ({ element, wrapper }) => {
   });
 
   return {
+    ...inputDriver,
     getLabel: () =>
       element &&
       element.querySelector(`[data-hook="${DataHooks.label}"]`).textContent,
@@ -15,7 +16,6 @@ const noBorderInputDriverFactory = ({ element, wrapper }) => {
       element &&
       element.querySelector(`[data-hook="${DataHooks.statusMessage}"]`)
         .textContent,
-    ...inputDriver,
   };
 };
 

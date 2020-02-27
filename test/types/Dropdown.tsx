@@ -5,7 +5,6 @@ import { dropdownTestkitFactory as dropdownEnzymeTestkitFactory } from '../../di
 import { dropdownTestkitFactory as dropdownPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
 import * as enzyme from 'enzyme';
 import * as puppeteer from 'puppeteer';
-import InputWithOptions from '../../src/InputWithOptions';
 
 function DropdownWithMandatoryProps() {
   return <Dropdown />;
@@ -35,8 +34,6 @@ function DropdownWithInputWithOptionsProps() {
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help

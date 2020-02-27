@@ -31,9 +31,6 @@ export const colorInputDriverFactory = (base, body) => {
     /** Returns the input value */
     getValue: () => inputTestkit.getValue(),
 
-    /** @deprecated - use hasStatus and getStatus instead */
-    hasError: () => inputTestkit.hasError(),
-
     /** Returns the placeholder of the input */
     getPlaceholder: () => inputTestkit.getPlaceholder(),
 
@@ -49,16 +46,15 @@ export const colorInputDriverFactory = (base, body) => {
     /** Clicks on input */
     click: () => inputTestkit.click(),
 
-    // TOOD - uncomment in wsr8
     // Status
-    // /** Return true if there's a status */
-    // hasStatus: inputTestkit.hasStatus,
-    // /** If there's a status, returns its type */
-    // getStatus: inputTestkit.getStatus,
-    // /** Return true if there's a status message */
-    // hasStatusMessage: inputTestkit.hasStatusMessage,
-    // /** If there's a status message, returns its text value */
-    // getStatusMessage: inputTestkit.getStatusMessage,
+    /** Return true if there's a status */
+    hasStatus: inputTestkit.hasStatus,
+    /** If there's a status, returns its type */
+    getStatus: inputTestkit.getStatus,
+    /** Return true if there's a status message */
+    hasStatusMessage: inputTestkit.hasStatusMessage,
+    /** If there's a status message, returns its text value */
+    getStatusMessage: inputTestkit.getStatusMessage,
   };
 };
 

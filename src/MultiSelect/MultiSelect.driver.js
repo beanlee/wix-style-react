@@ -2,12 +2,12 @@ import ReactTestUtils from 'react-dom/test-utils';
 import inputWithOptionsDriverFactory from '../InputWithOptions/InputWithOptions.driver';
 import tagDriverFactory from '../Tag/Tag.driver';
 
-const multiSelectDriverFactory = ({ element }) => {
+const multiSelectDriverFactory = ({ element, wrapper, eventTrigger }) => {
   const {
     driver,
     inputDriver,
     dropdownLayoutDriver,
-  } = inputWithOptionsDriverFactory({ element });
+  } = inputWithOptionsDriverFactory({ element, wrapper, eventTrigger });
 
   const inputWrapper = driver.inputWrapper();
 
@@ -22,9 +22,6 @@ const multiSelectDriverFactory = ({ element }) => {
 
     /** returns true if the input is focused */
     inputWrapperHasFocus: () => inputWrapper.classList.contains('hasFocus'),
-
-    /** returns true if the input has error */
-    inputWrapperHasError: () => inputWrapper.classList.contains('error'),
 
     /** returns true if the input is disabled */
     inputWrapperIsDisabled: () => inputWrapper.classList.contains('disabled'),

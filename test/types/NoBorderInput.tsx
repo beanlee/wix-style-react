@@ -1,10 +1,10 @@
-import * as React from "react";
-import NoBorderInput from "../../src/NoBorderInput";
-import { noBorderInputTestkitFactory } from "../../dist/testkit";
-import { noBorderInputTestkitFactory as noBorderInputEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import { noBorderInputTestkitFactory as noBorderInputPuppeteerTestkitFactory } from "../../dist/testkit/puppeteer";
-import * as enzyme from "enzyme";
-import * as puppeteer from "puppeteer";
+import * as React from 'react';
+import NoBorderInput from '../../src/NoBorderInput';
+import { noBorderInputTestkitFactory } from '../../dist/testkit';
+import { noBorderInputTestkitFactory as noBorderInputEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import { noBorderInputTestkitFactory as noBorderInputPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
+import * as enzyme from 'enzyme';
+import * as puppeteer from 'puppeteer';
 
 function NoBorderInputWithMandatoryProps() {
   return <NoBorderInput />;
@@ -28,8 +28,6 @@ function NoBorderInputWithAllProps() {
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help
@@ -81,19 +79,19 @@ function NoBorderInputWithAllProps() {
 
 async function testkits() {
   const testkit = noBorderInputTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = noBorderInputEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await noBorderInputPuppeteerTestkitFactory({
-    dataHook: "hook",
-    page
+    dataHook: 'hook',
+    page,
   });
 }

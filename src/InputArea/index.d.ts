@@ -2,8 +2,10 @@ import * as React from 'react';
 import WixComponent, {
   WixComponentProps,
 } from '../BaseComponents/WixComponent';
-import { InputStatusError, InputStatusWarning } from '../Input';
+import { InputStatus } from '../Input';
 import { TooltipOldProps } from '../Tooltip';
+
+export type InputAreaStatus = InputStatus;
 
 export interface InputAreaProps extends WixComponentProps {
   ariaControls?: string;
@@ -15,8 +17,6 @@ export interface InputAreaProps extends WixComponentProps {
   size?: InputAreaSize;
   defaultValue?: string;
   disabled?: boolean;
-  error?: boolean;
-  errorMessage?: string;
   forceFocus?: boolean;
   forceHover?: boolean;
   hasCounter?: boolean;
@@ -44,7 +44,7 @@ export interface InputAreaProps extends WixComponentProps {
   theme?: InputAreaTheme;
   tooltipPlacement?: TooltipOldProps['placement'];
   value?: string;
-  status?: InputStatusError | InputStatusWarning;
+  status?: InputAreaStatus;
   statusMessage?: string;
 }
 

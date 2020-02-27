@@ -1,10 +1,10 @@
-import * as React from "react";
-import NumberInput from "../../src/NumberInput";
-import { numberInputTestkitFactory } from "../../dist/testkit";
-import { numberInputTestkitFactory as numberInputEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import { numberInputTestkitFactory as numberInputPuppeteerTestkitFactory } from "../../dist/testkit/puppeteer";
-import * as enzyme from "enzyme";
-import * as puppeteer from "puppeteer";
+import * as React from 'react';
+import NumberInput from '../../src/NumberInput';
+import { numberInputTestkitFactory } from '../../dist/testkit';
+import { numberInputTestkitFactory as numberInputEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import { numberInputTestkitFactory as numberInputPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
+import * as enzyme from 'enzyme';
+import * as puppeteer from 'puppeteer';
 
 function NumberInputOldWithMandatoryProps() {
   return <NumberInput />;
@@ -27,8 +27,6 @@ function NumberInputOldWithAllProps() {
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help
@@ -75,25 +73,25 @@ function NumberInputOldWithAllProps() {
       updateControlledOnClear
       value="value"
       withSelection
-    ></NumberInput>
+    />
   );
 }
 
 async function testkits() {
   const testkit = numberInputTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = numberInputEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await numberInputPuppeteerTestkitFactory({
-    dataHook: "hook",
-    page
+    dataHook: 'hook',
+    page,
   });
 }

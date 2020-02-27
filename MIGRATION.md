@@ -37,6 +37,8 @@
 
 #### `<Input/>`
 - Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
   - removed `units` use `<Input.Affix/>` component instead
   - removed `magnifyingGlass` use `<Search/>` component instead
   - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
@@ -47,8 +49,34 @@
   - removed `hasMagnifyingGlass`
   - removed `clickMagnifyingGlass`
   - removed `hasHelp`
+  - removed `hasExclamation`
+  - removed `isNarrowError`
 
 Removed `<Input.Units/>` use `<Input.Affix>` instead.
+
+#### `<ColorInput/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+- Testkit:
+  - removed `hasError`
+  - added `hasStatus`
+  - added `getStatus`
+  - added `hasStatusMessage`
+  - added `getStatusMessage`
+
+#### `<Dropdown/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+
+#### `<InputWithOptions/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
 
 #### `<LinearProgressBar/>`
 
@@ -144,6 +172,32 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - removed `type` - For type button, use `<SegmentedToggle/>` component instead
 - Testkit:
   - removed `isButtonType`
+
+#### `<MultiSelect/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+- Testkit:
+  - removed `inputWrapperHasError`
+
+#### `<NoBorderInput/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+
+#### `<Search/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
+
+#### `<NumberInput/>`
+
+- Props:
+  - changed `error` to `status='error'`
+  - changed `errorMessage` to `statusMessage`
 
 ## Migrating to new PopoverMenu
 

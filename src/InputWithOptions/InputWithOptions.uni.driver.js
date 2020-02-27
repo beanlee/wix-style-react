@@ -19,6 +19,7 @@ export const inputWithOptionsUniDriverFactory = (base, body) => {
 
   const inputTestkit = inputUniDriverFactory(
     base.$(`${inputWrapperSelector} > *:first-child `),
+    body,
   );
 
   const driver = {

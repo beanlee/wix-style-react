@@ -9,8 +9,6 @@ export type ColorInputProps = OmitPolyfill<InputProps, 'onChange'> & {
   value: string;
   placeholder?: string;
   disabled?: boolean;
-  error?: boolean;
-  errorMessage?: React.ReactNode;
   status?: ColorInputStatus;
   statusMessage?: React.ReactNode;
   size?: ColorInputSize;

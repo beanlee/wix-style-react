@@ -1,7 +1,9 @@
 import ReactTestUtils from 'react-dom/test-utils';
 import styles from './Input.scss';
+import { tooltipDriverFactory } from 'wix-ui-core/dist/src/components/tooltip/Tooltip.driver';
+import { dataHooks } from './constants';
 
-const inputDriverFactory = ({ element }) => {
+const inputDriverFactory = ({ element, wrapper, eventTrigger }) => {
   const input = element && element.querySelector('input');
   const clearButton =
     element && element.querySelector(`[data-hook=input-clear-button]`);
@@ -78,12 +80,7 @@ const inputDriverFactory = ({ element }) => {
       element.querySelectorAll(
         `.${styles.suffixes} .${styles.suffix}:last-child > .${styles.menuArrow}`,
       ).length === 1,
-    hasExclamation: () => !!element.querySelector(`.${styles.exclamation}`),
-    isNarrowError: () => !!element.querySelector(`.${styles.narrow}`),
-    hasError: () => element.classList.contains(styles.hasError),
-    hasWarning: () => element.classList.contains(styles.hasWarning),
     getTooltipElement: () => element,
-    hasLoader: () => element.querySelector(`.loaderContainer`),
     getTooltipDataHook: () => 'input-tooltip',
     getDataHook: () => element.getAttribute('data-hook'),
     getCustomAffix: () => customAffixNode.textContent,
@@ -109,6 +106,32 @@ const inputDriverFactory = ({ element }) => {
       !element.classList.contains(styles.noLeftBorderRadius),
     isCustomInput: () => {
       return input.getAttribute('data-hook') === 'wsr-custom-input';
+    },
+
+    // Status
+    /** Return true if there's a status */
+    hasStatus: () =>
+      !!element.querySelector(`[data-hook='${dataHooks.status}']`),
+    /** If there's a status, returns its type */
+    getStatus: () =>
+      element
+        .querySelector(`[data-hook='${dataHooks.status}']`)
+        .getAttribute('data-status'),
+    /** Return true if there's a status message */
+    hasStatusMessage: () =>
+      !!element.querySelector(`[data-hook='status-indicator-tooltip']`),
+    /** If there's a status message, returns its text value */
+    getStatusMessage: () => {
+      const tooltipDriver = tooltipDriverFactory({
+        element: element.querySelector(
+          `[data-hook='status-indicator-tooltip']`,
+        ),
+        wrapper,
+        eventTrigger,
+      });
+
+      tooltipDriver.mouseEnter();
+      return tooltipDriver.getContentElement().textContent;
     },
   };
 

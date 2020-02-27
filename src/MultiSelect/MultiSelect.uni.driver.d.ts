@@ -10,7 +10,6 @@ export interface MultiSelectUniDriver
     getMaxHeight: () => Promise<any>;
     clickOnInputWrapper: () => Promise<void>;
     inputWrapperHasFocus: () => Promise<any>;
-    inputWrapperHasError: () => Promise<any>;
     inputWrapperIsDisabled: () => Promise<any>;
     numberOfTags: () => Promise<number>;
     getTagLabelAt: (index: number) => Promise<string>;

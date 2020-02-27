@@ -322,24 +322,23 @@ describe('ImageViewer', () => {
 
     describe('status attribute', () => {
       [
-        { status: 'error', message: 'Error Message' },
-        { status: 'warning', message: 'Warning Message' },
-        { status: 'loading', message: 'Loading Message' },
+        { status: 'error', statusMessage: 'Error Message' },
+        { status: 'warning', statusMessage: 'Warning Message' },
+        { status: 'loading', statusMessage: 'Loading Message' },
       ].forEach(test => {
         it(`should display a status icon when status="${test.status}"`, async () => {
           const props = {
             imageUrl: '',
             width: 300,
             height: 300,
-            status: test.status,
-            statusMessage: test.message,
+            ...test,
           };
           const { driver } = render(buildComponent(props));
 
           expect(await driver.hasStatus()).toBe(true);
           expect(await driver.getStatus()).toBe(test.status);
           expect(await driver.hasStatusMessage()).toBe(true);
-          expect(await driver.getStatusMessage()).toBe(test.message);
+          expect(await driver.getStatusMessage()).toBe(test.statusMessage);
         });
       });
     });

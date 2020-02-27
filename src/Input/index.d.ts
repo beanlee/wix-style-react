@@ -14,16 +14,6 @@ export interface InputProps {
   status?: InputStatus;
   statusMessage?: React.ReactNode;
   hideStatusSuffix?: boolean;
-  /**
-   * @deprecated
-   * @see status
-   */
-  error?: boolean;
-  /**
-   * @deprecated
-   * @see statusMessage
-   */
-  errorMessage?: React.ReactNode;
   forceFocus?: boolean;
   forceHover?: boolean;
   help?: boolean;

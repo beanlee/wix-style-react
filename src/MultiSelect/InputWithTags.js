@@ -50,9 +50,8 @@ class InputWithTags extends React.Component {
       onRemoveTag,
       onReorder,
       placeholder,
-      error,
-      errorMessage,
       status,
+      statusMessage,
       disabled,
       delimiters,
       mode,
@@ -65,8 +64,7 @@ class InputWithTags extends React.Component {
     const className = classNames({
       [styles.inputWithTagsContainer]: true,
       [styles.disabled]: disabled,
-      [styles.error]: status === 'error' || error,
-      [styles.warning]: status === 'warning',
+      [styles[status]]: status,
       [styles.readOnly]: isSelectMode,
       [styles.hasFocus]: hasFocus && !disabled,
       [styles.hasMaxHeight]:
@@ -88,8 +86,6 @@ class InputWithTags extends React.Component {
       withSelection,
       onBlur,
       menuArrow,
-      errorMessage: _,
-      statusMessage,
       onInputClicked,
       ...desiredProps
     } = inputProps;
@@ -172,12 +168,12 @@ class InputWithTags extends React.Component {
           />
         </span>
 
-        {(isSelectMode || status || error) && (
+        {(isSelectMode || status) && (
           <div className={styles.inputSuffix}>
             <InputSuffix
               disabled={disabled}
-              status={status || (error && 'error')}
-              statusMessage={statusMessage || errorMessage}
+              status={status}
+              statusMessage={statusMessage}
               menuArrow={isSelectMode}
             />
           </div>
@@ -249,20 +245,9 @@ InputWithTags.propTypes = {
   onInputClicked: PropTypes.func,
   autoFocus: PropTypes.bool,
   disabled: PropTypes.bool,
-  /** Is input has errors
-   * @deprecated
-   * @see status
-   */
-  error: PropTypes.bool,
-
-  /** Error message to display
-   * @deprecated
-   * @see statusMessage
-   */
-  errorMessage: PropTypes.string,
 
   /** The status of the input */
-  status: PropTypes.oneOf(['loading', 'success', 'error', 'warning']),
+  status: PropTypes.oneOf(['error', 'warning', 'loading']),
 
   /** Text to be shown in the status icon tooltip */
   statusMessage: PropTypes.string,

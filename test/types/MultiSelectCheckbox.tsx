@@ -1,10 +1,10 @@
-import * as React from "react";
-import MultiSelectCheckbox from "../../src/MultiSelectCheckbox";
-import { multiSelectCheckboxTestkitFactory } from "../../dist/testkit";
-import { multiSelectCheckboxTestkitFactory as multiSelectCheckboxEnzymeTestkitFactory } from "../../dist/testkit/enzyme";
-import { multiSelectCheckboxTestkitFactory as multiSelectCheckboxPuppeteerTestkitFactory } from "../../dist/testkit/puppeteer";
-import * as enzyme from "enzyme";
-import * as puppeteer from "puppeteer";
+import * as React from 'react';
+import MultiSelectCheckbox from '../../src/MultiSelectCheckbox';
+import { multiSelectCheckboxTestkitFactory } from '../../dist/testkit';
+import { multiSelectCheckboxTestkitFactory as multiSelectCheckboxEnzymeTestkitFactory } from '../../dist/testkit/enzyme';
+import { multiSelectCheckboxTestkitFactory as multiSelectCheckboxPuppeteerTestkitFactory } from '../../dist/testkit/puppeteer';
+import * as enzyme from 'enzyme';
+import * as puppeteer from 'puppeteer';
 
 function MultiSelectCheckboxWithMandatoryProps() {
   return <MultiSelectCheckbox />;
@@ -16,12 +16,12 @@ function MultiSelectCheckboxWithAllProps() {
       selectedOptions={[
         {
           disabled: true,
-          id: "1",
-          linkTo: "www.google.com",
+          id: '1',
+          linkTo: 'www.google.com',
           overrideStyle: true,
           title: true,
-          value: 1
-        }
+          value: 1,
+        },
       ]}
       onSelect={(_a, _v) => {}}
       onDeselect={(_a, _v) => {}}
@@ -38,8 +38,6 @@ function MultiSelectCheckboxWithAllProps() {
       defaultValue="value"
       disableEditing
       disabled
-      error
-      errorMessage="msg"
       forceFocus
       forceHover
       help
@@ -112,30 +110,30 @@ function MultiSelectCheckboxWithAllProps() {
       overflow="scroll"
       options={[
         {
-          value: "a",
+          value: 'a',
           id: 0,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
+          overrideStyle: true,
         },
         {
           value: <div />,
           id: 1,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
+          overrideStyle: true,
         },
-        { value: "-", id: "2" },
+        { value: '-', id: '2' },
         {
           value: ({ selected, disabled, hovered }) => <div />,
           id: 3,
           disabled: true,
-          linkTo: "google.com",
+          linkTo: 'google.com',
           title: true,
-          overrideStyle: true
-        }
+          overrideStyle: true,
+        },
       ]}
     />
   );
@@ -150,19 +148,19 @@ function ShouldHaveRefMethods() {
 
 async function testkits() {
   const testkit = multiSelectCheckboxTestkitFactory({
-    dataHook: "hook",
-    wrapper: document.createElement("div")
+    dataHook: 'hook',
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = multiSelectCheckboxEnzymeTestkitFactory({
-    dataHook: "hook",
-    wrapper: enzyme.mount(<div />)
+    dataHook: 'hook',
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await multiSelectCheckboxPuppeteerTestkitFactory({
-    dataHook: "hook",
-    page
+    dataHook: 'hook',
+    page,
   });
 }

@@ -18,7 +18,6 @@ function CircularProgressBarWithAllProps() {
       errorLabel="label"
       errorMessage="message"
       light
-      shouldLoadAsync
       showProgressIndication
       size="large"
       value="value"

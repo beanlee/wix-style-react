@@ -4,9 +4,9 @@ import CircleLoaderCheck from 'wix-ui-icons-common/system/CircleLoaderCheck';
 import CircleLoaderCheckSmall from 'wix-ui-icons-common/system/CircleLoaderCheckSmall';
 import FormFieldError from 'wix-ui-icons-common/system/FormFieldError';
 import FormFieldErrorSmall from 'wix-ui-icons-common/system/FormFieldErrorSmall';
+import Tooltip from '../Tooltip';
 import style from './CircularProgressBar.st.css';
 import PropTypes from 'prop-types';
-import { Loadable } from 'wix-ui-core/dist/src/components/loadable';
 import { dataHooks, Size, sizesMap } from './constants';
 
 const sizeToSuccessIcon = {
@@ -22,51 +22,10 @@ const sizeToErrorIcon = {
 };
 
 class CircularProgressBar extends React.PureComponent {
-  static displayName = 'CircularProgressBar';
+  _renderProgressBar() {
+    const { light, size, ...otherProps } = this.props;
 
-  static defaultProps = {
-    size: 'medium',
-  };
-
-  static propTypes = {
-    /** Should be true if had failure during the progress */
-    error: PropTypes.bool,
-
-    /** Label to display when an error happens */
-    errorLabel: PropTypes.string,
-
-    /** Message to display when an error happens */
-    errorMessage: PropTypes.string,
-
-    /** Use light theme instead of dark theme */
-    light: PropTypes.bool,
-
-    /** Use to display a percentage progress */
-    showProgressIndication: PropTypes.bool,
-
-    /** Size of the bar */
-    size: PropTypes.string,
-
-    /** The number of the percentage progress */
-    value: PropTypes.number || PropTypes.string,
-
-    dataHook: PropTypes.string,
-
-    /** load Tooltip async using dynamic import */
-    shouldLoadAsync: PropTypes.bool,
-  };
-
-  render() {
-    const {
-      errorMessage,
-      light,
-      size,
-      dataHook,
-      shouldLoadAsync,
-      ...otherProps
-    } = this.props;
-
-    const ProgressBar = (
+    return (
       <CoreCircularProgressBar
         {...style('progressBar', { light, size }, this.props)}
         {...otherProps}
@@ -77,35 +36,54 @@ class CircularProgressBar extends React.PureComponent {
         errorIcon={sizeToErrorIcon[size]}
       />
     );
+  }
+
+  render() {
+    const { dataHook, error, errorMessage } = this.props;
 
     return (
       <div data-hook={dataHook} {...style('root', {}, this.props)}>
-        <Loadable
-          loader={{
-            Tooltip: () =>
-              // TODO: convert to WSR Tooltip
-              shouldLoadAsync
-                ? import('../Tooltip/TooltipNext')
-                : require('../Tooltip/TooltipNext'),
-          }}
-          defaultComponent={ProgressBar}
-          shouldLoadComponent={this.props.error && errorMessage}
-        >
-          {({ Tooltip }) => {
-            return (
-              <Tooltip
-                data-hook={dataHooks.tooltip}
-                placement="top"
-                content={errorMessage}
-              >
-                {ProgressBar}
-              </Tooltip>
-            );
-          }}
-        </Loadable>
+        {error && errorMessage ? (
+          <Tooltip upgrade content={errorMessage} dataHook={dataHooks.tooltip}>
+            {this._renderProgressBar()}
+          </Tooltip>
+        ) : (
+          this._renderProgressBar()
+        )}
       </div>
     );
   }
 }
+
+CircularProgressBar.displayName = 'CircularProgressBar';
+
+CircularProgressBar.defaultProps = {
+  size: 'medium',
+};
+
+CircularProgressBar.propTypes = {
+  /** Should be true if had failure during the progress */
+  error: PropTypes.bool,
+
+  /** Label to display when an error happens */
+  errorLabel: PropTypes.string,
+
+  /** Message to display when an error happens */
+  errorMessage: PropTypes.string,
+
+  /** Use light theme instead of dark theme */
+  light: PropTypes.bool,
+
+  /** Use to display a percentage progress */
+  showProgressIndication: PropTypes.bool,
+
+  /** Size of the bar */
+  size: PropTypes.string,
+
+  /** The number of the percentage progress */
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+
+  dataHook: PropTypes.string,
+};
 
 export default CircularProgressBar;

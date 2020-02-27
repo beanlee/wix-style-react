@@ -9,37 +9,31 @@ export const circularProgressBarDriverFactory = ({
   eventTrigger,
   wrapper,
 }) => {
-  const createTooltipDriver = () =>
-    tooltipDriverFactory({
-      element: element.querySelector(`[data-hook='${dataHooks.tooltip}']`),
-      wrapper,
-      eventTrigger,
-    });
+  const tooltipDriver = tooltipDriverFactory({
+    element: element.querySelector(`[data-hook='${dataHooks.tooltip}']`),
+    wrapper,
+    eventTrigger,
+  });
+
   const coreProgressBarDriver = coreCircularProgressBarDriverFactory({
     element,
     wrapper,
     eventTrigger,
   });
-  const errorIcon = () =>
-    element.querySelector(`[data-hook='${dataHooks.errorIcon}']`);
-  const successIcon = () =>
-    element.querySelector(`[data-hook='${dataHooks.successIcon}']`);
   const progressBar = () =>
     element.querySelector(`[data-hook='${dataHooks.circularProgressBar}']`);
   const stylableDOMUtil = new StylableDOMUtil(style, element);
 
-  const getTooltip = () => createTooltipDriver();
-
   return {
     ...coreProgressBarDriver,
-    isTooltipShown: () => getTooltip().isContentElementExists(),
-    getTooltip,
-    isErrorIconShown: () => !!errorIcon(),
-    isSuccessIconShown: () => !!successIcon(),
+    isErrorIconShown: () =>
+      !!element.querySelector(`[data-hook='${dataHooks.errorIcon}']`),
+    isSuccessIconShown: () =>
+      !!element.querySelector(`[data-hook='${dataHooks.successIcon}']`),
     getSize: () => stylableDOMUtil.getStyleState(progressBar(), 'size'),
-    getTooltipErrorMessage: async () => {
-      await getTooltip().mouseEnter();
-      return getTooltip().getContentElement().textContent;
+    getTooltipErrorMessage: () => {
+      tooltipDriver.mouseEnter();
+      return tooltipDriver.getContentElement().textContent;
     },
   };
 };

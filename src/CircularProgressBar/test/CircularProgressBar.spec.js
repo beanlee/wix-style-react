@@ -43,15 +43,6 @@ describe('CircularProgressBar', () => {
         showProgressIndication: true,
       };
 
-      it('should display tooltip text', async () => {
-        const { driver } = render(
-          createCircularProgressBar({ ...defaultProps, ...errorProps }),
-        );
-        expect(await driver.isTooltipShown()).toBe(false);
-        await driver.getTooltip().mouseEnter();
-        expect(await driver.isTooltipShown()).toBe(true);
-      });
-
       it('should display error message', async () => {
         const { driver } = render(
           createCircularProgressBar({ ...defaultProps, ...errorProps }),

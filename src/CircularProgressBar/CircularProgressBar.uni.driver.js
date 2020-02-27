@@ -20,12 +20,6 @@ export const circularProgressBarDriverFactory = (base, body) => {
   return {
     ...coreProgressBarDriver,
 
-    /** Checks whether tooltip is shown */
-    isTooltipShown: () => getTooltip().tooltipExists(),
-
-    /** Returns tooltip driver */
-    getTooltip,
-
     /** Checks whether error icon is shown */
     isErrorIconShown: () => errorIcon(base).exists(),
 

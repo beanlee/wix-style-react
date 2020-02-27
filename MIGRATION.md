@@ -74,8 +74,6 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - added `hasStatusMessage`
   - added `getStatusMessage`
 
-
-
 #### `<InputWithOptions/>`
 
 - Props:
@@ -89,6 +87,15 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 #### `<Avatar/>`
 
 - Prop `color` - Deprecated old values, valid values are now only A1 to A6.
+
+#### `<CircularProgressBar/>`
+
+- Props:
+  - removed `shouldLoadAsync`
+- Testkit:
+  - removed `getTooltip`
+  - removed `isTooltipShown`
+  - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`
 
 #### `<DatePicker/>`
 

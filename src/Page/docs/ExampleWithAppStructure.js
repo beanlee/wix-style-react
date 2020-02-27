@@ -10,7 +10,7 @@ import { LongTextContent } from './SomeContentComponent';
 
 const ExampleStandard = () => (
   <ExamplePageContainer>
-    <Page upgrade>
+    <Page>
       <Page.Header
         title="Your Product"
         actionsBar={<Button prefixIcon={<Add />}>New Item</Button>}

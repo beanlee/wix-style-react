@@ -57,7 +57,7 @@ class ExampleGalleryLayout extends React.Component {
 
   render() {
     return (
-      <Page upgrade height="372px">
+      <Page height="372px">
         {this.renderHeader()}
         <Page.Content>
           <Container>

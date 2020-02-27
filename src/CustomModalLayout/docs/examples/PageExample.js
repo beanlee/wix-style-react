@@ -28,7 +28,7 @@ class PageExample extends React.Component {
             secondaryButtonOnClick={this.closeModal}
             onCloseButtonClick={this.closeModal}
           >
-            <Page upgrade height="40vh" sidePadding={30}>
+            <Page height="40vh" sidePadding={30}>
               <Page.Content>
                 <Box marginTop={5}>
                   <Container>

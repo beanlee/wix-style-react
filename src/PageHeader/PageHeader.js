@@ -88,9 +88,7 @@ export default class PageHeader extends WixComponent {
   }
 
   _animateComponent = (show, useEnterDelay, content) => {
-    const { upgrade } = this.props;
-
-    if (upgrade && show) {
+    if (show) {
       return content;
     }
 
@@ -116,7 +114,6 @@ export default class PageHeader extends WixComponent {
       showBackButton,
       hasBackgroundImage,
       className,
-      upgrade,
     } = this.props;
 
     const breadcrumbsExists = !!breadcrumbs;
@@ -209,7 +206,6 @@ export default class PageHeader extends WixComponent {
             className={classNames(s.actionsBar, {
               [s.minimized]: minimized,
               [s.withBreadcrumbs]: breadcrumbsExists,
-              [s.animationEnabled]: !upgrade,
             })}
             data-hook="page-header-actionbar"
           >
@@ -246,12 +242,8 @@ PageHeader.propTypes = {
   onBackClicked: PropTypes.func,
   /** A placeholder for a component that can contain actions / anything else. It should be a React component that receives `minimized` and `hasBackgroundImage` props. */
   actionsBar: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
-
-  /** @hidden internal for new Page*/
-  upgrade: PropTypes.bool,
 };
 
 PageHeader.defaultProps = {
   minimized: false,
-  upgrade: false,
 };

@@ -263,10 +263,7 @@ class ExampleStretchTable extends React.Component {
           showSelection
           showLastRowDivider
         >
-          <Page
-            upgrade
-            backgroundImageUrl="https://static.wixstatic.com/media/f0548921c53940ec803dfb1c203e96fe.jpg/v1/fill/w_400,h_100/f0548921c53940ec803dfb1c203e96fe.jpg"
-          >
+          <Page backgroundImageUrl="https://static.wixstatic.com/media/f0548921c53940ec803dfb1c203e96fe.jpg/v1/fill/w_400,h_100/f0548921c53940ec803dfb1c203e96fe.jpg">
             {header()}
             {tail}
             <Page.FixedContent>

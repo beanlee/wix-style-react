@@ -8,14 +8,6 @@
   @include default-scroll-bar;
 }
 
-.deprecatedPageContainer {
-  height: calc(100vh - 16px); // -16px account for chrome default body margin
-  display: flex;
-  flex-flow: column;
-  min-height: 0;
-}
-
-
 :global {
   .background-gradient {
     background: #e7e7ff;

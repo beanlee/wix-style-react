@@ -60,7 +60,7 @@ class ExampleSplitLayout extends React.Component {
     const ExampleShortContent = () => <div style={{ height: '250px' }} />;
 
     return (
-      <Page upgrade height="372px">
+      <Page height="372px">
         {this.renderHeader()}
         <Page.Content>
           <Container>

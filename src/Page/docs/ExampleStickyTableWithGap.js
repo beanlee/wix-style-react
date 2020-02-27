@@ -19,7 +19,7 @@ import TableToolbar from 'wix-style-react/TableToolbar';
 class Example extends React.Component {
   render() {
     return (
-      <Page upgrade height="372px">
+      <Page height="372px">
         {renderPageHeader()}
         <Page.Content>
           <Container>

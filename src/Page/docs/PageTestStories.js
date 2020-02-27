@@ -39,7 +39,6 @@ PageContainer.propTypes = {
 const kind = getTestStoryKind(storySettings);
 
 const defaultPageProps = {
-  upgrade: true,
   dataHook: storySettings.dataHook,
   gradientClassName: 'background-gradient',
   children: [header(), content()],

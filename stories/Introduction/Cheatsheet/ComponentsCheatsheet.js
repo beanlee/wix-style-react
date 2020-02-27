@@ -34,7 +34,7 @@ class ComponentsCheatsheet extends React.Component {
     ];
 
     return (
-      <Page upgrade>
+      <Page>
         <Page.Header
           title="Components Cheatsheet"
           subtitle="Common components index"

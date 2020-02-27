@@ -5,7 +5,6 @@
  */
 
 require('../src/Page/docs/PageTestStories');
-require('../src/Page/docs/PageTestStoriesDeprecated');
 require('../src/PageHeader/docs/testStory');
 require('../src/MultiSelect/docs/testStory');
 require('../src/MultiSelectCheckbox/docs/testStory');

@@ -19,6 +19,11 @@
 
 ## Changed:
 
+#### `<Page/>`
+
+- Props:
+  - removed `upgrade` - component is now upgraded by default
+
 #### `<TableActionCell/>`
 
 - Props:

@@ -16,7 +16,7 @@ const Content = () => <div>content</div>;
 const Tail = () => <div>tail</div>;
 
 const renderPageWithProps = (props = {}) => (
-  <Page {...props} upgrade>
+  <Page {...props}>
     <Page.Header title="title" />
     <Page.Content>
       <Content />

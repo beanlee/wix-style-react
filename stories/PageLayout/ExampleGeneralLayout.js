@@ -59,7 +59,7 @@ class ExampleGeneralLayout extends React.Component {
     const ExampleContent = () => <div style={{ height: '550px' }} />;
 
     return (
-      <Page upgrade height="372px">
+      <Page height="372px">
         {this.renderHeader()}
         <Page.Content>
           <Container>

@@ -37,7 +37,7 @@ class ExampleEmptyState extends React.Component {
 
   render() {
     return (
-      <Page upgrade>
+      <Page>
         {this.renderHeader()}
         <Page.Content>
           <Container>

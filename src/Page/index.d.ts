@@ -1,9 +1,10 @@
 import * as React from 'react';
-import WixComponent, {WixComponentProps } from '../BaseComponents/WixComponent';
+import WixComponent, {
+  WixComponentProps,
+} from '../BaseComponents/WixComponent';
 import PageHeader from '../PageHeader';
 
-export type PagePropsNew = WixComponentProps & {
-  upgrade: true;
+export type PageProps = WixComponentProps & {
   backgroundImageUrl?: string;
   maxWidth?: number;
   minWidth?: number;
@@ -14,20 +15,6 @@ export type PagePropsNew = WixComponentProps & {
   scrollableContentRef?: (ref: HTMLElement) => void;
   zIndex?: number;
 };
-
-export type PagePropsOld = WixComponentProps & {
-  upgrade?: false;
-  backgroundImageUrl?: string;
-  maxWidth?: number;
-  minWidth?: number;
-  sidePadding?: number;
-  className?: string;
-  gradientClassName?: string;
-  gradientCoverTail?: boolean;
-  scrollableContentRef?: (ref: HTMLElement) => void;
-};
-
-export type PageProps = PagePropsOld | PagePropsNew;
 
 export default class Page extends WixComponent<PageProps> {
   static Header: typeof PageHeader;

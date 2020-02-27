@@ -91,10 +91,6 @@ See: https://css-tricks.com/flexbox-truncated-text/#article-header-id-3 */
     margin-top: 6px;
     margin-left: auto;
 
-    &.animationEnabled {
-      transition: margin 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
     &.withBreadcrumbs {
       margin-top: 36px;
     }

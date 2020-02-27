@@ -58,14 +58,6 @@ export const PageContainer = props => {
   );
 };
 
-export const DeprecatedPageContainer = props => {
-  return (
-    <div className={s.deprecatedPageContainer} {...props}>
-      {props.children}
-    </div>
-  );
-};
-
 export const renderHeader = props => (
   <Page.Header
     dataHook="example-page-header"

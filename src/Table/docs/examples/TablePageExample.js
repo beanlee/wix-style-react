@@ -13,7 +13,7 @@ class TablePageExample extends React.Component {
     const filteredData = this._getFilteredData();
 
     return (
-      <Page upgrade height='600px'>
+      <Page height='600px'>
         <Page.Header title="My Table" />
         <Page.Content>
           <Table

@@ -76,7 +76,7 @@ class ExamplePageWithCard extends Component {
 
   render() {
     return (
-      <Page upgrade>
+      <Page>
         {this.renderHeader()}
         <Page.Content>
           <Container>
@@ -120,7 +120,7 @@ class ExamplePageEmptyState extends Component {
 
   render() {
     return (
-      <Page upgrade>
+      <Page>
         {this.renderHeader()}
         <Page.Content>
           <Container>

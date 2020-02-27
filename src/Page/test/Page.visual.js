@@ -13,7 +13,6 @@ import {
 import { BMPageContainer } from './examples/BMPageContainer';
 
 const baseProps = {
-  upgrade: true,
   children: [renderHeader(), renderContent()],
   backgroundImageUrl:
     'https://static.wixstatic.com/media/f0548921c53940ec803dfb1c203e96fe.jpg/v1/fill/w_400,h_100/f0548921c53940ec803dfb1c203e96fe.jpg',

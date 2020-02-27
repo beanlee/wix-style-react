@@ -21,7 +21,7 @@ Here's a [demo application](https://apps.wix.com/wix-style-react-mobile) that fo
   > Why? The page content has default `minWidth` which might not be suitable for small viewports.
 
   ```jsx
-  <Page upgrade minWidth={0}>
+  <Page minWidth={0}>
     <Page.Header title="Title" />
     <Page.Content>Content</Page.Content>
   </Page>

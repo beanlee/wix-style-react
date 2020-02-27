@@ -10,7 +10,7 @@ import { LongTextContent } from './SomeContentComponent';
 
 const ExampleStandAlone = () => (
   <div className={s.fullHeightStoryContainer}>
-    <Page upgrade>
+    <Page>
       <Page.Header
         title="Your Product"
         showBackButton

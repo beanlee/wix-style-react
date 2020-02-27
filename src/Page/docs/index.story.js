@@ -55,7 +55,6 @@ export default {
     children: [headerExample(), tailExample, contentExample(false)],
     dataHook: 'story-page-playground',
     gradientClassName: 'background-gradient',
-    upgrade: true,
   },
 
   exampleProps: {
@@ -92,19 +91,7 @@ export default {
   },
 
   sections: [
-    header({
-      component: (
-        <Layout>
-          <Cell span={6}>
-            <SectionHelper title="Upgrade period">
-              Make sure you pass the <Text weight="bold">`upgrade`</Text> prop
-              in order to use the revised component implementation with all the
-              latest features.
-            </SectionHelper>
-          </Cell>
-        </Layout>
-      ),
-    }),
+    header({}),
     tabs([
       tab({
         title: 'Description',
@@ -126,7 +113,7 @@ export default {
               description:
                 'Simply compund a <Page/> with <Page.Header/> and <Page.Content/>',
               source: `
-                <Page upgrade>
+                <Page>
                   <Page.Header title="Page Header"/>
                   <Page.Content>
                     Page Content
@@ -140,7 +127,7 @@ export default {
               description:
                 'A Page stretches according to its container height. use `100vh` for a standalone page or `calc(100vh - 48px)` if top bar exists',
               source: `
-                <Page upgrade height="40vh">
+                <Page height="40vh">
                   <Page.Header title="Page Header"/>
                   <Page.Content>
                     Page Content
@@ -154,7 +141,7 @@ export default {
               description:
                 'A common use case will be a Page containing Card components arranged by Grid components',
               source: `
-                <Page upgrade height="40vh">
+                <Page height="40vh">
                   <Page.Header title="Page Header"/>
                   <Page.Content>
                     <Container>
@@ -179,7 +166,7 @@ export default {
               description:
                 'The `PageHeader` is a standalone component, checkout its docs to see all features',
               source: `
-                <Page upgrade>
+                <Page>
                   <Page.Header title="Page Header" showBackButton onBackClicked={() => alert('cool')} actionsBar={<Button>Click me</Button>}/>
                   <Page.Content>
                     Page Content
@@ -199,7 +186,7 @@ export default {
               description:
                 'The Page will automatically adjust its header to a minimized mode when scrolling through the content',
               source: `
-                <Page upgrade height="40vh">
+                <Page height="40vh">
                   <Page.Header title="Page Header" />
                   <Page.Content>
                     <Container>
@@ -208,7 +195,7 @@ export default {
                           <Card>
                             <Card.Content>
                               <h3>Scroll Down</h3>
-                              {Array(20).fill(' ').map(item => 
+                              {Array(20).fill(' ').map(item =>
                                 (<div>
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                   facilisis molestie magna vitae pellentesque. Ut elementum
@@ -231,7 +218,7 @@ export default {
               description:
                 'elements can be sticked to the header when scrolled. Tabs are a good example for usage.',
               source: `
-                <Page upgrade height="40vh">
+                <Page height="40vh">
                   <Page.Header title="Page Header" />
                   <Page.Tail>
                     <Tabs
@@ -246,7 +233,7 @@ export default {
                         <Col span={8}>
                           <Card>
                             <Card.Content>
-                              {Array(20).fill(' ').map(item => 
+                              {Array(20).fill(' ').map(item =>
                                 (<div>
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                   facilisis molestie magna vitae pellentesque. Ut elementum
@@ -269,7 +256,7 @@ export default {
               description:
                 'The Page provides <Page.Sticky/> container to attach elements to the scrolled container.',
               source: `
-                <Page upgrade height="40vh">
+                <Page height="40vh">
                   <Page.Header title="Page Header" />
                   <Page.Content>
                     <Container>
@@ -277,7 +264,7 @@ export default {
                         <Col span={8}>
                           <Card>
                             <Card.Content>
-                              {Array(20).fill(' ').map(item => 
+                              {Array(20).fill(' ').map(item =>
                                 (<div>
                                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                   facilisis molestie magna vitae pellentesque. Ut elementum
@@ -327,15 +314,6 @@ export default {
         {
           title: 'Compound Components API',
           sections: [description({ title: 'Children', text: ChildrenReadme })],
-        },
-        {
-          title: 'V6 upgrade migration',
-          sections: [
-            description('## Migration guide (`6.x` -> + `upgrade`)'),
-            description(
-              'If you are already using `<Page/>` and you are adding the `upgrade` prop (`<Page upgrade/>`), then see this [README.MIGRATION.md](https://github.com/wix/wix-style-react/blob/53033adb9241879eeb2dd7d76f7498fd784e97ff/src/Page/README.MIGRATION.md)',
-            ),
-          ],
         },
         { title: 'Testkit', sections: [testkit()] },
         { title: 'Playground', sections: [playground()] },

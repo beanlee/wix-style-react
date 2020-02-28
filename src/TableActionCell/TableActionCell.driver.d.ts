@@ -1,5 +1,5 @@
 import { BaseDriver } from 'wix-ui-test-utils/driver-factory';
-import { PopoverMenuDriver } from '../PopoverMenu/PopoverMenu.driver';
+import { PopoverMenuUniDriver } from '../PopoverMenu/PopoverMenu.uni.driver';
 import { TooltipDriver } from '../Tooltip/Tooltip.driver';
 
 export interface TableActionCellDriver<T> extends BaseDriver {
@@ -11,7 +11,7 @@ export interface TableActionCellDriver<T> extends BaseDriver {
   getHiddenActionsCount: () => number;
   getVisibleActionTooltipDriver: (action: number) => TooltipDriver;
   getVisibleActionByDataHookTooltipDriver: (dataHook: string) => TooltipDriver;
-  getHiddenActionsPopoverMenuDriver: () => PopoverMenuDriver;
+  getHiddenActionsPopoverMenuDriver: () => PopoverMenuUniDriver;
   clickVisibleAction: (actionIndex: number) => void;
   clickVisibleActionByDataHook: (actionDataHook: string) => void;
   clickPopoverMenu: () => void;

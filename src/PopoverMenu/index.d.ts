@@ -5,7 +5,7 @@ import {
   Placement,
 } from 'wix-ui-core/dist/src/components/popover/Popover.d';
 
-export interface PopoverMenuNextProps {
+export interface PopoverMenuProps {
   triggerElement: React.ReactNode;
   children?: React.ReactNode;
   maxWidth?: number;
@@ -22,7 +22,7 @@ export interface PopoverMenuNextProps {
   dataHook?: string;
 }
 
-export interface PopoverMenuNextMenuItemProps {
+export interface PopoverMenuItemProps {
   text?: string;
   onClick?: () => any;
   skin?: 'dark' | 'destructive';
@@ -31,13 +31,13 @@ export interface PopoverMenuNextMenuItemProps {
   disabled?: boolean;
 }
 
-export interface PopoverMenuNextDividerProps {
+export interface PopoverMenuDividerProps {
   dataHook?: string;
 }
 
 export default class PopoverMenuNext<
-  T extends PopoverMenuNextProps
+  T extends PopoverMenuProps
   > extends React.PureComponent<T> {
-  static MenuItem: (props?: PopoverMenuNextMenuItemProps) => React.ReactElement;
-  static Divider: (props?: PopoverMenuNextDividerProps) => React.ReactElement;
+  static MenuItem: (props?: PopoverMenuItemProps) => React.ReactElement;
+  static Divider: (props?: PopoverMenuDividerProps) => React.ReactElement;
 }

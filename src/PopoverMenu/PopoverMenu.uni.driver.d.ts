@@ -1,7 +1,7 @@
 import { UniDriver } from '@unidriver/core';
 import { BaseUniDriver } from 'wix-ui-test-utils/unidriver';
 
-export interface PopoverMenuDriver extends BaseUniDriver {
+export interface PopoverMenuUniDriver extends BaseUniDriver {
   exists(): Promise<boolean>;
   getTriggerElement(dataHook: string): UniDriver;
   clickAtChild: (index: number) => Promise<void>;

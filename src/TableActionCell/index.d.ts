@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IconElement, OmitPolyfill } from '../common';
-import { PopoverMenuNextProps } from '../PopoverMenu';
+import { PopoverMenuProps } from '../PopoverMenu';
 
 type CommonTableActionCellProps = {
   dataHook?: string;
@@ -11,7 +11,7 @@ type CommonTableActionCellProps = {
 };
 
 export type TableActionCellProps = CommonTableActionCellProps & {
-  popoverMenuProps?: OmitPolyfill<PopoverMenuNextProps, 'triggerElement'>;
+  popoverMenuProps?: OmitPolyfill<PopoverMenuProps, 'triggerElement'>;
 };
 
 export const TableActionCell: React.SFC<TableActionCellProps>;

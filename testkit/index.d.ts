@@ -71,8 +71,6 @@ import { ContactItemBuilderDriver } from '../src/ContactItemBuilder/ContactItemB
 export const contactItemBuilderTestkitFactory: VanillaTestkitFactory<ContactItemBuilderDriver>;
 import { CounterBadgeUniDriver } from '../src/CounterBadge/CounterBadge.uni.driver';
 export const counterBadgeTestkitFactory: VanillaUniTestkitFactory<CounterBadgeUniDriver>;
-import { DataTableDriver } from '../src/DataTable/DataTable.driver';
-export const dataTableTestkitFactory: VanillaTestkitFactory<DataTableDriver>;
 import { DateInputUniDriver } from '../src/DateInput/DateInput.uni.driver';
 export const dateInputTestkitFactory: VanillaUniTestkitFactory<DateInputUniDriver>;
 import { DatePickerDriver } from '../src/DatePicker/DatePicker.driver';
@@ -149,8 +147,6 @@ import { PageHeaderDriver } from '../src/PageHeader/PageHeader.driver';
 export const pageHeaderTestkitFactory: VanillaTestkitFactory<PageHeaderDriver>;
 import { PopoverDriver } from '../src/Popover/Popover.driver';
 export const popoverTestkitFactory: VanillaTestkitFactory<PopoverDriver>;
-import { PopoverMenuDriver } from '../src/PopoverMenu/PopoverMenu.driver';
-export const popoverMenuTestkitFactory: VanillaTestkitFactory<PopoverMenuDriver>;
 import { ProportionUniDriver } from '../src/Proportion/Proportion.uni.driver';
 export const proportionTestkitFactory: VanillaUniTestkitFactory<ProportionUniDriver>;
 import { RadioGroupDriver } from '../src/RadioGroup/RadioGroup.driver';
@@ -273,6 +269,8 @@ import { StatusIndicatorUniDriver } from '../src/StatusIndicator/StatusIndicator
 export const statusIndicatorTestkitFactory: VanillaUniTestkitFactory<StatusIndicatorUniDriver>;
 import { MessageModalLayoutUniDriver } from '../src/MessageModalLayout/MessageModalLayout.uni.driver';
 export const messageModalLayoutTestkitFactory: VanillaUniTestkitFactory<MessageModalLayoutUniDriver>;
+import { PopoverMenuUniDriver } from '../src/PopoverMenu/PopoverMenu.uni.driver';
+export const popoverMenuTestkitFactory: VanillaUniTestkitFactory<PopoverMenuUniDriver>;
 import { AnnouncementModalLayoutUniDriver } from '../src/AnnouncementModalLayout/AnnouncementModalLayout.uni.driver';
 export const announcementModalLayoutTestkitFactory: VanillaUniTestkitFactory<AnnouncementModalLayoutUniDriver>;
 import { HeaderDriver } from '../src/Card/Header/Header.driver';
@@ -288,12 +286,5 @@ export const messageBoxFunctionalLayoutTestkitFactory: VanillaTestkitFactory<Mes
 import { CardSubheaderUniDriver } from '../src/Card/Subheader/Subheader.uni.driver';
 export const cardSubheaderTestkitFactory: VanillaUniTestkitFactory<CardSubheaderUniDriver>;
 
-export const autoCompleteCompositeTestkitFactory: DeprecatedVanillaTestkit;
-export const googleAddressInputWithLabelTestkitFactory: DeprecatedVanillaTestkit;
-export const multiSelectCompositeTestkitFactory: DeprecatedVanillaTestkit;
-export const statsWidgetTestkitFactory: DeprecatedVanillaTestkit;
-export const sideMenuDrillTestkitFactory: DeprecatedVanillaTestkit;
-export const sideMenuTestkitFactory: DeprecatedVanillaTestkit;
 export const draggableTestkitFactory: DeprecatedVanillaTestkit;
 export const fieldLabelAttributesTestkitFactory: DeprecatedVanillaTestkit;
-export const fieldWithSelectionCompositeTestkitFactory: DeprecatedVanillaTestkit;

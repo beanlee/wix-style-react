@@ -72,8 +72,6 @@ import {ContactItemBuilderDriver} from '../src/ContactItemBuilder/ContactItemBui
 export const contactItemBuilderTestkitFactory: EnzymeTestkitFactory<ContactItemBuilderDriver>;
 import {CounterBadgeUniDriver} from '../src/CounterBadge/CounterBadge.uni.driver';
 export const counterBadgeTestkitFactory: EnzymeUniTestkitFactory<CounterBadgeUniDriver>;
-import {DataTableDriver} from '../src/DataTable/DataTable.driver';
-export const dataTableTestkitFactory: EnzymeTestkitFactory<DataTableDriver>;
 import {DateInputUniDriver} from '../src/DateInput/DateInput.uni.driver';
 export const dateInputTestkitFactory: EnzymeUniTestkitFactory<DateInputUniDriver>;
 import {DatePickerDriver} from '../src/DatePicker/DatePicker.driver';
@@ -150,8 +148,6 @@ import {PageHeaderDriver} from '../src/PageHeader/PageHeader.driver';
 export const pageHeaderTestkitFactory: EnzymeTestkitFactory<PageHeaderDriver>;
 import {PopoverDriver} from '../src/Popover/Popover.driver';
 export const popoverTestkitFactory: EnzymeTestkitFactory<PopoverDriver>;
-import {PopoverMenuDriver} from '../src/PopoverMenu/PopoverMenu.driver';
-export const popoverMenuTestkitFactory: EnzymeTestkitFactory<PopoverMenuDriver>;
 import {ProportionUniDriver} from '../src/Proportion/Proportion.uni.driver';
 export const proportionTestkitFactory: EnzymeUniTestkitFactory<ProportionUniDriver>;
 import {RadioGroupDriver} from '../src/RadioGroup/RadioGroup.driver';
@@ -274,6 +270,8 @@ import {StatusIndicatorUniDriver} from '../src/StatusIndicator/StatusIndicator.u
 export const statusIndicatorTestkitFactory: EnzymeUniTestkitFactory<StatusIndicatorUniDriver>;
 import {MessageModalLayoutUniDriver} from '../src/MessageModalLayout/MessageModalLayout.uni.driver';
 export const messageModalLayoutTestkitFactory: EnzymeUniTestkitFactory<MessageModalLayoutUniDriver>;
+import {PopoverMenuUniDriver} from '../src/PopoverMenu/PopoverMenu.uni.driver';
+export const popoverMenuTestkitFactory: EnzymeUniTestkitFactory<PopoverMenuUniDriver>;
 import {AnnouncementModalLayoutUniDriver} from '../src/AnnouncementModalLayout/AnnouncementModalLayout.uni.driver';
 export const announcementModalLayoutTestkitFactory: EnzymeUniTestkitFactory<AnnouncementModalLayoutUniDriver>;
 import {HeaderDriver} from '../src/Card/Header/Header.driver';
@@ -290,12 +288,5 @@ import {CardSubheaderUniDriver} from '../src/Card/Subheader/Subheader.uni.driver
 export const cardSubheaderTestkitFactory: EnzymeUniTestkitFactory<CardSubheaderUniDriver>;
 
 
-export const autoCompleteCompositeTestkitFactory: DeprecatedEnzymeTestkit;
-export const googleAddressInputWithLabelTestkitFactory: DeprecatedEnzymeTestkit;
-export const multiSelectCompositeTestkitFactory: DeprecatedEnzymeTestkit;
-export const statsWidgetTestkitFactory: DeprecatedEnzymeTestkit;
-export const sideMenuDrillTestkitFactory: DeprecatedEnzymeTestkit;
-export const sideMenuTestkitFactory: DeprecatedEnzymeTestkit;
 export const draggableTestkitFactory: DeprecatedEnzymeTestkit;
 export const fieldLabelAttributesTestkitFactory: DeprecatedEnzymeTestkit;
-export const fieldWithSelectionCompositeTestkitFactory: DeprecatedEnzymeTestkit;

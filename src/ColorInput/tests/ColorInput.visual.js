@@ -44,7 +44,7 @@ const tests = [
               <div style={{ margin: '10px' }}>
                 <Layout>
                   <Cell span={4}>
-                    <ColorInput value="#FF0000" error />
+                    <ColorInput value="#FF0000" status="error" />
                   </Cell>
                   <Cell span={4}>
                     <ColorInput value="" />

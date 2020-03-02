@@ -4,11 +4,16 @@ import eventually from 'wix-eventually';
 
 import RichTextInputArea from '../RichTextInputArea';
 import richTextInputAreaPrivateDriverFactory from '../RichTextInputArea.private.uni.driver';
-import toolbarButtonStyles from '../RichTextToolbarButton.scss';
+import toolbarButtonStyles from '../Toolbar/RichTextToolbarButton.scss';
 import { createRendererWithUniDriver } from '../../../test/utils/react';
 import { scrollBehaviorPolyfill } from '../../../testkit/polyfills';
+import { cleanup } from '../../../test/utils/unit';
 
 describe('RichTextInputArea', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   const createDriver = createUniDriverFactory(
     richTextInputAreaPrivateDriverFactory,
   );
@@ -114,31 +119,36 @@ describe('RichTextInputArea', () => {
     expect(await driver.isDisabled()).toBe(true);
   });
 
-  describe('Error', () => {
-    it('should render the error indicator', async () => {
-      const driver = createDriver(<RichTextInputArea status="error" />);
+  describe('status attribute', () => {
+    [
+      { status: 'error', message: 'Error Message' },
+      { status: 'warning', message: 'Warning Message' },
+      { status: 'loading', message: 'Loading Message' },
+    ].forEach(test => {
+      it(`should display a status icon when status="${test.status}"`, async () => {
+        const render = createRendererWithUniDriver(
+          richTextInputAreaPrivateDriverFactory,
+        );
+        const { driver } = render(
+          <RichTextInputArea
+            status={test.status}
+            statusMessage={test.message}
+          />,
+        );
 
-      expect(await driver.hasError()).toBe(true);
+        expect(await driver.hasStatus()).toBe(true);
+        expect(await driver.getStatus()).toBe(test.status);
+        expect(await driver.hasStatusMessage()).toBe(true);
+        expect(await driver.getStatusMessage()).toBe(test.message);
+      });
     });
 
-    it('should not render the error indicator when disabled', async () => {
+    it('should not render the status indicator when disabled', async () => {
       const driver = createDriver(
         <RichTextInputArea disabled status="error" />,
       );
 
-      expect(await driver.hasError()).toBe(false);
-    });
-
-    it('should render a tooltip with the error message', async () => {
-      const errorMessage = 'Some error';
-      const render = createRendererWithUniDriver(
-        richTextInputAreaPrivateDriverFactory,
-      );
-      const { driver } = render(
-        <RichTextInputArea status="error" statusMessage={errorMessage} />,
-      );
-
-      expect(await driver.getErrorMessage()).toEqual(errorMessage);
+      expect(await driver.hasStatus()).toBe(false);
     });
   });
 

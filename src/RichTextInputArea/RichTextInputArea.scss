@@ -79,7 +79,7 @@ $padding: 12px;
   }
 }
 
-.error {
+.hasError {
   $borderColor: $R10;
 
   .toolbar {
@@ -98,7 +98,26 @@ $padding: 12px;
   }
 }
 
-.errorIndicator {
+.hasWarning {
+  $borderColor: $Y10;
+
+  .toolbar {
+    border-color: $borderColor;
+  }
+
+  :global(.public-DraftEditor-content) {
+    border-left-color: $borderColor;
+    border-bottom-color: $borderColor;
+    border-right-color: $borderColor;
+
+    &:focus {
+      border-color: $borderColor;
+      box-shadow: 0 0 0 3px $R30;
+    }
+  }
+}
+
+.statusIndicator {
   position: absolute;
   top: 9px;
   right: 12px;

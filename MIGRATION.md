@@ -37,7 +37,7 @@
 
 #### `<Input/>`
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
   - removed `units` use `<Input.Affix/>` component instead
   - removed `magnifyingGlass` use `<Search/>` component instead
@@ -57,7 +57,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 #### `<ColorInput/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 - Testkit:
   - removed `hasError`
@@ -69,13 +69,13 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 #### `<Dropdown/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 
 #### `<InputWithOptions/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 
 #### `<LinearProgressBar/>`
@@ -91,7 +91,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 
 - Props:
   - removed `onTooltipShow`
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 - Testkit:
   - removed `hasError`
@@ -134,7 +134,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 
 - Props:
   - removed `isOpen` - use `initialOpen` instead.
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 
 #### `<Loader/>`
@@ -151,7 +151,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 
 - Props:
   - removed `tooltipPlacement`
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 - Testkit:
   - removed `isErrorVisible`
@@ -176,7 +176,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 #### `<MultiSelect/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 - Testkit:
   - removed `inputWrapperHasError`
@@ -184,20 +184,33 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 #### `<NoBorderInput/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 
 #### `<Search/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
 
 #### `<NumberInput/>`
 
 - Props:
-  - changed `error` to `status='error'`
+  - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+
+#### `<RichTextInputArea/>`
+
+- Props:
+  - changed `error` to `status`
+  - changed `errorMessage` to `statusMessage`
+- Testkit:
+  - removed `hasError`
+  - removed `getErrorMessage`
+  - added `hasStatus`
+  - added `getStatus`
+  - added `hasStatusMessage`
+  - added `getStatusMessage`
 
 ## Migrating to new PopoverMenu
 

@@ -9,7 +9,7 @@ export const getPlaceholder = base =>
 
 export default (base, body) => {
   const statusIndicatorDriver = statusIndicatorDriverFactory(
-    base.$(`[data-hook="richtextarea-error-indicator"]`),
+    base.$(`[data-hook="richtextarea-status-indicator"]`),
     body,
   );
 
@@ -17,10 +17,8 @@ export default (base, body) => {
     ...baseUniDriverFactory(base, body),
     isDisabled: async () =>
       Boolean(await getContent(base).attr('contenteditable')),
-    hasError: statusIndicatorDriver.exists,
     getContent: () => getContent(base).text(),
     getPlaceholder: () => getPlaceholder(base).text(),
-    getErrorMessage: statusIndicatorDriver.getMessage,
     enterText: async text => {
       const contentElement = await getContent(base).getNative(); // eslint-disable-line no-restricted-properties
 
@@ -31,5 +29,15 @@ export default (base, body) => {
         contentElement.sendKeys(text);
       }
     },
+
+    // Status
+    /** Return true if there's a status */
+    hasStatus: statusIndicatorDriver.exists,
+    /** If there's a status, returns its type */
+    getStatus: statusIndicatorDriver.getStatus,
+    /** Return true if there's a status message */
+    hasStatusMessage: statusIndicatorDriver.hasMessage,
+    /** If there's a status message, returns its text value */
+    getStatusMessage: statusIndicatorDriver.getMessage,
   };
 };

@@ -45,7 +45,7 @@ export interface InputAreaProps extends WixComponentProps {
   tooltipPlacement?: TooltipOldProps['placement'];
   value?: string;
   status?: InputAreaStatus;
-  statusMessage?: string;
+  statusMessage?: React.ReactNode;
 }
 
 export default class InputArea extends WixComponent<InputAreaProps> {

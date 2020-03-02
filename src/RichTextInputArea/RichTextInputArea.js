@@ -34,8 +34,6 @@ const decorator = new CompositeDecorator([
 ]);
 
 class RichTextInputArea extends React.PureComponent {
-  static errorStatus = 'error';
-
   constructor(props) {
     super(props);
 
@@ -72,17 +70,16 @@ class RichTextInputArea extends React.PureComponent {
       statusMessage,
     } = this.props;
     const isEditorEmpty = EditorUtilities.isEditorEmpty(this.state.editorState);
-    const hasError = !disabled && status === RichTextInputArea.errorStatus;
 
     return (
       <div
         data-hook={dataHook}
-        className={classNames(
-          styles.root,
-          !isEditorEmpty && styles.hidePlaceholder,
-          disabled && styles.disabled,
-          hasError && styles.error,
-        )}
+        className={classNames(styles.root, {
+          [styles.hidePlaceholder]: !isEditorEmpty,
+          [styles.disabled]: disabled,
+          [styles.hasError]: !disabled && status === 'error',
+          [styles.hasWarning]: !disabled && status === 'warning',
+        })}
         // Using CSS variable instead of applying maxHeight on each child, down to the editor's content
         style={{ '--max-height': maxHeight }}
       >
@@ -116,11 +113,11 @@ class RichTextInputArea extends React.PureComponent {
             placeholder={placeholder}
             readOnly={disabled}
           />
-          {hasError && (
-            <span className={styles.errorIndicator}>
+          {!disabled && status && (
+            <span className={styles.statusIndicator}>
               <StatusIndicator
-                dataHook="richtextarea-error-indicator"
-                status="error"
+                dataHook="richtextarea-status-indicator"
+                status={status}
                 message={statusMessage}
               />
             </span>
@@ -175,7 +172,7 @@ RichTextInputArea.propTypes = {
   /** Disables the editor and toolbar */
   disabled: PropTypes.bool,
   /** Displays a status indicator */
-  status: PropTypes.oneOf(['error']),
+  status: PropTypes.oneOf(['error', 'warning', 'loading']),
   /** Text to be shown within the tooltip of the status indicator */
   statusMessage: PropTypes.string,
   /** Callback function for changes: `onChange(htmlText, { plainText })` */

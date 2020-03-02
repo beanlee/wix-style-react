@@ -1,12 +1,14 @@
 import * as React from 'react';
 
+export type RichTextInputAreaStatus = 'error' | 'warning' | 'loading';
+
 export interface RichTextInputAreaProps {
   dataHook?: string;
   initialValue?: string;
   placeholder?: string;
   disabled?: boolean;
-  status?: 'error';
-  statusMessage?: string;
+  status?: RichTextInputAreaStatus;
+  statusMessage?: React.ReactNode;
   onChange?: Function;
   maxHeight?: string;
   texts?: texts;

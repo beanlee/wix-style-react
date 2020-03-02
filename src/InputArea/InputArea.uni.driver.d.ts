@@ -33,6 +33,5 @@ export interface InputAreaUniDriver extends BaseUniDriver {
   getTooltipDataHook: () => string;
   getTooltipElement: () => UniDriver;
   isErrorMessageShown: () => Promise<boolean>;
-  mouseEnterErrorIndicator: () => Promise<void>;
   getErrorMessage: () => Promise<string>;
 }

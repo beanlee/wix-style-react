@@ -119,9 +119,6 @@ export * from './EmptyState';
 export { default as EndorseContentLayout } from './EndorseContentLayout';
 export * from './EndorseContentLayout';
 
-export { default as ErrorIndicator } from './ErrorIndicator';
-export * from './ErrorIndicator';
-
 export { default as FilePicker } from './FilePicker';
 export * from './FilePicker';
 

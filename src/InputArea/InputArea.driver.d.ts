@@ -32,6 +32,5 @@ export interface InputAreaDriver<T> extends BaseDriver {
   getTooltipDataHook: () => string;
   getTooltipElement: () => T;
   isErrorMessageShown: () => boolean;
-  mouseEnterErrorIndicator: () => void;
   getErrorMessage: () => string;
 }

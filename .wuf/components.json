@@ -110,12 +110,6 @@
       "docs/index.story.js"
     ]
   },
-  "ErrorIndicator": {
-    "path": "src/ErrorIndicator",
-    "missingFiles": [
-      "docs"
-    ]
-  },
   "FilePicker": {
     "path": "src/FilePicker"
   },
@@ -400,12 +394,6 @@
   },
   "Palette": {
     "path": "src/Palette"
-  },
-  "WarningIndicator": {
-    "path": "src/WarningIndicator",
-    "missingFiles": [
-      "docs"
-    ]
   },
   "VariableInput": {
     "path": "src/VariableInput"

@@ -85,8 +85,6 @@ import {EditableTitleUniDriver} from '../src/EditableTitle/EditableTitle.uni.dri
 export const editableTitleTestkitFactory: PuppeteerUniTestkitFactory<EditableTitleUniDriver>;
 import {EmptyStateUniDriver} from '../src/EmptyState/EmptyState.uni.driver';
 export const emptyStateTestkitFactory: PuppeteerUniTestkitFactory<EmptyStateUniDriver>;
-import {ErrorIndicatorUniDriver} from '../src/ErrorIndicator/ErrorIndicator.uni.driver';
-export const errorIndicatorTestkitFactory: PuppeteerUniTestkitFactory<ErrorIndicatorUniDriver>;
 import {FilePickerUniDriver} from '../src/FilePicker/FilePicker.uni.driver';
 export const filePickerTestkitFactory: PuppeteerUniTestkitFactory<FilePickerUniDriver>;
 import {FloatingHelperUniDriver} from '../src/FloatingHelper/FloatingHelper.uni.driver';
@@ -231,8 +229,6 @@ import {MarketingLayoutUniDriver} from '../src/MarketingLayout/MarketingLayout.u
 export const marketingLayoutTestkitFactory: PuppeteerUniTestkitFactory<MarketingLayoutUniDriver>;
 import {PaletteUniDriver} from '../src/Palette/Palette.uni.driver';
 export const paletteTestkitFactory: PuppeteerUniTestkitFactory<PaletteUniDriver>;
-import {WarningIndicatorUniDriver} from '../src/WarningIndicator/WarningIndicator.uni.driver';
-export const warningIndicatorTestkitFactory: PuppeteerUniTestkitFactory<WarningIndicatorUniDriver>;
 import {VariableInputUniDriver} from '../src/VariableInput/VariableInput.uni.driver';
 export const variableInputTestkitFactory: PuppeteerUniTestkitFactory<VariableInputUniDriver>;
 import {ImageUniDriver} from '../src/Image/Image.uni.driver';

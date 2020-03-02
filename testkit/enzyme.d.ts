@@ -88,8 +88,6 @@ import {EditableTitleUniDriver} from '../src/EditableTitle/EditableTitle.uni.dri
 export const editableTitleTestkitFactory: EnzymeUniTestkitFactory<EditableTitleUniDriver>;
 import {EmptyStateDriver} from '../src/EmptyState/EmptyState.driver';
 export const emptyStateTestkitFactory: EnzymeTestkitFactory<EmptyStateDriver>;
-import {ErrorIndicatorUniDriver} from '../src/ErrorIndicator/ErrorIndicator.uni.driver';
-export const errorIndicatorTestkitFactory: EnzymeUniTestkitFactory<ErrorIndicatorUniDriver>;
 import {FilePickerDriver} from '../src/FilePicker/FilePicker.driver';
 export const filePickerTestkitFactory: EnzymeTestkitFactory<FilePickerDriver>;
 import {FloatingHelperDriver} from '../src/FloatingHelper/FloatingHelper.driver';
@@ -254,8 +252,6 @@ import {MarketingLayoutUniDriver} from '../src/MarketingLayout/MarketingLayout.u
 export const marketingLayoutTestkitFactory: EnzymeUniTestkitFactory<MarketingLayoutUniDriver>;
 import {PaletteUniDriver} from '../src/Palette/Palette.uni.driver';
 export const paletteTestkitFactory: EnzymeUniTestkitFactory<PaletteUniDriver>;
-import {WarningIndicatorUniDriver} from '../src/WarningIndicator/WarningIndicator.uni.driver';
-export const warningIndicatorTestkitFactory: EnzymeUniTestkitFactory<WarningIndicatorUniDriver>;
 import {VariableInputUniDriver} from '../src/VariableInput/VariableInput.uni.driver';
 export const variableInputTestkitFactory: EnzymeUniTestkitFactory<VariableInputUniDriver>;
 import {ImageUniDriver} from '../src/Image/Image.uni.driver';

@@ -43,7 +43,6 @@ const dropdownLayoutDriverFactory = ({ element }) => {
       option && ReactTestUtils.Simulate.click(option);
     },
     exists: () => !!element,
-    hasTheme: theme => isClassExists(element, styles[`theme-${theme}`]),
     hasTopArrow: () => !!element.querySelector(`.${styles.arrow}`),
     isDown: () => isClassExists(contentContainer, styles.down),
     isLinkOption: position =>

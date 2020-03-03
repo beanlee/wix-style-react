@@ -55,7 +55,6 @@ export const dropdownLayoutDriverFactory = base => {
         }
       }
     },
-    hasTheme: theme => base.hasClass(`theme-${theme}`),
     hasTopArrow: () => base.$('.arrow').exists(),
     isDown: async () => (await contentContainer()).hasClass('down'),
     isLinkOption: async position => {

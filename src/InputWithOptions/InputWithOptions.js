@@ -108,7 +108,6 @@ class InputWithOptions extends Component {
       onKeyDown: chainEventHandlers(
         inputAdditionalProps && inputAdditionalProps.onKeyDown,
       ),
-      theme: this.props.theme,
       onChange: this._onChange,
       onInputClicked: this._onInputClicked,
       onFocus: this._onFocus,
@@ -165,7 +164,6 @@ class InputWithOptions extends Component {
           {...dropdownProps}
           dataHook="inputwithoptions-dropdownlayout"
           options={this._processOptions(dropdownProps.options)}
-          theme={this.props.theme}
           visible
           onClose={this.hideOptions}
           onSelect={this._onSelect}

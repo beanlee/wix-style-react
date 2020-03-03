@@ -348,23 +348,6 @@ describe('InputArea', () => {
       });
     });
 
-    describe('theme attribute', () => {
-      it('should set the theme by default to "normal"', async () => {
-        const driver = createDriver(<InputAreaForTesting />);
-        expect(await driver.isOfStyle('normal')).toBe(true);
-      });
-
-      it('should allowing setting the theme to "paneltitle"', async () => {
-        const driver = createDriver(<InputAreaForTesting theme="paneltitle" />);
-        expect(await driver.isOfStyle('paneltitle')).toBe(true);
-      });
-
-      it('should allow setting the theme to "material"', async () => {
-        const driver = createDriver(<InputAreaForTesting theme="material" />);
-        expect(await driver.isOfStyle('material')).toBe(true);
-      });
-    });
-
     describe('aria attributes', () => {
       it('should allow adding a custom aria-label', async () => {
         const driver = createDriver(<InputAreaForTesting ariaLabel="hello" />);

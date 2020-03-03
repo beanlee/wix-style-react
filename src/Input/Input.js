@@ -105,12 +105,10 @@ class Input extends Component {
       type,
       maxLength,
       textOverflow,
-      theme,
       disabled,
       status,
       statusMessage,
       tooltipPlacement,
-      onTooltipShow,
       autocomplete,
       min,
       max,
@@ -211,7 +209,6 @@ class Input extends Component {
             <InputSuffix
               status={hideStatusSuffix ? undefined : status}
               statusMessage={statusMessage}
-              theme={theme}
               disabled={disabled}
               onIconClicked={onIconClicked}
               isClearButtonVisible={isClearButtonVisible}
@@ -219,7 +216,6 @@ class Input extends Component {
               menuArrow={menuArrow}
               suffix={suffix}
               tooltipPlacement={tooltipPlacement}
-              onTooltipShow={onTooltipShow}
             />
           )}
         </InputContext.Provider>
@@ -382,7 +378,6 @@ Input.displayName = 'Input';
 Input.defaultProps = {
   autoSelect: true,
   size: 'normal',
-  theme: 'normal',
   roundInput: false,
   textOverflow: 'clip',
   maxLength: 524288,
@@ -495,9 +490,6 @@ Input.propTypes = {
   /** called when user pastes text from clipboard (using mouse or keyboard shortcut) */
   onPaste: PropTypes.func,
 
-  /** onShow prop for the error and help tooltips (supported only for amaterial theme for now) */
-  onTooltipShow: PropTypes.func,
-
   /** Placeholder to display */
   placeholder: PropTypes.string,
 
@@ -528,21 +520,7 @@ Input.propTypes = {
   /** Text overflow behaviour */
   textOverflow: PropTypes.string,
 
-  /** The theme of the input */
-  theme: PropTypes.oneOf([
-    'normal',
-    'tags',
-    'paneltitle',
-    'material',
-    'amaterial',
-    'flat',
-    'flatdark',
-  ]),
-
-  /** The material design style floating label for input (supported only for amaterial theme for now) */
-  title: PropTypes.string,
-
-  /** Placement of the error and help tooltips (supported only for amaterial theme for now) */
+  /** Placement of status tooltips */
   tooltipPlacement: PropTypes.string,
   type: PropTypes.string,
 

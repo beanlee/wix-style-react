@@ -39,9 +39,7 @@ export interface InputAreaProps extends WixComponentProps {
   rows?: number;
   autoGrow?: boolean;
   minRowsAutoGrow?: number;
-  style?: InputAreaTheme;
   tabIndex?: number;
-  theme?: InputAreaTheme;
   tooltipPlacement?: TooltipOldProps['placement'];
   value?: string;
   status?: InputAreaStatus;
@@ -57,4 +55,3 @@ export default class InputArea extends WixComponent<InputAreaProps> {
 }
 
 export type InputAreaSize = 'small' | 'normal';
-export type InputAreaTheme = 'normal' | 'paneltitle' | 'material' | 'amaterial';

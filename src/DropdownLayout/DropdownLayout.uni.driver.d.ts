@@ -1,12 +1,10 @@
 import { BaseUniDriver } from 'wix-ui-test-utils/base-driver';
-import { DropdownLayoutTheme } from './index';
 
 export interface DropdownLayoutUniDriver extends BaseUniDriver {
   /** @deprecated should be private */
   classes: (name: string) => Promise<any>;
   clickAtOption: (index: number) => Promise<void>;
   clickAtOptionWithValue: (value: string) => Promise<void>;
-  hasTheme: (theme: DropdownLayoutTheme) => Promise<boolean>;
   hasTopArrow: () => Promise<boolean>;
   isDown: () => Promise<boolean>;
   isLinkOption: (position: number) => Promise<boolean>;

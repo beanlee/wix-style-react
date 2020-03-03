@@ -31,6 +31,21 @@ $gap: 6px;
   &.disabled textarea::placeholder {
     color: $D10-30;
   }
+
+  @include ThemeDefault(
+    $color: $D10,
+    $borderColor: $B30,
+    $backgroundColor: $D80
+  );
+  @include ThemeHover($backgroundColor: $B50);
+  @include ThemeFocus;
+  @include ThemeError($borderColor: $paletteR1);
+  @include ThemeWarning($borderColor: $paletteR5);
+  @include ThemeDisabled(
+    $borderColor: $D10-20,
+    $backgroundColor: $D80,
+    $color: $D10-30
+  );
 }
 
 .inputArea {
@@ -84,95 +99,6 @@ $gap: 6px;
 
 .nonResizable > textarea {
   resize: none;
-}
-
-.theme {
-  &-normal {
-    @include ThemeDefault(
-      $color: $D10,
-      $borderColor: $B30,
-      $backgroundColor: $D80
-    );
-    @include ThemeHover($backgroundColor: $B50);
-    @include ThemeFocus;
-    @include ThemeError($borderColor: $paletteR1);
-    @include ThemeWarning($borderColor: $paletteR5);
-    @include ThemeDisabled(
-      $borderColor: $D10-20,
-      $backgroundColor: $D80,
-      $color: $D10-30
-    );
-  }
-  &-paneltitle {
-    @include ThemeDefault(
-      $color: white,
-      $borderColor: $B30,
-      $backgroundColor: rgba(22, 45, 61, 0.6)
-    );
-    @include ThemeHover($backgroundColor: rgba(22, 45, 61, 0.4));
-    @include ThemeFocusPanelTile(
-      $borderColor: $B20,
-      $boxShadow: inset 0 0 5px 0 rgba(56, 153, 236, 0.6)
-    );
-    @include ThemeError($borderColor: $paletteR1);
-    @include ThemeWarning($borderColor: $paletteR5);
-  }
-  &-amaterial {
-    .inputArea {
-      @include FontLight();
-      @include Placeholder($GR60);
-      padding-right: 37px;
-    }
-    border-radius: 0;
-    @include ThemeDefault(
-      $color: $D10,
-      $borderColor: #e0e3e5,
-      $backgroundColor: $D80
-    );
-    @include ThemeError($borderColor: $paletteR1);
-    @include ThemeWarning($borderColor: $paletteR5);
-  }
-  &-material {
-    border-radius: 0;
-    .inputArea {
-      @include FontLight();
-    }
-    @include ThemeDefault(
-      $color: $D10,
-      $borderColor: transparent,
-      $backgroundColor: $D80
-    );
-    @at-root {
-      .bar {
-        position: absolute;
-        bottom: 0;
-        left: -1px;
-        right: -1px;
-        height: 1px;
-        background: $D60;
-        &:before,
-        &:after {
-          content: '';
-          height: 1px;
-          width: 0;
-          bottom: 0;
-          position: absolute;
-          background: $D50;
-          transition: 0.2s ease all;
-        }
-        &:before {
-          left: 50%;
-        }
-        &:after {
-          right: 50%;
-        }
-      }
-      .hasFocus .bar:before,
-      .hasFocus .bar:after {
-        width: 50%;
-      }
-    }
-  }
 }
 
 // RTL layout based on global style set on document body or parent element.

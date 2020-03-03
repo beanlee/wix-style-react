@@ -302,7 +302,6 @@ GoogleAddressInput.displayName = 'GoogleAddressInput';
 
 GoogleAddressInput.defaultProps = {
   magnifyingGlass: true,
-  theme: Input.defaultProps.theme,
   autoSelect: true,
   footerOptions: {},
   clearSuggestionsOnBlur: true,
@@ -333,8 +332,12 @@ GoogleAddressInput.propTypes = {
   /** Fields indicating which types of Places data to return (see [here](https://developers.google.com/maps/documentation/javascript/places#place_details)**/
   placeDetailsFields: PropTypes.array,
 
-  /** Should display error marker */
-  error: PropTypes.bool,
+  /** Sets UI to indicate a status */
+  status: PropTypes.oneOf(['error', 'warning', 'loading']),
+
+  /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
+  statusMessage: PropTypes.node,
+
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
@@ -348,7 +351,6 @@ GoogleAddressInput.propTypes = {
 
   /** Show or hide magnifying glass icon */
   magnifyingGlass: PropTypes.bool,
-  theme: Input.propTypes.theme,
 
   /** Sets the input to readOnly */
   readOnly: PropTypes.bool,

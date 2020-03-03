@@ -1,11 +1,9 @@
 import { BaseDriver } from 'wix-ui-test-utils/driver-factory';
-import { DropdownLayoutTheme } from './index';
 
 export interface DropdownLayoutDriver extends BaseDriver {
   classes: () => string;
   clickAtOption: (position: number) => void;
   clickAtOptionWithValue: (value: string) => void;
-  hasTheme: (theme: DropdownLayoutTheme) => boolean;
   hasTopArrow: () => boolean;
   isDown: () => boolean;
   isLinkOption: (position: number) => boolean;

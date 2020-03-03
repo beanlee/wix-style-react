@@ -4,7 +4,6 @@
 
 $gap: 6px;
 $double-gap: 12px;
-$material-gap: 8px;
 
 .root {
   position: relative;
@@ -19,6 +18,21 @@ $material-gap: 8px;
     background-color: $D70;
     @include ThemeHover($backgroundColor: $B50);
   }
+
+  @include ThemeDefault(
+    $color: $D10,
+    $borderColor: $B30,
+    $backgroundColor: $D80
+  );
+  @include ThemeHover($backgroundColor: $B50);
+  @include ThemeFocus($borderColor: $B10, $boxShadow: 0 0 0 3px $F00);
+  @include ThemeError($borderColor: $paletteR1);
+  @include ThemeWarning($borderColor: $paletteR5);
+  @include ThemeDisable(
+    $borderColor: $D10-20,
+    $backgroundColor: $D80,
+    $color: $D10-30
+  );
 }
 
 .input-wrapper {
@@ -150,301 +164,6 @@ $material-gap: 8px;
   }
 }
 
-.theme {
-  // `medium` is the new `normal` by Zeplin. For now supporting both
-  &-normal,
-  &-medium {
-    @include ThemeDefault(
-      $color: $D10,
-      $borderColor: $B30,
-      $backgroundColor: $D80
-    );
-    @include ThemeHover($backgroundColor: $B50);
-    @include ThemeFocus($borderColor: $B10, $boxShadow: 0 0 0 3px $F00);
-    @include ThemeError($borderColor: $paletteR1);
-    @include ThemeWarning($borderColor: $paletteR5);
-    @include ThemeDisable(
-      $borderColor: $D10-20,
-      $backgroundColor: $D80,
-      $color: $D10-30
-    );
-  }
-
-  &-paneltitle {
-    @include ThemeDefault(
-      $color: white,
-      $borderColor: $B30,
-      $backgroundColor: rgba(22, 45, 61, 0.6)
-    );
-    @include ThemeHover($backgroundColor: rgba(22, 45, 61, 0.4));
-    @include ThemeFocusPanelTile(
-      $borderColor: $B20,
-      $boxShadow: inset 0 0 5px 0 rgba(56, 153, 236, 0.6)
-    );
-    @include ThemeError($borderColor: $paletteR1);
-    @include ThemeWarning($borderColor: $paletteR5);
-    @include ThemeDisable(
-      $borderColor: $D10-20,
-      $backgroundColor: $D80,
-      $color: $D10-30
-    );
-  }
-
-  &-tags {
-    @include ThemeDefault(
-      $color: $D10,
-      $borderColor: $B30,
-      $backgroundColor: transparent
-    );
-    @include ThemeHover($backgroundColor: $B50);
-    @include ThemeFocus($borderColor: transparent, $boxShadow: none);
-    @include ThemeError(
-      $borderColor: $paletteR1,
-      $boxShadow: inset 0px 0px 5px 0px fade($R10, 60%)
-    );
-    @include ThemeWarning(
-      $borderColor: $paletteR5,
-      $boxShadow: inset 0px 0px 5px 0px fade($R70, 60%)
-    );
-    @include ThemeDisable(
-      $borderColor: $D10-20,
-      $backgroundColor: $D80,
-      $color: $D10-30
-    );
-  }
-
-  &-amaterial {
-    border: 0;
-    // `medium` is the new `normal` by Zeplin. For now supporting both
-    &.size-normal,
-    &.size-medium {
-      padding-bottom: 4px;
-      @include Size($height: 34px, $fontSize: 20px);
-    }
-
-    label,
-    .input {
-      color: #43515c;
-    }
-
-    label {
-      font-size: 20px;
-      transition: all 0.2s ease-in-out;
-      position: absolute;
-      top: 2px;
-      padding: 0 12px;
-    }
-
-    .input {
-      @include FontLight();
-      opacity: 0;
-      z-index: 1;
-      transition: border-bottom 0.3s, border-color 0.3s, border-width 0.3s,
-        border 0.3s, opacity 0s ease-in-out;
-      line-height: 1;
-      display: block;
-      margin-top: 0;
-
-      background: none;
-      border-radius: 0;
-      border-style: solid; // Firefox fix
-
-      // Fix number inputs in Firefox to be full-width
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    &.hasFocus,
-    &.hasValue {
-      .input {
-        @include Placeholder($paletteE6);
-        transition: opacity 0.3s ease-in-out;
-        opacity: 1;
-      }
-      input {
-        border-bottom: 0;
-      }
-
-      .bar {
-        &:before,
-        &:after {
-          height: 2px;
-          background-color: $B10;
-        }
-      }
-      label {
-        top: -22px;
-        font-size: 14px;
-      }
-    }
-
-    .bar {
-      position: absolute;
-      bottom: 0;
-      left: -1px;
-      right: -1px;
-      height: 1px;
-      background: $D60;
-      &:before,
-      &:after {
-        content: '';
-        height: 1px;
-        width: 0;
-        bottom: 0;
-        position: absolute;
-        background: #000;
-        transition: 0.3s all;
-      }
-      transition: 0.3s ease all;
-    }
-    @at-root {
-      .hasFocus .barBlue:before,
-      .hasFocus .barBlue:after {
-        width: 100%;
-      }
-    }
-    &:hover:not(.disabled) {
-      .bar,
-      .input:hover ~ .barBlue,
-      .input.hasHover ~ .barBlue {
-        background-color: #000;
-        transition: 0.3s ease all;
-      }
-    }
-
-    &.hasError {
-      .bar,
-      .input:hover ~ .barBlue,
-      .input.hasHover ~ .barBlue {
-        background-color: #f2564d;
-        height: 2px;
-      }
-    }
-    &.hasWarning {
-      .bar,
-      .input:hover ~ .barBlue,
-      .input.hasHover ~ .barBlue {
-        background-color: #fdb10c;
-        height: 2px;
-      }
-    }
-  }
-
-  &-material {
-    border-radius: 0;
-    .suffixes {
-      padding: 0 4px;
-    }
-    // `medium` is the new `normal` by Zeplin. For now supporting both
-    &.size-normal,
-    &.size-medium {
-      @include Size($height: 34px, $fontSize: 18px);
-    }
-    .input {
-      @include FontLight();
-      padding: 0 $material-gap;
-    }
-    @include ThemeDefault(
-      $color: $D10,
-      $borderColor: transparent,
-      $backgroundColor: $D80
-    );
-    .bar {
-      position: absolute;
-      bottom: 0;
-      left: -1px;
-      right: -1px;
-      height: 1px;
-      background: $D60;
-      &:before,
-      &:after {
-        content: '';
-        height: 1px;
-        width: 0;
-        bottom: 0;
-        position: absolute;
-        background: $D50;
-        transition: 0.2s ease all;
-      }
-      &:before {
-        left: 50%;
-      }
-      &:after {
-        right: 50%;
-      }
-    }
-    @at-root {
-      .hasFocus .barBlack:before,
-      .hasFocus .bar:after {
-        width: 50%;
-      }
-    }
-    &.hasError {
-      .bar {
-        background: $R05;
-        &:before,
-        &:after {
-          background: $R05;
-        }
-      }
-    }
-
-    &.hasWarning {
-      .bar {
-        background: $R70;
-        &:before,
-        &:after {
-          background: $R70;
-        }
-      }
-    }
-  }
-
-  &-flat {
-    border: none;
-    border-radius: 0;
-
-    &.size-large {
-      @include Size($height: 54px, $fontSize: 16px);
-    }
-
-    &:hover,
-    &.hasFocus {
-      @include ThemeFlat($B20);
-    }
-    &:active {
-      @include ThemeFlat($B10);
-    }
-    &.disabled {
-      @include ThemeFlat($D10-30);
-    }
-
-    @include ThemeFlat($D20);
-  }
-
-  &-flatdark {
-    border: none;
-    border-radius: 0;
-
-    &.size-large {
-      @include Size($height: 54px, $fontSize: 16px);
-    }
-
-    &:hover,
-    &.hasFocus {
-      @include ThemeFlat($B20);
-    }
-    &:active {
-      @include ThemeFlat($B10);
-    }
-    &.disabled {
-      @include ThemeFlat($D80-70);
-    }
-
-    @include ThemeFlat($D80);
-  }
-}
-
 // RTL layout based on global style set on document body or parent element.
 @include withRTL() {
   .root,
@@ -513,12 +232,4 @@ $material-gap: 8px;
 
 .roundInput .menu-arrow {
   padding: 0 $double-gap 0 $gap;
-}
-
-.materialTitle {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-
-  @include Text($weight: thin, $size: medium, $secondary: true);
 }

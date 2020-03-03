@@ -15,44 +15,29 @@ class ThemedInput extends Input {
 
   render() {
     const {
-      id,
       size,
       dataHook,
-      title,
-      theme,
       rtl,
-      disabled,
-      error,
       status,
+      disabled,
       forceHover,
       forceFocus,
       roundInput,
       className,
       noLeftBorderRadius,
       noRightBorderRadius,
-      value,
       readOnly,
       withSelection,
     } = this.props;
 
-    let hasError = status === Input.StatusError;
-    const hasWarning = status === Input.StatusWarning;
-
-    // Check for deprecated fields and use them if provided
-    if (error) {
-      hasError = true;
-    }
-
     const classes = {
       [styles.rtl]: !!rtl,
       [styles.disabled]: disabled,
-      [styles.hasError]: hasError,
-      [styles.hasWarning]: hasWarning,
-      [styles.hasHover]: forceHover,
-      [styles.hasFocus]: forceFocus || this.state.focus,
+      [styles.hasError]: status === Input.StatusError, // Used in mixin
+      [styles.hasWarning]: status === Input.StatusWarning, // Used in mixin
+      [styles.hasHover]: forceHover, // For testing
+      [styles.hasFocus]: forceFocus || this.state.focus, // For testing
       [styles.roundInput]: roundInput,
-      [styles.hasValue]:
-        (value && value.length) || (this.input && !!this.input.value),
       [styles.noRightBorderRadius]: noRightBorderRadius === true, // assert boolean type
       [styles.noLeftBorderRadius]: noLeftBorderRadius === true, // assert boolean type
       /* Adding [noRightBorderRadius] and [noLeftBorderRadius] as a string className, is a hack for backward compatibility with
@@ -68,25 +53,13 @@ class ThemedInput extends Input {
         className={classNames(
           classes,
           styles.root,
-          styles[`theme-${theme}`],
           styles[`size-${size}${withSelection ? '-with-selection' : ''}`],
           className,
           { [styles.readOnly]: readOnly },
         )}
         {...this.getDataAttr({ dataHook, size })}
       >
-        {theme === 'amaterial' && (
-          <label className={styles.materialTitle} htmlFor={id}>
-            {title}
-          </label>
-        )}
         {super.render({ placeholder })}
-        {theme === 'material' && (
-          <div className={`${styles.bar} ${styles.barBlack}`} />
-        )}
-        {theme === 'amaterial' && (
-          <div className={`${styles.bar} ${styles.barBlue}`} />
-        )}
       </div>
     );
   }

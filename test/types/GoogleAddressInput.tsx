@@ -12,18 +12,18 @@ function GoogleAddressInputWithAllProps() {
       valuePrefix={'valuePrefix'}
       countryCode={'countryCode'}
       value={'value'}
-      types={['type1','type2']}
+      types={['type1', 'type2']}
       filterTypes={['filterType1']}
       placeDetailsFields={['place1', 'place2']}
-      error={true}
-      onChange={e=>{}}
-      onBlur={e=>{}}
-      onFocus={e=>{}}
-      onKeyDown={e=>{}}
-      onSet={()=>{}}
+      status="error"
+      statusMessage="message"
+      onChange={e => {}}
+      onBlur={e => {}}
+      onFocus={e => {}}
+      onKeyDown={e => {}}
+      onSet={() => {}}
       Client={clients.GoogleMapsClient}
       magnifyingGlass
-      theme={'paneltitle'}
       readOnly
       autoSelect
       footer={'footer'}
@@ -31,7 +31,7 @@ function GoogleAddressInputWithAllProps() {
       clearSuggestionsOnBlur
       fallbackToManual
       poweredByGoogle
-      handler='geocode'
+      handler="geocode"
     />
   );
 }

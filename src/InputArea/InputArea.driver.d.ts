@@ -1,6 +1,5 @@
 import { BaseDriver } from 'wix-ui-test-utils/driver-factory';
 import { SyntheticEventData, Simulate } from 'react-dom/test-utils';
-import { InputAreaTheme } from './index';
 
 export interface InputAreaDriver<T> extends BaseDriver {
   trigger: (trigger: keyof typeof Simulate, event: SyntheticEventData) => void;
@@ -23,7 +22,6 @@ export interface InputAreaDriver<T> extends BaseDriver {
   isFocusedStyle: () => boolean;
   isSizeSmall: () => boolean;
   isHoveredStyle: () => boolean;
-  isOfStyle: (style: InputAreaTheme) => boolean;
   isFocus: () => boolean;
   getStyle: () => CSSStyleDeclaration;
   getAriaLabel: () => string;

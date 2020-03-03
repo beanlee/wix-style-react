@@ -279,10 +279,7 @@ class DropdownLayout extends WixComponent {
     return (
       <div
         tabIndex={tabIndex}
-        className={classNames(
-          styles.wrapper,
-          styles[`theme-${this.props.theme}`],
-        )}
+        className={classNames(styles.wrapper)}
         onKeyDown={this._onKeyDown}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
@@ -506,7 +503,6 @@ DropdownLayout.propTypes = {
   /** The id of the selected option in the list  */
   selectedId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   tabIndex: PropTypes.number,
-  theme: PropTypes.string,
   onClickOutside: PropTypes.func,
   /** A fixed header to the list */
   fixedHeader: PropTypes.node,

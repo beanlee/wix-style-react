@@ -16,8 +16,6 @@ export interface InputProps {
   hideStatusSuffix?: boolean;
   forceFocus?: boolean;
   forceHover?: boolean;
-  help?: boolean;
-  helpMessage?: React.ReactNode;
   id?: string;
   maxLength?: number;
   menuArrow?: boolean;
@@ -37,7 +35,6 @@ export interface InputProps {
   onKeyDown?: React.KeyboardEventHandler<HTMLInputElement>;
   onKeyUp?: React.KeyboardEventHandler<HTMLInputElement>;
   onPaste?: React.ClipboardEventHandler<HTMLInputElement>;
-  onTooltipShow?: () => void;
   placeholder?: string;
   prefix?: React.ReactNode;
   readOnly?: boolean;
@@ -48,8 +45,6 @@ export interface InputProps {
   suffix?: React.ReactNode;
   tabIndex?: number;
   textOverflow?: string;
-  theme?: InputTheme;
-  title?: string;
   tooltipPlacement?: TooltipOldProps['placement'];
   type?: string;
   value?: string | number;
@@ -90,15 +85,6 @@ export type InputStatusLoading = 'loading';
 export type InputStatusWarning = 'warning';
 
 export type InputSize = 'small' | 'normal' | 'medium' | 'large';
-
-export type InputTheme =
-  | 'normal'
-  | 'tags'
-  | 'paneltitle'
-  | 'material'
-  | 'amaterial'
-  | 'flat'
-  | 'flatdark';
 
 declare const Ticker: React.SFC<TickerProps>;
 interface TickerProps {

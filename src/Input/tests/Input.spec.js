@@ -403,33 +403,6 @@ describe('Input', () => {
       });
     });
 
-    describe('theme attribute', () => {
-      it('should set the theme by default to "normal"', async () => {
-        const { driver } = render(<Input />);
-        expect(await driver.isOfStyle('normal')).toBe(true);
-      });
-
-      it('should allowing setting the theme to "paneltitle"', async () => {
-        const { driver } = render(<Input theme="paneltitle" />);
-        expect(await driver.isOfStyle('paneltitle')).toBe(true);
-      });
-
-      it('should allow setting the theme to "material"', async () => {
-        const { driver } = render(<Input theme="material" />);
-        expect(await driver.isOfStyle('material')).toBe(true);
-      });
-
-      it('should allow setting the theme to "flat"', async () => {
-        const { driver } = render(<Input theme="flat" />);
-        expect(await driver.isOfStyle('flat')).toBe(true);
-      });
-
-      it('should allow setting the theme to "flatdark"', async () => {
-        const { driver } = render(<Input theme="flatdark" />);
-        expect(await driver.isOfStyle('flatdark')).toBe(true);
-      });
-    });
-
     describe('clearButton attribute', () => {
       it('should be displayed when input text is not empty', async () => {
         const { driver } = render(<Input value="some value" clearButton />);

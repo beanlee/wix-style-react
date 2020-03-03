@@ -37,7 +37,6 @@ function DropdownLayoutWithAllProps() {
       selectedId="1"
       tabIndex={2}
       styles="font: 12px"
-      theme="b2b"
       visible
       withArrow
       overflow="scroll"

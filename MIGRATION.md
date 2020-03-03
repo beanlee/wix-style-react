@@ -42,7 +42,7 @@
   - removed `units` use `<Input.Affix/>` component instead
   - removed `magnifyingGlass` use `<Search/>` component instead
   - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
-
+  - removed `theme`
 - Testkit:
   - removed `clickUnit`
   - removed `getUnit`
@@ -59,6 +59,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 - Testkit:
   - removed `hasError`
   - added `hasStatus`
@@ -71,6 +72,14 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+
+#### `<DropdownLayout/>`
+
+- Props:
+  - removed `theme`
+- Testkit:
+  - removed `hasTheme`
 
 #### `<InputWithOptions/>`
 
@@ -93,6 +102,8 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - removed `onTooltipShow`
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `theme`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 - Testkit:
   - removed `hasError`
   - removed `hasWarning`
@@ -136,6 +147,7 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - removed `isOpen` - use `initialOpen` instead.
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 
 #### `<Loader/>`
 
@@ -178,6 +190,8 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `theme`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 - Testkit:
   - removed `inputWrapperHasError`
 
@@ -186,24 +200,39 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `theme`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 
 #### `<Search/>`
 
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `theme`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 
 #### `<NumberInput/>`
 
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `theme`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+
+#### `<GoogleAddressInput/>`
+
+- Props:
+  - changed `error` to `status`
+  - changed `errorMessage` to `statusMessage`
+  - removed `theme`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 
 #### `<RichTextInputArea/>`
 
 - Props:
   - changed `error` to `status`
   - changed `errorMessage` to `statusMessage`
+  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
 - Testkit:
   - removed `hasError`
   - removed `getErrorMessage`

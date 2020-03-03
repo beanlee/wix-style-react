@@ -28,8 +28,6 @@ function InputWithAllProps() {
       disabled
       forceFocus
       forceHover
-      help
-      helpMessage="msg"
       hideStatusSuffix
       id="1"
       max={10}
@@ -50,7 +48,6 @@ function InputWithAllProps() {
       onKeyDown={_ev => {}}
       onKeyUp={_ev => {}}
       onPaste={_ev => {}}
-      onTooltipShow={() => {}}
       placeholder="placeholder"
       prefix={<div />}
       readOnly
@@ -66,14 +63,13 @@ function InputWithAllProps() {
       suffix={<div />}
       tabIndex={0}
       textOverflow="clip"
-      theme="amaterial"
-      title="title"
       tooltipPlacement="bottom"
       type="text"
       updateControlledOnClear
       value="value"
       pattern="some pattern"
-      withSelection>
+      withSelection
+    >
       <Input.Ticker
         dataHook="hook"
         downDisabled
@@ -101,18 +97,18 @@ function testInstanceMethods() {
 async function testkits() {
   const testkit = inputTestkitFactory({
     dataHook: 'hook',
-    wrapper: document.createElement('div')
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = inputEnzymeTestkitFactory({
     dataHook: 'hook',
-    wrapper: enzyme.mount(<div />)
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await inputPuppeteerTestkitFactory({
     dataHook: 'hook',
-    page
+    page,
   });
 }

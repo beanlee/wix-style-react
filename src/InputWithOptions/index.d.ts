@@ -9,11 +9,8 @@ export interface InputWithOptionsProps<
   ManualInputFn = ManualInputFnSignature,
   OnSelectFn = OnSelectFnSignature
 >
-  extends OmitPolyfill<InputProps, 'theme'>,
-    OmitPolyfill<DropdownLayoutProps, 'theme' | 'onSelect'> {
-  // TODO: there is a bug in WSR - theme exists in InputProps and DropdownLayoutProps
-  // and it has different set of values
-  theme?: string;
+  extends InputProps,
+    OmitPolyfill<DropdownLayoutProps, 'onSelect'> {
 
   autocomplete?: string;
   inputElement?: React.ReactElement;

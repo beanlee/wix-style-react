@@ -807,14 +807,6 @@ describe('DropdownLayout', () => {
       });
     });
 
-    describe('theme support', () => {
-      it('should allow setting a custom theme', async () => {
-        const props = { theme: 'material', options };
-        const { driver } = render(<DropdownLayout {...props} />);
-        expect(await driver.hasTheme('material')).toBe(true);
-      });
-    });
-
     describe('option validator', () => {
       describe('valid', () => {
         it('option', async () => {

@@ -44,16 +44,6 @@ describe('GoogleAddressInput', () => {
       expect(component.querySelector('[data-hook="search-icon"]')).toBe(null);
     });
 
-    it('should allow setting theme for the nested input', () => {
-      const component = createShallow({
-        Client: GmapsTestClient,
-        theme: 'material',
-      });
-      expect(component.find('InputWithOptions').props().theme).toEqual(
-        'material',
-      );
-    });
-
     it('should allow the input to be readOnly', () => {
       const component = createShallow({
         Client: GmapsTestClient,

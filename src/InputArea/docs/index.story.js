@@ -31,9 +31,7 @@ export default {
 
   componentProps: {
     dataHook: storySettings.dataHook,
-    error: false,
     status: undefined,
-    theme: 'normal',
     hasCounter: false,
     resizable: false,
     disabled: false,

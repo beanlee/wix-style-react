@@ -90,7 +90,6 @@ const inputDriverFactory = ({ element, wrapper, eventTrigger }) => {
     isFocusedStyle: () => element.classList.contains(styles.hasFocus),
     isHoveredStyle: () => element.classList.contains(styles.hasHover),
     isDisabled: () => element.classList.contains(styles.disabled),
-    isOfStyle: style => element.classList.contains(styles[`theme-${style}`]),
     isOfSize: size => element.classList.contains(styles[`size-${size}`]),
     getSize: () => element.getAttribute('data-size'),
     isFocus: () => document.activeElement === input,

@@ -1,6 +1,5 @@
 import { BaseUniDriver } from 'wix-ui-test-utils/base-driver';
 import { SyntheticEventData, Simulate } from 'react-dom/test-utils';
-import { InputAreaTheme } from './index';
 import { UniDriver } from 'wix-ui-test-utils/unidriver';
 
 export interface InputAreaUniDriver extends BaseUniDriver {
@@ -24,7 +23,6 @@ export interface InputAreaUniDriver extends BaseUniDriver {
   isFocusedStyle: () => Promise<boolean>;
   isSizeSmall: () => Promise<boolean>;
   isHoveredStyle: () => Promise<boolean>;
-  isOfStyle: (style: InputAreaTheme) => Promise<boolean>;
   isFocus: () => Promise<boolean>;
   getStyle: () => Promise<any>;
   getAriaLabel: () => Promise<string | null>;

@@ -759,17 +759,6 @@ describe('InputWithOptions', () => {
         expect(onOptionsShow).toHaveBeenCalled();
       });
     });
-
-    describe('appearance', () => {
-      it('should be possible to specify the theme of underlying elements', async () => {
-        const props = { theme: 'material', dataHook: 'myDataHook' };
-        const { driver } = render(<InputWithOptions {...props} />);
-        expect(await driver.inputDriver.isOfStyle(props.theme)).toBe(true);
-        expect(await driver.dropdownLayoutDriver.hasTheme(props.theme)).toBe(
-          true,
-        );
-      });
-    });
   }
 
   describe('[async] only', () => {

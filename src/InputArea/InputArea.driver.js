@@ -38,8 +38,6 @@ const inputAreaDriverFactory = ({ element, eventTrigger, wrapper }) => {
     isFocusedStyle: () => textAreaElement.classList.contains(styles.hasFocus),
     isSizeSmall: () => textArea.classList.contains(styles.sizeSmall),
     isHoveredStyle: () => textAreaElement.classList.contains(styles.hasHover),
-    isOfStyle: style =>
-      textAreaElement.classList.contains(styles[`theme-${style}`]),
     isFocus: () => document.activeElement === textArea,
     exists: () => !!textArea,
     getStyle: () => textArea.style,

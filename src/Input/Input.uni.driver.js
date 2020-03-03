@@ -60,7 +60,6 @@ export const testkit = (base, body) => {
     getText: async () => await input.value(),
     getPattern: async () => await input.attr('pattern'),
     getPlaceholder: async () => await input.attr('placeholder'),
-    isOfStyle: async style => await base.hasClass(`theme-${style}`),
     isOfSize: async size => await base.hasClass(`size-${size}`),
     getSize: async () => await base.attr(DATA_ATTR.DATA_SIZE),
     isDisabled: async () => await base.hasClass('disabled'),

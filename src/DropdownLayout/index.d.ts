@@ -15,7 +15,6 @@ export interface DropdownLayoutProps extends WixComponentProps {
   options?: DropdownLayoutOption[];
   selectedId?: string | number;
   tabIndex?: number;
-  theme?: DropdownLayoutTheme;
   onClickOutside?: WixComponentClickOutsideEventHandler;
   fixedHeader?: React.ReactNode;
   fixedFooter?: React.ReactNode;
@@ -68,5 +67,3 @@ export type DropdownLayoutDividerOption = {
 };
 
 export type DropdownLayoutItemHeight = 'small' | 'big';
-
-export type DropdownLayoutTheme = 'b2b' | 'material';

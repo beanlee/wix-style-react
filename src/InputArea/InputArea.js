@@ -71,7 +71,6 @@ class InputArea extends React.PureComponent {
       maxLength,
       resizable,
       hasCounter,
-      theme,
       size,
       tooltipPlacement,
       status,
@@ -96,7 +95,6 @@ class InputArea extends React.PureComponent {
 
     const classes = classNames({
       [styles.root]: true,
-      [styles[`theme-${theme}`]]: true,
       [styles.hasStatus]: !!status,
       [styles.hasError]: status === 'error',
       [styles.hasWarning]: status === 'warning',
@@ -147,7 +145,6 @@ class InputArea extends React.PureComponent {
             {...ariaAttribute}
             readOnly={readOnly}
           />
-          {theme === 'material' && <div className={styles.bar} />}
           {hasCounter && maxLength && (
             <span className={styles.counter} data-hook="counter">
               {this.state.counter}/{maxLength}
@@ -279,7 +276,6 @@ class InputArea extends React.PureComponent {
 InputArea.displayName = 'InputArea';
 
 InputArea.defaultProps = {
-  theme: 'normal',
   minRowsAutoGrow: InputArea.MIN_ROWS,
   size: 'normal',
 };
@@ -363,11 +359,7 @@ InputArea.propTypes = {
   /** Sets the minimum amount of rows the component can have when in autoGrow mode */
   minRowsAutoGrow: PropTypes.number,
 
-  style: PropTypes.oneOf(['normal', 'paneltitle', 'material', 'amaterial']),
   tabIndex: PropTypes.number,
-
-  /** The theme of the input, can be one of `normal`, `paneltitle` */
-  theme: PropTypes.oneOf(['normal', 'paneltitle', 'material', 'amaterial']),
 
   /** Placement of the status tooltip */
   tooltipPlacement: PropTypes.string,

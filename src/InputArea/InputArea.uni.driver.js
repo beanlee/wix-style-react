@@ -37,7 +37,6 @@ export const inputAreaUniDriverFactory = (base, body) => {
     isFocusedStyle: () => textAreaElement.hasClass('hasFocus'),
     isSizeSmall: () => textArea.hasClass('sizeSmall'),
     isHoveredStyle: () => textAreaElement.hasClass('hasHover'),
-    isOfStyle: style => textAreaElement.hasClass([`theme-${style}`]),
     isFocus: () => textAreaBase.isFocus(),
     exists: () => textArea.exists(),
     getStyle: () => textArea._prop('style'),

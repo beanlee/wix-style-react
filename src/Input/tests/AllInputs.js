@@ -32,15 +32,6 @@ export default class AllInputs extends React.Component {
           status="loading"
           rtl={rtl}
           menuArrow
-          theme="flat"
-          size="small"
-          prefix={<Input.Affix>https://</Input.Affix>}
-          suffix={<Input.Affix>.com</Input.Affix>}
-        />
-        <Input
-          status="loading"
-          rtl={rtl}
-          menuArrow
           roundInput
           size="small"
           prefix={<Input.Affix>https://</Input.Affix>}
@@ -58,14 +49,6 @@ export default class AllInputs extends React.Component {
           status="loading"
           rtl={rtl}
           menuArrow
-          theme="flat"
-          prefix={<Input.Affix>https://</Input.Affix>}
-          suffix={<Input.Affix>.com</Input.Affix>}
-        />
-        <Input
-          status="loading"
-          rtl={rtl}
-          menuArrow
           roundInput
           prefix={<Input.Affix>https://</Input.Affix>}
           suffix={<Input.Affix>.com</Input.Affix>}
@@ -75,15 +58,6 @@ export default class AllInputs extends React.Component {
           status="loading"
           rtl={rtl}
           menuArrow
-          size="large"
-          prefix={<Input.Affix>https://</Input.Affix>}
-          suffix={<Input.Affix>.com</Input.Affix>}
-        />
-        <Input
-          status="loading"
-          rtl={rtl}
-          menuArrow
-          theme="flat"
           size="large"
           prefix={<Input.Affix>https://</Input.Affix>}
           suffix={<Input.Affix>.com</Input.Affix>}
@@ -118,23 +92,6 @@ export default class AllInputs extends React.Component {
           status="loading"
           rtl={rtl}
           menuArrow
-          theme="flat"
-          size="small"
-          prefix={
-            <Input.IconAffix>
-              <DateSmall />
-            </Input.IconAffix>
-          }
-          suffix={
-            <Input.IconAffix>
-              <DateSmall />
-            </Input.IconAffix>
-          }
-        />
-        <Input
-          status="loading"
-          rtl={rtl}
-          menuArrow
           roundInput
           size="small"
           prefix={
@@ -168,22 +125,6 @@ export default class AllInputs extends React.Component {
           status="loading"
           rtl={rtl}
           menuArrow
-          theme="flat"
-          prefix={
-            <Input.IconAffix>
-              <Date />
-            </Input.IconAffix>
-          }
-          suffix={
-            <Input.IconAffix>
-              <Date />
-            </Input.IconAffix>
-          }
-        />
-        <Input
-          status="loading"
-          rtl={rtl}
-          menuArrow
           roundInput
           prefix={
             <Input.IconAffix>
@@ -201,23 +142,6 @@ export default class AllInputs extends React.Component {
           status="loading"
           rtl={rtl}
           menuArrow
-          size="large"
-          prefix={
-            <Input.IconAffix>
-              <Date />
-            </Input.IconAffix>
-          }
-          suffix={
-            <Input.IconAffix>
-              <Date />
-            </Input.IconAffix>
-          }
-        />
-        <Input
-          status="loading"
-          rtl={rtl}
-          menuArrow
-          theme="flat"
           size="large"
           prefix={
             <Input.IconAffix>

@@ -34,13 +34,9 @@ class NoBorderInput extends React.Component {
     } = this.props;
 
     const rejectedProps = [
-      'theme',
       'prefix',
       'className',
-      'help',
       'statusMessage',
-      'error',
-      'errorMessage',
       'roundInput',
       'noLeftBorderRadius',
       'noRightBorderRadius',

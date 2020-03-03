@@ -24,7 +24,6 @@ const getVisibleSuffixCount = args =>
     .filter(x => x).length;
 
 const InputSuffix = ({
-  theme,
   statusMessage,
   status,
   disabled,
@@ -34,7 +33,6 @@ const InputSuffix = ({
   menuArrow,
   suffix,
   tooltipPlacement,
-  onTooltipShow,
 }) => {
   const suffixes = [
     {
@@ -45,7 +43,6 @@ const InputSuffix = ({
             status={status}
             message={statusMessage}
             tooltipPlacement={tooltipPlacement}
-            onTooltipShow={onTooltipShow}
           />
         </Box>
       ),
@@ -102,15 +99,6 @@ InputSuffix.propTypes = {
       isVisible: PropTypes.bool.isRequired,
     }),
   ),
-  theme: PropTypes.oneOf([
-    'normal',
-    'tags',
-    'paneltitle',
-    'material',
-    'amaterial',
-    'flat',
-    'flatdark',
-  ]),
   statusMessage: PropTypes.node,
   status: PropTypes.oneOf(['loading', 'error', 'warning']),
   disabled: PropTypes.bool,
@@ -120,7 +108,6 @@ InputSuffix.propTypes = {
   menuArrow: PropTypes.bool,
   suffix: PropTypes.node,
   tooltipPlacement: PropTypes.string,
-  onTooltipShow: PropTypes.func,
 };
 
 export default InputSuffix;

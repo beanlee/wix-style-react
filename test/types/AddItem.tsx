@@ -21,12 +21,9 @@ function AddItemWithAllProps() {
       showIcon
       size="large"
       theme="dashes"
-      tooltipAppendTo="parent"
-      tooltipContent="asd"
-      tooltipFixed
-      tooltipFlip
-      tooltipPlacement="top"
-      tooltipProps={{}}
+      tooltipProps={{
+        content: 'content',
+      }}
     />
   );
 }
@@ -34,18 +31,18 @@ function AddItemWithAllProps() {
 async function testkits() {
   const testkit = addItemTestkitFactory({
     dataHook: 'hook',
-    wrapper: document.createElement('div')
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = addItemEnzymeTestkitFactory({
     dataHook: 'hook',
-    wrapper: enzyme.mount(<div />)
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await addItemPuppeteerTestkitFactory({
     dataHook: 'hook',
-    page
+    page,
   });
 }

@@ -126,6 +126,7 @@
 .root:theme(image) {
   display: block;
   height: 100%;
+  min-height: 81px;
   padding: 12px;
   border: none;
   transition: background 0.2s linear;
@@ -147,10 +148,19 @@
   background-color: value(D70);
 }
 
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+}
+
 /** Content **/
 
 .content {
-  -st-states: theme(enum(image)), alignItems(enum(center, right, left)), size(enum(tiny)), disabled;
+  -st-states: theme(enum(image)), alignItems(enum(center, right, left)), size(enum(tiny)), disabled, tooltip;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,6 +175,10 @@
   border: dashed 1px value(B20);
   border-radius: 3px;
   padding: 12px 30px;
+}
+
+.content:theme(image):tooltip {
+  position: absolute;
 }
 
 .content:disabled:theme(image) {

@@ -50,7 +50,7 @@ const load = module => {
 };
 
 export const accordionTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/Accordion/Accordion.uni.driver')));
-export const addItemTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/AddItem/AddItem.protractor.driver')));
+export const addItemTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/AddItem/AddItem.uni.driver')));
 export const autoCompleteTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/AutoComplete/AutoComplete.protractor.driver')));
 export const avatarTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/Avatar/Avatar.uni.driver')));
 export const badgeTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Badge/Badge.protractor.driver')));

@@ -8,9 +8,8 @@ import AddItemMedium from 'wix-ui-icons-common/system/AddItemMedium';
 import AddItemSmall from 'wix-ui-icons-common/system/AddItemSmall';
 import Add from 'wix-ui-icons-common/Add';
 
-import Tooltip from '../Tooltip';
+import Tooltip from '../Tooltip/TooltipNext';
 import Text from '../Text';
-import TooltipHOC from './components/TooltipHOC';
 import AddMedia from 'wix-ui-icons-common/system/AddMedia';
 import { dataHooks } from './constants';
 
@@ -23,6 +22,11 @@ const ICONS = {
   tiny: <Add width="26" height="26" style={{ flexShrink: 0 }} />,
   custom: <AddMedia width="31" height="31" />,
 };
+const {
+  dataHook: omitted_dataHook,
+  children: omitted_children,
+  ...tooltipPropTypes
+} = Tooltip.propTypes;
 
 class AddItem extends Component {
   static displayName = 'AddItem';
@@ -49,27 +53,7 @@ class AddItem extends Component {
     dataHook: PropTypes.string,
 
     /** Tooltip props */
-    tooltipProps: PropTypes.shape(Tooltip.propTypes),
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipAppendTo: PropTypes.oneOf([
-      'window',
-      'scrollParent',
-      'viewport',
-      'parent',
-    ]),
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipFlip: PropTypes.bool,
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipFixed: PropTypes.bool,
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipContent: PropTypes.string,
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipPlacement: PropTypes.string,
+    tooltipProps: PropTypes.shape(tooltipPropTypes),
 
     /** Displays the plus icon */
     showIcon: PropTypes.bool,
@@ -125,22 +109,34 @@ class AddItem extends Component {
       size,
       disabled,
       showIcon,
-      tooltipContent,
+      tooltipProps = {},
     } = this.props;
 
     const container = (
-      <div {...style('content', { theme, size, alignItems, disabled })}>
+      <div
+        {...style('content', {
+          theme,
+          size,
+          alignItems,
+          disabled,
+          tooltip: !!tooltipProps.content,
+        })}
+      >
         {showIcon && this._renderIcon()}
         {this._renderText()}
       </div>
     );
-    return (
-      <TooltipHOC
-        enabled={theme === 'image' && tooltipContent !== ''}
-        {...this.props}
+
+    return theme === 'image' && !!tooltipProps.content ? (
+      <Tooltip
+        {...tooltipProps}
+        dataHook={dataHooks.itemTooltip}
+        className={style.tooltip}
       >
         {container}
-      </TooltipHOC>
+      </Tooltip>
+    ) : (
+      container
     );
   };
 

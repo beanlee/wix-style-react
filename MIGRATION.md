@@ -241,6 +241,15 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - added `hasStatusMessage`
   - added `getStatusMessage`
 
+#### `<AddItem/>`
+
+- Props:
+  - removed `tooltipAppendTo` use `tooltipProps` instead
+  - removed `tooltipContent` use `tooltipProps` instead
+  - removed `tooltipFixed` use `tooltipProps` instead
+  - removed `tooltipFlip` use `tooltipProps` instead
+  - removed `tooltipPlacement` use `tooltipProps` instead
+
 ## Migrating to new PopoverMenu
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.

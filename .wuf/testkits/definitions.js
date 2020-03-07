@@ -488,7 +488,6 @@ module.exports = {
   AddItem: {
     vanillaLegacyTestkit: true,
     enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
   },
 
   ImageViewer: {

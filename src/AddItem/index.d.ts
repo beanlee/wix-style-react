@@ -9,17 +9,10 @@ export interface AddItemProps {
   size?: AddItemSize;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   dataHook?: string;
-  tooltipProps?: OmitPolyfill<Partial<TooltipNewProps>, 'upgrade' | 'dataHook'>;
-  /** @deprecated do not use this prop, use tooltipProps prop instead. */
-  tooltipAppendTo?: AddItemAppendTo;
-  /** @deprecated do not use this prop, use tooltipProps prop instead. */
-  tooltipFlip?: boolean;
-  /** @deprecated do not use this prop, use tooltipProps prop instead. */
-  tooltipFixed?: boolean;
-  /** @deprecated do not use this prop, use tooltipProps prop instead. */
-  tooltipContent?: string;
-  /** @deprecated do not use this prop, use tooltipProps prop instead. */
-  tooltipPlacement?: string;
+  tooltipProps?: OmitPolyfill<
+    Partial<TooltipNewProps>,
+    'dataHook' | 'children'
+  >;
   showIcon?: boolean;
   removePadding?: boolean;
 }
@@ -29,4 +22,3 @@ export default class AddItem extends React.Component<AddItemProps> {}
 export type AddItemTheme = 'dashes' | 'plain' | 'filled' | 'image';
 export type AddItemAlignItems = 'center' | 'right' | 'left';
 export type AddItemSize = 'large' | 'medium' | 'small' | 'tiny';
-export type AddItemAppendTo = 'window' | 'scrollParent' | 'viewport' | 'parent';

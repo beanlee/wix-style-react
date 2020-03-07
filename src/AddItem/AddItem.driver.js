@@ -10,8 +10,6 @@ const addItemDriverFactory = ({ element, eventTrigger }) => {
   });
   const textDriver = () =>
     textDriverFactory({ element: byHook(dataHooks.itemText) });
-  const deprecationMessage =
-    'WARNING[AddItem]: Testkit method getTooltipDriver() is deprecated. Make sure to review AddItem Testkit for other available methods.';
 
   return {
     /** returns true if element in the DOM */
@@ -25,10 +23,6 @@ const addItemDriverFactory = ({ element, eventTrigger }) => {
 
     /** true if passed children in string exists */
     textExists: () => textDriver().exists(),
-
-    /** returns driver of tooltip */
-    // eslint-disable-next-line no-console
-    getTooltipDriver: () => console.warn(deprecationMessage),
 
     /** returns value of tooltip content */
     getTooltipContent: () => {

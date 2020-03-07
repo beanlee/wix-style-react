@@ -12,7 +12,7 @@ export const themes = `
     <AddItem theme="filled">Add Item</AddItem>
   </div>
   <div>
-    <AddItem theme="image" tooltipContent="Add Item">Add Item</AddItem>
+    <AddItem theme="image" tooltipProps={{content: 'Add Item'}}>Add Item</AddItem>
   </div>
 </Layout>
 `;

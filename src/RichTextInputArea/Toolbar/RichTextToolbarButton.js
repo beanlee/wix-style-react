@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import styles from './RichTextToolbarButton.scss';
-import Tooltip from '../../Tooltip/TooltipNext';
+import Tooltip from '../../Tooltip';
 
 const RichTextToolbarButton = ({
   dataHook,

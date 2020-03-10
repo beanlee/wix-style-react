@@ -91,7 +91,6 @@ class Checkbox extends React.PureComponent {
           size={size}
         >
           <Tooltip
-            upgrade
             dataHook={dataHooks.boxTooltip}
             disabled={disabled || !hasError || !errorMessage}
             placement="top"

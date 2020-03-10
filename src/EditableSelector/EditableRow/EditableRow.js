@@ -55,7 +55,7 @@ class EditableRow extends Component {
         </div>
 
         <div className={styles.editableRowButtons}>
-          <Tooltip content="Cancel" upgrade timeout={0}>
+          <Tooltip content="Cancel" timeout={0}>
             <IconButton
               onClick={this.onCancel}
               size="medium"
@@ -66,7 +66,7 @@ class EditableRow extends Component {
             </IconButton>
           </Tooltip>
 
-          <Tooltip content="Confirm" upgrade timeout={0}>
+          <Tooltip content="Confirm" timeout={0}>
             <IconButton
               onClick={this.onApprove}
               size="medium"

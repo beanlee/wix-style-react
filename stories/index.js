@@ -133,7 +133,7 @@ require('../src/TimeInput/docs/index.story');
 require('../src/TimeTable/docs/index.story');
 require('../src/ToggleButton/docs/index.story');
 require('../src/ToggleSwitch/docs/index.story');
-require('../src/Tooltip/TooltipNext/docs/index.story');
+require('../src/Tooltip/docs/index.story');
 require('../src/VerticalTabs/docs/index.story');
 require('../src/VerticalTabsItem/docs/index.story');
 require('../src/VerticalTabs/docs/index.story');

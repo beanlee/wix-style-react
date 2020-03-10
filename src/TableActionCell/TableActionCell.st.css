@@ -25,6 +25,10 @@
   white-space: nowrap;
 }
 
+.hoverSlot {
+  display: flex;
+}
+
 .hoverSlot > button,
 .hoverSlot > Popover::popoverElement > button {
   margin: 0 6px;

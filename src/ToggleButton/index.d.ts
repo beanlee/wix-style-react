@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ButtonWithAsProp } from '../Button';
-import { TooltipNewProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 import { OmitPolyfill } from '../common';
 
 export type ToggleButtonProps = ButtonWithAsProp<{
@@ -9,7 +9,7 @@ export type ToggleButtonProps = ButtonWithAsProp<{
   disabled?: boolean;
   dataHook?: string;
   tooltipContent?: React.ReactNode;
-  tooltipProps?: OmitPolyfill<TooltipNewProps, 'size' | 'content' | 'dataHook' | 'upgrade'>;
+  tooltipProps?: OmitPolyfill<TooltipProps, 'size' | 'content' | 'dataHook'>;
 }>;
 
 export default class ToggleButton extends React.Component<ToggleButtonProps> {}

@@ -545,7 +545,6 @@ export default {
 
   Tooltip: {
     props: {
-      upgrade: true,
       content: 'hello',
       children: <button>content</button>,
     },

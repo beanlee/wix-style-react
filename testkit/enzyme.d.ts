@@ -23,11 +23,6 @@ interface EnzymeTestkitParams {
   dataHook: string;
 }
 
-import {TooltipDriver} from '../src/Tooltip/Tooltip.driver';
-export const tooltipTestkitFactory: EnzymeTestkitFactory<TooltipDriver>;
-import {TooltipUniDriver} from '../src/Tooltip/TooltipNext/Tooltip.uni.driver';
-export const TooltipTestkit: EnzymeUniTestkitFactory<TooltipUniDriver>;
-
 type DeprecatedEnzymeTestkit = any;
 
 import {AccordionUniDriver} from '../src/Accordion/Accordion.uni.driver';
@@ -196,6 +191,8 @@ import {TimeInputDriver} from '../src/TimeInput/TimeInput.driver';
 export const timeInputTestkitFactory: EnzymeTestkitFactory<TimeInputDriver>;
 import {ToggleSwitchDriver} from '../src/ToggleSwitch/ToggleSwitch.driver';
 export const toggleSwitchTestkitFactory: EnzymeTestkitFactory<ToggleSwitchDriver>;
+import {TooltipUniDriver} from '../src/Tooltip/Tooltip.uni.driver';
+export const tooltipTestkitFactory: EnzymeUniTestkitFactory<TooltipUniDriver>;
 import {SidebarSectionItemUniDriver} from '../src/SidebarSectionItem/SidebarSectionItem.uni.driver';
 export const sidebarSectionItemTestkitFactory: EnzymeUniTestkitFactory<SidebarSectionItemUniDriver>;
 import {SidebarDividerUniDriver} from '../src/SidebarDivider/SidebarDivider.uni.driver';

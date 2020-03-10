@@ -555,7 +555,10 @@ describe('Table', () => {
             { title: 'Row Num', render: (row, rowNum) => rowNum },
             {
               title: 'A',
-              infoTooltipProps: { content: 'Vary informative tooltip text' },
+              infoTooltipProps: {
+                content: 'Vary informative tooltip text',
+                children: false,
+              },
               render: row => row.a,
             },
             { title: 'B', render: row => row.b },

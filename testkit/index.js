@@ -11,17 +11,6 @@ import {
   uniTestkitFactoryCreator,
 } from 'wix-ui-test-utils/vanilla';
 
-import tooltipDriverFactory from '../src/Tooltip/Tooltip.driver';
-import { tooltipDriverFactory as tooltipNextDriverFactory } from '../src/Tooltip/TooltipNext/Tooltip.uni.driver';
-
-export const tooltipTestkitFactory = testkitFactoryCreator(
-  tooltipDriverFactory,
-);
-
-export const TooltipTestkit = uniTestkitFactoryCreator(
-  tooltipNextDriverFactory,
-);
-
 const load = module => {
   const MODULE_META_KEYS = ['__esModule'];
 
@@ -126,6 +115,7 @@ export const textButtonTestkitFactory = uniTestkitFactoryCreator(load(require('.
 export const thumbnailTestkitFactory = uniTestkitFactoryCreator(load(require('../src/Thumbnail/Thumbnail.uni.driver')));
 export const timeInputTestkitFactory = testkitFactoryCreator(load(require('../src/TimeInput/TimeInput.driver')));
 export const toggleSwitchTestkitFactory = testkitFactoryCreator(load(require('../src/ToggleSwitch/ToggleSwitch.driver')));
+export const tooltipTestkitFactory = uniTestkitFactoryCreator(load(require('../src/Tooltip/Tooltip.uni.driver')));
 export const sidebarSectionItemTestkitFactory = uniTestkitFactoryCreator(load(require('../src/SidebarSectionItem/SidebarSectionItem.uni.driver')));
 export const sidebarDividerTestkitFactory = uniTestkitFactoryCreator(load(require('../src/SidebarDivider/SidebarDivider.uni.driver')));
 export const sidebarBackButtonTestkitFactory = uniTestkitFactoryCreator(load(require('../src/SidebarBackButton/SidebarBackButton.uni.driver')));

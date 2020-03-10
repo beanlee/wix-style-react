@@ -250,6 +250,14 @@ Removed `<Input.Units/>` use `<Input.Affix>` instead.
   - removed `tooltipFlip` use `tooltipProps` instead
   - removed `tooltipPlacement` use `tooltipProps` instead
 
+#### `<FillButton/>`
+- Props:
+  - removed `tooltipContent` - use `tooltipProps` instead
+
+#### `<Tooltip/>`
+- Props:
+  - removed `upgrade` - component is now upgraded by default
+
 ## Migrating to new PopoverMenu
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.

@@ -8,7 +8,7 @@ import AddItemMedium from 'wix-ui-icons-common/system/AddItemMedium';
 import AddItemSmall from 'wix-ui-icons-common/system/AddItemSmall';
 import Add from 'wix-ui-icons-common/Add';
 
-import Tooltip from '../Tooltip/TooltipNext';
+import Tooltip from '../Tooltip';
 import Text from '../Text';
 import AddMedia from 'wix-ui-icons-common/system/AddMedia';
 import { dataHooks } from './constants';
@@ -22,11 +22,6 @@ const ICONS = {
   tiny: <Add width="26" height="26" style={{ flexShrink: 0 }} />,
   custom: <AddMedia width="31" height="31" />,
 };
-const {
-  dataHook: omitted_dataHook,
-  children: omitted_children,
-  ...tooltipPropTypes
-} = Tooltip.propTypes;
 
 class AddItem extends Component {
   static displayName = 'AddItem';
@@ -53,7 +48,10 @@ class AddItem extends Component {
     dataHook: PropTypes.string,
 
     /** Tooltip props */
-    tooltipProps: PropTypes.shape(tooltipPropTypes),
+    tooltipProps: (() => {
+      const { children, dataHook, ...tooltipProps } = Tooltip.propTypes;
+      return PropTypes.shape(tooltipProps);
+    })(),
 
     /** Displays the plus icon */
     showIcon: PropTypes.bool,

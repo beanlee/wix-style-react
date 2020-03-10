@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { OmitPolyfill } from '../common';
-import { TooltipNewProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 
 export interface FillButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   iconSize?: FillButtonIconSize;
   disabled?: boolean;
-  tooltipContent?: React.ReactNode;
   fill?: string;
-  tooltipProps?: OmitPolyfill<TooltipNewProps, 'dataHook' | 'content' | 'size' | 'upgrade'>;
+  tooltipProps?: OmitPolyfill<TooltipProps, 'dataHook' | 'size'>;
   dataHook?: string;
 }
 

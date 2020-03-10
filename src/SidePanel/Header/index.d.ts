@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { TooltipNewProps } from '../../Tooltip';
+import { TooltipProps } from '../../Tooltip';
 
 export interface HeaderProps {
   children?: React.ReactNode;
   className?: string;
   title?: string | React.ReactNode;
-  infoTooltipProps?: Partial<TooltipNewProps>;
+  infoTooltipProps?: Partial<TooltipProps>;
   infoTooltipContent?: string;
   showDivider?: boolean;
 }

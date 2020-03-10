@@ -1,5 +1,5 @@
 import { baseUniDriverFactory } from '../../test/utils/unidriver';
-import { tooltipDriverFactory } from '../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 import { dataHooks } from './constants';
 
 export const formFieldUniDriverFactory = (base, body, { dataHook }) => {

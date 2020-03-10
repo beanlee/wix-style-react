@@ -1,5 +1,5 @@
 import { textUniDriverFactory } from '../Text/Text.uni.driver';
-import { tooltipDriverFactory } from '../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 import { baseUniDriverFactory } from 'wix-ui-test-utils/unidriver';
 import { dataHooks } from './constants';
 

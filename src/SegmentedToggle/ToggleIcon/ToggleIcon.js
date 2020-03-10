@@ -57,7 +57,6 @@ class ToggleIcon extends React.Component {
     return (
       <Tooltip
         {...styles('tooltip', {}, rest)}
-        upgrade
         dataHook={dataHook}
         appendTo="window"
         placement="top"

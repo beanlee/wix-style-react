@@ -9,7 +9,7 @@ import { VariableSizeList as List } from 'react-window';
 
 import styles from './DataTable.scss';
 import InfiniteScroll from '../../utils/InfiniteScroll';
-import Tooltip from '../../Tooltip/Tooltip';
+import Tooltip from '../../Tooltip';
 import InfoIcon from '../../InfoIcon';
 
 import { virtualRowsAreEqual } from './DataTable.utils';
@@ -512,9 +512,6 @@ DataTable.defaultProps = {
   skin: 'standard',
 };
 
-/* eslint-disable no-unused-vars */
-const { moveBy, dataHook, ...infoTooltipProps } = Tooltip.propTypes;
-
 DataTable.propTypes = {
   dataHook: PropTypes.string,
   /** An id to pass to the table */
@@ -527,7 +524,15 @@ DataTable.propTypes = {
       title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]).isRequired,
       render: PropTypes.func.isRequired,
       sortable: PropTypes.bool,
-      infoTooltipProps: PropTypes.shape(infoTooltipProps),
+      infoTooltipProps: (() => {
+        const {
+          moveBy,
+          dataHook,
+          children,
+          ...infoTooltipProps
+        } = Tooltip.propTypes;
+        return PropTypes.shape(infoTooltipProps);
+      })(),
       sortDescending: PropTypes.bool,
       align: PropTypes.oneOf(['start', 'center', 'end']),
     }),

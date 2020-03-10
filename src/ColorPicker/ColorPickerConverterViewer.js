@@ -41,7 +41,6 @@ class ColorPickerConverterViewer extends PureComponent {
     return (
       <Tooltip
         disabled={!addTooltipContent}
-        upgrade
         content={addTooltipContent}
         size="small"
       >

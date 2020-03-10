@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipNewProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 import { OmitPolyfill } from '../common';
 
 export interface AddItemProps {
@@ -9,10 +9,7 @@ export interface AddItemProps {
   size?: AddItemSize;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   dataHook?: string;
-  tooltipProps?: OmitPolyfill<
-    Partial<TooltipNewProps>,
-    'dataHook' | 'children'
-  >;
+  tooltipProps?: OmitPolyfill<Partial<TooltipProps>, 'dataHook' | 'children'>;
   showIcon?: boolean;
   removePadding?: boolean;
 }

@@ -23,7 +23,6 @@ const InfoIcon = ({ dataHook, content, size, tooltipProps, ...otherProps }) => {
       <Tooltip
         {...tooltipProps}
         content={content}
-        upgrade
         dataHook={getTooltipDataHook(dataHook)}
       >
         <Icon className={styles.icon} />

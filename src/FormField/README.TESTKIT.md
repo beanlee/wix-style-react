@@ -11,7 +11,6 @@
 |--------|-----------|----------------|-------------|
 | element | - | element | returns the element |
 | getLabelValue | - | string | get the label text |
-| getTooltipInfoValue | number | string | get the info tooltip text |
 | isRequired | - | boolean | check if the field is required |
 
 ## Usage Example

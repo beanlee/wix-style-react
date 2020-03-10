@@ -17,7 +17,6 @@ function FillButtonWithAllProps() {
       onClick={_ev => {}}
       iconSize="medium"
       disabled
-      tooltipContent={<div />}
       fill="red"
       tooltipProps={{}}
       dataHook="hook"

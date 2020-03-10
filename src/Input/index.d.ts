@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipOldProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 
 export interface InputProps {
   ariaControls?: string;
@@ -45,7 +45,7 @@ export interface InputProps {
   suffix?: React.ReactNode;
   tabIndex?: number;
   textOverflow?: string;
-  tooltipPlacement?: TooltipOldProps['placement'];
+  tooltipPlacement?: TooltipProps['placement'];
   type?: string;
   value?: string | number;
   withSelection?: boolean;

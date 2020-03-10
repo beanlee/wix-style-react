@@ -37,10 +37,10 @@ describe('FillButton', () => {
     });
   });
 
-  describe('`tooltipContent` prop', () => {
+  describe('`tooltipProps` prop', () => {
     it('[when] given should pass textual content to tooltip', async () => {
       const content = 'hello';
-      const { driver } = render(<FillButton tooltipContent={content} />);
+      const { driver } = render(<FillButton tooltipProps={{ content }} />);
       expect(await driver.getTooltipText()).toBe(content);
     });
   });

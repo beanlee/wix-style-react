@@ -5,7 +5,7 @@ import Text from 'wix-style-react/Text';`;
 
 export const basic = `
 <Layout cols={1} justifyItems="center">
-  <Tooltip upgrade appendTo="window" content="Enter your postal code, so postman can easier send you a mail.">
+  <Tooltip appendTo="window" content="Enter your postal code, so postman can easier send you a mail.">
     <Text>Hover me</Text>
   </Tooltip>
 </Layout>
@@ -36,7 +36,7 @@ class PlacementExample extends React.Component {
     const placement = this.VALID_PLACEMENTS[this.state.placement];
     return (
       <Layout cols={1} justifyItems="center">
-        <Tooltip upgrade content={placement} placement={placement} appendTo="window">
+        <Tooltip content={placement} placement={placement} appendTo="window">
           <TextButton onClick={this.changeDirection}>Click me to change the placement</TextButton>
         </Tooltip>
       </Layout>
@@ -47,7 +47,7 @@ class PlacementExample extends React.Component {
 
 export const delay = `
 <Layout cols={1} justifyItems="center">
-  <Tooltip upgrade enterDelay={350} exitDelay={350} appendTo="window" content="Lagging...">
+  <Tooltip enterDelay={350} exitDelay={350} appendTo="window" content="Lagging...">
     <Text>Hover me</Text>
   </Tooltip>
 </Layout>
@@ -55,10 +55,10 @@ export const delay = `
 
 export const size = `
 <Layout cols={2} justifyItems="center">
-  <Tooltip upgrade size="small" appendTo="window" content="Tooltip">
+  <Tooltip size="small" appendTo="window" content="Tooltip">
     <Text>small</Text>
   </Tooltip>
-  <Tooltip upgrade size="medium" appendTo="window" content="Tooltip">
+  <Tooltip size="medium" appendTo="window" content="Tooltip">
     <Text>medium (default)</Text>
   </Tooltip>
 </Layout>
@@ -66,10 +66,10 @@ export const size = `
 
 export const disabled = `
 <Layout cols={2} justifyItems="center">
-  <Tooltip upgrade  appendTo="window" content="You don't have permission to do this">
+  <Tooltip  appendTo="window" content="You don't have permission to do this">
     <TextButton disabled>Native Element</TextButton>
   </Tooltip>
-  <Tooltip upgrade appendTo="window" content="You don't have permission to do this">
+  <Tooltip appendTo="window" content="You don't have permission to do this">
     <span>
       <TextButton disabled>With span</TextButton>
     </span>

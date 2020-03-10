@@ -4,7 +4,7 @@ import X from 'wix-ui-icons-common/X';
 
 import styles from './RichTextInputAreaForm.scss';
 import { RichTextInputAreaContext } from '../RichTextInputAreaContext';
-import Tooltip from '../../Tooltip/TooltipNext';
+import Tooltip from '../../Tooltip';
 import Box from '../../Box';
 import IconButton from '../../IconButton';
 

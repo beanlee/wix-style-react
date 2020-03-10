@@ -108,7 +108,7 @@ class AdaptiveHeading extends React.PureComponent {
             aria-hidden="true"
             title={text}
           >
-            <Tooltip upgrade content={text}>
+            <Tooltip content={text}>
               <div className={styles.ellipsis}>{textInShort}</div>
             </Tooltip>
           </span>

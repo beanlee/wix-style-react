@@ -1,6 +1,6 @@
 import { modalPreviewLayoutDriverFactory as publicDriverFactory } from '../ModalPreviewLayout.uni.driver';
 import { dataHooks } from '../constants';
-import { tooltipDriverFactory } from '../../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../../Tooltip/Tooltip.uni.driver';
 
 export const modalPreviewLayoutPrivateDriverFactory = (base, body) => {
   const rightArrow = base.$(

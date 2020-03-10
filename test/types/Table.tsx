@@ -69,7 +69,7 @@ function tableWithAllProps() {
 }
 
 function tableWithRefScrollElement() {
-  return <Table scrollElement={React.createRef()} columns={[]} />;
+  return <Table scrollElement={new HTMLElement()} columns={[]} />;
 }
 
 function testInstanceMethods() {

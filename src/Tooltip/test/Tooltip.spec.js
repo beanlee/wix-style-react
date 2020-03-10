@@ -1,13 +1,10 @@
 import React from 'react';
-import {
-  createRendererWithUniDriver,
-  cleanup,
-} from '../../../../test/utils/unit';
+import { createRendererWithUniDriver, cleanup } from '../../../test/utils/unit';
 
 import Tooltip from '../Tooltip';
 import { tooltipPrivateDriverFactory } from './Tooltip.private.uni.driver';
 
-import Button from '../../../Button';
+import Button from '../../Button';
 
 describe('Tooltip', () => {
   const render = createRendererWithUniDriver(tooltipPrivateDriverFactory);

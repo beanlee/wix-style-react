@@ -306,10 +306,7 @@
     "path": "src/ToggleSwitch"
   },
   "Tooltip": {
-    "path": "src/Tooltip",
-    "missingFiles": [
-      "docs/index.story.js"
-    ]
+    "path": "src/Tooltip"
   },
   "SidebarSectionItem": {
     "path": "src/SidebarSectionItem"

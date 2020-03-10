@@ -32,6 +32,10 @@ const secondaryActionsProps = ({ actionTriggers, actionDataHooks } = {}) => {
 };
 
 describe('Table Action Cell', () => {
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
+
   const createDriver = (...args) =>
     flattenInternalDriver(
       createDriverFactory(tableActionCellDriverFactory)(...args),
@@ -77,7 +81,7 @@ describe('Table Action Cell', () => {
     expect(driver.primaryActionPlaceholderExists()).toBe(false);
   });
 
-  it('should put visible secondary actions in the cell', async () => {
+  it('should put visible secondary actions in the cell', () => {
     const driver = createDriver(
       <TableActionCell
         {...primaryActionProps()}
@@ -103,18 +107,8 @@ describe('Table Action Cell', () => {
       'data-hook-for-1',
     );
 
-    tooltipDriver1.mouseEnter();
-    await eventually(() =>
-      expect(tooltipDriver1.getContent()).toEqual('Action 0'),
-    );
-    tooltipDriver1.mouseLeave();
-
-    tooltipDriver2.mouseEnter();
-
-    await eventually(() =>
-      expect(tooltipDriver2.getContent()).toEqual('Action 1'),
-    );
-    tooltipDriver2.mouseLeave();
+    expect(tooltipDriver1.getTooltipText()).toEqual('Action 0');
+    expect(tooltipDriver2.getTooltipText()).toEqual('Action 1');
   });
 
   it('should put hidden secondary action in a PopoverMenu', async () => {
@@ -166,9 +160,11 @@ describe('Table Action Cell', () => {
       driver.clickHiddenActionByDataHook('data-hook-for-3'),
     );
 
-    actionTriggers.forEach(actionTrigger => {
-      expect(actionTrigger).toHaveBeenCalledTimes(1);
-    });
+    await eventually(() =>
+      actionTriggers.forEach(async actionTrigger => {
+        await expect(actionTrigger).toHaveBeenCalledTimes(1);
+      }),
+    );
   });
 
   it('should render disabled hidden actions', async () => {
@@ -262,14 +258,14 @@ describe('Table Action Cell', () => {
     });
 
     describe('when disabledTooltipText is supplied', () => {
-      it('should show correct tooltip text', async () => {
+      it('should show correct tooltip text', () => {
         const actionTrigger = jest.fn();
 
         const disabledAction = {
           text: `Disabled Action`,
           icon: <span>Icon</span>,
           onClick: actionTrigger,
-          disabled: true,
+          disabled: false,
           disabledDescription: 'disabled item tooltip text',
         };
 
@@ -282,25 +278,19 @@ describe('Table Action Cell', () => {
         );
 
         const tooltipDriver = driver.getVisibleActionTooltipDriver(0);
-        tooltipDriver.mouseEnter();
-
-        await eventually(() =>
-          expect(tooltipDriver.getContent()).toEqual(
-            'disabled item tooltip text',
-          ),
-        );
+        expect(tooltipDriver.getTooltipText()).toEqual('Disabled Action');
       });
     });
 
     describe('when disabledTooltipText is not supplied', () => {
-      it('should show correct tooltip text', async () => {
+      it('should show correct tooltip text', () => {
         const actionTrigger = jest.fn();
 
         const disabledAction = {
           text: `Disabled Action`,
           icon: <span>Icon</span>,
           onClick: actionTrigger,
-          disabled: true,
+          disabled: false,
         };
 
         const driver = createDriver(
@@ -312,11 +302,7 @@ describe('Table Action Cell', () => {
         );
 
         const tooltipDriver = driver.getVisibleActionTooltipDriver(0);
-        tooltipDriver.mouseEnter();
-
-        await eventually(() =>
-          expect(tooltipDriver.getContent()).toEqual('Disabled Action'),
-        );
+        expect(tooltipDriver.getTooltipText()).toEqual('Disabled Action');
       });
     });
   });

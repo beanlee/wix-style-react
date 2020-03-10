@@ -161,7 +161,6 @@ class ImageViewer extends Component {
     return (
       <Tooltip
         {...tooltipProps}
-        upgrade
         timeout={0}
         dataHook={dataHooks.updateTooltip}
         content={updateImageInfo}
@@ -185,7 +184,6 @@ class ImageViewer extends Component {
     return (
       <Tooltip
         {...tooltipProps}
-        upgrade
         timeout={0}
         dataHook={dataHooks.removeTooltip}
         content={removeImageInfo}

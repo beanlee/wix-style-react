@@ -1,7 +1,7 @@
 import ReactTestUtils from 'react-dom/test-utils';
 import { INTERNAL_DRIVER_SYMBOL } from '../../test/utils/private-drivers';
 import { popoverMenuTestkitFactory } from '../../testkit';
-import tooltipDriverFactory from '../Tooltip/Tooltip.driver';
+import { tooltipDriverFactory } from 'wix-ui-core/dist/src/components/tooltip/Tooltip.driver';
 import { dataHooks } from './constants';
 
 const buttonDriverFactory = ({ element }) => {
@@ -19,7 +19,7 @@ const buttonDriverFactory = ({ element }) => {
   };
 };
 
-const tableActionCellDriverFactory = ({ element, wrapper }) => {
+const tableActionCellDriverFactory = ({ element, wrapper, eventTrigger }) => {
   const getPrimaryActionPlaceholder = () =>
     element.querySelector('[data-hook="table-action-cell-placeholder"]');
   const getVisibleActionsWrapper = () =>
@@ -37,6 +37,7 @@ const tableActionCellDriverFactory = ({ element, wrapper }) => {
       element: getVisibleActionsWrapper().querySelectorAll(
         '[data-hook="table-action-cell-visible-action-tooltip"]',
       )[actionIndex],
+      eventTrigger,
     });
 
   const getVisibleActionByDataHookTooltipDriver = dataHook =>
@@ -44,6 +45,7 @@ const tableActionCellDriverFactory = ({ element, wrapper }) => {
       element: getVisibleActionsWrapper().querySelector(
         `[data-hook="${dataHook}"]`,
       ),
+      eventTrigger,
     });
 
   const getVisibleActionButtonDriver = actionIndex =>
@@ -56,7 +58,7 @@ const tableActionCellDriverFactory = ({ element, wrapper }) => {
   const getVisibleActionByDataHookButtonDriver = dataHook =>
     buttonDriverFactory({
       element: getVisibleActionsWrapper().querySelector(
-        `button[data-hook="${dataHook}"]`,
+        `[data-hook="${dataHook}"]`,
       ),
     });
 

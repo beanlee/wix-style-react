@@ -1,5 +1,5 @@
 import { baseUniDriverFactory } from '../../test/utils/unidriver';
-import { tooltipDriverFactory } from '../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 
 const getTextElement = element => element.$(`[data-hook="loader-text"]`);
 

@@ -44,7 +44,7 @@ class CircularProgressBar extends React.PureComponent {
     return (
       <div data-hook={dataHook} {...style('root', {}, this.props)}>
         {error && errorMessage ? (
-          <Tooltip upgrade content={errorMessage} dataHook={dataHooks.tooltip}>
+          <Tooltip content={errorMessage} dataHook={dataHooks.tooltip}>
             {this._renderProgressBar()}
           </Tooltip>
         ) : (

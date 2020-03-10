@@ -117,7 +117,6 @@ module.exports = {
   },
 
   TableToolbar: { skipSanityTest: true, noTestkit: true },
-  Tooltip: { skipSanityTest: true, manualExport: true },
   Collapse: { skipSanityTest: true, noTestkit: true },
   Card: { skipSanityTest: true, noTestkit: true },
   Composite: { skipSanityTest: true, noTestkit: true },

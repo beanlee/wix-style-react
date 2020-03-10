@@ -68,9 +68,8 @@ class AddColor extends React.PureComponent {
             dataHook={dataHooks.addButton}
             iconSize={iconSize}
             fill={buttonColor}
-            tooltipContent={tooltip}
             onClick={this.toggleColorPicker}
-            tooltipProps={{ disabled: shown, timeout: 0 }}
+            tooltipProps={{ disabled: shown, timeout: 0, content: tooltip }}
           />
         </Popover.Element>
         <Popover.Content>

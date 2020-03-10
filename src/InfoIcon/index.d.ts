@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipNewProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 
 export type InfoIconSize = 'small' | 'medium';
 
@@ -7,7 +7,7 @@ export interface InfoIconProps {
   content: React.ReactNode;
   size?: InfoIconSize;
   dataHook?: string;
-  tooltipProps?: Partial<TooltipNewProps>;
+  tooltipProps?: Partial<TooltipProps>;
 }
 
 declare const InfoIcon: React.FC<InfoIconProps>;

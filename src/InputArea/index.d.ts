@@ -3,7 +3,7 @@ import WixComponent, {
   WixComponentProps,
 } from '../BaseComponents/WixComponent';
 import { InputStatus } from '../Input';
-import { TooltipOldProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 
 export type InputAreaStatus = InputStatus;
 
@@ -40,7 +40,7 @@ export interface InputAreaProps extends WixComponentProps {
   autoGrow?: boolean;
   minRowsAutoGrow?: number;
   tabIndex?: number;
-  tooltipPlacement?: TooltipOldProps['placement'];
+  tooltipPlacement?: TooltipProps['placement'];
   value?: string;
   status?: InputAreaStatus;
   statusMessage?: React.ReactNode;

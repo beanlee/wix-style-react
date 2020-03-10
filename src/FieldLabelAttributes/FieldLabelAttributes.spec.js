@@ -34,7 +34,9 @@ describe('FieldLabelAttributes', () => {
 
     it('should render tooltip', () => {
       const driver = createDriver(
-        <FieldLabelAttributes tooltip={<Tooltip content="content" />} />,
+        <FieldLabelAttributes
+          tooltip={<Tooltip content="content" children={false} />}
+        />,
       );
       expect(driver.hasInfo()).toBe(true);
     });

@@ -13,11 +13,10 @@ import {
 import LinkTo from '@storybook/addon-links/react';
 import * as examples from './examples';
 
-import { Layout, Cell } from 'wix-style-react/Layout';
 import TextButton from 'wix-style-react/TextButton';
 import Tooltip from 'wix-style-react/Tooltip';
-import SectionHelper from 'wix-style-react/SectionHelper';
 import { Category } from '../storiesHierarchy';
+import Box from '../../src/Box';
 
 const example = config => baseExample({ components: allComponents, ...config });
 
@@ -28,18 +27,11 @@ export default {
   sections: [
     header({
       component: (
-        <Layout gap={10}>
-          <Cell>
-            <Tooltip upgrade appendTo="window" content="HERE I AM! THIS IS ME!">
-              <TextButton skin="dark">Hover me</TextButton>
-            </Tooltip>
-          </Cell>
-          <Cell span={6}>
-            <SectionHelper title="Next Generation Tooltip">
-              To enable new generation read more on Tooltip's API docs
-            </SectionHelper>
-          </Cell>
-        </Layout>
+        <Box>
+          <Tooltip appendTo="window" content="Hello!">
+            <TextButton skin="dark">Hover me</TextButton>
+          </Tooltip>
+        </Box>
       ),
     }),
 

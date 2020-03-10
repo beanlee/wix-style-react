@@ -1,7 +1,7 @@
 import { baseUniDriverFactory } from '../../test/utils/unidriver';
 import { iconButtonDriverFactory } from '../IconButton/IconButton.uni.driver';
 import { addItemUniDriverFactory } from '../AddItem/AddItem.uni.driver';
-import { tooltipDriverFactory } from '../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 import { dataAttributes, dataHooks } from './constants';
 import { statusIndicatorDriverFactory } from '../StatusIndicator/StatusIndicator.uni.driver';
 

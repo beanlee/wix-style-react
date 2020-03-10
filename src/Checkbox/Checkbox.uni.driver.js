@@ -1,7 +1,7 @@
 import { Simulate } from 'react-dom/test-utils';
 import { baseUniDriverFactory, ReactBase } from '../../test/utils/unidriver';
 import { labelUniDriverFactory } from 'wix-ui-backoffice/dist/src/components/Label/Label.uni.driver';
-import { tooltipDriverFactory } from '../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 import { dataHooks } from './constants';
 
 import * as DATA_ATTR from './DataAttr';

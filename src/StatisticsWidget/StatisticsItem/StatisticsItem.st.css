@@ -1,5 +1,5 @@
 :import {
-  -st-from: "../../Tooltip/TooltipNext/Tooltip.st.css";
+  -st-from: "../../Tooltip/Tooltip.st.css";
   -st-default: Tooltip;
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { array, bool, func, node, number, oneOf, string } from 'prop-types';
 
 import AddColor from './AddColor';
-import Tooltip from '../Tooltip/TooltipNext/Tooltip';
+import Tooltip from '../Tooltip';
 import parseColor from 'color';
 
 import { Layout } from '../Layout';

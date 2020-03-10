@@ -1,5 +1,5 @@
 import { addItemUniDriverFactory as publicDriverFactory } from '../AddItem.uni.driver';
-import { tooltipDriverFactory } from '../../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../../Tooltip/Tooltip.uni.driver';
 import { dataHooks } from '../constants';
 
 export const addItemPrivateUniDriverFactory = base => {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TooltipNewProps } from '../Tooltip';
+import { TooltipProps } from '../Tooltip';
 import { OmitPolyfill } from '../common';
 
 export interface FormFieldProps {
@@ -14,7 +14,7 @@ export interface FormFieldProps {
   labelPlacement?: FormFieldLabelPlacement;
   required?: boolean;
   infoContent?: React.ReactNode;
-  infoTooltipProps?: OmitPolyfill<TooltipNewProps, 'content' | 'dataHook' | 'upgrade'>;
+  infoTooltipProps?: OmitPolyfill<TooltipProps, 'content' | 'dataHook'>;
   suffix?: React.ReactNode;
   id?: string;
   dataHook?: string;

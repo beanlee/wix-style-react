@@ -1,7 +1,7 @@
 import { swatchesDriverFactory as publicDriverFactory } from '../Swatches.uni.driver';
 import { fillButtonDriverFactory } from '../../FillButton/FillButton.uni.driver';
 
-import { tooltipDriverFactory } from '../../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../../Tooltip/Tooltip.uni.driver';
 import testkit from '../../Popover/Popover.uni.driver';
 import { CommonDriver } from 'wix-ui-core/dist/src/components/popover/Popover.common.uni.driver';
 import { colorPickerUniDriverFactory } from '../../ColorPicker/ColorPicker.private.uni.driver';

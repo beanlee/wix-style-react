@@ -60,7 +60,6 @@ class StatisticsItem extends React.PureComponent {
         </Heading>
         {subtitleContentInfo && (
           <Tooltip
-            upgrade
             textAlign="start"
             {...styles('tooltip', {}, this.props)}
             dataHook={DataHooks.tooltip}

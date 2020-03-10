@@ -125,7 +125,6 @@ class ModalPreviewLayout extends React.PureComponent {
               <Tooltip
                 className={styles.modalTooltip}
                 dataHook={dataHooks.closeButtonTooltip}
-                upgrade
                 appendTo="scrollParent"
                 content={<Text>{closeButtonTooltipText}</Text>}
                 placement="bottom"

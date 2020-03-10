@@ -123,7 +123,7 @@ class CardGalleryItem extends React.PureComponent {
     return (
       <div className={styles.primaryAction} data-hook={DataHook.HoverContent}>
         {disabled && disabledMessage ? (
-          <Tooltip upgrade disabled={!disabled} content={disabledMessage}>
+          <Tooltip disabled={!disabled} content={disabledMessage}>
             {primaryAction}
           </Tooltip>
         ) : (

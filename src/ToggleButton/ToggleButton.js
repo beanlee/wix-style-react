@@ -53,7 +53,6 @@ class ToggleButton extends Component {
 
     return (
       <Tooltip
-        upgrade
         {...tooltipProps}
         size="small"
         content={tooltipContent}

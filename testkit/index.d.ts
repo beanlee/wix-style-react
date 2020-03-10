@@ -22,11 +22,6 @@ interface VanillaTestkitParams {
   dataHook: string;
 }
 
-import { TooltipDriver } from '../src/Tooltip/Tooltip.driver';
-export const tooltipTestkitFactory: VanillaTestkitFactory<TooltipDriver>;
-import { TooltipUniDriver } from '../src/Tooltip/TooltipNext/Tooltip.uni.driver';
-export const TooltipTestkit: VanillaUniTestkitFactory<TooltipUniDriver>;
-
 type DeprecatedVanillaTestkit = any;
 
 import { AccordionUniDriver } from '../src/Accordion/Accordion.uni.driver';
@@ -195,6 +190,8 @@ import { TimeInputDriver } from '../src/TimeInput/TimeInput.driver';
 export const timeInputTestkitFactory: VanillaTestkitFactory<TimeInputDriver>;
 import { ToggleSwitchDriver } from '../src/ToggleSwitch/ToggleSwitch.driver';
 export const toggleSwitchTestkitFactory: VanillaTestkitFactory<ToggleSwitchDriver>;
+import { TooltipUniDriver } from '../src/Tooltip/Tooltip.uni.driver';
+export const tooltipTestkitFactory: VanillaUniTestkitFactory<TooltipUniDriver>;
 import { SidebarSectionItemUniDriver } from '../src/SidebarSectionItem/SidebarSectionItem.uni.driver';
 export const sidebarSectionItemTestkitFactory: VanillaUniTestkitFactory<SidebarSectionItemUniDriver>;
 import { SidebarDividerUniDriver } from '../src/SidebarDivider/SidebarDivider.uni.driver';

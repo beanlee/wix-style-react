@@ -9,17 +9,17 @@
 }
 
 :import {
-  -st-from: '../../Foundation/stylable/colors.st.css';
+  -st-from: '../Foundation/stylable/colors.st.css';
   -st-named: D10;
 }
 
 :import {
-  -st-from: '../../Foundation/stylable/shadows.st.css';
+  -st-from: '../Foundation/stylable/shadows.st.css';
   -st-named: shadow30;
 }
 
 :import {
-  -st-from: '../../Foundation/stylable/typography.st.css';
+  -st-from: '../Foundation/stylable/typography.st.css';
   -st-named: text-small-normal, text-tiny-thin;
 }
 

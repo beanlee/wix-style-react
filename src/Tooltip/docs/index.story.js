@@ -13,17 +13,16 @@ import {
   title,
 } from 'wix-storybook-utils/Sections';
 import Tooltip from '..';
-import allComponents from '../../../../stories/utils/allComponents';
-import AddItem from '../../../AddItem';
-import { Cell, Layout } from '../../../Layout';
-import { placements } from '../../../Popover/Popover';
-import SectionHelper from '../../../SectionHelper';
-import Text from '../../../Text';
-import TextButton from '../../../TextButton';
+import allComponents from '../../../stories/utils/allComponents';
+import AddItem from '../../AddItem';
+import { placements } from '../../Popover/Popover';
+import Text from '../../Text';
+import TextButton from '../../TextButton';
 import { storySettings } from '../test/storySettings';
 import * as examples from './examples';
 import Readme from './README.TESTKIT.md';
 import usage from './Usage.md';
+import Box from '../../Box';
 
 const liveCode = config =>
   code({
@@ -78,18 +77,11 @@ export default {
       sourceUrl:
         'https://github.com/wix/wix-style-react/tree/master/src/TooltipNext/',
       component: (
-        <Layout gap={10}>
-          <Cell>
-            <Tooltip appendTo="window" content="HERE I AM! THIS IS ME!">
-              <TextButton skin="dark">Hover me</TextButton>
-            </Tooltip>
-          </Cell>
-          <Cell span={6}>
-            <SectionHelper title="Next Generation Tooltip">
-              To enable new generation tooltip make sure to pass prop `upgrade`
-            </SectionHelper>
-          </Cell>
-        </Layout>
+        <Box>
+          <Tooltip appendTo="window" content="Hello!">
+            <TextButton skin="dark">Hover me</TextButton>
+          </Tooltip>
+        </Box>
       ),
     }),
 

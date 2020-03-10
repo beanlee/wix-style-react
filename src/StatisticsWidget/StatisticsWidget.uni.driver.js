@@ -1,6 +1,6 @@
 import { baseUniDriverFactory } from 'wix-ui-test-utils/base-driver';
 import { findBaseByHook } from '../../test/utils';
-import { tooltipDriverFactory } from '../Tooltip/TooltipNext/Tooltip.uni.driver';
+import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 import { adaptiveHeadingDriverFactory } from '../utils/AdaptiveHeading/AdaptiveHeading.uni.driver';
 
 import DataHooks from './dataHooks';

@@ -178,7 +178,7 @@ Props:
 - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
-## /<DropdownLayout/>
+## \<DropdownLayout/>
 
 Props:
 - removed `theme`
@@ -248,7 +248,7 @@ Same example using `<FormField/>`:
 </FormField>
 ```
 
-## /<GoogleAddressInput/>
+## \<GoogleAddressInput/>
 
 Props:
 - removed `theme`

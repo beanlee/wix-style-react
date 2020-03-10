@@ -1,279 +1,489 @@
 # Upgrading `wix-style-react` from 7 to 8
 
-## Removed
+# Index
 
-- `<VBox/>` & `<HBox/>` - Use `<Box/>` instead.
-- `<FullTextView/>` - Use `<Text/>` instead.
-- `<AutoCompleteComposite/>` - Use `<FormField/>` instead.
-- `<InputAreaWithLabelComposite/>` - Use `<FormField/>` instead.
-- `<MultiSelectComposite/>` - Use `<FormField/>` instead.
-- `<FieldWithSelectionComposite/>` - Use `<FormField/>` instead.
-- `<GoogleAddressInputWithLabel/>` - Use `<FormField/>` instead.
-- Icons from `wix-style-react/new-icons` import path were removed. Please install and use icons from `wix-ui-icons-common` package directly. You can migrate your existing codebase using provided codemod, please see [migration guide](./docs/migration/ICONS.md) for more details.
-- `<TextLink/>` - Use `<TextButton as="a"/>` instead.
-- `<SideMenu/>` - Use `<Sidebar/>` instead.
-- `<SideMenuDrill/>` - Use `<Sidebar/>` instead.
-- `<StatsWidget/>` - Use `<StatisticsWidget/>` instead. See [migration guide](./docs/migration/StatsWidget.md).
-- `<PopoverMenu/>` - replaced with new beta PopoverMenu, see migration guide below.
-- `<DataTable/>` - Use `<Table/>` instead.
+- [Components](#components)
+  - [\<AddItem/>](#additem)
+  - [\<Avatar/>](#avatar)
+  - [\<AutoCompleteComposite/>](#autocompletecomposite)
+  - [\<CircularProgressBar/>](#circularprogressbar)
+  - [\<ColorInput/>](#colorinput)
+  - [\<DataTable/>](#datatable)
+  - [\<DatePicker/>](#datepicker)
+  - [\<Dropdown/>](#dropdown)
+  - [\<DropdownLayout/>](#dropdownlayout)
+  - [\<FieldWithSelectionComposite/>](#fieldwithselectioncomposite)
+  - [\<FillButton/>](#fillbutton)
+  - [\<FullTextView/>](#fulltextview)
+  - [\<GoogleAddressInputWithLabel/>](#googleaddressinputwithlabel)
+  - [\<GoogleAddressInput/>](#googleaddressinput)
+  - [\<HBox/>](#hbox)
+  - [\<ImageViewer/>](#imageviewer)
+  - [\<Input/>](#input)
+  - [\<InputArea/>](#inputarea)
+  - [\<InputAreaWithLabelComposite/>](#inputareawithlabelcomposite)
+  - [\<InputWithOptions/>](#inputwithoptions)
+  - [\<LinearProgressBar/>](#linearprogressbar)
+  - [\<Loader/>](#loader)
+  - [\<MultiSelect/>](#multiselect)
+  - [\<MultiSelectComposite/>](#multiselectcomposite)
+  - [\<NoBorderInput/>](#noborderinput)
+  - [\<NumberInput/>](#numberinput)
+  - [\<Page/>](#page)
+  - [\<Popover/>](#popover)
+  - [\<PopoverMenu/>](#popovermenu)
+  - [\<RadioGroup/>](#radiogroup)
+  - [\<RichTextInputArea/>](#sidemenu)
+  - [\<Search/>](#search)
+  - [\<SideMenu/>](#sidemenudrill)
+  - [\<SideMenuDrill/>](#richtextinputarea)
+  - [\<StatisticsWidget/>](#statisticswidget)
+  - [\<StatsWidget/>](#statswidget)
+  - [\<TextLink/>](#textlink)
+  - [\<Table/>](#table)
+  - [\<TableActionCell/>](#tableactioncell)
+  - [\<Tag/>](#tag)
+  - [\<Tooltip/>](#tooltip)
+  - [\<VBox/>](#vbox)
 
-## Changed:
+- [Guides](#guides)
+  - [Icons](#icons)
+  - [error --> status](#error--errormessage----status--statusmessage)
+  - [help prop](#help-prop)
 
-#### `<Page/>`
+# Components
 
-- Props:
-  - removed `upgrade` - component is now upgraded by default
+## \<AddItem/>
 
-#### `<TableActionCell/>`
+Props:
+- removed `tooltipAppendTo` - use `tooltipProps` instead.
+- removed `tooltipContent` - use `tooltipProps` instead.
+- removed `tooltipPlacement` - use `tooltipProps` instead.
+- removed `tooltipFixed` - use `tooltipProps` instead.
+- removed `tooltipFlip` - use `tooltipProps` instead.
 
-- Props:
-  - removed `upgrade` - component is now upgraded by default
-  - changed `primaryAction.theme` to `primaryAction.skin` (with new values)
+_Note: `tooltipProps` are defiled in Tooltip component story page._
 
-#### `<Table/>`
+Before:
+```jsx
+<AddItem
+  tooltipAppendTo="window"
+  tooltipContent="hello"
+  tooltipPlacement="top"
+  tooltipFixed
+  tooltipFlip
+/>
+```
 
-- Testkit:
-  - removed `clickRowChecbox` - removed due to typo, use `clickRowCheckbox` instead
+After:
+```jsx
+<AddItem
+  tooltipProps={
+    appendTo: 'window',
+    content: 'hello',
+    placement: 'top',
+    fixed: true,
+    flip: true,
+  }
+/>
+```
 
-#### `<Input/>`
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `units` use `<Input.Affix/>` component instead
-  - removed `magnifyingGlass` use `<Search/>` component instead
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
-  - removed `theme`
-- Testkit:
-  - removed `clickUnit`
-  - removed `getUnit`
-  - removed `hasMagnifyingGlass`
-  - removed `clickMagnifyingGlass`
-  - removed `hasHelp`
-  - removed `hasExclamation`
-  - removed `isNarrowError`
+## \<Avatar/>
 
-Removed `<Input.Units/>` use `<Input.Affix>` instead.
+Props:
+- `color` - Deprecated old values: 'blue', 'green', 'grey', 'red', 'orange'.
+- new values are now A1 to A6.
 
-#### `<ColorInput/>`
+Before:
+```jsx
+<Avatar color="red" />
+```
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
-- Testkit:
-  - removed `hasError`
-  - added `hasStatus`
-  - added `getStatus`
-  - added `hasStatusMessage`
-  - added `getStatusMessage`
+After:
+```jsx
+<Avatar color="A1" />
+```
 
-#### `<Dropdown/>`
+## \<AutoCompleteComposite/>
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+This component was deleted, use `<FormField/>` instead.
 
-#### `<DropdownLayout/>`
+Basic example:
+```jsx
+<AutoCompleteComposite>
+  <Component />
+</AutoCompleteComposite>
+```
 
-- Props:
-  - removed `theme`
-- Testkit:
-  - removed `hasTheme`
+Same example using `<FormField/>`:
+```jsx
+<FormField required>
+  <Component />
+</FormField>
+```
 
-#### `<InputWithOptions/>`
+## \<CircularProgressBar/>
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
+Props:
+- removed `shouldLoadAsync` - we decided to remove this feature.
 
-#### `<LinearProgressBar/>`
+Testkit:
+- changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of `Promise<string>`.
+- removed `getTooltip` - use `isErrorIconShown` and `getTooltipErrorMessage` instead.
+- removed `isTooltipShown` - use `isErrorIconShown` and `getTooltipErrorMessage` instead.
 
-- Props:
-  - removed `shouldLoadAsync`
-- Testkit:
-  - removed `getTooltip`
-  - removed `isTooltipShown`
-  - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`
+## \<ColorInput/>
 
-#### `<InputArea/>`
+Props:
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 
-- Props:
-  - removed `onTooltipShow`
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `theme`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
-- Testkit:
-  - removed `hasError`
-  - removed `hasWarning`
-  - removed `getTooltipDataHook`
-  - removed `getTooltipElement`
-  - removed `isErrorMessageShown`
-  - removed `mouseEnterErrorIndicator`
-  - removed `getErrorMessage`
-  - removed `getStatusMessage`
-  - added `hasStatus`
-  - added `getStatus`
-  - added `hasStatusMessage`
-  - added `getStatusMessage`
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+- removed `hasError` - use `hasStatus` instead.
 
-#### `<InputWithOptions/>`
+## \<DataTable/>
 
-- Props:
-  - removed `disableClickOutsideWhenClosed`, this functionality is now permanent
+This component is _internal_ and should not be used directly - use `<Table/>` instead.
 
-#### `<Popover/>`
+## \<DatePicker/>
 
-- Props:
-  - removed `disableClickOutsideWhenClosed`, this functionality is now permanent
+Props:
+- removed `isOpen` - use `initialOpen` instead.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 
-#### `<Avatar/>`
+An example with the removed `isOpen` prop:
+```jsx
+<DatePicker isOpen/>
+```
 
-- Prop `color` - Deprecated old values, valid values are now only A1 to A6.
+Use `initialOpen` instead:
+```jsx
+<DatePicker initialOpen/>
+```
 
-#### `<CircularProgressBar/>`
+## \<Dropdown/>
 
-- Props:
-  - removed `shouldLoadAsync`
-- Testkit:
-  - removed `getTooltip`
-  - removed `isTooltipShown`
-  - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`
+Props:
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 
-#### `<DatePicker/>`
+## /<DropdownLayout/>
 
-- Props:
-  - removed `isOpen` - use `initialOpen` instead.
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+Props:
+- removed `theme`
 
-#### `<Loader/>`
+Testkit:
+- removed `hasTheme`
 
-- Props:
-  - removed `shouldLoadAsync`
+## \<FieldWithSelectionComposite/>
 
-#### `<Tag/>`
+This component was deleted, use `<FormField/>` instead.
 
-- Props:
-  - removed `wrap` - now text has ellipsis by default
+Basic example:
+```jsx
+<FieldWithSelectionComposite>
+  <Component />
+</FieldWithSelectionComposite>
+```
 
-#### `<ImageViewer/>`
+Same example using `<FormField/>`:
+```jsx
+<FormField required>
+  <Component />
+</FormField>
+```
 
-- Props:
-  - removed `tooltipPlacement`
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-- Testkit:
-  - removed `isErrorVisible`
-  - removed `getErrorTooltipContent`
-  - added `hasStatus`
-  - added `getStatus`
-  - added `hasStatusMessage`
-  - added `getStatusMessage`
+## \<FillButton/>
 
-#### `<StatisticsWidget/>`
+Props:
+- removed `tooltipContent` - use `tooltipProps` instead
 
-- Props:
-  - removed `statistics` use `items` instead.
+_Note: `tooltipProps` are defiled in Tooltip component story page._
 
-#### `<Button/>`
+Before:
 
-- Props:
-  - removed `type` - For type button, use `<SegmentedToggle/>` component instead
-- Testkit:
-  - removed `isButtonType`
+```jsx
+<FillButton tooltipContent="hello" />
+```
 
-#### `<MultiSelect/>`
+After:
+```jsx
+<FillButton
+  tooltipProps={
+    content: 'hello',
+  }
+/>
+```
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `theme`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
-- Testkit:
-  - removed `inputWrapperHasError`
+## \<FullTextView/>
 
-#### `<NoBorderInput/>`
+This component was deleted, use `<Text/>` instead.
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `theme`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+## \<GoogleAddressInputWithLabel/>
 
-#### `<Search/>`
+This component was deleted, use `<FormField/>` instead.
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `theme`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+Basic example:
+```jsx
+<GoogleAddressInputWithLabel>
+  <Component />
+</GoogleAddressInputWithLabel>
+```
 
-#### `<NumberInput/>`
+Same example using `<FormField/>`:
+```jsx
+<FormField required>
+  <Component />
+</FormField>
+```
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `theme`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+## /<GoogleAddressInput/>
 
-#### `<GoogleAddressInput/>`
+Props:
+- removed `theme`
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `theme`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+## \<HBox/>
 
-#### `<RichTextInputArea/>`
+This component was deleted, use `<Box/>` instead.
 
-- Props:
-  - changed `error` to `status`
-  - changed `errorMessage` to `statusMessage`
-  - removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
-- Testkit:
-  - removed `hasError`
-  - removed `getErrorMessage`
-  - added `hasStatus`
-  - added `getStatus`
-  - added `hasStatusMessage`
-  - added `getStatusMessage`
+## \<ImageViewer/>
 
-#### `<AddItem/>`
+Props:
+- removed `tooltipPlacement` - use `tooltipProps` instead.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 
-- Props:
-  - removed `tooltipAppendTo` use `tooltipProps` instead
-  - removed `tooltipContent` use `tooltipProps` instead
-  - removed `tooltipFixed` use `tooltipProps` instead
-  - removed `tooltipFlip` use `tooltipProps` instead
-  - removed `tooltipPlacement` use `tooltipProps` instead
+Testkit:
+- added `hasStatus`
+- added `getStatus`
+- added `hasStatusMessage`
+- added `getStatusMessage`
+- removed `isErrorVisible` - use `hasStatus` instead
+- removed `getErrorTooltipContent` - use `getStatusMessage` instead
 
-#### `<FillButton/>`
-- Props:
-  - removed `tooltipContent` - use `tooltipProps` instead
+Before:
+```jsx
+<ImageViewer
+  tooltipPlacement="top"
+/>
+```
 
-#### `<Tooltip/>`
-- Props:
-  - removed `upgrade` - component is now upgraded by default
+After:
+```jsx
+<ImageViewer
+  tooltipProps={
+    placement: 'top',
+  }
+/>
+```
 
-## Migrating to new PopoverMenu
+## \<Input/>
+
+Props:
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+- removed `units` use `<Input.Affix/>` component instead
+- removed `magnifyingGlass` use `<Search/>` component instead
+- removed `theme`
+
+Testkit:
+- removed `hasHelp`
+- removed `clickUnit`
+- removed `getUnit`
+- removed `hasMagnifyingGlass`
+- removed `clickMagnifyingGlass`
+- removed `hasExclamation`
+- removed `isNarrowError`
+
+Removed sub component `<Input.Units/>` use `<Input.Affix>` instead.
+
+Before:
+```jsx
+<Dropdown
+  prefix={<Input.Units>$</Input.Units>}
+/>
+```
+
+After:
+```jsx
+<Dropdown
+  prefix={<Input.Affix>$</Input.Affix>}
+/>
+```
+
+## \<InputArea/>
+
+Props:
+- removed `onTooltipShow`.
+- removed `theme`.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+- removed `hasError` - use `hasStatus` & `getStatus` instead.
+- removed `hasWarning` - use `hasStatus` & `getStatus` instead.
+- removed `getTooltipDataHook`.
+- removed `getTooltipElement`.
+- removed `isErrorMessageShown`.
+- removed `mouseEnterErrorIndicator`.
+- removed `getErrorMessage` - use `getStatusMessage` instead.
+- removed `getWarningMessage` - use `getStatusMessage` instead.
+
+## \<InputAreaWithLabelComposite/>
+
+This component was deleted, use `<FormField/>` instead.
+
+Basic example:
+```jsx
+<InputAreaWithLabelComposite>
+  <Component />
+</InputAreaWithLabelComposite>
+```
+
+Same example using `<FormField/>`:
+```jsx
+<FormField required>
+  <Component />
+</FormField>
+```
+
+## \<InputWithOptions/>
+
+Props:
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `disableClickOutsideWhenClosed`, this functionality is now permanent <br/>
+  Just remove this prop, no other change required.
+
+## \<LinearProgressBar/>
+
+Props:
+- removed `shouldLoadAsync` - we decided to remove this feature.
+Testkit:
+- changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`.
+- removed `getTooltip` - use `isErrorIconShown` and `getTooltipErrorMessage` instead.
+- removed `isTooltipShown` - use `isErrorIconShown` and `getTooltipErrorMessage` instead.
+
+## \<Loader/>
+
+Props:
+- removed `shouldLoadAsync` - we decided to remove this feature.
+
+## \<MultiSelect/>
+
+Props:
+- removed `theme`.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+- removed `inputWrapperHasError` - use `hasStatus` instead.
+
+## \<MultiSelectComposite/>
+
+This component was deleted, use `<FormField/>` instead.
+
+Basic example:
+```jsx
+<MultiSelectComposite>
+  <Component />
+</MultiSelectComposite>
+```
+
+Same example using `<FormField/>`:
+```jsx
+<FormField required>
+  <Component />
+</FormField>
+```
+
+## \<NoBorderInput/>
+
+Props:
+- removed `theme`.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+
+## \<NumberInput/>
+
+Props:
+- removed `theme`.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+
+## \<Page/>
+// TODO - write a migration guide
+
+Props:
+- removed `upgrade` - component is now upgraded by default
+
+## \<Popover/>
+
+Props:
+- removed `disableClickOutsideWhenClosed`, this functionality is now permanent <br/>
+  Just remove this prop, no other change required.
+
+## \<PopoverMenu/>
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.
 
-Replace old PopoverMenu:
+Old PopoverMenu:
 
 ```jsx
 import PopoverMenu from 'wix-style-react/PopoverMenu';
 import PopoverMenuItem from 'wix-style-react/PopoverMenuItem';
 
 <PopoverMenu>
-  <PopoverMenuItem onClick={() => {}} text="Item" />
-</PopoverMenu>
+  <PopoverMenuItem onClick={clickHandler} text="Item" />
+</PopoverMenu>;
 ```
 
-With new PopoverMenu:
+New PopoverMenu:
 
 ```jsx
 import { PopoverMenu, IconButton } from 'wix-style-react';
@@ -286,6 +496,163 @@ import More from 'wix-ui-icons-common/More';
     </IconButton>
   }
 >
-  <PopoverMenu.MenuItem onClick={() => {}} text="Item" />
-</PopoverMenu>
+  <PopoverMenu.MenuItem onClick={clickHandler} text="Item" />
+</PopoverMenu>;
+```
+
+## \<RadioGroup/>
+
+Props:
+- removed `type`.
+
+Testkit:
+- removed `isButtonType`.
+
+Example using removed `type` prop with value `button`:
+```jsx
+<RadioGroup type="button" />
+```
+
+Use `<SegmentedToggle/>` component instead:
+```jsx
+<SegmentedToggle />
+```
+
+## \<RichTextInputArea/>
+
+Props:
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+- removed `hasError` - use `hasStatus` & `getStatus` instead.
+- removed `getErrorMessage` - use `getStatusMessage` instead.
+
+## \<Search/>
+
+Props:
+- removed `theme`.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
+
+Testkit:
+- added `hasStatus`.
+- added `getStatus`.
+- added `hasStatusMessage`.
+- added `getStatusMessage`.
+
+## \<SideMenu/>
+// TODO - write a migration guide
+This component was deleted, use `<Sidebar/>` instead.
+
+## \<SideMenuDrill/>
+// TODO - write a migration guide
+This component was deleted, use `<Sidebar/>` instead.
+
+## \<StatisticsWidget/>
+
+Props:
+- removed `statistics` use `items` instead.
+
+## \<StatsWidget/>
+// TODO - write a migration guide
+Use `<StatisticsWidget/>` instead. See [migration guide](./docs/migration/StatsWidget.md).
+
+## \<TextLink/>
+// TODO - write a migration guide
+This component was deleted, use `<TextButton as="a"/>` instead.
+
+## \<Table/>
+
+Testkit:
+- removed `clickRowChecbox` - removed due to typo, use `clickRowCheckbox` instead
+
+## \<TableActionCell/>
+// TODO - write a migration guide
+
+Props:
+- removed `upgrade` - component is now upgraded by default
+- changed `primaryAction.theme` to `primaryAction.skin` (with new values)
+
+## \<Tag/>
+
+Props:
+- removed `wrap` - now text has ellipsis by default
+
+## \<Tooltip/>
+// TODO - write a migration guide
+
+Props:
+- removed `upgrade` - component is now upgraded by default
+
+## \<VBox/>
+
+This component was deleted, use `<Box/>` instead.
+
+# Guides
+
+## Icons
+- Icons from `wix-style-react/new-icons` import path were removed. Please install and use icons from `wix-ui-icons-common` package directly. You can migrate your existing codebase using provided codemod, please see [migration guide](./docs/migration/ICONS.md) for more details.
+
+## error & errorMessage --> status & statusMessage
+
+Props:
+
+- changed `error` to `status`
+- changed `errorMessage` to `statusMessage`
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
+
+Testkit:
+
+- added `hasStatus`
+- added `getStatus`
+- added `hasStatusMessage`
+- added `getStatusMessage`
+- \~ \~ \~
+- removed `hasError` - use `hasStatus` and `getStatus` instead
+- removed `inputWrapperHasError` - use `hasStatus` and `getStatus` instead
+- removed `isErrorVisible` - use `hasStatus` instead
+- removed `getErrorTooltipContent` - use `getStatusMessage` instead
+- \~ \~ \~
+- _Look at `<Input/>` component migration guide for more information._
+
+Before:
+
+```jsx
+<NumberInput error errorMessage="Error!" />
+```
+
+After:
+
+```jsx
+<NumberInput status="error" statusMessage="Error!" />
+```
+
+## help prop
+
+[Help prop section](#help-prop)
+Props:
+- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+
+Testkit:
+- removed `hasHelp` - use `<FormField/>` testkit instead
+
+Before:
+```jsx
+<NumberInput help helpMessage="Help!" />
+```
+
+After:
+```jsx
+<FormField infoContent="Help!">
+  <NumberInput />
+</FormField>
 ```

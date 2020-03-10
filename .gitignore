@@ -33,7 +33,6 @@ autodocs-registry
 .DS_Store
 /*.scss
 /bundles
-/new-icons
 
 # applitools private config
 !applitools.config.js

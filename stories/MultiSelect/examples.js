@@ -1,7 +1,5 @@
 export const importExample = `
-import FormField from 'wix-style-react/FormField';
-import MultiSelect from 'wix-style-react/MultiSelect';
-`;
+import { FormField, MultiSelect  } from 'wix-style-react';`;
 
 export const size = `
 <Layout cols={1}>

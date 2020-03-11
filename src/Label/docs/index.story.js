@@ -54,7 +54,7 @@ export default {
             interactive: false,
           }),
 
-          importExample("import Label from 'wix-style-react/Label';"),
+          importExample("import { Label } from 'wix-style-react';"),
 
           divider(),
 

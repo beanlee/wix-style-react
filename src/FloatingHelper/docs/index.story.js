@@ -105,9 +105,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import FloatingHelper from 'wix-style-react/FloatingHelper';",
-            ),
+            importExample("import { FloatingHelper } from 'wix-style-react';"),
           ]),
 
           divider(),

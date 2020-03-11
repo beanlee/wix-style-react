@@ -57,9 +57,7 @@ export default {
       tab({
         title: 'Usage',
         sections: [
-          importExample(
-            "import RichTextInputArea from 'wix-style-react/RichTextInputArea';",
-          ),
+          importExample("import { RichTextInputArea } from 'wix-style-react';"),
 
           title('Examples'),
 

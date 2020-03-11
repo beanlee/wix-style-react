@@ -72,7 +72,7 @@ export default {
             }),
           ]),
 
-          importExample("import Modal from 'wix-style-react/Modal';"),
+          importExample("import { Modal } from 'wix-style-react';"),
 
           divider(),
 

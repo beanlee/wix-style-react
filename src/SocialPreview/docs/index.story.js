@@ -76,9 +76,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import SocialPreview from 'wix-style-react/SocialPreview'",
-            ),
+            importExample("import { SocialPreview } from 'wix-style-react'"),
           ]),
 
           divider(),

@@ -69,7 +69,7 @@ export default {
             }),
           ]),
 
-          importExample("import Search from 'wix-style-react/Search';"),
+          importExample("import { Search } from 'wix-style-react';"),
 
           divider(),
 

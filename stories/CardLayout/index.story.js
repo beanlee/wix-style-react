@@ -62,7 +62,7 @@ export default {
     ]),
 
     importExample(`
-import Card from 'wix-style-react/Card';
+import { Card } from 'wix-style-react';
 const { Header, Subheader, Content, Divider} = Card;
     `),
 

@@ -74,9 +74,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import StatusIndicator from 'wix-style-react/StatusIndicator';",
-          ),
+          importExample("import { StatusIndicator } from 'wix-style-react';"),
 
           divider(),
 

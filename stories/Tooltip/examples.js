@@ -1,7 +1,4 @@
-export const importExample = `
-import Tooltip from 'wix-style-react/Tooltip';
-import TextButton from 'wix-style-react/TextButton';
-import Text from 'wix-style-react/Text';`;
+export const importExample = `import { Tooltip, TexButton, Text } from 'wix-style-react';`;
 
 export const basic = `
 <Layout cols={1} justifyItems="center">

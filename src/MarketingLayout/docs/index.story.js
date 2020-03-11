@@ -60,9 +60,7 @@ export default {
         sections: [
           columns([description(descriptionText)]),
 
-          importExample(
-            "import MarketingLayout from 'wix-style-react/MarketingLayout';",
-          ),
+          importExample("import { MarketingLayout } from 'wix-style-react';"),
 
           divider(),
 

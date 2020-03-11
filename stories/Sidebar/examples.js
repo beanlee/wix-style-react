@@ -1,11 +1,5 @@
-export const importExample = `
-import Sidebar from 'wix-style-react/Sidebar';
-import SidebarHeader from 'wix-style-react/SidebarHeader';
-import SidebarDivider from 'wix-style-react/SidebarDivider';
-import SidebarSectionTitle from 'wix-style-react/SidebarSectionTitle';
-import SidebarSectionItem from 'wix-style-react/SidebarSectionItem';
-import SidebarBackButton from 'wix-style-react/SidebarBackButton';
-`;
+export const importExample =
+  "import { Sidebar, SidebarHeader, SidebarDivider, SidebarSectionTitle, SidebarSectionItem, SidebarBackButton  } from 'wix-style-react';";
 
 export const businessManagerSidebar = `
 class DesignedSidebar extends React.Component {

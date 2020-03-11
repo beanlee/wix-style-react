@@ -63,7 +63,7 @@ export default {
 
           columns([
             importExample(
-              "import LinearProgressBar from 'wix-style-react/LinearProgressBar';",
+              "import { LinearProgressBar } from 'wix-style-react';",
             ),
           ]),
 

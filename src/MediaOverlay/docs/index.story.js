@@ -89,9 +89,7 @@ export default {
             'A component used to overlay any other content on top of a media element.',
           ),
 
-          importExample(
-            "import MediaOverlay from 'wix-style-react/MediaOverlay';",
-          ),
+          importExample("import { MediaOverlay } from 'wix-style-react';"),
 
           divider(),
 

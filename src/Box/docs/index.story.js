@@ -104,7 +104,7 @@ This component behaves exactly like “CSS Flexbox”, therefore any related **v
           `,
         ),
 
-        importExample("import Box from 'wix-style-react/Box';"),
+        importExample("import { Box } from 'wix-style-react';"),
 
         // Children
         description(propExplanations.children.description),

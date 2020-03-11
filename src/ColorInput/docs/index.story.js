@@ -89,7 +89,7 @@ export default {
             '🎨 ColorInput is an input which allows to write HEX color manually or pick it from color picker.',
           ),
 
-          importExample("import ColorInput from 'wix-style-react/ColorInput';"),
+          importExample("import { ColorInput } from 'wix-style-react';"),
 
           divider(),
 

@@ -77,7 +77,7 @@ export default {
       tab({
         title: 'Usage',
         sections: [
-          importExample("import DatePicker from 'wix-style-react/DatePicker';"),
+          importExample("import { DatePicker } from 'wix-style-react';"),
 
           divider(),
 

@@ -64,7 +64,7 @@ export default {
             `A header that sticks at the top of the container which minimizes on scroll.`,
           ),
 
-          importExample("import PageHeader from 'wix-style-react/PageHeader';"),
+          importExample("import { PageHeader } from 'wix-style-react';"),
 
           divider(),
 

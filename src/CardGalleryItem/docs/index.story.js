@@ -41,9 +41,7 @@ export default {
       tab({
         title: 'Description',
         sections: [
-          importExample(
-            "import CardGalleryItem from 'wix-style-react/CardGalleryItem';",
-          ),
+          importExample("import { CardGalleryItem } from 'wix-style-react';"),
 
           divider(),
 

@@ -69,9 +69,7 @@ export default {
               }),
             ]),
 
-            importExample(
-              "import IconButton from 'wix-style-react/IconButton';",
-            ),
+            importExample("import { IconButton } from 'wix-style-react';"),
 
             divider(),
 

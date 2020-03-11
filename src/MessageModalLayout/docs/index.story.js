@@ -66,7 +66,7 @@ export default {
 
           columns([
             importExample(
-              "import MessageModalLayout from 'wix-style-react/MessageModalLayout';",
+              "import { MessageModalLayout } from 'wix-style-react';",
             ),
           ]),
 

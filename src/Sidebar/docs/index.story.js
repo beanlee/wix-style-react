@@ -26,11 +26,11 @@ import React from 'react';
 
 const importDeclaration = `
 ### For basic compositions:
-import Sidebar from 'wix-style-react/Sidebar';
+import { Sidebar } from 'wix-style-react';
 const { Item, BackButton, PersistentFooter, PersistentHeader } = Sidebar;
 
 ### For advanced usages:
-import { SidebarContextConsumer, SidebarItemContextConsumer } from 'wix-style-react/Sidebar';
+import { SidebarContextConsumer, SidebarItemContextConsumer } from 'wix-style-react';
 `;
 
 const example = config => baseExample({ components: allComponents, ...config });

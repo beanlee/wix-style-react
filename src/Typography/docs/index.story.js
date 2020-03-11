@@ -72,8 +72,8 @@ export default {
     ]),
 
     columns([
-      importExample(`import Heading from 'wix-style-react/Heading';
-import Text from 'wix-style-react/Text';`),
+      importExample(`import { Heading } from 'wix-style-react';
+import { Text } from 'wix-style-react';`),
     ]),
 
     divider(),

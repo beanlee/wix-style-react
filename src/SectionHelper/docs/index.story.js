@@ -80,9 +80,7 @@ export default {
             `Used in pages where you need to explain or mention things about the content or actions.`,
           ),
 
-          importExample(
-            "import SectionHelper from 'wix-style-react/SectionHelper';",
-          ),
+          importExample("import { SectionHelper } from 'wix-style-react';"),
 
           divider(),
 

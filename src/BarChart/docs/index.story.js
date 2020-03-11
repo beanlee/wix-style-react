@@ -84,7 +84,7 @@ export default {
             }),
           ]),
 
-          importExample("import BarChart from 'wix-style-react/BarChart';"),
+          importExample("import { BarChart } from 'wix-style-react';"),
 
           divider(),
 

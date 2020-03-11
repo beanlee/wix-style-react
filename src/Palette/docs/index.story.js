@@ -77,7 +77,7 @@ export default {
             }),
           ]),
 
-          importExample("import Palette from 'wix-style-react/Palette';"),
+          importExample("import { Palette } from 'wix-style-react';"),
 
           divider(),
 

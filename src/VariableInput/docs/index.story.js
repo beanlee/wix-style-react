@@ -60,9 +60,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import VariableInput from 'wix-style-react/VariableInput';",
-          ),
+          importExample("import { VariableInput } from 'wix-style-react';"),
 
           divider(),
 

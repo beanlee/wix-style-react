@@ -109,7 +109,7 @@ export default {
             `Avatar is a type of element that visually represents a user, either as an image, placeholder or text (name initials)..`,
           ),
 
-          importExample("import Avatar from 'wix-style-react/Avatar';"),
+          importExample("import { Avatar } from 'wix-style-react';"),
 
           divider(),
 

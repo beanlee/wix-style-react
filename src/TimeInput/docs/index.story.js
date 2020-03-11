@@ -8,7 +8,7 @@ export default {
   component: TimeInput,
   componentPath: '..',
 
-  exampleImport: `import TimePicker from 'wix-style-react/TimeInput';`,
+  exampleImport: `import { TimePicker } from 'wix-style-react';`,
 
   componentProps: {
     dashesWhenDisabled: false,

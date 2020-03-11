@@ -102,7 +102,7 @@ export default {
           ]),
 
           importExample(
-            "import ModalPreviewLayout from 'wix-style-react/ModalPreviewLayout';",
+            "import { ModalPreviewLayout } from 'wix-style-react';",
           ),
 
           divider(),

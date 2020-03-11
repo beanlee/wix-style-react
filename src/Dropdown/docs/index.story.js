@@ -75,7 +75,7 @@ export default {
             }),
           ]),
 
-          importExample(),
+          importExample("import { Dropdown } from 'wix-style-react';"),
 
           divider(),
 

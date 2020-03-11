@@ -68,9 +68,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import FillPreview from 'wix-style-react/FillPreview';",
-          ),
+          importExample("import { FillPreview } from 'wix-style-react';"),
 
           divider(),
 

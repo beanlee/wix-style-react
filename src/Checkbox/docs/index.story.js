@@ -76,7 +76,7 @@ export default {
       tab({
         title: 'Usage',
         sections: [
-          importExample("import Checkbox from 'wix-style-react/Checkbox';"),
+          importExample("import { Checkbox } from 'wix-style-react';"),
 
           divider(),
 

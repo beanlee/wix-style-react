@@ -76,7 +76,7 @@ export default {
             }),
           ]),
 
-          importExample("import TimeTable from 'wix-style-react/TimeTable';"),
+          importExample("import { TimeTable } from 'wix-style-react';"),
 
           divider(),
 

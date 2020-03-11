@@ -48,9 +48,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import VerticalTabs from 'wix-style-react/VerticalTabs';",
-            ),
+            importExample("import { VerticalTabs } from 'wix-style-react';"),
           ]),
 
           divider(),

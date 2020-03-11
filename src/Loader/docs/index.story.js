@@ -50,7 +50,7 @@ export default {
         sections: [
           description(`Provides a spinner to be used for async operations.`),
 
-          importExample("import Loader from 'wix-style-react/Loader';"),
+          importExample("import { Loader } from 'wix-style-react';"),
 
           divider(),
 

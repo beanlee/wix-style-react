@@ -55,9 +55,7 @@ export default {
             text: 'Button with defined social button colors and icons.',
           }),
 
-          importExample(
-            "import SocialButton from 'wix-style-react/SocialButton';",
-          ),
+          importExample("import { SocialButton } from 'wix-style-react';"),
 
           divider(),
 

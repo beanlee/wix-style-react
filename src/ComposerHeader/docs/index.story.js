@@ -95,9 +95,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import ComposerHeader from 'wix-style-react/ComposerHeader';",
-            ),
+            importExample("import { ComposerHeader } from 'wix-style-react';"),
           ]),
 
           divider(),

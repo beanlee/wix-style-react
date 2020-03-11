@@ -113,7 +113,7 @@ export default {
 
           description(componentExplanation),
 
-          importExample("import Table from 'wix-style-react/Table';"),
+          importExample("import { Table } from 'wix-style-react';"),
 
           divider(),
 

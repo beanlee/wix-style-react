@@ -61,9 +61,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import LabelledElement from 'wix-style-react/LabelledElement';",
-            ),
+            importExample("import { LabelledElement } from 'wix-style-react';"),
           ]),
 
           divider(),

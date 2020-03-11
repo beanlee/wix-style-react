@@ -73,9 +73,7 @@ export default {
               }),
             ]),
 
-            importExample(
-              "import ToggleButton from 'wix-style-react/ToggleButton';",
-            ),
+            importExample("import { ToggleButton } from 'wix-style-react';"),
 
             divider(),
 

@@ -45,9 +45,7 @@ const _cellWrapper = (title, content) => {
   ${content}
 </Cell>`;
 };
-export const importExample = `import FormField from 'wix-style-react/FormField';
-import TextButton from 'wix-style-react/TextButton';
-import VariableInput from 'wix-style-react/VariableInput'`;
+export const importExample = `import { FormField, TextButton, VariableInput } from 'wix-style-react'`;
 
 export const sizes = `
 <Layout>

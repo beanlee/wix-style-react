@@ -73,7 +73,7 @@ export default {
             }),
           ]),
 
-          importExample("import Image from 'wix-style-react/Image';"),
+          importExample("import { Image } from 'wix-style-react';"),
 
           divider(),
 

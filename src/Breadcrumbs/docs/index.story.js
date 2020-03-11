@@ -75,9 +75,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import Breadcrumbs from 'wix-style-react/Breadcrumbs';",
-          ),
+          importExample("import { Breadcrumbs } from 'wix-style-react';"),
 
           divider(),
 

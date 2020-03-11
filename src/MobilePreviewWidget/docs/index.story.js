@@ -93,7 +93,7 @@ export default {
 
           columns([
             importExample(
-              "import MobilePreviewWidget from 'wix-style-react/MobilePreviewWidget';",
+              "import { MobilePreviewWidget } from 'wix-style-react';",
             ),
           ]),
 
@@ -121,8 +121,8 @@ export default {
           code({
             compact: true,
             source: `<Layout cols={2}>
-                    <MobilePreviewWidget skin='gradient'>${childNodeString}</MobilePreviewWidget>                  
-                    <MobilePreviewWidget skin='custom' backgroundColor='B10'>${childNodeString}</MobilePreviewWidget>     
+                    <MobilePreviewWidget skin='gradient'>${childNodeString}</MobilePreviewWidget>
+                    <MobilePreviewWidget skin='custom' backgroundColor='B10'>${childNodeString}</MobilePreviewWidget>
                    </Layout>`,
           }),
         ],

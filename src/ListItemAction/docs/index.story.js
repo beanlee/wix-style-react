@@ -65,7 +65,7 @@ export default {
           ]),
 
           importExample(
-            "import { listItemActionBuilder } from 'wix-style-react/ListItemAction';",
+            "import { listItemActionBuilder } from 'wix-style-react';",
           ),
 
           divider(),

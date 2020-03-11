@@ -52,7 +52,7 @@ export default {
             `Tabs component enables navigation between content at the same page.`,
           ),
 
-          importExample("import Tabs from 'wix-style-react/Tabs';"),
+          importExample("import { Tabs } from 'wix-style-react';"),
 
           divider(),
 

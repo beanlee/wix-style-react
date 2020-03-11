@@ -47,7 +47,7 @@ export default {
           ]),
 
           importExample(
-            "import SidebarSectionTitle from 'wix-style-react/SidebarSectionTitle';",
+            "import { SidebarSectionTitle } from 'wix-style-react';",
           ),
 
           divider(),

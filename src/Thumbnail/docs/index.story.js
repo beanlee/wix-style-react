@@ -5,6 +5,7 @@ import {
   playground,
   api,
   testkit,
+  importExample,
   code as baseCode,
 } from 'wix-storybook-utils/Sections';
 
@@ -78,6 +79,7 @@ export default {
       title: 'Description',
       sections: [
         description(thumbnailReadme),
+        importExample("import { Thumbnail } from 'wix-style-react';"),
 
         ...[
           {

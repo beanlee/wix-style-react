@@ -1,7 +1,5 @@
 export const importExample = `
-import PopoverMenu from 'wix-style-react/PopoverMenu';
-import IconButton from 'wix-style-react/IconButton';
-`;
+import { PopoverMenu, IconButton } from 'wix-style-react';`;
 
 export const basic = `
 <Layout  cols={1} justifyItems="center">

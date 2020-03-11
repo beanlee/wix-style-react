@@ -82,7 +82,7 @@ export default {
             }),
           ]),
 
-          importExample(),
+          importExample("import { AutoComplete } from 'wix-style-react'"),
 
           divider(),
 

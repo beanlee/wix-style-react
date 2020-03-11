@@ -62,9 +62,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import ToggleSwitch from 'wix-style-react/ToggleSwitch';",
-          ),
+          importExample("import { ToggleSwitch } from 'wix-style-react';"),
 
           divider(),
 

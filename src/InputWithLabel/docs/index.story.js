@@ -85,9 +85,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import InputWithLabel from 'wix-style-react/InputWithLabel';",
-          ),
+          importExample("import { InputWithLabel } from 'wix-style-react';"),
 
           divider(),
 

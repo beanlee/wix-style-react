@@ -36,9 +36,7 @@ export default {
         'FontUpgrade is a wrapper component that upgrades all its children fonts and font settings to the new Madefor font.',
     }),
 
-    columns([
-      importExample("import FontUpgrade from 'wix-style-react/FontUpgrade';"),
-    ]),
+    columns([importExample("import { FontUpgrade } from 'wix-style-react';")]),
 
     tabs([
       tab({

@@ -57,9 +57,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import StatisticsWidget from 'wix-style-react/StatisticsWidget';",
-          ),
+          importExample("import { StatisticsWidget } from 'wix-style-react';"),
 
           divider(),
 

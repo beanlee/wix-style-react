@@ -68,9 +68,9 @@ export default {
 
           importExample(`
 // Use directly
-import ListItemSection, { ListItemSectionTypes } from 'wix-style-react/ListItemSection';
+import { ListItemSection } from 'wix-style-react';
 // Or use a builder
-import { listItemSectionBuilder, ListItemSectionTypes } from 'wix-style-react/ListItemSection';
+import { listItemSectionBuilder } from 'wix-style-react';
 `),
 
           divider(),

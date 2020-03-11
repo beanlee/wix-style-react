@@ -67,7 +67,7 @@ export default {
       tab({
         title: 'Description',
         sections: [
-          importExample("import Badge from 'wix-style-react/Badge';"),
+          importExample("import { Badge } from 'wix-style-react';"),
           divider(),
           title('Examples'),
 

@@ -93,7 +93,7 @@ export default {
         sections: [
           description(`Component for collapsible content`),
 
-          importExample("import Accordion from 'wix-style-react/Accordion';"),
+          importExample("import { Accordion } from 'wix-style-react';"),
 
           divider(),
 

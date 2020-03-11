@@ -34,7 +34,7 @@ export default {
       sections: [
         importExample({
           source:
-            "import {MessageBoxFunctionalLayout} from 'wix-style-react/MessageBox';",
+            "import { MessageBoxFunctionalLayout } from 'wix-style-react';",
         }),
         code({
           title: 'An Alert modal',

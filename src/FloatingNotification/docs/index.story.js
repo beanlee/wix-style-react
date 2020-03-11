@@ -67,8 +67,7 @@ export default {
         ),
 
         importExample({
-          source:
-            "import FloatingNotification from 'wix-style-react/FloatingNotification';",
+          source: "import { FloatingNotification } from 'wix-style-react';",
         }),
 
         code({

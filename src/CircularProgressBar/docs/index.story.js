@@ -69,7 +69,7 @@ export default {
 
           columns([
             importExample(
-              "import CircularProgressBar from 'wix-style-react/CircularProgressBar';",
+              "import { CircularProgressBar } from 'wix-style-react';",
             ),
           ]),
 

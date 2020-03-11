@@ -61,9 +61,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import FillButton from 'wix-style-react/FillButton';",
-            ),
+            importExample("import { FillButton } from 'wix-style-react';"),
           ]),
 
           divider(),

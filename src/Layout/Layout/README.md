@@ -8,7 +8,7 @@
 They are useful to lay out content for whole page or just small area.
 
 ```js
-import { Layout, Cell } from 'wix-style-react/Layout';
+import { Layout, Cell } from 'wix-style-react';
 
 // Three column layout
 export default () =>
@@ -30,7 +30,7 @@ It is possible to add `<Cell/>`s summing more than 12 columns in one
   <summary>Nested grid example</summary>
 
   ```js
-  import { Layout, Cell } from 'wix-style-react/Layout';
+  import { Layout, Cell } from 'wix-style-react';
 
   // Three column layout
   export default () =>

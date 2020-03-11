@@ -89,7 +89,7 @@ export default {
             `Placeholder for filling up screen, usually for when some async operation is ongoing.`,
           ),
 
-          importExample("import Skeleton from 'wix-style-react/Skeleton';"),
+          importExample("import { Skeleton } from 'wix-style-react';"),
 
           divider(),
 

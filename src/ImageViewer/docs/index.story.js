@@ -73,9 +73,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import ImageViewer from 'wix-style-react/ImageViewer';",
-          ),
+          importExample("import { ImageViewer } from 'wix-style-react';"),
 
           divider(),
 

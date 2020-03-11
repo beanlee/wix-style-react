@@ -69,7 +69,7 @@ export default {
         sections: [
           description(`A Tag component.`),
 
-          importExample("import Tag from 'wix-style-react/Tag';"),
+          importExample("import { Tag } from 'wix-style-react';"),
 
           divider(),
 

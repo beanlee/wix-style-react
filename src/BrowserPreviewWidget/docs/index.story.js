@@ -76,7 +76,7 @@ export default {
           }),
 
           importExample(
-            "import BrowserPreviewWidget from 'wix-style-react/BrowserPreviewWidget';",
+            "import { BrowserPreviewWidget } from 'wix-style-react';",
           ),
 
           divider(),

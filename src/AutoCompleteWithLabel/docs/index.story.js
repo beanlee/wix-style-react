@@ -76,7 +76,7 @@ export default {
 
           columns([
             importExample(
-              "import AutoCompleteWithLabel from 'wix-style-react/AutoCompleteWithLabel';",
+              "import { AutoCompleteWithLabel } from 'wix-style-react';",
             ),
           ]),
 

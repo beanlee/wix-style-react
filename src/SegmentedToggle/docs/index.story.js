@@ -68,8 +68,7 @@ export default {
             `SegmentedToggle is a view group containing typically three or more buttons that can be toggled on and off. These buttons visibly change to indicate whether an option is active or inactive.`,
           ),
           importExample({
-            source:
-              "import SegmentedToggle from 'wix-style-react/SegmentedToggle';",
+            source: "import { SegmentedToggle } from 'wix-style-react';",
           }),
 
           description({

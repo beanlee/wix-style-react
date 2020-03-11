@@ -145,9 +145,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import ModalMobileLayout from 'wix-style-react/ModalMobileLayout';",
-          ),
+          importExample("import { ModalMobileLayout } from 'wix-style-react';"),
 
           divider(),
 

@@ -64,7 +64,7 @@ export default {
             'Add Item is a component used to add new items to an existing items list.',
           ),
 
-          importExample("import AddItem from 'wix-style-react/AddItem';"),
+          importExample("import { AddItem } from 'wix-style-react';"),
 
           divider(),
 

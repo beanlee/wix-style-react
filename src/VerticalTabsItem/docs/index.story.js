@@ -59,7 +59,7 @@ export default {
 
           columns([
             importExample(
-              "import VerticalTabsItem from 'wix-style-react/VerticalTabsItem';",
+              "import { VerticalTabsItem } from 'wix-style-react';",
             ),
           ]),
 

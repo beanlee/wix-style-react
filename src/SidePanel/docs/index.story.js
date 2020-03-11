@@ -25,7 +25,7 @@ import Box from '../../Box';
 const example = config => baseExample({ components: allComponents, ...config });
 
 const importDeclaration = `
-import SidePanel from 'wix-style-react/SidePanel';
+import { SidePanel } from 'wix-style-react';
 const { Header, Content, Footer } = SidePanel;
 `;
 

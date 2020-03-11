@@ -53,7 +53,7 @@ export default {
             'A component used to display an information icon with some additional details provided in a tooltip.',
           ),
 
-          importExample("import InfoIcon from 'wix-style-react/InfoIcon';"),
+          importExample("import { InfoIcon } from 'wix-style-react';"),
 
           divider(),
 

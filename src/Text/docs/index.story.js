@@ -71,7 +71,7 @@ export default {
             }),
           ]),
 
-          importExample("import Text from 'wix-style-react/Text';"),
+          importExample("import { Text } from 'wix-style-react';"),
 
           columns([
             description({

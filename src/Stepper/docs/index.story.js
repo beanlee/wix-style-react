@@ -73,7 +73,7 @@ export default {
             }),
           ]),
 
-          importExample("import Stepper from 'wix-style-react/Stepper';"),
+          importExample("import { Stepper } from 'wix-style-react';"),
 
           divider(),
 

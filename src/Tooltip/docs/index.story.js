@@ -95,7 +95,7 @@ export default {
             ),
           ]),
 
-          importExample("import Tooltip from 'wix-style-react/Tooltip';"),
+          importExample("import { Tooltip } from 'wix-style-react';"),
 
           divider(),
 

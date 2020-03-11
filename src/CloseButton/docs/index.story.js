@@ -62,9 +62,7 @@ export default {
       tab({
         title: 'Description',
         sections: [
-          importExample(
-            "import CloseButton from 'wix-style-react/CloseButton';",
-          ),
+          importExample("import { CloseButton } from 'wix-style-react';"),
 
           divider(),
 

@@ -1,5 +1,4 @@
-export const importExample = `import FormField from 'wix-style-react/FormField';
-import Input from 'wix-style-react/Input'`;
+export const importExample = `import { FormField, Input } from 'wix-style-react';`;
 
 export const sizes = `
 <Layout>

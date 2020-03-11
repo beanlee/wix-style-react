@@ -102,7 +102,7 @@ export default {
               'The Page component provides a common layout for a page header and content, including scrolling capabilities, sticky nodes and much more',
           }),
 
-          importExample(`import Page from 'wix-style-react/Page';`),
+          importExample(`import { Page } from 'wix-style-react';`),
 
           divider(),
 

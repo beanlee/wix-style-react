@@ -72,9 +72,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import PreviewWidget from 'wix-style-react/PreviewWidget';",
-          ),
+          importExample("import { PreviewWidget } from 'wix-style-react';"),
 
           divider(),
 

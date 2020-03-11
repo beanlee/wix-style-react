@@ -68,7 +68,7 @@ export default {
             `Button is a default component to display action in a page.`,
           ),
 
-          importExample("import Button from 'wix-style-react/Button';"),
+          importExample("import { Button } from 'wix-style-react';"),
 
           divider(),
 

@@ -68,9 +68,7 @@ export default {
               ),
             ]),
 
-            importExample(
-              "import TextButton from 'wix-style-react/TextButton';",
-            ),
+            importExample("import { TextButton } from 'wix-style-react';"),
 
             divider(),
 

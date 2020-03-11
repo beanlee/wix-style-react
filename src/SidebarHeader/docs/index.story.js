@@ -86,9 +86,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import SidebarHeader from 'wix-style-react/SidebarHeader';",
-          ),
+          importExample("import { SidebarHeader } from 'wix-style-react';"),
 
           divider(),
 

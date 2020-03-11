@@ -90,7 +90,7 @@ export default {
   storyName: 'Layout',
   component: Layout,
   componentPath: '../Layout',
-  exampleImport: `import { Layout, Cell } from 'wix-style-react/Layout';`,
+  exampleImport: `import { Layout, Cell } from 'wix-style-react';`,
 
   componentProps: {
     children: childrenExample[0].value,

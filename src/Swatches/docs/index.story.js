@@ -78,7 +78,7 @@ export default {
             }),
           ]),
 
-          importExample("import Swatches from 'wix-style-react/Swatches';"),
+          importExample("import { Swatches } from 'wix-style-react';"),
 
           divider(),
 

@@ -95,7 +95,7 @@ export default {
       tab({
         title: 'Usage',
         sections: [
-          importExample("import RadioGroup from 'wix-style-react/RadioGroup';"),
+          importExample("import { RadioGroup } from 'wix-style-react';"),
 
           divider(),
 

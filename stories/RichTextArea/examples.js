@@ -1,5 +1,4 @@
-export const importExample = `import FormField from 'wix-style-react/FormField';
-import RichTextInputArea from 'wix-style-react/RichTextInputArea';`;
+export const importExample = `import { FormField, RichTextInputArea } from 'wix-style-react';`;
 
 export const basicExample = `
 <FormField label="Rich Text Area label">

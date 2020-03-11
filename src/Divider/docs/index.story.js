@@ -48,7 +48,7 @@ export default {
               'A component that separates content by a line horizontally or vertically.',
           }),
 
-          importExample("import Divider from 'wix-style-react/Divider';"),
+          importExample("import { Divider } from 'wix-style-react';"),
 
           divider(),
 

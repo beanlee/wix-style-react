@@ -58,9 +58,7 @@ export default {
               'A google preview displayer. Contains a title, url and description for SEO result',
           }),
 
-          importExample(
-            "import GooglePreview from 'wix-style-react/GooglePreview'",
-          ),
+          importExample("import { GooglePreview } from 'wix-style-react'"),
 
           divider(),
 

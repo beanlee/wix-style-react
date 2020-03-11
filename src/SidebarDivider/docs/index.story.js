@@ -43,9 +43,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import SidebarDivider from 'wix-style-react/SidebarDivider';",
-          ),
+          importExample("import { SidebarDivider } from 'wix-style-react';"),
 
           divider(),
 

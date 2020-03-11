@@ -58,9 +58,7 @@ export default {
               '`CounterBadge` gives you a quick preview to indicate more action is required.',
           }),
 
-          importExample(
-            "import CounterBadge from 'wix-style-react/CounterBadge';",
-          ),
+          importExample("import { CounterBadge } from 'wix-style-react';"),
 
           divider(),
 

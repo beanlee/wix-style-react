@@ -46,9 +46,7 @@ export default {
             }),
           ]),
 
-          importExample(
-            "import SidebarBackButton from 'wix-style-react/SidebarBackButton';",
-          ),
+          importExample("import { SidebarBackButton } from 'wix-style-react';"),
 
           divider(),
 

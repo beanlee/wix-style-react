@@ -75,9 +75,9 @@ export default {
           importExample(
             `
 // Use directly
-import ListItemSelect from 'wix-style-react/ListItemSelect';
+import { ListItemSelect } from 'wix-style-react';
 // Or use a builder
-import { listItemSelectBuilder } from 'wix-style-react/ListItemSelect';
+import { listItemSelectBuilder } from 'wix-style-react';
               `,
           ),
 

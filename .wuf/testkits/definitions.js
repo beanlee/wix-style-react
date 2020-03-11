@@ -523,9 +523,4 @@ module.exports = {
     namedProtractorTestkitExport: true,
     namedPuppeteerTestkitExport: true,
   },
-
-  TextLink: {
-    skipSanityTest: true,
-    noTestkit: true,
-  }
 };

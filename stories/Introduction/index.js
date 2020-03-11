@@ -5,6 +5,7 @@ import Markdown from 'wix-storybook-utils/Markdown';
 
 import Readme from '../../README.md';
 import Migration from '../../MIGRATION.md';
+import Contributing from '../../CONTRIBUTING.md';
 import TestingReadme from '../../docs/usage/testing.md';
 import TroubleshootingReadme from '../../docs/usage/Troubleshooting.md';
 import UsageWithoutYoshiReadme from '../../docs/usage-without-yoshi.md';
@@ -19,6 +20,10 @@ storiesOf(Category.GETTINGSTARTED, module).add('Getting started', () => (
 
 storiesOf(Category.GETTINGSTARTED, module).add('Migrating to wsr8', () => (
   <Markdown source={Migration} />
+));
+
+storiesOf(Category.GETTINGSTARTED, module).add('Contributing', () => (
+  <Markdown source={Contributing} />
 ));
 
 storiesOf(Category.GETTINGSTARTED, module).add('Usage Without Yoshi', () => (
@@ -40,8 +45,3 @@ storiesOf(Category.TROUBLESHOOTING, module).add('Troubleshooting', () => (
     <Markdown source={TroubleshootingReadme} />
   </div>
 ));
-
-//TODO - add contribution docs links here somehow
-
-// http://localhost:6006/?path=/story/introduction-getting-started--migrating-to-wsr8
-// http://localhost:6006/?path=introduction-getting-started--migrating-to-wsr8&viewMode=story#components

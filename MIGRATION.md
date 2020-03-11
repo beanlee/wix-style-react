@@ -1,7 +1,7 @@
-# Upgrading `wix-style-react` from 7 to 8
+# Upgrading `wix-style-react` to version 8
 
 # Index
-
+links don't work in Storybook - only in GitHub. sorry for the inconvenience.
 - [Components](#components)
   - [\<AddItem/>](#additem)
   - [\<Avatar/>](#avatar)
@@ -117,7 +117,7 @@ Props:
 This component was deleted, use `<FormField/>` instead.
 
 <details>
-  <summary>Using <code>&ltFormField/&gt</code> example:</summary>
+  <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
   Before:
   ```jsx
@@ -207,7 +207,7 @@ Testkit:
 This component was deleted, use `<FormField/>` instead.
 
 <details>
-  <summary>Using <code>&ltFormField/&gt</code> example:</summary>
+  <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
   Before:
   ```jsx
@@ -258,7 +258,7 @@ This component was deleted, use `<Text/>` instead.
 This component was deleted, use `<FormField/>` instead.
 
 <details>
-  <summary>Using <code>&ltFormField/&gt</code> example:</summary>
+  <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
   Before:
   ```jsx
@@ -344,7 +344,7 @@ Testkit:
 - removed `isNarrowError`
 
 <details>
-  <summary>Using <code>&ltInput.Affix/&gt</code> sub component example:</summary>
+  <summary>Using <code><span><</span>Input.Affix<span>/></span></code> sub component example:</summary>
 
   Before:
   ```jsx
@@ -390,7 +390,7 @@ Testkit:
 This component was deleted, use `<FormField/>` instead.
 
 <details>
-  <summary>Using <code>&ltFormField/&gt</code> example:</summary>
+  <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
   Before:
   ```jsx
@@ -451,7 +451,7 @@ Testkit:
 This component was deleted, use `<FormField/>` instead.
 
 <details>
-  <summary>Using <code>&ltFormField/&gt</code> example:</summary>
+  <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
   Before:
   ```jsx
@@ -534,7 +534,7 @@ Now it is enough that the parent has a determined height.
 
 IMPORTANT: If your page is already in an App structure, your Page container may already have a determined height!
 
-```raw
+```jsx
 +--------------------------------------------------
 |                    Header (48px)
 +--------------------------------------------------
@@ -707,7 +707,7 @@ This component was deleted, use `<StatisticsWidget/>` instead.
   <summary>Migrating a Stats widget example with percents example:</summary>
 
   Old code using `<StatsWidget/>`
-  ```
+  ```jsx
   import React from 'react';
   import StatsWidget from '..';
   import styles from './ExampleStatsWidget.scss';
@@ -754,7 +754,7 @@ This component was deleted, use `<StatisticsWidget/>` instead.
   ```
 
   New code using `<StatisticsWidget/>`:
-  ```
+  ```jsx
   import React from 'react';
   import StatisticsWidget from 'wix-style-react/StatisticsWidget';
   import Card from 'wix-style-react/Card';
@@ -802,7 +802,7 @@ This component was deleted, use `<StatisticsWidget/>` instead.
   <summary>Migrating a StatsWidget example with Multiple filters example:</summary>
 
   Old code using `<StatsWidget/>`
-  ```
+  ```jsx
   import React from 'react';
   import StatsWidget from '..';
 
@@ -857,7 +857,7 @@ This component was deleted, use `<StatisticsWidget/>` instead.
   ```
 
   New code using `<StatisticsWidget/>`
-  ```
+  ```jsx
   import React from 'react';
   import StatisticsWidget from 'wix-style-react/StatisticsWidget';
   import Card from 'wix-style-react/Card';
@@ -946,7 +946,7 @@ This component was deleted, use `<StatisticsWidget/>` instead.
 This component was deleted, use `<TextButton as="a"/>` instead.
 
 <details>
-  <summary>Using <code>&ltTextButton/&gt</code> component example:</summary>
+  <summary>Using <code><span><</span>TextButton<span>/></span></code> component example:</summary>
 
   Before:
   ```jsx

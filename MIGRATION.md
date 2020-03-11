@@ -1,7 +1,8 @@
 # Upgrading `wix-style-react` to version 8
+---
 
-# Index
-links don't work in Storybook - only in GitHub. sorry for the inconvenience.
+## Index
+<span style="color:#c30000">links don't work in Storybook - only in GitHub. sorry for the inconvenience.</span>
 - [Components](#components)
   - [\<AddItem/>](#additem)
   - [\<Avatar/>](#avatar)
@@ -52,6 +53,7 @@ links don't work in Storybook - only in GitHub. sorry for the inconvenience.
   - [help prop](#help-prop)
 
 # Components
+---
 
 ## \<AddItem/>
 
@@ -1079,6 +1081,7 @@ New Uni Testkit API
 This component was deleted, use `<Box/>` instead.
 
 # Guides
+---
 
 ## Icons
 Icons from `wix-style-react/new-icons` import path were removed.<br>

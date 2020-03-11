@@ -1,5 +1,5 @@
 import { circularProgressBarDriverFactory as coreCircularProgressBarDriverFactory } from 'wix-ui-core/drivers/vanilla';
-import { tooltipDriverFactory } from 'wix-ui-core/dist/src/components/Tooltip/Tooltip.driver';
+import { tooltipDriverFactory } from 'wix-ui-core/dist/src/components/tooltip/Tooltip.driver';
 import { StylableDOMUtil } from '@stylable/dom-test-kit';
 import style from './CircularProgressBar.st.css';
 import { dataHooks } from './constants';

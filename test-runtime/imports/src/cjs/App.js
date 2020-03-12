@@ -1,5 +1,5 @@
 const React = require('react');
-const Text = require('../../../../Text');
+const Text = require('../../../../dist/src/Text');
 
 class App extends React.Component {
   state = {

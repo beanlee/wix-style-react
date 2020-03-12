@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../../../../Button';
-import Heading from '../../../../Heading';
+import Button from '../../../../dist/src/Button';
+import Heading from '../../../../dist/src/Heading';
 
 class App extends React.Component {
   state = {

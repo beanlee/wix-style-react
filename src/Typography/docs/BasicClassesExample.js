@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import t from 'wix-style-react/Typography';
+import { Typography as t } from 'wix-style-react';
 
 export default () => (
   <div>

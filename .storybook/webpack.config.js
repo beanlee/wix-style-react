@@ -36,6 +36,8 @@ module.exports = ({ config }) => {
             issueURL:
               'https://github.com/wix/wix-style-react/issues/new/choose',
             testkitsWarning,
+            importFormat:
+            "import { %componentName } from '%moduleName'",
             testkits: {
               vanilla: {
                 template: makeTestkitTemplate(''),

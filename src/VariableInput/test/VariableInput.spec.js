@@ -161,40 +161,25 @@ describe('VariableInput', () => {
       expect(callback).toHaveBeenCalledWith(text);
     });
   });
-  describe('Error', () => {
-    it('should render the error indicator', async () => {
-      const driver = createDriver(<VariableInput status="error" />);
-      expect(await driver.hasError()).toBe(true);
-    });
 
-    it('should render a tooltip with the error message', async () => {
-      const errorMessage = 'Some error';
-      const render = createRendererWithUniDriver(publicDriverFactory);
-      const { driver } = render(
-        <VariableInput status="error" statusMessage={errorMessage} />,
-      );
+  describe('status attribute', () => {
+    [
+      { status: 'error', statusMessage: 'Error Message' },
+      { status: 'warning', statusMessage: 'Warning Message' },
+      { status: 'loading', statusMessage: 'Loading Message' },
+    ].forEach(test => {
+      it(`should display a status icon when status="${test.status}"`, async () => {
+        const render = createRendererWithUniDriver(publicDriverFactory);
+        const { driver } = render(<VariableInput {...test} />);
 
-      expect(await driver.hasError()).toBe(true);
-      expect(await driver.getErrorMessage()).toEqual(errorMessage);
-    });
-  });
-  describe('Warning', () => {
-    it('should render the warning indicator', async () => {
-      const driver = createDriver(<VariableInput status="warning" />);
-      expect(await driver.hasWarning()).toBe(true);
-    });
-
-    it('should render a tooltip with the error message', async () => {
-      const warningMessage = 'Some warning';
-      const render = createRendererWithUniDriver(publicDriverFactory);
-      const { driver } = render(
-        <VariableInput status="warning" statusMessage={warningMessage} />,
-      );
-
-      expect(await driver.hasWarning()).toBe(true);
-      expect(await driver.getWarningMessage()).toEqual(warningMessage);
+        expect(await driver.hasStatus()).toBe(true);
+        expect(await driver.getStatus()).toBe(test.status);
+        expect(await driver.hasStatusMessage()).toBe(true);
+        expect(await driver.getStatusMessage()).toBe(test.statusMessage);
+      });
     });
   });
+
   describe('size', () => {
     it('should render a tag in small size', async () => {
       const text = `Some text {{${variableEntity.value}}} `;

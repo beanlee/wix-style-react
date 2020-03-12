@@ -1,5 +1,5 @@
 import { statusIndicatorDriverFactory } from '../StatusIndicator/StatusIndicator.uni.driver';
-import { dataHooks, statusTypes } from './constants';
+import { dataHooks } from './constants';
 import { baseUniDriverFactory, ReactBase } from '../../test/utils/unidriver';
 
 export const getContent = base => base.$('.public-DraftEditor-content');
@@ -13,7 +13,7 @@ export default (base, body) => {
   );
 
   return {
-    ...baseUniDriverFactory(base, body),
+    ...baseUniDriverFactory(base),
     isDisabled: async () =>
       (await getContent(base).attr('contenteditable')) === 'false',
     getContent: () => getContent(base).text(),
@@ -35,25 +35,15 @@ export default (base, body) => {
         await page.$eval('.public-DraftEditor-content', e => e.blur());
       }
     },
-    hasError: async () => {
-      const exists = await statusIndicatorDriver.exists();
-      if (exists) {
-        const status = await statusIndicatorDriver.getStatus();
-        return status === statusTypes.error;
-      }
 
-      return false;
-    },
-    getErrorMessage: statusIndicatorDriver.getMessage,
-    hasWarning: async () => {
-      const exists = await statusIndicatorDriver.exists();
-      if (exists) {
-        const status = await statusIndicatorDriver.getStatus();
-        return status === statusTypes.warning;
-      }
-
-      return false;
-    },
-    getWarningMessage: statusIndicatorDriver.getMessage,
+    // Status
+    /** Return true if there's a status */
+    hasStatus: statusIndicatorDriver.exists,
+    /** If there's a status, returns its type */
+    getStatus: statusIndicatorDriver.getStatus,
+    /** Return true if there's a status message */
+    hasStatusMessage: statusIndicatorDriver.hasMessage,
+    /** If there's a status message, returns its text value */
+    getStatusMessage: statusIndicatorDriver.getMessage,
   };
 };

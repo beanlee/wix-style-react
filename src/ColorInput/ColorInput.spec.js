@@ -298,24 +298,6 @@ describe('ColorInput', () => {
       });
     });
 
-    // Uncomment in wsr8
-    xdescribe('with status', () => {
-      [
-        { status: 'error', statusMessage: 'Error Message' },
-        { status: 'warning', statusMessage: 'Warning Message' },
-        { status: 'loading', statusMessage: 'Loading Message' },
-      ].forEach(test => {
-        it(`should display a status icon when status="${test.status}"`, async () => {
-          const { driver } = render(renderColorInput(test));
-
-          expect(await driver.hasStatus()).toBe(true);
-          expect(await driver.getStatus()).toBe(test.status);
-          expect(await driver.hasStatusMessage()).toBe(true);
-          expect(await driver.getStatusMessage()).toBe(test.statusMessage);
-        });
-      });
-    });
-
     describe('`onChange` prop', () => {
       it(`should be triggered when input value has changed`, async () => {
         const onChange = jest.fn();

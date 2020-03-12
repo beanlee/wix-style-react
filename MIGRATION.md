@@ -1127,13 +1127,11 @@ export default () => (
 ## error & errorMessage --> status & statusMessage
 
 Props:
-
 - changed `error` to `status`
 - changed `errorMessage` to `statusMessage`
 - removed `theme` - Look at `<Input/>` component migration guide for more information.
 
 Testkit:
-
 - added `hasStatus`
 - added `getStatus`
 - added `hasStatusMessage`

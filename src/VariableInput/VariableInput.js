@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, func, shape, oneOf, node, bool, number } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Editor, EditorState } from 'draft-js';
 
 import EditorUtilities from './EditorUtilities';
@@ -205,56 +205,56 @@ VariableInput.displayName = 'VariableInput';
 
 VariableInput.propTypes = {
   /** A single CSS class name to be appended to the Input's wrapper element. */
-  className: string,
+  className: PropTypes.string,
 
   /** Applied as data-hook HTML attribute that can be used in the tests */
-  dataHook: string,
+  dataHook: PropTypes.string,
 
   /** When set to true this component is disabled */
-  disabled: bool,
+  disabled: PropTypes.bool,
 
   /** Initial value to display in the editor */
-  initialValue: string,
+  initialValue: PropTypes.string,
 
   /** When set to true, component will allow multiple lines, otherwise will scroll horizontaly and ignore return key*/
-  multiline: bool,
+  multiline: PropTypes.bool,
 
   /** Callback function for changes while typing.
    * `onChange(value: String): void` */
-  onChange: func,
+  onChange: PropTypes.func,
 
   /** Callback funciton after calling `insertVariable()` and `setValue()`
    * `onSubmit(value: String): void` */
-  onSubmit: func,
+  onSubmit: PropTypes.func,
 
   /** Callback funciton when focusing out.`
    * `onBlur(value: String): void` */
-  onBlur: func,
+  onBlur: PropTypes.func,
 
   /** Use to display a status indication for the user.*/
-  status: oneOf(['error', 'warning', 'loading']),
+  status: PropTypes.oneOf(['error', 'warning', 'loading']),
 
   /** The status (error/warning) message to display when hovering the status icon, if not given or empty there will be no tooltip*/
-  statusMessage: node,
+  statusMessage: PropTypes.node,
 
   /** Placeholder to display in the editor */
-  placeholder: string,
+  placeholder: PropTypes.string,
 
   /** Set height of component that fits the given number of rows */
-  rows: number,
+  rows: PropTypes.number,
 
   /** Specifies the size of the input and variables*/
-  size: oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
 
   /** Component will parse the variable keys, and convert them to tag bubble on blur and while using insertVariable.
    * For each key variableParser will be called and should return a proper text for that key or false in case the key is invalid.
    * `variableParser(key: String): String|boolean` */
-  variableParser: func,
+  variableParser: PropTypes.func,
 
   /** Template for variables, will search and replace variables with the given prefix and suffix */
-  variableTemplate: shape({
-    prefix: string,
-    suffix: string,
+  variableTemplate: PropTypes.shape({
+    prefix: PropTypes.string,
+    suffix: PropTypes.string,
   }),
 };
 

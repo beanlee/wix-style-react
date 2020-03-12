@@ -1,4 +1,5 @@
 import { BaseUniDriver } from 'wix-ui-test-utils/unidriver';
+import { StatusIndicatorState } from '../StatusIndicator';
 
 export interface VariableInputUniDriver extends BaseUniDriver {
   /** Returns true if component is disabled */
@@ -19,4 +20,10 @@ export interface VariableInputUniDriver extends BaseUniDriver {
   hasWarning(): Promise<boolean>;
   /** Get the warning message content */
   getWarningMessage(): Promise<string>;
+
+  // Status
+  hasStatus(): Promise<boolean>;
+  getStatus(): Promise<StatusIndicatorState>;
+  hasStatusMessage(): Promise<boolean>;
+  getStatusMessage(): Promise<string>;
 }

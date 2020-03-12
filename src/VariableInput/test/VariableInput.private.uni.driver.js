@@ -13,6 +13,7 @@ const getTagDriver = base =>
 export default (base, body) => {
   return {
     ...publicDriverFactory(base, body),
+
     getPlaceholder: () => getPlaceholder(base).text(),
     isTagTiny: () => getTagDriver(base).isTiny(),
     isTagSmall: () => getTagDriver(base).isSmall(),

@@ -17,14 +17,12 @@ const tooltipProps = {
   [arrowsDirection.rightArrow]: {
     dataHook: dataHooks.nextNavigationButtonTooltip,
     className: styles.modalTooltip,
-    upgrade: true,
     appendTo: 'scrollParent',
     placement: 'right',
   },
   [arrowsDirection.leftArrow]: {
     dataHook: dataHooks.prevNavigationButtonTooltip,
     className: styles.modalTooltip,
-    upgrade: true,
     appendTo: 'scrollParent',
     placement: 'left',
   },

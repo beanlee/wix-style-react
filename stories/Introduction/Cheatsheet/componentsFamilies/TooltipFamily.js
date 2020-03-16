@@ -16,19 +16,19 @@ import {
   symbolsGroup,
 } from '../../../symbolsComponentsMapping/symbols';
 
-//7. Tooltip
+// 7. Tooltip
 import Tooltip from 'wix-style-react/Tooltip';
 import Popover from 'wix-style-react/Popover';
 import PopoverMenu from 'wix-style-react/PopoverMenu';
 import FloatingHelper from 'wix-style-react/FloatingHelper';
 
-//Assets
+// Assets
 import Text from 'wix-style-react/Text';
 import Box from 'wix-style-react/Box';
 import TextButton from 'wix-style-react/TextButton';
 import { Layout } from 'wix-style-react/Layout';
 
-//icons
+// icons
 import Add from 'wix-ui-icons-common/Add';
 import Edit from 'wix-ui-icons-common/Edit';
 import Delete from 'wix-ui-icons-common/Delete';
@@ -53,19 +53,12 @@ const TooltipExample = () => {
     <SingleComponentSideBySide {...singleComponentProps}>
       <Layout cols={2}>
         <Box>
-          <Tooltip
-            upgrade
-            fixed
-            size="small"
-            appendTo="viewport"
-            content="Site Name"
-          >
+          <Tooltip fixed size="small" appendTo="viewport" content="Site Name">
             <TextButton size="small">Small Tooltip</TextButton>
           </Tooltip>
         </Box>
         <Box>
           <Tooltip
-            upgrade
             fixed
             appendTo="viewport"
             content="Take a moment to confirm your email"

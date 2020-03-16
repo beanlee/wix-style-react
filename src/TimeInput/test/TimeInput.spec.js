@@ -91,18 +91,13 @@ describe('TimeInput', () => {
       });
 
       it('should display custom suffix before ticker', async () => {
-        const customSuffixDataHook = 'custom-suffix';
-        const customSuffixText = 'Custom Suffix';
-        const props = {
-          customSuffix: (
-            <div data-hook={customSuffixDataHook}>{customSuffixText}</div>
-          ),
-        };
+        const customSuffix = 'Custom Suffix';
+        const props = { customSuffix };
+
         const { driver } = render(<TimePicker {...props} />);
-        const receivedText = await driver.getCustomSuffixText(
-          customSuffixDataHook,
-        );
-        expect(receivedText).toBe(customSuffixText);
+
+        const customSuffixNode = await driver.getCustomSuffix();
+        expect(customSuffixNode).toBe(customSuffix);
       });
     });
 

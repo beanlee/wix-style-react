@@ -8,6 +8,7 @@ export interface TimeInputDriver extends BaseDriver {
   isAmPmIndicatorExist: () => boolean;
   toggleAmPmIndicator: () => void;
   getAmPmIndicatorText: () => string;
+  getCustomSuffix: () => string;
   isRtl: () => boolean;
   setValue: (text: string) => void;
   blur: () => void;

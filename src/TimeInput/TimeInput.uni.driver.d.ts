@@ -8,6 +8,7 @@ export interface TimeInputUniDriver extends BaseUniDriver {
   isAmPmIndicatorExist: () => Promise<boolean>;
   toggleAmPmIndicator: () => Promise<void>;
   getAmPmIndicatorText: () => Promise<string>;
+  getCustomSuffix: () => Promise<string>;
   isRtl: () => Promise<boolean>;
   setValue: (text: string) => Promise<void>;
   blur: () => Promise<void>;

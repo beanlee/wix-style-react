@@ -237,7 +237,9 @@ export default class TimePicker extends Component {
               </Text>
             )}
           </div>
-          {customSuffix}
+          {customSuffix && (
+            <div data-hook={dataHooks.customSuffix}>{customSuffix}</div>
+          )}
           <Input.Ticker
             upDisabled={disabled}
             downDisabled={disabled}
@@ -250,18 +252,17 @@ export default class TimePicker extends Component {
     );
 
     return (
-      <div className={styles.input}>
-        <Input
-          ref="input"
-          value={text}
-          onFocus={this.handleFocus}
-          onChange={this.handleInputChange}
-          onBlur={this.handleInputBlur}
-          suffix={suffix}
-          dataHook={dataHooks.input}
-          disabled={disabled}
-        />
-      </div>
+      <Input
+        ref="input"
+        value={text}
+        className={styles.input}
+        onFocus={this.handleFocus}
+        onChange={this.handleInputChange}
+        onBlur={this.handleInputBlur}
+        suffix={suffix}
+        dataHook={dataHooks.input}
+        disabled={disabled}
+      />
     );
   }
 

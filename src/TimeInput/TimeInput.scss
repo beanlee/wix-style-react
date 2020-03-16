@@ -49,7 +49,12 @@
 }
 
 .input {
-  cursor: pointer;
+  min-width: 120px;
+
+  > div {
+    justify-content: space-between;
+  }
+
   input {
     max-width: 53.7px; // Inferred from Zeplin spec.
   }

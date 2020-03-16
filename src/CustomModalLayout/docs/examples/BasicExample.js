@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Checkbox from "../../../Checkbox";
+import Checkbox from "wix-style-react/Checkbox";
 
 class BasicExample extends React.Component {
   render() {

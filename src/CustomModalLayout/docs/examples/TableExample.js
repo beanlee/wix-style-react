@@ -1,9 +1,9 @@
 /* eslint-disable */
 import React from 'react';
-import Checkbox from "../../../Checkbox";
-import Box from "../../../Box";
-import Table from "../../../Table";
-import CustomModalLayout from "../../../CustomModalLayout";
+import Checkbox from "wix-style-react/Checkbox";
+import Box from "wix-style-react/Box";
+import Table from "wix-style-react/Table";
+import CustomModalLayout from "wix-style-react/CustomModalLayout";
 
 class TableExample extends React.Component {
   render() {

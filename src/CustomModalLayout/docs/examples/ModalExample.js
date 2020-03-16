@@ -3,7 +3,7 @@ import React from 'react';
 import Modal from 'wix-style-react/Modal';
 import Button from 'wix-style-react/Button';
 import Box from 'wix-style-react/Box';
-import Checkbox from "../../../Checkbox";
+import Checkbox from "wix-style-react/Checkbox";
 
 class ModalExample extends React.Component {
   state = {

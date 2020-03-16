@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React from 'react';
-import Checkbox from "../../../Checkbox";
+import Checkbox from "wix-style-react/Checkbox";
 
 class FootnoteExample extends React.Component {
   render() {
@@ -15,10 +15,7 @@ class FootnoteExample extends React.Component {
         subtitle="Make customers come back to your store with coupons"
         sideActions={(<Checkbox>Checkbox</Checkbox>)}
         footnote={
-          <>
-            <Text size="small">By sending an invite, you agree to the{'\u00A0'}</Text>
-            <TextButton size="small">Wix Terms of Use.</TextButton>
-          </>
+            <Text size="small">By sending an invite, you agree to the <a>Wix Terms of Use</a></Text>
         }
       >
         <Text>

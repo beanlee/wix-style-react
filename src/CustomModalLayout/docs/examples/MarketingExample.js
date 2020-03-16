@@ -3,7 +3,7 @@ import React from 'react';
 import Modal from 'wix-style-react/Modal';
 import Button from 'wix-style-react/Button';
 import Box from 'wix-style-react/Box';
-import CustomModalLayout from "../../CustomModalLayout";
+import CustomModalLayout from "wix-style-react/CustomModalLayout";
 
 class MarketingExample extends React.Component {
   state = {

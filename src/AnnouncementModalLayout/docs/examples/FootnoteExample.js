@@ -11,10 +11,7 @@ class FootnoteExample extends React.Component {
         // This illustration is only an example with a relative path asset. Replace with your image
         illustration={"announcement_illustration.svg"}
         footnote={
-          <>
-            <Text size="small">By sending an invite, you agree to the{'\u00A0'}</Text>
-            <TextButton size="small">Wix Terms of Use.</TextButton>
-          </>
+            <Text size="small">By sending an invite, you agree to the <a>Wix Terms of Use</a></Text>
         }
       >
         <Text>
